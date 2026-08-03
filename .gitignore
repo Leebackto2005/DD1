@@ -1,0 +1,23 @@
+# ===== 环境与密钥（严禁提交 GitHub） =====
+.env
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+
+# ===== 运行时数据 / 产物 / 日志（本地生成，不入库） =====
+data/
+reports/
+logs/
+tmp/
+
+# ===== 图片产物 =====
+*.png
+*.jpg
+*.jpeg
