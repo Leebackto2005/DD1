@@ -66,6 +66,39 @@ ONSITECLUB_END_FAR=30
 ONSITECLUB_LONG_CAP=10        # 长期段每月展示上限
 ```
 
+## 🚀 GitHub 上传与更新
+
+```bash
+# ===== 首次上传（在 github.com 建好仓库后执行一次）=====
+git init                                              # 初始化本地仓库（本机已做过）
+git remote add origin https://github.com/Leebackto2005/DD1.git   # 关联远端（本机已配好）
+git branch -M main                                    # 分支统一命名为 main
+git push -u origin main                               # 首次推送（GCM 弹浏览器登录一次）
+# 若远端有占位 README 导致推送被拒，用强制推送覆盖（会覆盖远端占位文件）：
+git push -u origin main --force
+
+# ===== 日常更新（每次改完代码后）=====
+git add -A                                            # 暂存全部改动
+git commit -m "改动说明"                               # 提交（写清改了什么）
+git push                                              # 推送到 GitHub
+
+# ===== 在其它电脑克隆使用 =====
+git clone https://github.com/Leebackto2005/DD1.git     # 克隆
+cd DD1
+pip install -r requirements.txt                       # 装依赖
+cp .env.example .env                                  # 克隆后必须自建 .env 并填密钥
+
+# ===== 查看状态 / 历史 =====
+git status                                            # 查看未提交的改动
+git log --oneline                                     # 查看提交历史
+git pull                                              # 拉取远端最新改动
+```
+
+> ⚠️ **安全说明**
+> - `.env`（钉钉 webhook / 图床 key）已被 `.gitignore` 排除，**永不提交**，推送不会带上密钥
+> - `data/`、`reports/`、`logs/` 为本地运行时数据/产物，也不入库
+> - 换电脑克隆后需自行 `cp .env.example .env` 填入密钥才能推送
+
 ## 📁 代码结构
 
 ```text
