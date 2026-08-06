@@ -13,6 +13,7 @@
 """
 
 import calendar as _cal
+import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
 from urllib.parse import urljoin
@@ -20,7 +21,8 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
-from .base import fetch_with_retry, make_headers
+from .base import fetch_with_retry, get_with_ssl_fallback, make_headers
+from config import ONSITECLUB_ALLOW_INSECURE_SSL
 
 BASE_URL = "https://www.onsiteclub.com/"
 CALENDAR_API = urljoin(BASE_URL, "calendar_cases")
@@ -153,12 +155,54 @@ def _extract_cover(soup):
     return ""
 
 
+def _extract_body_description(soup, max_chars=None):
+    """只从详情页已知正文容器提取中文介绍。
+
+    旧页面使用 ``.entry-content``，当前页面使用 ``.cc``。SEO meta、导航区、
+    推荐案例和来源声明都不参与提取，避免把无关内容错配到当前会展。
+    """
+    boilerplate_markers = (
+        "图片及内容来自", "图片来自", "内容来自网络", "出处见网络",
+        "文字来自 AI", "文字来自AI", "AI信息自我辨识",
+    )
+    paragraphs = []
+    for selector in (".entry-content", ".cc"):
+        container = soup.select_one(selector)
+        if not container:
+            continue
+        for node in container.select("p"):
+            text = _clean_text(node)
+            if any(marker in text for marker in boilerplate_markers):
+                continue
+            if re.fullmatch(r"[\d\s年月日./~～\-—至]+", text):
+                continue
+            # 当前 .cc 容器还包含标题和日期；正文段落明显更长。
+            if selector == ".cc" and len(text) < 30:
+                continue
+            chinese_count = len(re.findall(r"[\u4e00-\u9fff]", text))
+            if chinese_count < 6 or chinese_count / max(len(text), 1) < 0.15:
+                continue
+            paragraphs.append(text)
+        if paragraphs:
+            break
+
+    description = "\n".join(dict.fromkeys(paragraphs)).strip()
+    if not max_chars or len(description) <= max_chars:
+        return description
+    return description[:max_chars].rstrip("，。；;、,.!?！？:： \n") + "…"
+
+
 def enrich_event_detail(item, timeout=10):
     """抓取详情页补充城市/品牌/行业/主题/封面图；失败时静默保留原有字段。"""
     if not item.get("url"):
         return item
     try:
-        response = requests.get(item["url"], headers=make_headers(referer=BASE_URL), timeout=timeout)
+        response = get_with_ssl_fallback(
+            item["url"],
+            headers=make_headers(referer=BASE_URL),
+            timeout=timeout,
+            allow_insecure_fallback=ONSITECLUB_ALLOW_INSECURE_SSL,
+        )
         response.raise_for_status()
         soup = BeautifulSoup(response.text, "html.parser")
 
@@ -180,6 +224,8 @@ def enrich_event_detail(item, timeout=10):
         item["topics"] = list(dict.fromkeys(t for t in topics if t))
 
         item["image_url"] = _extract_cover(soup) or item.get("image_url", "")
+        item["description"] = _extract_body_description(soup)
+        item["description_source"] = "entry_content"
     except requests.RequestException:
         pass
     return item
@@ -194,7 +240,13 @@ def fetch_calendar_events(year, month, timeout=10, max_workers=6):
 
     def _fetch():
         params = {"start": first.isoformat(), "end": last.isoformat()}
-        response = requests.get(CALENDAR_API, headers=make_headers(referer=BASE_URL), params=params, timeout=timeout)
+        response = get_with_ssl_fallback(
+            CALENDAR_API,
+            headers=make_headers(referer=BASE_URL),
+            params=params,
+            timeout=timeout,
+            allow_insecure_fallback=ONSITECLUB_ALLOW_INSECURE_SSL,
+        )
         response.raise_for_status()
         payload = response.json()
         return parse_calendar_payload(payload)

@@ -122,25 +122,50 @@ def clean_events(events, month):
 def enrich_new_events(events, state, logger=None):
     """为「新增」的会展抓取详情页，并写入缓存；已缓存的直接复用。"""
     cache = state.setdefault("cache", {})
+    cache_keys = (
+        "title", "start", "end", "url", "type", "city", "brand", "industry",
+        "topics", "image_url", "description", "description_source",
+    )
     for item in events:
         key = str(item["id"])
         if key in cache:
             item.update(cache[key])
-        else:
-            from crawlers.onsiteclub_calendar import enrich_event_detail
-            enriched = enrich_event_detail(dict(item))
-            cache[key] = {
-                k: enriched.get(k) for k in
-                ("title", "start", "end", "url", "type", "city", "brand", "industry", "topics", "image_url")
-            }
-            item.update(cache[key])
+            if cache[key].get("description_source") == "entry_content":
+                continue
+        from crawlers.onsiteclub_calendar import enrich_event_detail
+        candidate = dict(item)
+        candidate["description"] = ""
+        candidate.pop("description_source", None)
+        enriched = enrich_event_detail(candidate)
+        cache[key] = {k: enriched.get(k) for k in cache_keys}
+        if cache[key].get("description_source") != "entry_content":
+            cache[key]["description"] = ""
+        item.update(cache[key])
     return events
 
 
-def diff_new_events(events, state):
-    """与历史 seen_ids 对比，返回今日新增的会展；首日（无历史）时返回全部。"""
+def diff_new_events(events, state, logger=None):
+    """与历史 seen_ids 对比，返回今日新增的会展；首日（无历史）时返回全部。
+
+    Args:
+        events: 本次抓取到的会展列表
+        state: 状态字典（含 seen_ids）
+        logger: 可选日志器；不传则不打印调试日志
+    """
     seen = set(state.get("seen_ids", []))
-    return [item for item in events if item["id"] not in seen]
+    new_events = [item for item in events if item["id"] not in seen]
+
+    if logger:
+        logger.info("[日历监控] diff_new_events：抓取 %s 场，seen_ids 共 %s 条",
+                    len(events), len(seen))
+        for item in events:
+            is_new = item["id"] not in seen
+            logger.debug("[日历监控]   %s id=%s title=%s",
+                         "新增" if is_new else "已见过", item["id"],
+                         str(item.get("title", ""))[:30])
+        logger.info("[日历监控] 本次新增 %s 场", len(new_events))
+
+    return new_events
 
 
 def active_on(events, day):

@@ -1,10 +1,9 @@
-"""Onsite Club 分类案例库监控主流程（独立于日历监控的管道）。
+"""Onsite Club 分类案例库监控（已并入 dd_monitor 主流程，作为库被调用）。
 
-每日流程：
-1. 抓取 /category 前 N 页案例（按最新排序，今日新增必在前几页）。
-2. 与本地 seen_ids（slug）对比，识别「今日新增」（首日 = 全部）。
-3. 为新增案例抓详情页补全城市/品牌/日期/封面。
-4. 生成一段精短 markdown 文本，推送到钉钉（纯文字，无看板图）。
+提供分类案例的抓取、去重、enrich、基准初始化等功能：
+- dd_monitor.run() 调用本模块的 diff_new_cases / _enrich_new_cases 等函数，
+  将分类案例新增并入日历报告的「今日新增」部分合并展示。
+- dd_main.py --init-category 调用 init_baseline 设定基准。
 
 状态存于 data/onsiteclub_category_state.json（与日历状态隔离）：
 - seen_ids：历史出现过的 slug
@@ -14,25 +13,22 @@
 import json
 import os
 from concurrent.futures import ThreadPoolExecutor
-from datetime import date, datetime
+from datetime import datetime
 
-from config import DATA_DIR, LOG_DIR, REPORT_DIR
-from crawlers.onsiteclub_category import (
-    enrich_cases,
-    fetch_category_cases,
-)
+from config import DATA_DIR, LOG_DIR
+from crawlers.onsiteclub_category import fetch_category_cases
 from runtime import setup_logger
 
 STATE_FILENAME = "onsiteclub_category_state.json"
-REPORT_FILENAME = "category_report_{date}.md"
 
 # 默认抓取前 3 页（约 60 条），足以覆盖单日新增
 DEFAULT_MAX_PAGES = 3
-# 推送时今日新增最多展示条数（精短文本）
-MAX_NEW_SHOW = 20
 ENRICH_WORKERS = 6
 
-CACHE_KEYS = ("title", "url", "type", "city", "brand", "industry", "start", "end", "image_url")
+CACHE_KEYS = (
+    "title", "url", "type", "city", "brand", "industry", "start", "end",
+    "image_url", "description", "description_source",
+)
 
 
 def default_state_path():
@@ -66,20 +62,44 @@ def save_state(path, state):
         json.dump(state, file, ensure_ascii=False, indent=1)
 
 
-def diff_new_cases(cases, state):
-    """与历史 seen_ids 对比，返回今日新增；首日（无历史）返回全部。"""
+def diff_new_cases(cases, state, logger=None):
+    """与历史 seen_ids 对比，返回今日新增；首日（无历史）返回全部。
+
+    Args:
+        cases: 本次抓取到的案例列表
+        state: 状态字典（含 seen_ids）
+        logger: 可选日志器；不传则不打印调试日志
+    """
     seen = set(state.get("seen_ids", []))
-    return [item for item in cases if item["slug"] not in seen]
+    new_cases = [item for item in cases if item["slug"] not in seen]
+
+    if logger:
+        logger.info("[分类监控] diff_new_cases：抓取 %s 条，seen_ids 共 %s 条",
+                    len(cases), len(seen))
+        for item in cases:
+            is_new = item["slug"] not in seen
+            logger.debug("[分类监控]   %s slug=%s",
+                         "新增" if is_new else "已见过", item["slug"])
+        logger.info("[分类监控] 本次新增 %s 条", len(new_cases))
+
+    return new_cases
 
 
 def _enrich_new_cases(cases, state, max_workers=ENRICH_WORKERS):
-    """并发为新增案例抓详情页并写缓存；已缓存的直接复用。"""
+    """并发为新增案例抓详情页并写缓存；已缓存的直接复用。
+
+    无正文来源标记的旧缓存会强制补抓一次，淘汰历史 SEO meta 简介。
+    """
     cache = state.setdefault("cache", {})
     targets = []
     for item in cases:
         key = item["slug"]
         if key in cache:
             item.update(cache[key])
+            if cache[key].get("description_source") != "entry_content":
+                item["description"] = ""
+                item.pop("description_source", None)
+                targets.append(item)
         else:
             targets.append(item)
 
@@ -88,67 +108,20 @@ def _enrich_new_cases(cases, state, max_workers=ENRICH_WORKERS):
 
     def _enrich(item):
         from crawlers.onsiteclub_category import enrich_case_detail
-        enriched = enrich_case_detail(dict(item))
-        cache[item["slug"]] = {k: enriched.get(k) for k in CACHE_KEYS}
+        try:
+            enriched = enrich_case_detail(dict(item))
+            cache[item["slug"]] = {k: enriched.get(k) for k in CACHE_KEYS}
+            if cache[item["slug"]].get("description_source") != "entry_content":
+                cache[item["slug"]]["description"] = ""
+        except Exception:
+            # 抓取失败时标记 description_source="failed"，避免每次重抓陷入死循环
+            cache[item["slug"]] = {**{k: item.get(k, "") for k in CACHE_KEYS},
+                                   "description": "", "description_source": "failed"}
         item.update(cache[item["slug"]])
 
     with ThreadPoolExecutor(max_workers=min(max_workers, len(targets))) as executor:
         list(executor.map(_enrich, targets))
     return cases
-
-
-def _date_span(item):
-    """日期区间展示，如 08-01~08-10；无日期返回空串。"""
-    start = str(item.get("start") or "")
-    end = str(item.get("end") or "")
-    if not start:
-        return ""
-    fmt = lambda d: d[5:].replace("-", "-") if len(d) >= 10 else d  # 2026-08-01 → 08-01
-    if end and end != start:
-        return f"{fmt(start)}~{fmt(end)}"
-    return fmt(start)
-
-
-def build_category_report(new_cases, today=None, max_show=MAX_NEW_SHOW):
-    """生成精短 markdown 文本：今日新增案例列表（标题+城市+日期+链接）。
-
-    钉钉安全关键词「会展」已包含在标题行，确保消息送达。
-    """
-    today = today or date.today()
-    weekday_cn = "一二三四五六日"
-    lines = [
-        f"## 会展｜Onsite Club 今日新增案例 · {today.month}/{today.day} 周{weekday_cn[today.weekday()]}",
-        f"**今日新增 {len(new_cases)} 条** · 🔗 [完整列表](https://www.onsiteclub.com/category)",
-        "",
-    ]
-    if not new_cases:
-        lines.append("今日暂无新增案例。")
-        return "\n".join(lines)
-
-    shown = 0
-    for idx, item in enumerate(new_cases, 1):
-        if shown >= max_show:
-            lines.append(f"\n… 其余 {len(new_cases) - shown} 条见 [完整列表](https://www.onsiteclub.com/category)")
-            break
-        title = item.get("title") or "未命名"
-        url = item.get("url", "")
-        parts = [f"{idx}. [{title}]({url})"]
-        meta = []
-        if item.get("city"):
-            meta.append(item["city"])
-        if item.get("brand") and item["brand"] != "待定":
-            meta.append(item["brand"])
-        span = _date_span(item)
-        if span:
-            meta.append(span)
-        if meta:
-            parts.append(" · ".join(meta))
-        lines.append(" · ".join(parts))
-        shown += 1
-
-    lines.append("")
-    lines.append("> 数据源 onsiteclub.com/category")
-    return "\n".join(lines)
 
 
 def init_baseline(baseline_slug, max_pages=DEFAULT_MAX_PAGES, state_path=None, logger=None):
@@ -199,67 +172,5 @@ def init_baseline(baseline_slug, max_pages=DEFAULT_MAX_PAGES, state_path=None, l
         "baseline_index": baseline_idx,
         "total_seen": len(seen),
         "will_be_new": baseline_idx,
-        "state_path": state_path,
-    }
-
-
-def run(push_callback=None, no_enrich=False, max_pages=DEFAULT_MAX_PAGES,
-        state_path=None, logger=None):
-    """执行一次分类案例监控：抓取→去重→enrich→文本→推送→存状态。
-
-    Args:
-        push_callback: callable(report_text, new_cases) -> None；为 None 不推送。
-        no_enrich: 跳过详情页抓取（测试用）。
-        max_pages: 抓取前 N 页（默认 3）。
-    Returns:
-        dict: 运行摘要（counts / 产物路径）。
-    """
-    today = date.today()
-    logger = logger or setup_logger(LOG_DIR)[0]
-    state = load_state(state_path)
-    state_path = state_path or default_state_path()
-
-    logger.info("[分类监控] 抓取 /category 前 %s 页", max_pages)
-    cases = fetch_category_cases(max_pages=max_pages)
-    logger.info("[分类监控] 抓取 %s 条案例", len(cases))
-
-    if not cases:
-        raise RuntimeError("未抓到任何案例，请检查网络或页面结构")
-
-    if not no_enrich:
-        _enrich_new_cases(cases, state)
-
-    new_cases = diff_new_cases(cases, state)
-    first_run = not state.get("seen_ids")
-    if first_run:
-        logger.info("[分类监控] 首次运行，今日新增显示全部 %s 条", len(new_cases))
-
-    report = build_category_report(new_cases, today=today)
-    logger.info("[分类监控] 文本报告生成，新增 %s 条", len(new_cases))
-
-    os.makedirs(REPORT_DIR, exist_ok=True)
-    report_path = os.path.join(REPORT_DIR, REPORT_FILENAME.format(date=today.isoformat()))
-    with open(report_path, "w", encoding="utf-8") as file:
-        file.write(report)
-
-    if push_callback:
-        push_callback(report, new_cases)
-
-    # 更新状态
-    seen = set(state.get("seen_ids", []))
-    for item in cases:
-        seen.add(item["slug"])
-    state["seen_ids"] = sorted(seen)
-    state["history"].setdefault(today.isoformat(), []).extend(item["slug"] for item in new_cases)
-    state["last_run"] = datetime.now().isoformat(timespec="seconds")
-    os.makedirs(DATA_DIR, exist_ok=True)
-    save_state(state_path, state)
-    logger.info("[分类监控] 状态已保存：%s", state_path)
-
-    return {
-        "total": len(cases),
-        "new": len(new_cases),
-        "first_run": first_run,
-        "report_path": report_path,
         "state_path": state_path,
     }

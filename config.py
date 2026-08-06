@@ -107,8 +107,12 @@ IMGBB_API_KEY = os.getenv("IMGBB_API_KEY", "").strip()
 # 看板图片图床（备选）：GitHub Token + 仓库（owner/repo），传 raw 直链
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "").strip()
 GITHUB_IMAGE_REPO = os.getenv("GITHUB_IMAGE_REPO", "").strip()
+# jsDelivr CDN URL 模板：H5 报告页上传 GitHub 后通过此模板生成公网访问 URL
+JSDELIVR_URL_TEMPLATE = os.getenv("JSDELIVR_URL_TEMPLATE", "https://cdn.jsdelivr.net/gh/{repo}@main/h5/{date}.html").strip()
 # 监控月份：默认当前月（自动滚动）；指定如 2026-08 可固定
 ONSITECLUB_MONTH = os.getenv("ONSITECLUB_MONTH", "").strip()
+# 站点证书过期/无效时是否允许自动降级为不校验 SSL（true=降级重试，false=严格校验报错）
+ONSITECLUB_ALLOW_INSECURE_SSL = parse_bool(os.getenv("ONSITECLUB_ALLOW_INSECURE_SSL"), True)
 # 推送里「未来N天新开」日程窗口天数（1-30，默认 7）
 ONSITECLUB_SCHEDULE_DAYS = parse_int(os.getenv("ONSITECLUB_SCHEDULE_DAYS"), 7, minimum=1, maximum=30)
 # 进行中会展按「距结束天数」分档的阈值：剩END_URGENT天内 / 剩END_NEAR天内 / 剩END_FAR天内 / 更长期
@@ -122,6 +126,13 @@ ONSITECLUB_LONG_CAP = parse_int(os.getenv("ONSITECLUB_LONG_CAP"), 10, minimum=1,
 # 钉钉开放平台「企业内部应用」的凭证（open.dingtalk.com 创建后获取）
 DINGTALK_APP_KEY = os.getenv("DINGTALK_APP_KEY", "").strip()
 DINGTALK_APP_SECRET = os.getenv("DINGTALK_APP_SECRET", "").strip()
+# 个人单聊默认收件人姓名（send_dingtalk_user.py 用）
+DINGTALK_RECIPIENT_NAME = os.getenv("DINGTALK_RECIPIENT_NAME", "").strip()
+# 收件人 userId（直连，跳过按姓名搜索；通讯录用户ID里可查）
+DINGTALK_RECIPIENT_USER_ID = os.getenv("DINGTALK_RECIPIENT_USER_ID", "").strip()
+# 群推送目标：机器人已加入的钉钉群的 openConversationId（由 dd_capture_group.py 捕获）
+DINGTALK_GROUP_ID = os.getenv("DINGTALK_GROUP_ID", "").strip()
+DINGTALK_GROUP_NAME = os.getenv("DINGTALK_GROUP_NAME", "").strip()
 # 机器人名称：群聊时识别并剥离 @ 前缀
 DINGTALK_BOT_NAME = (os.getenv("DINGTALK_BOT_NAME", "").strip() or "会展查询")
 # 机器人回答最多展示的会展条数（1-30）

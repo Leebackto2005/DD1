@@ -1,15 +1,16 @@
 """DD日推 · Onsite Club 会展「极简文本」报告生成。
 
-按钉钉消息排版生成报告，**进行中会展按「距结束天数」分四档**：
+按钉钉消息排版生成报告，**「会展动态」合并展示今日新增与各档将结束会展**：
 1. 标题行：当月会展 / 今日新增 / 完整日历链接
-2. 🆕 今日新增（全部罗列；END_URGENT 天内结束的附 ⏰）
-3. ⏳ 剩 END_URGENT 天内将结束（全部罗列，按剩X天分组）
-4. ⏳ 剩 END_NEAR 天内将结束（全部罗列，按剩X天分组）
-5. ⏳ 剩 END_FAR 天内将结束（全部罗列，按剩X天分组）
-6. 🔄 长期进行中（剩 END_FAR 天以上，**按结束月份细分**，每月最多 LONG_CAP 条）
-7. 📅 未来N天开幕（按开始日分组，全部罗列）
-8. 🔚 已结束（按结束日分组，全部罗列）
-9. 📊 分布速览（城市 / 类型 / 高频词 / 总数）
+2. 📋 会展动态（合并模块）
+   2a. 🆕 今日新增（全部罗列，带封面图；END_URGENT 天内结束的附 ⏰）
+   2b. ⏳ 剩 END_URGENT 天内将结束（全部罗列，按剩X天分组）
+   2c. ⏳ 剩 END_NEAR 天内将结束（全部罗列，按剩X天分组）
+   2d. ⏳ 剩 END_FAR 天内将结束（全部罗列，按剩X天分组）
+   2e. 🔄 长期进行中（剩 END_FAR 天以上，**按结束月份细分**，每月最多 LONG_CAP 条）
+3. 📅 未来N天开幕（按开始日分组，全部罗列）
+4. 🔚 已结束（按结束日分组，全部罗列）
+5. 📊 分布速览（城市 / 类型 / 高频词 / 总数）
 
 阈值与截断上限可在 .env 配置：
 ONSITECLUB_END_URGENT / ONSITECLUB_END_NEAR / ONSITECLUB_END_FAR / ONSITECLUB_LONG_CAP。
@@ -85,7 +86,25 @@ def _append_day_group(lines, items, today, weekday_cn, head_by_left):
             lines.append(f"  - {_grouped_line(item)}")
 
 
-def build_dd_report(events, new_events, today=None, days=7, month_label="8月"):
+def _format_case_line(item):
+    """分类案例单行：``[标题](url) · 城市 · 品牌 · 日期``（与日历会展格式对齐）。"""
+    parts = [f"[{item.get('title', '') or '未命名'}]({item.get('url', '')})"]
+    if item.get("city"):
+        parts.append(item["city"])
+    brand = (item.get("brand") or "").strip()
+    if brand and brand != "待定":
+        parts.append(brand)
+    # 日期区间：category 用 start/end 字段
+    start = str(item.get("start") or "")
+    end = str(item.get("end") or "")
+    if start:
+        fmt = lambda d: d[5:] if len(d) >= 10 else d
+        span = f"{fmt(start)}~{fmt(end)}" if end and end != start else fmt(start)
+        parts.append(span)
+    return " · ".join(parts)
+
+
+def build_dd_report(events, new_events, new_cases=None, today=None, days=7, month_label="8月"):
     """生成极简文本报告：所有会展按状态罗列，进行中分三段、长期段截断。"""
     today = today or date.today()
     weekday_cn = "一二三四五六日"
@@ -120,25 +139,48 @@ def build_dd_report(events, new_events, today=None, days=7, month_label="8月"):
                    key=lambda x: x.get("end_date", ""))
 
     lines = []
+    new_cases = new_cases or []
+    total_new = len(new_events) + len(new_cases)
     # 1. 标题行
     lines.append(f"📅 Onsite Club {month_label}会展 · {today.month}/{today.day} 周{weekday_cn[today.weekday()]}")
-    lines.append(f"当月 **{len(events)}** 场 · 今日新增 **{len(new_events)}** 场 · 🔗 [完整日历]({CALENDAR_URL})")
+    lines.append(f"当月 **{len(events)}** 场 · 今日新增 **{total_new}** 项 · 🔗 [完整日历]({CALENDAR_URL})")
     lines.append("")
 
-    # 2. 今日新增（全部罗列；10天内结束附 ⏰）
-    if new_events:
-        lines.append(f"### 🆕 今日新增（{len(new_events)} 场）")
+    # 2. 会展动态（合并：今日新增 + 各档将结束 + 长期进行中）
+    ongoing_count = len(tier1) + len(tier2) + len(tier3) + len(tier4)
+    total_new = len(new_events) + len(new_cases)
+    lines.append(f"### 📋 会展动态（新增 {total_new} · 将结束 {ongoing_count}）")
+    lines.append("")
+
+    # 2a. 今日新增（日历新增 + 分类案例新增，带封面图）
+    total_new = len(new_events) + len(new_cases)
+    if total_new == 0:
+        lines.append(f"#### 🆕 今日新增\n今日无新增。")
+        lines.append("")
+    else:
+        lines.append(f"#### 🆕 今日新增（{total_new} 项）")
+        idx = 1
+        # 日历新增
         for item in new_events:
             left = _days_left(item, today)
             flag = " ⏰" if left is not None and left <= end_urgent else ""
-            lines.append(f"- {format_event_line(item, with_date=True, detailed=True)}{flag}")
-    else:
-        lines.append("### 🆕 今日新增\n今日无新增会展。")
-    lines.append("")
+            img_url = item.get("image_url") or ""
+            if img_url:
+                lines.append(f"![{item.get('title', '')}]({img_url})")
+            lines.append(f"{idx}. {format_event_line(item, with_date=True, detailed=True)}{flag}")
+            idx += 1
+        # 分类案例新增
+        for item in new_cases:
+            img_url = item.get("image_url") or ""
+            if img_url:
+                lines.append(f"![{item.get('title', '')}]({img_url})")
+            lines.append(f"{idx}. {_format_case_line(item)}")
+            idx += 1
+        lines.append("")
 
-    # 3. 剩 END_URGENT 天内将结束（全部罗列）
+    # 2b. 剩 END_URGENT 天内将结束（全部罗列）
     if tier1:
-        lines.append(f"### ⏳ {end_urgent}天内将结束（{len(tier1)} 场）")
+        lines.append(f"#### ⏳ {end_urgent}天内将结束（{len(tier1)} 场）")
         lines.append("> 按剩余天数分组 · 剩0天=今天结束，请立刻关注")
         _append_day_group(
             lines, tier1, today, weekday_cn,
@@ -146,36 +188,36 @@ def build_dd_report(events, new_events, today=None, days=7, month_label="8月"):
             f"▸ 剩**0**天 · 今天结束（{n} 场）" if left == 0 else f"▸ 剩**{left}**天（{n} 场）",
         )
     else:
-        lines.append(f"### ⏳ {end_urgent}天内将结束\n无。")
+        lines.append(f"#### ⏳ {end_urgent}天内将结束\n无。")
     lines.append("")
 
-    # 4. 剩 END_NEAR 天内将结束（全部罗列）
+    # 2c. 剩 END_NEAR 天内将结束（全部罗列）
     if tier2:
-        lines.append(f"### ⏳ {end_urgent + 1}-{end_near}天将结束（{len(tier2)} 场）")
+        lines.append(f"#### ⏳ {end_urgent + 1}-{end_near}天将结束（{len(tier2)} 场）")
         lines.append("> 按剩余天数分组")
         _append_day_group(
             lines, tier2, today, weekday_cn,
             head_by_left=lambda left, n: f"▸ 剩**{left}**天（{n} 场）",
         )
     else:
-        lines.append(f"### ⏳ {end_urgent + 1}-{end_near}天将结束\n无。")
+        lines.append(f"#### ⏳ {end_urgent + 1}-{end_near}天将结束\n无。")
     lines.append("")
 
-    # 5. 剩 END_NEAR+1 ~ END_FAR 天将结束（全部罗列）
+    # 2d. 剩 END_NEAR+1 ~ END_FAR 天将结束（全部罗列）
     if tier3:
-        lines.append(f"### ⏳ {end_near + 1}-{end_far}天将结束（{len(tier3)} 场）")
+        lines.append(f"#### ⏳ {end_near + 1}-{end_far}天将结束（{len(tier3)} 场）")
         lines.append("> 按剩余天数分组")
         _append_day_group(
             lines, tier3, today, weekday_cn,
             head_by_left=lambda left, n: f"▸ 剩**{left}**天（{n} 场）",
         )
     else:
-        lines.append(f"### ⏳ {end_near + 1}-{end_far}天将结束\n无。")
+        lines.append(f"#### ⏳ {end_near + 1}-{end_far}天将结束\n无。")
     lines.append("")
 
-    # 6. 长期进行中（>END_FAR 天）：按结束月份细分，每月展示上限 LONG_CAP
+    # 2e. 长期进行中（>END_FAR 天）：按结束月份细分，每月展示上限 LONG_CAP
     if tier4:
-        lines.append(f"### 🔄 长期进行中（剩{end_far}天以上 · 共 {len(tier4)} 场）")
+        lines.append(f"#### 🔄 长期进行中（剩{end_far}天以上 · 共 {len(tier4)} 场）")
         lines.append(f"> 按结束月份细分 · 每月展示前 {long_cap} 场")
         by_month = {}
         for item in tier4:
@@ -190,10 +232,10 @@ def build_dd_report(events, new_events, today=None, days=7, month_label="8月"):
             if len(items) > long_cap:
                 lines.append(f"  - … 该月其余 {len(items) - long_cap} 场见[完整日历]({CALENDAR_URL})")
     else:
-        lines.append(f"### 🔄 长期进行中\n无。")
+        lines.append(f"#### 🔄 长期进行中\n无。")
     lines.append("")
 
-    # 7. 未来N天开幕（按开始日分组，全部罗列）
+    # 3. 未来N天开幕（按开始日分组，全部罗列）
     if starting:
         lines.append(f"### 📅 未来{days}天开幕（{len(starting)} 场）")
         lines.append("> 按开始日分组")
@@ -211,7 +253,7 @@ def build_dd_report(events, new_events, today=None, days=7, month_label="8月"):
         lines.append(f"### 📅 未来{days}天开幕\n窗口内暂无。")
     lines.append("")
 
-    # 8. 已结束（按结束日分组，全部罗列）
+    # 4. 已结束（按结束日分组，全部罗列）
     if ended:
         lines.append(f"### 🔚 已结束（{len(ended)} 场）")
         lines.append("> 按结束日分组 · 最近结束在前")
@@ -229,7 +271,7 @@ def build_dd_report(events, new_events, today=None, days=7, month_label="8月"):
         lines.append("### 🔚 已结束\n无。")
     lines.append("")
 
-    # 9. 分布速览
+    # 5. 分布速览
     city_count, type_count = {}, {}
     for item in events:
         city = item.get("city") or "其他"

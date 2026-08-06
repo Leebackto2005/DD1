@@ -21,13 +21,16 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
-from .base import fetch_with_retry, make_headers
+from .base import fetch_with_retry, get_with_ssl_fallback, make_headers
+from config import ONSITECLUB_ALLOW_INSECURE_SSL
 from .onsiteclub_calendar import (
     BASE_URL,
+    SLUG_CITY_MAP,
     _city_from_slug,
     _city_from_title,
     _extract_case_facts,
     _extract_cover,
+    _extract_body_description,
     classify_type,
 )
 
@@ -128,11 +131,12 @@ def fetch_category_cases(max_pages=3, timeout=10, page_delay=0.8):
         all_items, seen = [], set()
         for page in range(1, max_pages + 1):
             try:
-                resp = requests.get(
+                resp = get_with_ssl_fallback(
                     CATEGORY_URL,
                     params={"page": page},
                     headers=make_headers(referer=BASE_URL),
                     timeout=timeout,
+                    allow_insecure_fallback=ONSITECLUB_ALLOW_INSECURE_SSL,
                 )
                 resp.raise_for_status()
                 page_items = parse_category_page(resp.text)
@@ -159,7 +163,12 @@ def enrich_case_detail(item, timeout=10):
     if not item.get("url"):
         return item
     try:
-        resp = requests.get(item["url"], headers=make_headers(referer=BASE_URL), timeout=timeout)
+        resp = get_with_ssl_fallback(
+            item["url"],
+            headers=make_headers(referer=BASE_URL),
+            timeout=timeout,
+            allow_insecure_fallback=ONSITECLUB_ALLOW_INSECURE_SSL,
+        )
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
 
@@ -185,9 +194,7 @@ def enrich_case_detail(item, timeout=10):
         # 城市：详情页「项目地点」优先，回退标题括号与 URL slug
         city = (facts.get("项目地点") or "").strip()
         if city:
-            for known in {"上海", "北京", "广州", "深圳", "成都", "重庆", "杭州", "南京",
-                          "武汉", "苏州", "西安", "天津", "长沙", "青岛", "大连", "海口",
-                          "昆明", "沈阳", "厦门", "佛山", "无锡", "东莞", "哈尔滨", "合肥"}:
+            for known in {entry[1] for entry in SLUG_CITY_MAP}:
                 if city.startswith(known):
                     item["city"] = known
                     break
@@ -196,18 +203,8 @@ def enrich_case_detail(item, timeout=10):
 
         item["image_url"] = _extract_cover(soup) or item.get("image_url", "")
         item["type"] = classify_type(item.get("title", ""))
+        item["description"] = _extract_body_description(soup)
+        item["description_source"] = "entry_content"
     except requests.RequestException:
         pass
     return item
-
-
-def enrich_cases(items, timeout=10, max_workers=6):
-    """并发为案例抓取详情页补全字段。"""
-    from concurrent.futures import ThreadPoolExecutor, as_completed
-    if not items:
-        return items
-    with ThreadPoolExecutor(max_workers=min(max_workers, len(items))) as executor:
-        futures = [executor.submit(enrich_case_detail, item, timeout) for item in items]
-        for future in as_completed(futures):
-            future.result()
-    return items
