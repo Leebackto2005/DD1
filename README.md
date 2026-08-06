@@ -3,7 +3,7 @@
 每日 9:00 自动抓取 [Onsite Club 日历](https://www.onsiteclub.com/calendar) 的当月会展与
 [/category](https://www.onsiteclub.com/category) 分类案例，识别「今日新增」，
 生成本地报告/看板/H5。钉钉推送**把分类案例动态逐条推成 actionCard 卡片**（企业机器人发到
-`DINGTALK_GROUP_NAME` 群：每条新增一张卡片，含封面+介绍+「查看详情」按钮；无新增发
+群「**人工智能创新应用中心**」：每条新增一张卡片，含封面+介绍+「查看详情」按钮；无新增发
 「今日无新增」卡片）；未配群 ID 时回退给 `DINGTALK_RECIPIENT_NAME` 发单聊，未配置企业
 应用时回退群 Webhook 推送。另有 9:05 的**分类案例监控**。
 
@@ -23,7 +23,7 @@
    ▸ 看板图片（.png）：活动会展折线图 + 会展类型饼图
    ▸ H5 详情页（.html，有新增时才生成）：Serif 设计系统排版
    ↓
-4. 推送钉钉（默认企业机器人群推送：分类案例**逐条 actionCard 卡片**，无新增发「今日无新增」卡片）
+4. 推送钉钉（默认企业机器人群推送→「人工智能创新应用中心」：分类案例**逐条 actionCard 卡片**，无新增发「今日无新增」卡片）
    ▸ 日历报告仅本地归档，不推送
    ▸ 未配群 ID 时回退企业机器人单聊；未配置企业应用凭证时回退群 Webhook：逐条 actionCard / --digest 合并报告
    ▸ actionCard「查看详情」跳转 H5 详情页（GitHub + jsDelivr CDN 公网托管）
@@ -34,7 +34,7 @@
 
 | 模式 | 命令 | 说明 |
 | --- | --- | --- |
-| **企业机器人群推送**（默认） | `python dd_main.py --once` | 配置了 `DINGTALK_APP_KEY`/`APP_SECRET` + `DINGTALK_GROUP_ID` 时，每日把**分类案例新增**逐条推成 actionCard 卡片到群 `DINGTALK_GROUP_NAME`（封面+介绍+查看详情，无新增发「今日无新增」卡片；`--digest`/actionCard 均被忽略） |
+| **企业机器人群推送**（默认） | `python dd_main.py --once` | 配置了 `DINGTALK_APP_KEY`/`APP_SECRET` + `DINGTALK_GROUP_ID` 时，每日把**分类案例新增**逐条推成 actionCard 卡片到群「人工智能创新应用中心」（封面+介绍+查看详情，无新增发「今日无新增」卡片；`--digest`/actionCard 均被忽略） |
 | **企业机器人单聊**（回退） | `python dd_main.py --once` | 配置了企业凭证但未配群 ID 时，发给 `DINGTALK_RECIPIENT_NAME` 单聊（旧行为） |
 | **逐条 actionCard**（回退） | `python dd_main.py --once` | 未配置企业应用时，走群 Webhook 逐条推送卡片，含封面图+标题+介绍+「查看详情」按钮 |
 | **合并报告** | `python dd_main.py --once --digest` | 群 Webhook 合并成一条 markdown 消息，含看板图 |
@@ -63,9 +63,11 @@ python send_dingtalk_user.py --markdown --title "标题" --text "正文"
 
 **配置**（.env）：`DINGTALK_APP_KEY` / `DINGTALK_APP_SECRET`（企业内部应用凭证，AppSecret 不带 SEC 前缀）、`DINGTALK_RECIPIENT_NAME`（默认收件人）。
 
-**每日推送**：配置好企业凭证 + `DINGTALK_GROUP_ID` 后，`dd_main.py --once`（含每日定时任务）每日把**分类案例新增**逐条推成 actionCard 卡片到群 `DINGTALK_GROUP_NAME`（未配群 ID 回退收件人单聊；无新增发「今日无新增」卡片），不发日历报告、不走群 Webhook；`--file` 可发任意文件内容（超长自动分段）。
+**每日推送**：配置好企业凭证 + `DINGTALK_GROUP_ID` 后，`dd_main.py --once`（含每日定时任务）每日把**分类案例新增**逐条推成 actionCard 卡片到群「人工智能创新应用中心」（未配群 ID 回退收件人单聊；无新增发「今日无新增」卡片），不发日历报告、不走群 Webhook；`--file` 可发任意文件内容（超长自动分段）。
 
 **群 ID 获取**：企业机器人往群里推消息需要群的 `openConversationId`，没有按群名查的接口。用 `dd_capture_group.py` 一次性捕获——它连上应用机器人 Stream 长连接后，你到群里发一条消息（建议 @机器人），脚本自动把群 `openConversationId` 写入 `data/dingtalk_group_id.json`，按提示填进 `.env` 的 `DINGTALK_GROUP_ID` 即可（前提：应用机器人「消息接收模式」为 Stream 长连接）。
+
+> **当前推送目标**：群「人工智能创新应用中心」，`DINGTALK_GROUP_ID=cidSRs1kGRRj5teepkt0a0P4g==`（`.env` 已配置，2026-08-06 验证推送成功）。换群时重跑 `python dd_capture_group.py "新群名"` 并更新 `.env` 即可。
 
 > 说明：旧的自定义机器人 Webhook 方式（`DINGTALK_WEBHOOK_URL`）与这套企业机器人互不影响，各走各的。旧的 `topapi/user/search` 等按姓名搜索接口已下线，姓名→userId 走 v1.0 `contact/users/search`。
 
