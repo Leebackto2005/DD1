@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-08-07</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-08-07 周五</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">25</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/46c0fd3a6a3c43c787734eea711f6c42.jpg" alt="和平精英7周年「登入之门」北外滩主题展" loading="lazy">
+      <h2>和平精英7周年「登入之门」北外滩主题展</h2>
+      <p class="description">和平精英7周年「登入之门」北外滩主题展，是品牌IP本土化落地的里程碑项目，也是和平精英中国大陆首场大型官方沉浸式线下展览，填补了品牌大型实景体验场景的空白，具备重要的IP沉淀与用户运营意义。项目落地北外滩国客中心核心区位，打造2600㎡超大体验空间，整体以游戏经典玩法流程为叙事脉络，规划十一大展区与五大主题空间，空间制作高度还原游戏场景，1:1复刻运输机登机、出生岛、巨型空投等标志性装置，同时搭配七年版本时间长廊、原画手稿、限定皮肤与PEL电竞展区，沉浸式复刻游戏世界观与品牌发展历程。现场融合AR互动、任务打卡与限定周边商店，丰富线下体验维度。本次展览活动周期是IP营销传播的关键窗口期，依托北外滩天然客流优势打造网红打卡地标，精准触达全域游戏玩家。线下沉浸式观展体验激活用户情怀与参与意愿，联动线上#登入之门#话题造势，形成线下实景打卡、线上社区裂变的双向传播链路，高效沉淀用户情感认同，打造出游戏IP线下场景营销的标杆案例。</p>
+      <div class="meta">上海 · 08-03~08-04</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Game-for-Peace-7th-ANNIVERSARY-Theme-Exhibition-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/bc2fa5a7003f410f84f6eb88c3e0968e.jpg" alt="《蜘蛛侠：崭新之日》官方主题快闪" loading="lazy">
+      <h2>《蜘蛛侠：崭新之日》官方主题快闪</h2>
+      <p class="description">漫威电影《蜘蛛侠：崭新之日》北外滩白玉兰广场官方快闪，是影片宣发周期中重要的线下IP落地项目，依托上海城市滨江地标优势，打造全域沉浸式观影前置体验，具有IP场景化、城市文旅与影视营销结合的示范价值。
+项目创新搭建户外地标装置与室内主题街区的双层体验空间，整体沿用蜘蛛侠经典红蓝蛛网视觉体系，视觉制作辨识度极高。户外巨型蹲伏蜘蛛侠充气雕塑直面陆家嘴天际线，搭配夜间灯光效果，实现超级英雄IP与魔都城市地标同框场景；场内LG2中庭构建电影主题街区，结合观景台地贴与外立面巨幕动态影像，形成立体化、全覆盖的沉浸式氛围。
+场内多元电影主题场景与正版周边发售，完善了线下体验体系。活动期作为影片预热传播关键窗口，通过趣味集章打卡、社交分享兑礼机制，精准吸引年轻潮流群体与漫威影迷参与。依托北外滩独特景观优势与高出片场景持续撬动社交UGC扩散，以线下实景体验赋能线上传播，高效完成影片热度造势与IP大众影响力破圈。</p>
+      <div class="meta">上海 · 07-25~08-19</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Spider-Man-4-Pop-Up-Event-Shanghai-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/d7e54952367c4438837645020f0be79b.jpg" alt="潘海利根「游弋之地：伦敦名流录」兽首十周年限时展" loading="lazy">
+      <h2>潘海利根「游弋之地：伦敦名流录」兽首十周年限时展</h2>
+      <p class="description">英国百年香氛品牌潘海利根于上海张园打造的肖像兽首系列十周年主题展，是品牌经典IP周年纪念的重磅落地项目，承载着系列十年美学沉淀与叙事升级的历史意义，也是高端香氛艺术场景化营销的典型实践。
+项目选址百年历史建筑张园W4栋，依托独栋建筑肌理打造纯正英伦庄园风格空间，造型制作极具叙事性，通过肖像长廊、名流长桌宴、伦敦街区地图展区，完整复刻兽首家族人物故事线，结合户外花园喷泉景致，交融复古建筑质感与英伦优雅氛围，构筑高级沉浸式香氛场景。现场陈列全系列兽首香氛、首发限定淡香精，搭配专属语音导览、线上集章互动及主题周边、限定冰淇淋礼遇，丰富观香体验。
+活动周期是品牌内容传播的核心载体，精准面向香氛爱好者与潮流打卡群体，以极具美学质感的场景叙事激发用户自发打卡分享，依托社交平台UGC传播势能，实现周年IP价值的大众破圈传播，完成新品种草与品牌高端调性的深度塑造。</p>
+      <div class="meta">上海 · 08-02~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Penhaligon-10th-Anniversary-Special-Exhibition-Shanghai-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/e2b19baafa48430782fd7412fb613127.jpg" alt="巴黎卡诗全新粉钻发膜城市巡游快闪" loading="lazy">
+      <h2>巴黎卡诗全新粉钻发膜城市巡游快闪</h2>
+      <p class="description">巴黎卡诗全新粉钻发膜城市巡游快闪，是品牌依托城市户外场景打造的轻量化巡展营销项目，延续「高光女孩俱乐部」浪漫叙事体系，为新品落地构建城市级沉浸式传播场景，具备年轻化、场景化营销的创新示范意义。
+项目打破传统固定展馆模式，以标志性小粉车为移动核心载体，巡回落地西岸梦中心、愚园路创邑 SPACE 等潮流城市地标。空间造型与视觉制作紧扣产品内核，以柔雾裸粉为主色调，搭配巨型野玫瑰纸艺装置呼应产品核心精粹概念，巨型粉钻发膜模型打造强记忆点视觉焦点，通透开放式车体设计适配城市街区氛围，兼具观赏性与场景融合度。
+现场设置产品体验区与礼品自助机，提供新品护发体验及限定礼遇。活动期作为新品营销核心周期，依托流动式城市曝光与高颜值户外装置，充分激发用户打卡意愿，持续产出社交UGC内容。通过移动场景渗透城市潮流圈层，高效完成新品线下种草，持续深化品牌夏日高光护发的产品认知与用户心智。</p>
+      <div class="meta">上海 · KERASTASE 卡诗 · 07-31~08-04</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Kerastase-Diamond-Cruise-Roadshow-Shanghai-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/489d8f215b114e4f84699dcec5c31d85.jpg" alt="XINADÜ SHENZHEN POP-UP（深圳）" loading="lazy">
+      <h2>XINADÜ SHENZHEN POP-UP（深圳）</h2>
+      <p class="description">2026年7月31日至8月2日，由刘雨昕主理的潮流品牌 XINADÜ，携其胶囊系列「ECHO」在深圳前海壹方城 L1 层中庭开启了为期三天的限时快闪。作为品牌年度巡礼的重要一站，它承载了连接粉丝与路人的双重期待。
+本次快闪店的设计语言源自「ECHO」系列的“沙漠地平线”主题。空间由深蓝向橙色渐变的环形帷幕包裹，地面则蚀刻着仙人掌与星光图案，营造出一种静谧且充满探索感的氛围，与品牌过往的风格截然不同。
+本次快闪是 XINADÜ 从粉丝圈走向更广阔市场的一次重要试航。它成功验证了品牌强大的粉丝号召力与独特的设计美学，证明了其商业模式的巨大潜力。</p>
+      <div class="meta">深圳 · 07-31~08-02</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/XINADU-POPUP-SZ-2026-8-5" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/6c38ea9989fd497fbbcbb4f69f89ee32.jpg" alt="Netflix人气剧集《怪奇物语》限定周边快闪店（重庆）" loading="lazy">
+      <h2>Netflix人气剧集《怪奇物语》限定周边快闪店（重庆）</h2>
+      <p class="description">本次《怪奇物语》西南地区首场主题快闪展开办周期为 2026 年 7 月 10 日‑8 月 10 日，选址重庆观音桥方圆 LIVE 地下一层，由 LATESTART 承办运营，不属于 Netflix 官方直营项目。立足于剧集长久积攒下来的全球粉丝基础、复古美式科幻 IP 热度，项目跳出常规 IP 展销模式，打造沉浸式粉丝线下聚集地，填补重庆西南片区缺少该 IP 大型线下展览的市场空白。在空间造型和现场制作层面，场地高度复刻影视剧名场面，搭建威尔家字母墙面、巨型魔王雕塑、逆世界藤蔓装置，各处埋藏剧情彩蛋，整体布景着重还原剧集昏暗诡谲的氛围感，原生拍摄质感便于参观者直接打卡出片。
+展览期间粉丝打卡探店、场景体验、社群交流等活动内容，和品牌口碑营销深度绑定；重庆站凭借顶尖的沉浸布景，被受众拿来和北上蓉等地巡展进行对比，优质观众评价自发形成圈层传播。该项目也为非官方 IP 衍生活动、粉丝向商业展览，摸索出依靠精细化场景制作收获口碑、撬动自发传播的可行路径，具备行业参考价值。</p>
+      <div class="meta">重庆 · 07-10~08-10</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/NETFLIX-LATESTART-POPUP-CQ-2026-8-5" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/9fb0e39eb289465d854555fd12f71d50.jpg" alt="雅诗兰黛「复活水境」限时快闪（长沙）" loading="lazy">
+      <h2>雅诗兰黛「复活水境」限时快闪（长沙）</h2>
+      <div class="meta">长沙 · Estee Lauder 雅诗兰黛 · 08-03~08-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/ESTEE-LAUDER-RESURGENT-WATERSCAPE-POPUP-CS-2026-8-5" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/496ac853c7aa42f9898dc457998ce16a.jpg" alt="Marshall “KEEP LIVE MUSIC ALIVE﻿守住现场” 音乐文化体验活动（成都）" loading="lazy">
+      <h2>Marshall “KEEP LIVE MUSIC ALIVE﻿守住现场” 音乐文化体验活动（成都）</h2>
+      <p class="description">Marshall “KEEP LIVE MUSIC ALIVE﻿守住现场” 音乐文化体验活动（成都）
+Marshall「守住现场」不只是一场展览，更像一次 Marshall 与成都共同发起的摇滚文化寻根。从8月4日到9日，整个东郊记忆都成了 Marshall 的“主场”，它罕见地将品牌历史、产品体验、本土社群和重磅演出融为一体，试图重新诠释“现场”的意义。
+在银杏广场，一场关于 Marshall 60多年历史的回顾展静候于此，从早期的JTM45到最新的Hendrix 60周年联名款，许多难得一见的经典音箱陈列其中，配合巨型海报与品牌故事，让人直观感受到流淌在品牌血液里的摇滚基因。
+整个活动最动人的部分，在于它没有居高临下地“展示”，而是邀请了本土厂牌与青年社群深度共创。在“Marshall Village”和户外市集，你可以触摸到成都音乐最真实的肌理：本地厂牌明堂唱片带来了独家卡带和SP404制作工作坊，AXIS设有联合快拍亭和扭蛋机，JEFF.Free PARK 则提供DIY挂件体验。工业横街上，北京SCHOOL、武汉VOX、成都小酒馆等传奇Livehouse被复刻成小铺，带来各自的特色酒水与周边，仿佛把各地的摇滚据点都“搬”到了成都。</p>
+      <div class="meta">成都 · 08-04~08-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/MARSHALL-KEEP-LIVE-MUSIC-ALIVE-EVENT-CD-2026-8-5" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/dd24098b22ab498b9530709871ed6c07.png" alt="POPMART x 艺术家工作室Molly Factory「Crybaby特展」北京站" loading="lazy">
+      <h2>POPMART x 艺术家工作室Molly Factory「Crybaby特展」北京站</h2>
+      <p class="description">Pop Mart x 艺术家工作室Molly Factory「Crybaby特展」北京站
+从2026年8月1日到9月5日，Pop Mart 携手艺术家工作室 Molly Factory，在北京郎园Station的中央车站，将Crybaby “Letting Go… Holding On…” 的情绪世界具象化。这不仅是一场展览，更像一个你可以走进去、躺进去、玩进去的柔软乐园，但这份柔软包裹着的，是复杂的现实体验。
+整个特展以鲜明的视觉语言，集合了 Crybaby、Crybunny 和 Cryteddy 三大经典IP形象，创造了一个充满“情绪自由”感的沉浸式空间。核心的灵魂是那三个相互连通的巨型海洋球池，巨大的充气玩偶装置极具视觉冲击力，是现场最出片的打卡点。
+互动体验围绕“寻宝”展开。在45分钟的限时内，参与者需要在百万海洋球中找到带有特殊“泪滴”图案的幸运球，或扫描隐藏在现场的15个小程序码，以兑换艺术家签名卡、贴纸或铜锣烧券。此外，现场还设有 DIY 专属哭娃、扭蛋和 POP BAKERY 情绪补给站，提供冰棍、饼干和特调饮品。
+这场特展的口碑呈现出明显的两极分化。一方面，它成功地通过极具创意的场景设计，为粉丝们打造了一个梦幻的“情绪出口”，许多人在这里找到了纯粹的快乐和拍照的乐趣。 然而，另一方面，大量负面反馈也同样尖锐。Crybaby 北京特展完美映射了当代潮流IP商业化的核心矛盾。它在“体验”上无疑是成功的，证明了强大的IP美学和场景叙事足以吸引大众。但它在“消费”上却是一种妥协，用复杂的规则、虚高的票价和不稳定的品控，考验着粉丝的忠诚度，并为所有希望破圈的IP展示了一条充满挑战的前路。</p>
+      <div class="meta">北京 · 泡泡玛特POPMART · 08-01~09-05</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/POPMART-MOLLY-FACTORY-CRYBABY-EXHIBITION-BJ-2026-8-5" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-10">
+      <img class="cover" src="https://res.onsiteclub.com/4df0530ce604488a886cf48a4430635f.jpg" alt="修丽可「用色修¹好颜值」｜快闪" loading="lazy">
+      <h2>修丽可「用色修¹好颜值」｜快闪</h2>
+      <p class="description">修丽可携手天猫小黑盒落地上海西岸船坞的限时快闪项目，是品牌联动头部电商平台、落地新品线下赋能、深化科学护肤品牌定位的重要实践，有着鲜明的市场传播与品牌升级意义。
+项目以全新升级色修精华为核心，打造「好颜值探索」主题体验空间，在场地选址上依托西岸船坞独特的工业建筑肌理，形成自然且极具辨识度的空间基底。空间造型与视觉制作极具巧思，以品牌标志性翠绿色为主视觉色调，搭配巨型色修精华瓶、水幕可视化实验装置，将抽象的成分修护原理具象化，直观展现产品核心功效。现场规划肌肤检测、成分科普、产品试用、互动打卡多元功能区，构建沉浸式科学护肤体验。
+本次短期活动周期是新品营销传播的关键载体，线下专业体验、互动任务与小样福利机制，有效调动用户参与积极性，依托西岸滨江优质场景流量，精准强化品牌专业护肤调性。同时线下打卡体验持续催生社交UGC内容，联动天猫小黑盒线上首发资源，打通线下体验种草、线上流量扩散的完整链路，高效完成新品曝光与用户心智渗透。</p>
+      <div class="meta">上海 · SkinCeuticals 修丽可 · 08-05~08-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/SkinCeuticals-X-Tmall-Event-POP-UP-STORE-SH-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-11">
+      <img class="cover" src="https://res.onsiteclub.com/cb30f17885ab45cb9ade7ff1140fb589.jpg" alt="百事「轻盈元力空间」快闪" loading="lazy">
+      <h2>百事「轻盈元力空间」快闪</h2>
+      <p class="description">百事「轻盈元力空间」限时快闪，是品牌面向年轻消费群体，为益生元可乐新品打造的线下场景化营销项目，也是品牌革新夏日饮品消费场景、传递轻盈健康产品理念的重要创新实践。
+项目在空间设计与视觉制作上极具年轻化特质，以清透浅蓝为整体主基调，搭配云朵、飞艇、气泡等轻量化艺术装置，塑造松弛鲜活的沉浸式场景，巨型百事产品罐模型作为核心视觉地标，具备极强的视觉辨识度与打卡属性。场地科学划分新品试饮、元力互动、打卡装置、周边兑换四大功能区域，搭配机器人人偶巡游互动，丰富了线下体验内容。
+本次短期活动周期是新品传播的核心节点，品牌依托现场品鉴体验、趣味集章打卡与限定文创兑换的激励模式，充分调动用户参与热情。高颜值的场景装置适配社交媒体传播需求，有效撬动海量UGC内容产出，将线下沉浸式体验转化为线上传播流量，高效完成新品线下种草，精准传递轻松自在的夏日生活主张，实现产品理念、场景体验与品牌传播的深度联动。</p>
+      <div class="meta">上海 · PEPSI COLA 百事可乐 · 08-05~08-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Pepsi-Light-Vitality-Space-POP-UP-STORE-SH-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-12">
+      <img class="cover" src="https://res.onsiteclub.com/c331894e749a407eb16d306637149f02.jpg" alt="「白日追星」｜ECODAY 上海限时空间" loading="lazy">
+      <h2>「白日追星」｜ECODAY 上海限时空间</h2>
+      <p class="description">2026年8月6日至9日落地上海武康路的ECODAY「白日追星」联名快闪项目，是品牌发展进程中极具标志性的一次落地实践，承载着线上业态向线下实体场景突破的核心意义。依托武康路独特的历史街区肌理与天然流量优势，项目以奶白、浅银、淡粉为主色调，搭配巨型星光装置、镜面打卡点与柔光纱质造型，打造适配少女浪漫美学的沉浸式空间，轻量化的搭建制作模式兼顾低成本与高质感，让空间成为自带传播属性的内容载体。项目清晰划分展陈、打卡、福利兑换区域，将产品展示与社交场景深度融合，革新了品牌线下呈现形式。
+活动周期是品牌传播营销的核心窗口期，项目通过打卡任务、限定周边兑换的激励机制，打通线下体验与线上UGC传播链路。到访用户的沉浸式打卡行为，转化为品牌二次传播的社交素材，依托街区流量势能持续扩散品牌影响力，不仅完成新品种草与线下曝光，更落地“非日常星图”的品牌理念，构建起从空间体验、用户参与到社交认同的完整营销闭环，为新兴美学品牌线上线下一体化运营提供了优质范本。</p>
+      <div class="meta">上海 · 08-06~08-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/ECODAY-X-Maelin-DAYLIGHT-STAR-Project-SH-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-13">
+      <img class="cover" src="https://res.onsiteclub.com/1d8a180ef3bd48a08c1b0fcbc63df3db.jpg" alt="LLOUD中国内地首次快闪" loading="lazy">
+      <h2>LLOUD中国内地首次快闪</h2>
+      <p class="description">2026年8月6日至16日，BLACKPINK成员LISA于2024年创立的个人生活方式品牌LLOUD，将其中国内地首场快闪活动落地上海静安区巨鹿路685号JULU GALLERY。此前，LLOUD已先后在首尔、东京完成品牌快闪布局，此次上海站标志着其全球化零售网络正式向内地市场延伸，亦是艺人IP从音乐舞台向时尚生活方式领域纵深拓展的关键落子。
+从空间与造型维度解读，项目以「BEACH CLUB海滩俱乐部」为主题，将品牌标志性的婴儿蓝与奶油白植入巨鹿路老洋房街区语境，形成热带松弛感与海派历史街巷的戏剧性碰撞。入口处以巨型蓝色LLOUD字母墙构建超尺度视觉锚点，以强符号性完成街道层面的品牌截流；场内则以充气泳圈、沙滩躺椅、氛围感灯串等轻量化度假装置，以低制作成本快速复刻可感知的海滩场景。空间内部明确划分为成衣陈列区、配饰专区与主题打卡区，既保证Summer Collection全系列商品——涵盖美式复古风T恤、帽衫、短裤及帽饰、包袋——的完整展示，又通过场景化布景预留高密度出片点位，使商业空间本身成为内容生产场域。
+活动期内，预约入场机制与限定单品限量发售策略相互咬合，制造稀缺性与仪式感：预约资格本身即转化为粉丝群体的社交货币，而海滩主题打卡场景则持续撬动小红书、微博等平台的UGC裂变传播。访客在主题区的拍照行为、对限定单品的开箱分享，构成「线下体验—线上种草—返场拔草」的闭环。此次快闪以「空间即内容、打卡即传播」的运营逻辑，完成LLOUD在内地市场的首次线下曝光，将艺人粉丝流量沉淀为品牌生活方式认同，实现从流量曝光到消费转化的完整链路。</p>
+      <div class="meta">上海 · 08-06~08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LLOUD-CHINA-POP-UP-SHANGHAI-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-14">
+      <img class="cover" src="https://res.onsiteclub.com/1d8a180ef3bd48a08c1b0fcbc63df3db.jpg" alt="LLOUD中国内地首次快闪" loading="lazy">
+      <h2>LLOUD中国内地首次快闪</h2>
+      <p class="description">2026年8月6日至16日，BLACKPINK成员LISA于2024年创立的个人生活方式品牌LLOUD，将其中国内地首场快闪活动落地上海静安区巨鹿路685号JULU GALLERY。此前，LLOUD已先后在首尔、东京完成品牌快闪布局，此次上海站标志着其全球化零售网络正式向内地市场延伸，亦是艺人IP从音乐舞台向时尚生活方式领域纵深拓展的关键落子。
+从空间与造型维度解读，项目以「BEACH CLUB海滩俱乐部」为主题，将品牌标志性的婴儿蓝与奶油白植入巨鹿路老洋房街区语境，形成热带松弛感与海派历史街巷的戏剧性碰撞。入口处以巨型蓝色LLOUD字母墙构建超尺度视觉锚点，以强符号性完成街道层面的品牌截流；场内则以充气泳圈、沙滩躺椅、氛围感灯串等轻量化度假装置，以低制作成本快速复刻可感知的海滩场景。空间内部明确划分为成衣陈列区、配饰专区与主题打卡区，既保证Summer Collection全系列商品——涵盖美式复古风T恤、帽衫、短裤及帽饰、包袋——的完整展示，又通过场景化布景预留高密度出片点位，使商业空间本身成为内容生产场域。
+活动期内，预约入场机制与限定单品限量发售策略相互咬合，制造稀缺性与仪式感：预约资格本身即转化为粉丝群体的社交货币，而海滩主题打卡场景则持续撬动小红书、微博等平台的UGC裂变传播。访客在主题区的拍照行为、对限定单品的开箱分享，构成「线下体验—线上种草—返场拔草」的闭环。此次快闪以「空间即内容、打卡即传播」的运营逻辑，完成LLOUD在内地市场的首次线下曝光，将艺人粉丝流量沉淀为品牌生活方式认同，实现从流量曝光到消费转化的完整链路。</p>
+      <div class="meta">上海 · 08-06~08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LLOUD-CHINA-POP-UP-SHANGHAI-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-15">
+      <img class="cover" src="https://res.onsiteclub.com/c331894e749a407eb16d306637149f02.jpg" alt="「白日追星」｜ECODAY 上海限时空间" loading="lazy">
+      <h2>「白日追星」｜ECODAY 上海限时空间</h2>
+      <p class="description">2026年8月6日至9日落地上海武康路的ECODAY「白日追星」联名快闪项目，是品牌发展进程中极具标志性的一次落地实践，承载着线上业态向线下实体场景突破的核心意义。依托武康路独特的历史街区肌理与天然流量优势，项目以奶白、浅银、淡粉为主色调，搭配巨型星光装置、镜面打卡点与柔光纱质造型，打造适配少女浪漫美学的沉浸式空间，轻量化的搭建制作模式兼顾低成本与高质感，让空间成为自带传播属性的内容载体。项目清晰划分展陈、打卡、福利兑换区域，将产品展示与社交场景深度融合，革新了品牌线下呈现形式。
+活动周期是品牌传播营销的核心窗口期，项目通过打卡任务、限定周边兑换的激励机制，打通线下体验与线上UGC传播链路。到访用户的沉浸式打卡行为，转化为品牌二次传播的社交素材，依托街区流量势能持续扩散品牌影响力，不仅完成新品种草与线下曝光，更落地“非日常星图”的品牌理念，构建起从空间体验、用户参与到社交认同的完整营销闭环，为新兴美学品牌线上线下一体化运营提供了优质范本。</p>
+      <div class="meta">上海 · 08-06~08-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/ECODAY-X-Maelin-DAYLIGHT-STAR-Project-SH-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-16">
+      <img class="cover" src="https://res.onsiteclub.com/4df0530ce604488a886cf48a4430635f.jpg" alt="修丽可「用色修¹好颜值」｜快闪" loading="lazy">
+      <h2>修丽可「用色修¹好颜值」｜快闪</h2>
+      <p class="description">修丽可携手天猫小黑盒落地上海西岸船坞的限时快闪项目，是品牌联动头部电商平台、落地新品线下赋能、深化科学护肤品牌定位的重要实践，有着鲜明的市场传播与品牌升级意义。
+项目以全新升级色修精华为核心，打造「好颜值探索」主题体验空间，在场地选址上依托西岸船坞独特的工业建筑肌理，形成自然且极具辨识度的空间基底。空间造型与视觉制作极具巧思，以品牌标志性翠绿色为主视觉色调，搭配巨型色修精华瓶、水幕可视化实验装置，将抽象的成分修护原理具象化，直观展现产品核心功效。现场规划肌肤检测、成分科普、产品试用、互动打卡多元功能区，构建沉浸式科学护肤体验。
+本次短期活动周期是新品营销传播的关键载体，线下专业体验、互动任务与小样福利机制，有效调动用户参与积极性，依托西岸滨江优质场景流量，精准强化品牌专业护肤调性。同时线下打卡体验持续催生社交UGC内容，联动天猫小黑盒线上首发资源，打通线下体验种草、线上流量扩散的完整链路，高效完成新品曝光与用户心智渗透。</p>
+      <div class="meta">上海 · SkinCeuticals 修丽可 · 08-05~08-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/SkinCeuticals-X-Tmall-Event-POP-UP-STORE-SH-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-17">
+      <img class="cover" src="https://res.onsiteclub.com/cb30f17885ab45cb9ade7ff1140fb589.jpg" alt="百事「轻盈元力空间」快闪" loading="lazy">
+      <h2>百事「轻盈元力空间」快闪</h2>
+      <p class="description">百事「轻盈元力空间」限时快闪，是品牌面向年轻消费群体，为益生元可乐新品打造的线下场景化营销项目，也是品牌革新夏日饮品消费场景、传递轻盈健康产品理念的重要创新实践。
+项目在空间设计与视觉制作上极具年轻化特质，以清透浅蓝为整体主基调，搭配云朵、飞艇、气泡等轻量化艺术装置，塑造松弛鲜活的沉浸式场景，巨型百事产品罐模型作为核心视觉地标，具备极强的视觉辨识度与打卡属性。场地科学划分新品试饮、元力互动、打卡装置、周边兑换四大功能区域，搭配机器人人偶巡游互动，丰富了线下体验内容。
+本次短期活动周期是新品传播的核心节点，品牌依托现场品鉴体验、趣味集章打卡与限定文创兑换的激励模式，充分调动用户参与热情。高颜值的场景装置适配社交媒体传播需求，有效撬动海量UGC内容产出，将线下沉浸式体验转化为线上传播流量，高效完成新品线下种草，精准传递轻松自在的夏日生活主张，实现产品理念、场景体验与品牌传播的深度联动。</p>
+      <div class="meta">上海 · PEPSI COLA 百事可乐 · 08-05~08-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Pepsi-Light-Vitality-Space-POP-UP-STORE-SH-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-18">
+      <img class="cover" src="https://res.onsiteclub.com/496ac853c7aa42f9898dc457998ce16a.jpg" alt="Marshall “KEEP LIVE MUSIC ALIVE﻿守住现场” 音乐文化体验活动（成都）" loading="lazy">
+      <h2>Marshall “KEEP LIVE MUSIC ALIVE﻿守住现场” 音乐文化体验活动（成都）</h2>
+      <p class="description">Marshall “KEEP LIVE MUSIC ALIVE﻿守住现场” 音乐文化体验活动（成都）
+Marshall「守住现场」不只是一场展览，更像一次 Marshall 与成都共同发起的摇滚文化寻根。从8月4日到9日，整个东郊记忆都成了 Marshall 的“主场”，它罕见地将品牌历史、产品体验、本土社群和重磅演出融为一体，试图重新诠释“现场”的意义。
+在银杏广场，一场关于 Marshall 60多年历史的回顾展静候于此，从早期的JTM45到最新的Hendrix 60周年联名款，许多难得一见的经典音箱陈列其中，配合巨型海报与品牌故事，让人直观感受到流淌在品牌血液里的摇滚基因。
+整个活动最动人的部分，在于它没有居高临下地“展示”，而是邀请了本土厂牌与青年社群深度共创。在“Marshall Village”和户外市集，你可以触摸到成都音乐最真实的肌理：本地厂牌明堂唱片带来了独家卡带和SP404制作工作坊，AXIS设有联合快拍亭和扭蛋机，JEFF.Free PARK 则提供DIY挂件体验。工业横街上，北京SCHOOL、武汉VOX、成都小酒馆等传奇Livehouse被复刻成小铺，带来各自的特色酒水与周边，仿佛把各地的摇滚据点都“搬”到了成都。</p>
+      <div class="meta">成都 · 08-04~08-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/MARSHALL-KEEP-LIVE-MUSIC-ALIVE-EVENT-CD-2026-8-5" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-19">
+      <img class="cover" src="https://res.onsiteclub.com/9fb0e39eb289465d854555fd12f71d50.jpg" alt="雅诗兰黛「复活水境」限时快闪（长沙）" loading="lazy">
+      <h2>雅诗兰黛「复活水境」限时快闪（长沙）</h2>
+      <div class="meta">长沙 · Estee Lauder 雅诗兰黛 · 08-03~08-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/ESTEE-LAUDER-RESURGENT-WATERSCAPE-POPUP-CS-2026-8-5" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-20">
+      <img class="cover" src="https://res.onsiteclub.com/46c0fd3a6a3c43c787734eea711f6c42.jpg" alt="和平精英7周年「登入之门」北外滩主题展" loading="lazy">
+      <h2>和平精英7周年「登入之门」北外滩主题展</h2>
+      <p class="description">和平精英7周年「登入之门」北外滩主题展，是品牌IP本土化落地的里程碑项目，也是和平精英中国大陆首场大型官方沉浸式线下展览，填补了品牌大型实景体验场景的空白，具备重要的IP沉淀与用户运营意义。项目落地北外滩国客中心核心区位，打造2600㎡超大体验空间，整体以游戏经典玩法流程为叙事脉络，规划十一大展区与五大主题空间，空间制作高度还原游戏场景，1:1复刻运输机登机、出生岛、巨型空投等标志性装置，同时搭配七年版本时间长廊、原画手稿、限定皮肤与PEL电竞展区，沉浸式复刻游戏世界观与品牌发展历程。现场融合AR互动、任务打卡与限定周边商店，丰富线下体验维度。本次展览活动周期是IP营销传播的关键窗口期，依托北外滩天然客流优势打造网红打卡地标，精准触达全域游戏玩家。线下沉浸式观展体验激活用户情怀与参与意愿，联动线上#登入之门#话题造势，形成线下实景打卡、线上社区裂变的双向传播链路，高效沉淀用户情感认同，打造出游戏IP线下场景营销的标杆案例。</p>
+      <div class="meta">上海 · 08-03~08-04</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Game-for-Peace-7th-ANNIVERSARY-Theme-Exhibition-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-21">
+      <img class="cover" src="https://res.onsiteclub.com/d7e54952367c4438837645020f0be79b.jpg" alt="潘海利根「游弋之地：伦敦名流录」兽首十周年限时展" loading="lazy">
+      <h2>潘海利根「游弋之地：伦敦名流录」兽首十周年限时展</h2>
+      <p class="description">英国百年香氛品牌潘海利根于上海张园打造的肖像兽首系列十周年主题展，是品牌经典IP周年纪念的重磅落地项目，承载着系列十年美学沉淀与叙事升级的历史意义，也是高端香氛艺术场景化营销的典型实践。
+项目选址百年历史建筑张园W4栋，依托独栋建筑肌理打造纯正英伦庄园风格空间，造型制作极具叙事性，通过肖像长廊、名流长桌宴、伦敦街区地图展区，完整复刻兽首家族人物故事线，结合户外花园喷泉景致，交融复古建筑质感与英伦优雅氛围，构筑高级沉浸式香氛场景。现场陈列全系列兽首香氛、首发限定淡香精，搭配专属语音导览、线上集章互动及主题周边、限定冰淇淋礼遇，丰富观香体验。
+活动周期是品牌内容传播的核心载体，精准面向香氛爱好者与潮流打卡群体，以极具美学质感的场景叙事激发用户自发打卡分享，依托社交平台UGC传播势能，实现周年IP价值的大众破圈传播，完成新品种草与品牌高端调性的深度塑造。</p>
+      <div class="meta">上海 · 08-02~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Penhaligon-10th-Anniversary-Special-Exhibition-Shanghai-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-22">
+      <img class="cover" src="https://res.onsiteclub.com/dd24098b22ab498b9530709871ed6c07.png" alt="POPMART x 艺术家工作室Molly Factory「Crybaby特展」北京站" loading="lazy">
+      <h2>POPMART x 艺术家工作室Molly Factory「Crybaby特展」北京站</h2>
+      <p class="description">Pop Mart x 艺术家工作室Molly Factory「Crybaby特展」北京站
+从2026年8月1日到9月5日，Pop Mart 携手艺术家工作室 Molly Factory，在北京郎园Station的中央车站，将Crybaby “Letting Go… Holding On…” 的情绪世界具象化。这不仅是一场展览，更像一个你可以走进去、躺进去、玩进去的柔软乐园，但这份柔软包裹着的，是复杂的现实体验。
+整个特展以鲜明的视觉语言，集合了 Crybaby、Crybunny 和 Cryteddy 三大经典IP形象，创造了一个充满“情绪自由”感的沉浸式空间。核心的灵魂是那三个相互连通的巨型海洋球池，巨大的充气玩偶装置极具视觉冲击力，是现场最出片的打卡点。
+互动体验围绕“寻宝”展开。在45分钟的限时内，参与者需要在百万海洋球中找到带有特殊“泪滴”图案的幸运球，或扫描隐藏在现场的15个小程序码，以兑换艺术家签名卡、贴纸或铜锣烧券。此外，现场还设有 DIY 专属哭娃、扭蛋和 POP BAKERY 情绪补给站，提供冰棍、饼干和特调饮品。
+这场特展的口碑呈现出明显的两极分化。一方面，它成功地通过极具创意的场景设计，为粉丝们打造了一个梦幻的“情绪出口”，许多人在这里找到了纯粹的快乐和拍照的乐趣。 然而，另一方面，大量负面反馈也同样尖锐。Crybaby 北京特展完美映射了当代潮流IP商业化的核心矛盾。它在“体验”上无疑是成功的，证明了强大的IP美学和场景叙事足以吸引大众。但它在“消费”上却是一种妥协，用复杂的规则、虚高的票价和不稳定的品控，考验着粉丝的忠诚度，并为所有希望破圈的IP展示了一条充满挑战的前路。</p>
+      <div class="meta">北京 · 泡泡玛特POPMART · 08-01~09-05</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/POPMART-MOLLY-FACTORY-CRYBABY-EXHIBITION-BJ-2026-8-5" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-23">
+      <img class="cover" src="https://res.onsiteclub.com/e2b19baafa48430782fd7412fb613127.jpg" alt="巴黎卡诗全新粉钻发膜城市巡游快闪" loading="lazy">
+      <h2>巴黎卡诗全新粉钻发膜城市巡游快闪</h2>
+      <p class="description">巴黎卡诗全新粉钻发膜城市巡游快闪，是品牌依托城市户外场景打造的轻量化巡展营销项目，延续「高光女孩俱乐部」浪漫叙事体系，为新品落地构建城市级沉浸式传播场景，具备年轻化、场景化营销的创新示范意义。
+项目打破传统固定展馆模式，以标志性小粉车为移动核心载体，巡回落地西岸梦中心、愚园路创邑 SPACE 等潮流城市地标。空间造型与视觉制作紧扣产品内核，以柔雾裸粉为主色调，搭配巨型野玫瑰纸艺装置呼应产品核心精粹概念，巨型粉钻发膜模型打造强记忆点视觉焦点，通透开放式车体设计适配城市街区氛围，兼具观赏性与场景融合度。
+现场设置产品体验区与礼品自助机，提供新品护发体验及限定礼遇。活动期作为新品营销核心周期，依托流动式城市曝光与高颜值户外装置，充分激发用户打卡意愿，持续产出社交UGC内容。通过移动场景渗透城市潮流圈层，高效完成新品线下种草，持续深化品牌夏日高光护发的产品认知与用户心智。</p>
+      <div class="meta">上海 · KERASTASE 卡诗 · 07-31~08-04</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Kerastase-Diamond-Cruise-Roadshow-Shanghai-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-24">
+      <img class="cover" src="https://res.onsiteclub.com/489d8f215b114e4f84699dcec5c31d85.jpg" alt="XINADÜ SHENZHEN POP-UP（深圳）" loading="lazy">
+      <h2>XINADÜ SHENZHEN POP-UP（深圳）</h2>
+      <p class="description">2026年7月31日至8月2日，由刘雨昕主理的潮流品牌 XINADÜ，携其胶囊系列「ECHO」在深圳前海壹方城 L1 层中庭开启了为期三天的限时快闪。作为品牌年度巡礼的重要一站，它承载了连接粉丝与路人的双重期待。
+本次快闪店的设计语言源自「ECHO」系列的“沙漠地平线”主题。空间由深蓝向橙色渐变的环形帷幕包裹，地面则蚀刻着仙人掌与星光图案，营造出一种静谧且充满探索感的氛围，与品牌过往的风格截然不同。
+本次快闪是 XINADÜ 从粉丝圈走向更广阔市场的一次重要试航。它成功验证了品牌强大的粉丝号召力与独特的设计美学，证明了其商业模式的巨大潜力。</p>
+      <div class="meta">深圳 · 07-31~08-02</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/XINADU-POPUP-SZ-2026-8-5" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-25">
+      <img class="cover" src="https://res.onsiteclub.com/bc2fa5a7003f410f84f6eb88c3e0968e.jpg" alt="《蜘蛛侠：崭新之日》官方主题快闪" loading="lazy">
+      <h2>《蜘蛛侠：崭新之日》官方主题快闪</h2>
+      <p class="description">漫威电影《蜘蛛侠：崭新之日》北外滩白玉兰广场官方快闪，是影片宣发周期中重要的线下IP落地项目，依托上海城市滨江地标优势，打造全域沉浸式观影前置体验，具有IP场景化、城市文旅与影视营销结合的示范价值。
+项目创新搭建户外地标装置与室内主题街区的双层体验空间，整体沿用蜘蛛侠经典红蓝蛛网视觉体系，视觉制作辨识度极高。户外巨型蹲伏蜘蛛侠充气雕塑直面陆家嘴天际线，搭配夜间灯光效果，实现超级英雄IP与魔都城市地标同框场景；场内LG2中庭构建电影主题街区，结合观景台地贴与外立面巨幕动态影像，形成立体化、全覆盖的沉浸式氛围。
+场内多元电影主题场景与正版周边发售，完善了线下体验体系。活动期作为影片预热传播关键窗口，通过趣味集章打卡、社交分享兑礼机制，精准吸引年轻潮流群体与漫威影迷参与。依托北外滩独特景观优势与高出片场景持续撬动社交UGC扩散，以线下实景体验赋能线上传播，高效完成影片热度造势与IP大众影响力破圈。</p>
+      <div class="meta">上海 · 07-25~08-19</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Spider-Man-4-Pop-Up-Event-Shanghai-2026-8-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-08-07
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
