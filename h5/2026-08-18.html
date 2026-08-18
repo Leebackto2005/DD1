@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-08-18</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-08-18 周二</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">22</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/5d2a9027228c4f6eb94d8c74ae8bf760.jpg" alt="【成都车展】车展展位图" loading="lazy">
+      <h2>【成都车展】车展展位图</h2>
+      <p class="description">本届车展一共 11 个乘用车展馆，总面积 22 万㎡、入驻近 120 家车企品牌，分区逻辑从传统「豪华‑合资‑自主」改为 车企集团包馆模式 ：</p>
+      <div class="meta">成都 · 08-20~08-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/CHENGDU-AUTO-SHOW-Floorplan-2026-8-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/3cf10b1b6d3a40afacced0a1d5790fae.jpg" alt="【Leather在现场】 香奈儿香水快闪（成都IFS）" loading="lazy">
+      <h2>【Leather在现场】 香奈儿香水快闪（成都IFS）</h2>
+      <div class="meta">成都 · CHANEL 香奈儿 · 08-17</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-CHANEL-CD-IFS-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/9291a7a63bdf4437b7f24c1835b5a9e9.jpg" alt="【Leather在现场】莲花商场展示（成都万象城）" loading="lazy">
+      <h2>【Leather在现场】莲花商场展示（成都万象城）</h2>
+      <div class="meta">成都 · LOTUS 路特斯 · 08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-LOTUS-POP-UP-CD-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/fd5aadb647db4904ba1974ffdc0b0dfc.jpg" alt="【Leather在现场】碧欧泉路演" loading="lazy">
+      <h2>【Leather在现场】碧欧泉路演</h2>
+      <div class="meta">成都 · Biotherm 碧欧泉 · 08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-Biotherm-Roadshow-CD-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/2817b7d9fccc486eb5c2c3586028fff2.jpg" alt="【Leather在现场】 Tiffany「爱是火彩」线下主题影像展" loading="lazy">
+      <h2>【Leather在现场】 Tiffany「爱是火彩」线下主题影像展</h2>
+      <p class="description">【Leather在现场】 Tiffany「爱是火彩」线下主题影像展
+Tiffany 蒂芙尼「爱是火彩」七夕主题影像展落地成都太古里漫广场，展期 8 月 5 日‑8 月 19 日，是品牌立足七夕传统节点打造的城市户外叙事型艺术展，将大众熟知的石头剪刀布游戏转化为亲密关系隐喻，打破高端珠宝品牌传统营销范式，实现珠宝美学与大众情感叙事的融合表达。
+项目空间造型取材钻石切割切面，多组不规则几何棱角装置错落排布，以哑光米白为主色调，局部点缀品牌标志性 Tiffany 蓝，实体立板印刻三幕爱的叙事文本，搭配影像橱窗，整体制作简洁克制，用雕塑化建筑装置完成情感叙事转译。
+展览分为 “我与我的平衡”“你和我的交手”“我们的总和” 三幕叙事篇章，展出品牌大使及名人影像作品，开放观众手势互动打卡。活动期线下沉浸式观展体验，联动社交平台鼓励用户产出 UGC 内容，线下场景为线上传播供给优质打卡素材，线上话题反哺线下客流，完成品牌七夕情感价值输出、大众圈层传播与城市话题营销的闭环。</p>
+      <div class="meta">成都 · Tiffany&amp;Co. · 08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-Tiffany-Love-POP-UP-STORE-CD-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/cba78dbccbaf4c13a0915901ea25c7d7.jpg" alt="【Leather在现场】Velentino华伦天奴106A雨后清桃快闪" loading="lazy">
+      <h2>【Leather在现场】Velentino华伦天奴106A雨后清桃快闪</h2>
+      <p class="description">【Leather在现场】Velentino华伦天奴106A雨后清桃快闪</p>
+      <div class="meta">成都 · Valentino · 08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-Velentino-106A-POP-UP-STORE-CD-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/5d26af3a8d8744868650189d053c558a.jpg" alt="【Leather在现场】柯达快闪（成都万象城）" loading="lazy">
+      <h2>【Leather在现场】柯达快闪（成都万象城）</h2>
+      <div class="meta">成都 · 08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-KODAK-Roadshow-CD-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/19776f03c63d49dbbdcf55cce644715f.jpg" alt="【Leather在现场】 路易威登广东会馆" loading="lazy">
+      <h2>【Leather在现场】 路易威登广东会馆</h2>
+      <div class="meta">成都 · LOUIS VUITTON 路易威登 · 08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-LOUIS-VUITTON-GUANGDONG-HALL-CD-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/e973b4b2495845bc9ba7d48fe89e7e9a.jpg" alt="【Leather在现场】 香奈儿香水快闪（成都万象城）" loading="lazy">
+      <h2>【Leather在现场】 香奈儿香水快闪（成都万象城）</h2>
+      <div class="meta">成都 · CHANEL 香奈儿 · 08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-CHANEL-CD-MIXC-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-10">
+      <img class="cover" src="https://res.onsiteclub.com/fcd8902fc2104d0e8cff873b708dea0b.jpg" alt="【Leather在现场】雪碧快闪活动" loading="lazy">
+      <h2>【Leather在现场】雪碧快闪活动</h2>
+      <div class="meta">成都 · 08-15</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSTE-Sprite-POP-UP-STORE-CD-2026-8-15" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-11">
+      <img class="cover" src="https://res.onsiteclub.com/730dbf88cbc848548a3b7e875a46ae4e.jpg" alt="【Leather在现场】维动力「三重补给 清爽带感」城市户外快闪" loading="lazy">
+      <h2>【Leather在现场】维动力「三重补给 清爽带感」城市户外快闪</h2>
+      <p class="description">百事维动力气泡电解质水的官方英文名为 ‌Pepsi Weidongli Sparkling Electrolyte Water‌（品牌系列名）
+维动力「三重补给 清爽带感」城市户外快闪落地成都东郊记忆街头，活动周期为 2026 年 8 月 13 日‑8 月 16 日，是电解质饮料品牌面向夏日消费场景打造的线下场景营销项目，聚焦年轻都市人群，把产品补给理念从包装延伸至实体体验空间，实现饮品产品价值可视化，为快消饮品户外路演提供可参考的实践样本。
+项目空间整体采用品牌标志性浅蓝与白色为主视觉色调，露天开放式舞台式场地布局，场景制作大量使用巨型充气艺术装置，放大还原维动力饮料瓶体造型，搭配卡通充气人偶、气泡艺术摆件，右侧搭建迷你仿真产品售卖站，完整陈列品牌饮品，现场设置人物立牌、导视立牌与休闲露营座椅，整体风格轻松鲜活，适配城市街拍打卡。活动期间设置清爽补给站、大笑泡泡机、活力充能挑战三类线下互动游戏，联动小红书发起话题传播，用户发布带指定话题的现场实拍内容即可兑换产品并参与抽奖，线下现场体验承接线上社交内容产出，线下流量反向转化为社交平台 UGC 内容，完成从现场参与、打卡产出到全网扩散的营销闭环，强化产品 “三重补给” 的核心记忆点，深化品牌夏日清爽的产品心智。</p>
+      <div class="meta">成都 · 08-15</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-Weidongli-POP-UP-STORE-CD-2026-8-15" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-12">
+      <img class="cover" src="https://res.onsiteclub.com/8b8adb9c9005485d9d1f785a899e25c1.jpg" alt="【Leaher在现场】 if快闪" loading="lazy">
+      <h2>【Leaher在现场】 if快闪</h2>
+      <div class="meta">成都 · 08-15</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-if-POP-UP-STORE-CD-2026-8-15" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-13">
+      <img class="cover" src="https://res.onsiteclub.com/1fd7bab2dfae4ae2964bdf02825865bb.jpg" alt="CAMPER JUNCTION 模块快闪空间（杭州）" loading="lazy">
+      <h2>CAMPER JUNCTION 模块快闪空间（杭州）</h2>
+      <p class="description">CAMPER JUNCTION 模块快闪空间于2026年8月15日至16日限时登陆杭州天目里阳光房，每日开放时间为11:00至18:00。本次快闪以“模块化设计”为灵感起点，将鞋履、艺术与空间想象深度连接，打造了一场开放的空间实验。现场不仅同步展示了CAMPER JUNCTION系列“换头鞋”的多重穿法，还融合了艺术装置、AI互动与DIY体验，是杭州近期极具设计感与趣味性的潮流打卡地。
+现场携手大星吉子工作室，共同呈现了名为《BUILDING建筑游戏》的艺术装置。设计团队将鞋头轮廓抽象为几何模块，通过拼色木块的堆叠、旋转和撞色，搭建出了墙、柱、廊等建筑元素，划分出可穿行与停留的动线。整个空间以明快色调为主，搭配天目里阳光房的自然光影，将抽象的“可替换鞋头”逻辑巨象化为空间尺度的建筑实验，随手一拍就是充满构成感的装置艺术大片。
+逛展互动玩法非常丰富且充满巧思。入口处的巨型彩色鞋头装置是绝对的视觉C位，适合搭配浅色衣服拍摄多巴胺风格大片。现场还设置了AI拍照互动，扫码即可解锁专属卡通形象，还能更换多种彩色皮肤，光影与结构的结合度极高。此外，打卡或消费即可DIY模块化蜡烛，把微缩版的“积木”带回家，现场还有机会领取天目里美术馆的门票。除了拍照，还能近距离体验Junction系列鞋款，感受德比、乐福、Runner和裸靴四种鞋型自由切换的搭配乐趣。
+本次快闪是CAMPER将产品设计概念与公共艺术空间深度融合的一次创新尝试，标志着品牌在体验营销上从“单向展示”向“实体空间演示”的转型。通过把“换头鞋”的模块化逻辑转化为可穿行的建筑装置，CAMPER不仅降低了大众对复杂设计概念的认知门槛，更让快闪店本身成为了一件值得专门跑一趟的艺术品。这种“产品+艺术+互动”的轻量化跨界路径，也为鞋服品牌在城市文化地标（如天目里）的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">杭州 · 08-15~08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/CAMPER-JUNCTION-POPUP-HZ-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-14">
+      <img class="cover" src="https://res.onsiteclub.com/26b3a63dc8774526a565e67f74e62ef6.jpg" alt="【Leather在现场】快手夏日游音节" loading="lazy">
+      <h2>【Leather在现场】快手夏日游音节</h2>
+      <p class="description">第二届快手夏日游音节是快手升级打造的大型线下游戏嘉年华，依托 51 万㎡大型乐园场地落地，集结 21 个游戏 IP 展区与复古游戏厅，是平台打通线上直播生态与线下实景游乐的标杆项目，实现游戏 IP、主播社群与线下游客的三方联动，为短视频平台大型游戏线下活动提供参考范本。
+项目空间制作高度还原各游戏原作世界观，每个 IP 独立搭建主题实景展区，造型风格跟随游戏调性差异化设计，涵盖赛博朋克、暗黑哥特、国风古风、海岛乐园等多元视觉，搭配巨型 IP 装置、互动游戏操作台，同时设置复古游戏厅复刻多款经典怀旧游戏，全域布局任务点位，以统一的紫色视觉体系串联整个乐园场景。
+活动期设置星钻任务机制，游客打卡展区、NPC 互动、参与水友赛可积累星钻兑换外设、手办等实物礼品，分为个人冒险与主播战队两条游玩路径，260 余位主播、选手、Coser 到场参与。线下丰富的实景体验产出大量打卡素材，反哺快手站内短视频与直播内容，线上话题与主播流量又持续引流线下到场用户，完成线上流量、线下场景、IP 商业曝光的闭环营销。</p>
+      <div class="meta">成都 · 快手 · 08-14</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-KUAISHOU-GAME-MUSIC-CD-2026-8-14" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-15">
+      <img class="cover" src="https://res.onsiteclub.com/377da057e25a4fcb84e17442c107f97d.jpg" alt="兰蔻七夕「留声厅」（上海、郑州）" loading="lazy">
+      <h2>兰蔻七夕「留声厅」（上海、郑州）</h2>
+      <p class="description">兰蔻七夕「留声厅」即将登陆上海与郑州两座城市。上海站于8月15日至8月23日落地武康路LOOKNOW PARK，郑州站于8月14日至8月23日位于正弘城一层中庭。本次快闪以“刻录声色，三城倒计时”为主题，将黑胶唱片、浪漫唇色与专属告白融为一体，打造了一场充满复古与艺术气息的沉浸式视听之旅，无需预约即可直接前往体验。
+现场空间以复古黑胶与红棕调光影为主视觉，打造了一座充满老钱风的“意识花园”。上海武康路站分为上下两层三个主题空间，分别是倪妮即兴街区、张凌赫狂想音乐工作室和张婧仪原声客厅，每个空间都有不一样的陈列与氛围，墙面还暗藏了明星惊喜声纹彩蛋，手机贴近就能听到惊喜语音。郑州正弘城站则主打一层中庭的律动街道与黑胶唱片墙，整体设计摒弃了过度堆砌，营造出松弛且高级的复古美学。
+逛展互动流程非常丰富且福利硬核。在上海站，一楼门口扫码领券核销领取打卡纸，左手间试彩妆可得迷你唱片币，右手间投掷选取唱片，上二楼还能在迷你录音工作室录制专属有声唱片，并生成定制封面打印带走。完成打卡拍照并发文，即可领取迷你冰淇淋和试用装（每日限量，先到先得）。郑州站同样可以体验试色、刻录声纹和定制唱片，购买正装产品还能获赠七夕限定冰淇淋、明星小卡及满额加赠好礼。
+本次“留声厅”是兰蔻七夕限定活动在深圳、上海、郑州三城同步联动的关键一站，标志着品牌在节日营销中持续深化“视听声色”的沉浸式体验路径。通过黑胶唱片与唇色的创意结合，兰蔻不仅将产品包装从“视觉单品”升级为“情感载体”，更传递了“先听见自己，才能与世界共鸣”的女性自我表达态度。这种将科学护肤、色彩美学与音乐艺术深度融合的策展方式，也为高端美妆品牌在七夕等传统节日的线下体验创新提供了新的范本。</p>
+      <div class="meta">上海 · LANCOME · 08-14~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LANCOME-‌VOICE-HALL-POPUP-SH-ZZ-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-16">
+      <img class="cover" src="https://res.onsiteclub.com/ce7cbb95ece9410d87bd2f78611d8be9.jpg" alt="R13限时快闪（广州）" loading="lazy">
+      <h2>R13限时快闪（广州）</h2>
+      <p class="description">纽约先锋潮奢品牌R13限时快闪店于2026年8月14日至8月21日登陆广州K11购物艺术中心L1中庭。这是R13进驻内地的第4座城市，也是其在大湾区开设的首家快闪店。活动以“岭南都市活力邂逅纽约街头美学”为核心，同步呈现品牌2026早秋系列，将标志性的Grunge精神、解构剪裁与自由叠穿美学带入珠江新城，为广州时髦精们打造了一个表达独立态度的线下据点。
+现场空间完美复刻了R13标志性的粗粝美学，复古做旧纹理与粗砺砖墙交错，光影在冷冽解构中暗藏野性张力。整体设计摒弃了传统零售店的规整感，营造出一个沉浸式的感官场域，让人一走进去就能感受到源自纽约地下文化的叛逆内核。店内以丹宁、格纹、皮革等经典美式元素为基底，搭配先锋廓形与偏移结构、毛边等不规则细节，粗砺与精致、张扬与松弛在空间中交织，随手一拍都充满高级的街头艺术感。建议穿着深色系或美式复古风格的衣服前往，与空间氛围完美契合。
+逛展互动玩法丰富且福利硬核。现场扫描立牌二维码，关注R13官方小红书及微信公众号，即可参与幸运扭蛋机抽奖，随机掉落开业限定200元代金券、价值288元的可收纳购物袋、品牌徽章及贴纸等好礼。此外，发布开业相关笔记并带上话题#R13广州，完成门店打卡，也能直接领取可收纳购物袋。对于有购买计划的顾客，活动期间单笔实付满3000元还可享受10倍积分（10万积分封顶），性价比极高。
+本次快闪是R13继上海兴业太古汇、成都太古里、南京JLC金陵中环之后，在中国市场布局的重要一步，标志着品牌从一线城市向大湾区核心时尚消费市场的深度渗透。R13将“粗粝与精致、张扬与克制”的品牌美学转化为实体零售空间，与广州K11“艺术、人文、自然”的核心理念及高净值年轻客群高度契合。这种不盲目依赖传统奢场，而是精准选择与自身气质相符的艺术商业地标的选址策略，不仅为华南潮人创造了新的打卡据点，也为国际先锋潮牌在中国区域的线下体验与本土化融合提供了极具参考价值的范本。</p>
+      <div class="meta">广州 · 08-14~08-21</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/R13-POPUP-GZ-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-17">
+      <img class="cover" src="https://res.onsiteclub.com/b461b41654494761a4543af6315a927e.png" alt="兰蔻七夕「留声厅」（深圳）" loading="lazy">
+      <h2>兰蔻七夕「留声厅」（深圳）</h2>
+      <p class="description">兰蔻七夕「留声厅」将于2026年8月13日至8月29日登陆深圳湾万象城A区湾区之眼。本次快闪以“刻录声色，三城倒计时”为主题，是兰蔻七夕限定活动在深圳的专属落地。现场不仅同步推出了携手代言人张凌赫等明星的“声色限定”系列，还融合了沉浸式视听体验与丰富的互动福利，是深圳七夕期间极具艺术感与仪式感的美妆打卡地。
+现场空间以“黑胶唱片”与“留声机”为核心视觉元素，打造了一座充满复古与艺术气息的“意识花园”。步入留声厅，光影在黑胶橱窗间流转，声与色在此交织。试妆镜前可以遇见万千声色，留声机旁则能听见内心独白。整体设计摒弃了过度堆砌，以红棕调的光影流转为主基调，营造出一种“不必掩饰锋芒，也不用迎合节奏”的松弛与高级感，随手拍照都非常出片。
+逛展期间可以参与“声色·寻色挑战”互动，翻牌挑战成功有机会领取兰蔻明星体验礼三件套。现场还能近距离体验兰蔻声色限定唇膏与超修小黑瓶等明星单品。购买任意正装产品即可获赠七夕限定冰淇淋单球一份，更有字母钥匙扣、限定化妆刷等满额加赠好礼（数量有限，先到先得）。此外，购买七夕限定唇膏或护肤礼盒还能获赠明星小卡，想收集张凌赫小卡的粉丝千万别错过。
+本次“留声厅”是兰蔻七夕限定活动在深圳、上海、郑州三城同步联动的关键一站，标志着品牌在节日营销中持续深化“视听声色”的沉浸式体验路径。通过黑胶唱片与唇色的创意结合，兰蔻不仅将产品包装从“视觉单品”升级为“情感载体”，更传递了“先听见自己，才能与世界共鸣”的女性自我表达态度。这种将科学护肤、色彩美学与音乐艺术深度融合的策展方式，也为高端美妆品牌在七夕等传统节日的线下体验创新提供了新的范本。</p>
+      <div class="meta">深圳 · LANCOME · 08-13~08-29</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LANCOME-‌VOICE-HALL-POPUP-SZ-2026-8-15" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-18">
+      <img class="cover" src="https://res.onsiteclub.com/214927460b3e4eadbb456e515c86b13f.jpg" alt="NBA ATELIER 罗斯主题快闪空间（杭州）" loading="lazy">
+      <h2>NBA ATELIER 罗斯主题快闪空间（杭州）</h2>
+      <p class="description">NBA ATELIER × 德里克·罗斯「玫瑰绽放，传奇归来」主题快闪空间于2026年8月12日至8月23日落地杭州西溪印象城A座L1中庭。本次快闪以“绽放、传承、归来”为灵感，不仅展示了NBA ATELIER与罗斯个人IP Rose’s Flower Shop的联名系列，还融合了限定陈列与互动打卡。最重磅的是，8月14日罗斯本人已亲临现场与球迷见面，将风城玫瑰的热爱与坚持带到了西子湖畔。
+现场以玫瑰元素与篮球文化为核心视觉，打造了极具氛围感的限定主题陈列。中庭区域设置了大型玫瑰打卡装置与联名系列展示区，将公牛队的经典标识与花店美学巧妙交织。整体设计摒弃了传统运动展台的生硬，通过暖色调光影与复古街头元素，营造出一种既热血又充满生活气息的空间感，非常适合穿着休闲运动风或浅色系衣服前往拍照。
+现场打卡玩法丰富且福利硬核。普通观众可免费参与中庭互动挑战，完成即有机会解锁限定好礼；在社交平台发布打卡笔记，还能领取玫瑰花、公牛冰箱贴、徽章和小扇子等周边。如果想体验VIP专属福利（如近距离互动），需提前在官方门店消费满额报名。不过需要特别提醒的是，根据已到场球迷的真实反馈，现场安保较为严格，第一排多为预留位置，且VIP进店合影环节存在一定变动，建议普通观众保持平常心，在免费中庭区域感受氛围同样能拍到不错的照片。
+本次快闪是NBA ATELIER在杭州开设首店后的重要营销动作，也是德里克·罗斯中国行的重要一站。品牌通过将球星个人IP（花店美学）与运动潮牌结合，成功打破了传统球星周边的单一售卖模式，向大众传递了“篮球不只属于球场，热爱从未停止生长”的生活态度。这种将体育精神、潮流穿搭与情感叙事深度融合的策展方式，不仅增强了品牌与年轻球迷及泛运动人群的情感连接，也为体育IP在城市商业空间的沉浸式落地提供了生动的本地化范本。</p>
+      <div class="meta">杭州 · NBA · 08-12~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/NBA-ATELIER-ROSE-POPUP-HZ-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-19">
+      <img class="cover" src="https://res.onsiteclub.com/e529dbf7ee9f49149f961006cb0ee0c3.jpg" alt="CHANEL「可可闪亮电台」华南首展（深圳）" loading="lazy">
+      <h2>CHANEL「可可闪亮电台」华南首展（深圳）</h2>
+      <p class="description">CHANEL「可可闪亮电台」华南首展将于2026年8月8日至8月23日登陆深圳万象天地时光广场及高街丁字路口。本次快闪以“RADIO SHINE FM”为灵感，将声音、色彩与星座元素深度融合，打造了一座会发光的沉浸式粉色电台空间。现场不仅同步首发全新可可闪亮唇蜜等彩妆新品，还融合了专属化妆服务与互动抽奖，是深圳七夕前后极具艺术感与少女心的美妆打卡地。
+现场以温柔粉色调为主视觉，打造了一间充满复古与潮流气息的街区电台。闪亮声工场通过声线与音效互动探索声音的颜色；闪亮星运站结合星座与塔罗牌解读幸运色号；焕妆室则提供专业彩妆师一对一服务，可化身电台DJ录制声音明信片。整体设计摒弃了传统专柜的拘束感，融入打碟互动区与专属COCO杂志装置，随手拍照都非常出片。
+逛展流程充满仪式感：门口领取气泡水与腕带后，可参与声工场和星运站的互动卡牌解读。妆容服务需要提前在微信小程序预约，现场有专业彩妆师打造薄妆水光肌，还能体验全新唇蜜与眼影。出口处设有抽奖环节，不限新老会员，奖品包含口红徽章、山茶花书签、手机支架等。此外，在万象天地购买产品还可享受20倍积分特别礼遇。
+本次“可可闪亮电台”是香奈儿美妆继台北华山首展后落地的华南首站，标志着品牌在节日营销中持续深化“视听声色”的沉浸式体验路径。通过电台与星座的创意结合，香奈儿不仅将唇蜜产品从“视觉单品”升级为“情感与个性载体”，更传递了“先听见自己，才能与世界共鸣”的女性自我表达态度。这种将彩妆美学与音乐艺术深度融合的策展方式，也为高端美妆品牌在商圈的线下体验创新提供了新的范本。</p>
+      <div class="meta">深圳 · CHANEL 香奈儿 · 08-08~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/CHANEL-RADIO-SHINE-FM-POPUP-SZ-2026-8-15" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-20">
+      <img class="cover" src="https://res.onsiteclub.com/9f1d78daf27a4f3d8881c648d9e2d8e4.jpg" alt="香港迪士尼 x 可口可乐【“玩皮”当夏，畅爽充“乐”】主题展（深圳）" loading="lazy">
+      <h2>香港迪士尼 x 可口可乐【“玩皮”当夏，畅爽充“乐”】主题展（深圳）</h2>
+      <p class="description">香港迪士尼 x 可口可乐【“玩皮”当夏，畅爽充“乐”】主题展（深圳）
+香港迪士尼与可口可乐联手打造的「“玩皮”当夏，畅爽充“乐”」主题展于2026年8月7日至9月6日空降深圳万象天地旗舰广场。本次快闪以皮克斯夏日狂欢趴为核心，将经典动画IP与可口可乐的畅爽元素深度融合，打造了一座充满童趣与活力的户外“畅爽充乐站”。活动不仅免费开放且无需预约，还融合了巨型装置打卡、互动抽奖及限定周边派发，是深圳近期极具夏日松弛感的跨界快闪活动。
+现场以红黄撞色为主视觉基调，完美还原了皮克斯世界的缤纷色彩与可口可乐的经典活力。巨型可口可乐瓶装置是全场视觉C位，不仅是拍照打卡的核心点位，还兼具互动抽奖功能。皮克斯角色雕塑群栩栩如生，巴斯光年、胡迪、三眼仔、翠丝、苏利文、红熊猫等好友悉数亮相，与可口可乐主题拱门、积木城堡等装置巧妙交织。整体设计摒弃了传统展台的生硬感，营造出轻松随性的街头派对氛围，建议穿浅色系衣服前往，与红黄背景搭配超级出片。
+逛展福利非常硬核，到场即可参与巨型可口可乐装置的互动抽奖，中奖率超高，有机会直接赢取香港迪士尼乐园门票或可爱的迪士尼贴纸。现场还设置了自助贩卖机，可以买一瓶冰爽可口可乐解暑，感受气泡炸开的畅爽充“乐”时刻。此外，在社交平台晒出可口可乐与迪士尼玩偶的合影并带上指定话题，还有机会赢取港迪门票、精美水杯甚至迪士尼好莱坞酒店住宿。值得一提的是，现场展示了皮克斯限定包装的可口可乐，虽然限定款需在港迪园区内购买，但现场打卡同样能感受到满满的收藏氛围。
+本次快闪是香港迪士尼“皮克斯夏日狂欢趴”在内地商圈的重要线下延伸，标志着迪士尼在节日与暑期营销中持续深化“IP+快消品+商圈体验”的跨界联动路径。通过可口可乐这一国民级饮品IP的加持，港迪成功打破了乐园的物理边界，让无法立刻奔赴香港的消费者也能在街头零距离触摸到皮克斯的快乐。这种轻量级、高互动、强社交属性的户外快闪模式，不仅为品牌提供了低成本触达年轻群体与亲子家庭的新渠道，也为文旅IP在城市商业空间的沉浸式落地提供了生动的本地化范本。</p>
+      <div class="meta">深圳 · 08-07~09-06</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/HK-DISNEY-COCA-COLA-PIXAR-EXHIBITION-SZ-2026-8-15" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-21">
+      <img class="cover" src="https://res.onsiteclub.com/9aa214cb92da452a88cc44828275756d.jpg" alt="KERASTASE巴黎卡诗「小粉车」快闪（长沙）" loading="lazy">
+      <h2>KERASTASE巴黎卡诗「小粉车」快闪（长沙）</h2>
+      <p class="description">巴黎卡诗「GLOSS ABSOLU花车」限时快闪于2026年8月7日至8月9日登陆长沙IFS国金中心西南广场。本次快闪以“浪漫冬日花车巡游”为概念，将卡诗釉光玫瑰系列与夏日冰淇淋元素结合，打造了一场充满少女心的街头互动体验。现场不仅可以直接体验新品，还能0元领取限量派样和冰淇淋，是长沙周末极具趣味性的美妆快闪活动。
+现场主打一辆超萌的粉色主题花车，搭配玫瑰元素的打卡装置，粉嫩配色在阳光下超级出片。整体设计没有复杂的布景，而是以花车为核心，营造出一种轻松、随性的街头巡游氛围。无论是花车全景还是细节特写，都非常适合拍朋友圈大片，随手一拍就是满满的夏日浪漫感。
+逛展流程非常简单直接：来到长沙IFS西南广场的小粉车前，现场打卡拍照即可领取卡诗新品体验装1份（每日限量，先到先得）。除了领小样，现场还能品尝到限定的野玫瑰冰淇淋，丝滑解暑。在体验环节，可以近距离试用卡诗粉钻发膜和小粉珠护发精油，感受高级的花果香调。
+本次“小粉车”快闪是巴黎卡诗在夏季推出的轻量化街头营销案例，延续了品牌“高光女孩俱乐部”的年轻化定位。通过花车巡游这种低门槛、高互动的形式，卡诗成功将高端护发产品带入大众逛街的日常场景中，打破了传统专柜的距离感。这不仅增强了品牌与年轻消费者之间的情感连接，也为美妆个护品牌在商圈的户外快闪提供了“产品+美食+打卡”的跨界融合新思路。</p>
+      <div class="meta">长沙 · KERASTASE 卡诗 · 08-07~08-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/KERASTASE-SMALL-PINK-CAR-POPUP-CS-2026-8-15" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-22">
+      <img class="cover" src="https://res.onsiteclub.com/e3a278f9452f450d8ab9f4aa495d5d72.jpg" alt="FILA FUSION「轻逸新机服」快闪活动" loading="lazy">
+      <h2>FILA FUSION「轻逸新机服」快闪活动</h2>
+      <p class="description">FILA FUSION「轻逸新机服」快闪活动于2026年8月7日至8月9日限时登陆大理，采用双站点互动模式。活动以“放飞乌托邦”为核心概念，将潮流机能服饰与大理的自然山海深度融合，打造了一场逃离城市的轻户外体验。现场不仅展示了主打轻薄零压的轻逸新机服系列，还结合了风筝放飞、打卡派样等趣味玩法，是大理近期极具松弛感的潮流打卡地。
+现场分为两个风格迥异但完美互补的主题空间。迷山书店站（8月7日-8日） 由老沙砖厂改造而成，工业风与海景交织，店内布置了品牌装置与主题海报，光影透过书架洒下，文艺氛围拉满。洱海生态廊道草坪站（8月8日-9日） 则主打开阔的自然场景，面朝洱海、背靠苍山，草地上散落着云朵气球与巨型主题风筝装置。整体设计摒弃了传统展台生硬感，让服装与山海、微风自然融合，随手一拍就是充满自由感的度假大片。
+逛展流程轻松且福利满满。在迷山书店可以现场试穿轻逸新机服，感受面料的轻薄透气，打卡还能领取品牌定制风筝或透明扇子等限量周边（先到先得）。来到洱海生态廊道草坪，可以迎着海风亲手放飞主题风筝，体验“追风”的治愈感。此外，现场还设有注册礼与游戏互动环节，完成挑战即可解锁更多GWP品牌好礼，全程无需复杂预约，直接到场即可参与。
+本次快闪是FILA FUSION在“轻户外”与“山系生活”趋势下的一次创新营销尝试。品牌没有选择传统的商场中庭，而是将快闪空间搬进大理的独立书店与生态廊道，通过“服饰+自然+艺术”的跨界融合，将产品卖点从单纯的“机能面料”升华为“轻盈自由的生活态度”。这种轻量化、强体验的户外快闪模式，不仅精准触达了追求松弛感的年轻消费群体，也为潮流运动品牌在文旅目的地的场景化营销提供了生动的本地化范本。</p>
+      <div class="meta">FILA · 08-07~08-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/FILA-FUSION-RELEASE-UTOPIA-POPUP-DL-2026-8-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-08-18
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
