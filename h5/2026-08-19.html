@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-08-19</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-08-19 周三</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">17</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/4adc340c668c4adf888565c366ec49c1.jpg" alt="上海书展·静安读书周「书香入弄，微醺游园」项目" loading="lazy">
+      <h2>上海书展·静安读书周「书香入弄，微醺游园」项目</h2>
+      <p class="description">上海张园茂名北路限时步行街活动，作为2026上海书展与静安读书周的重磅城市文化项目，立足百年石库门历史建筑基底，以“书香入弄，微醺游园”为核心线索，创新打造开放式海派书香街区，是城市人文阅读、历史建筑文旅与夜间休闲消费融合的标杆性实践。
+项目空间制作深度依托张园原生石库门街巷肌理，摒弃传统封闭式展厅模式，沿街布置书页造型艺术装置与文学光影布景，将城市街巷改造为沉浸式流动书房，兼具复古底蕴与文艺质感。场地科学划分海派书单展示区、AI书香互动区、微醺休闲外摆区与品牌联动体验点位，聚焦海派文化内容展陈，发布特色主题书单，结合智能交互机器人打造科技阅读体验，搭配限定特调饮品，构建“阅读+微醺+AI”的全新复合场景。
+活动联动园区多个高端品牌推出票务专属礼遇，设置多处光影打卡机位，市民漫步游园、社交分享即可兑换文创礼品。开放式街区场景兼具观赏性与体验性，持续激发社交平台UGC传播，有效推广全民阅读文化，盘活历史街区商业活力，塑造南京西路兼具人文底蕴与松弛氛围的城市文化新地标。</p>
+      <div class="meta">上海 · 08-17~08-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Shanghai-Book-Fair-and-Jingan-Reading-Week-Shanghai-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/d13e6a8796f143e9b30d2376af242d50.jpg" alt="天猫奢品「Present is Present」七夕艺术展项目" loading="lazy">
+      <h2>天猫奢品「Present is Present」七夕艺术展项目</h2>
+      <p class="description">天猫奢品编辑部打造的七夕沉浸式艺术体验展，依托上海老洋房历史建筑载体落地，打破传统七夕营销单一情爱叙事，以“Present is Present”为核心概念，诠释自爱、相伴、知己等多元当代爱意，是平台线上奢品内容生态向线下实体艺术场景延伸的创新实践，重塑高端奢品礼赠的审美与情感价值。
+项目空间制作充分尊重老洋房砖木原生肌理，以柔雾米白、暗棕鎏金为主视觉色调，营造静谧高级的文艺氛围。场地结构化划分爱意影像长廊、艺术装置区、奢品陈列区、心意互动厅与光影回廊五大叙事展区，融合摄影、纤维艺术与光影装置多维呈现情感美学，并集中展出各大奢侈品牌七夕限定皮具、珠宝、香氛系列，实现线上奢品内容场景的实体落地。
+活动期开设手写寄语互动、全域打卡兑礼等体验玩法，以预约制入场把控高端体验质感，并邀请艺人、时尚KOL参与沙龙分享。依托巨富长洋房的稀缺场景优势，项目以沉浸式文艺氛围激发小红书、抖音UGC自发传播，打通线上内容运营与线下实景体验，精准触达高净值客群与时尚圈层，强化天猫奢品高端礼赠平台定位，实现品牌心智塑造与七夕限定货品的双线营销转化。</p>
+      <div class="meta">上海 · 天猫 · 08-15~08-19</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Tmall-Luxury-Qixi-Immersive-Art-Exhibition-Shanghai-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/3ceea3f45f1a4417aec3b4e91772a29b.jpg" alt="法国娇兰天空之境蓝调香水快闪" loading="lazy">
+      <h2>法国娇兰天空之境蓝调香水快闪</h2>
+      <p class="description">本项目以传奇香作蓝调淡香精（L&#x27;HEURE BLEUE）为核心，延续娇兰「探寻香水的尽头」内容主线，选址西岸漩心流线型螺旋建筑，打造蓝调暮色沉浸式香氛秘境。
+空间整体运用渐变深海蓝与雾灰基调，铺陈成片鸢尾花艺，以巨型蓝调香水瓶艺术装置作为视觉锚点，精准复刻巴黎黄昏昼夜交替的蓝调时刻。制作层面，项目构建灵感影像长廊、三大香调感官体验舱、一对一专业品香区及主题打卡区的复合动线：影像展区回溯 1912 年蓝调时光创作起源，深度解读鸢尾根茎漫长萃取工艺；感官舱依次呈现天空之息、鸢尾香蕴、香草芬芳，访客可沉浸式嗅闻原料与成品香韵差异，近距离体验全新蓝调淡香精通透柔润的香调层次。
+历史维度上，蓝调时光逾百年的创作谱系与娇兰香水世家的匠心美学在此被转译为可感知的空间叙事，赋予新品首发以深厚的品牌文化背书。活动期内，开幕明星盛典集结品牌代言人杨洋、王鹤棣、章若楠到场引爆流量，公众通过娇兰官方小程序预约入场，全域打卡机制驱动访客完整体验动线并领取主题周边与香氛小样；依托西岸滨江地标建筑的视觉优势，大量氛围感出片场景天然适配社交平台 UGC 自传播，实现艺术化嗅觉体验与新品市场首发声量的同步引爆。</p>
+      <div class="meta">上海 · Guerlain法国娇兰 · 08-15~08-19</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Guerlain-Blue-Hour-Immersive-Fragrance-Sanctuary-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/d908dbb597a3439ab8648fba32cdfc8d.jpg" alt="PUMA 品牌档案中心" loading="lazy">
+      <h2>PUMA 品牌档案中心</h2>
+      <p class="description">本项目以 &quot;不驯之城&quot; 为叙事核心，是 PUMA 跨越 78 年品牌设计档案的一次大型沉浸式重构，核心商业目标聚焦薄底鞋家族新品矩阵的市场声量释放。
+空间整体采用冷调工业极简语言，以巨型立体美洲狮装置作为全场主视觉地标，串联先锋档案、赛道传奇、千禧新生、SUEDE 街区四大主题展区，并配套凌感片场、纯纯享电台两大代言人专属互动空间及 PUMA GIRL 穿搭体验区。制作层面，近百件海外收藏家珍稀古董鞋款的跨境陈列、F1 赛车实景装置的落地、街头涂鸦场景的还原与录音室沉浸式声效系统的搭建，共同构成高复杂度的展陈工程体系。
+历史维度上，展览系统梳理 PUMA CAT 标识迭代史及田径、足球、赛车经典产品线，将品牌运动基因与亚文化脉络转化为可感知的空间叙事。活动期内，张凌赫、单依纯出席开幕引爆明星流量，官方小程序预约制保障到场质量，全域打卡解锁限定周边的机制驱动访客完整体验动线；极具辨识度的巨型装置与分区场景天然适配小红书、抖音 UGC 自传播，实现经典档案文化科普、新品展示与圈层打卡的闭环，最终夯实 PUMA 复古都市潮流定位，助推 Rollcat、H‑Street 等薄底鞋款破圈。</p>
+      <div class="meta">上海 · PUMA 彪马 · 08-15~08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/PUMA-Untamed-City-Archive-Exhibition-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/ce1d0127308748bda2ae484cb287fa0a.jpg" alt="《疯狂动物城》上映十周年城市户外主题快闪" loading="lazy">
+      <h2>《疯狂动物城》上映十周年城市户外主题快闪</h2>
+      <p class="description">本项目为迪士尼《疯狂动物城》上映十周年城市户外主题快闪，选址百年梧桐街区愚园路草坪空间，以还原电影经典名场面为核心，串联十周年情怀回顾与续作前瞻内容。场地融合红砖建筑与开放式草坪的街区肌理，以暖黄、冰蓝两大视觉色调明确区分动物城城区与冰川镇两大世界观场景，实现从城市语境到电影叙事的自然过渡。
+制作层面，空间划分为电影场景打卡区、十周年时光展区、官方限定商品商店三大板块：打卡区设立巨型甜甜圈地标与闪电跑车装置，布置礼服版朱迪、尼克、豹警官、大先生等立体人物立牌，以高辨识度户外装置构建沉浸式名场面；时光长廊展出原画手稿与角色设定资料，系统梳理 IP 十年成长历程，并首次释放《疯狂动物城 2》全新剧情视觉素材；商店发售上海城市限定徽章、毛绒玩偶、文具及潮流文创等独家周边。
+历史维度上，项目以十周年为时间锚点，将动画 IP 的文化积淀转化为可触摸的城市公共文化事件。活动期内，集章打卡与扭蛋机互动游戏驱动访客完整体验动线，完成全域打卡可领取限定透卡礼品，人偶定时巡游进一步强化现场沉浸感与亲子互动；依托愚园路城市漫步的自然客流，项目精准覆盖年轻粉丝、亲子家庭与二次元爱好者，高辨识度户外装置天然激发小红书、抖音 UGC 自传播，实现经典动画情怀唤醒、十周年 IP 热度攀升与衍生商品销售转化的三重闭环。</p>
+      <div class="meta">上海 · 08-14~09-13</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Disney-Zootopia-10th-Anniversary-Urban-Outdoor-Pop-Up-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/16b50d44ed154117a63f99ca34a497af.jpg" alt="TAMBURINS「未来归航」艺术香氛快" loading="lazy">
+      <h2>TAMBURINS「未来归航」艺术香氛快</h2>
+      <p class="description">TAMBURINS城市大型艺术香氛快闪以「The Future Returned 未来归航」为核心叙事，是品牌融合先锋艺术与嗅觉美学的创新性线下落地项目。
+项目在空间设计与制作上极具辨识度，整体采用高饱和正红绒面地坪奠定高级热烈的视觉基调，以13米仿生机械巨型腊肠犬SUNSHINE为核心地标，通过动态机械结构实现躯体呼吸起伏、鼻尖微动等特效，打造虚实交融的沉浸式艺术场景。整体空间科学划分为梦境香氛长廊、一对一沉浸式品香区、AI互动影像厅与全线产品陈列区四大功能板块，全方位展示SUNSHINE阳光香水、PUPPY爱犬香作两大全新核心香型及品牌全系香氛单品，并配备专业调香师提供专属品鉴服务，深化用户嗅觉体验。活动期间，品牌打造AI影像互动、全域打卡兑礼、消费解锁限定周边等多元玩法，多处专属取景机位适配潮流创作。
+项目依托淮海路沿街橱窗的天然曝光优势，以极具话题性的巨型萌宠装置为传播抓手，精准触达艺术爱好者、香氛圈层及都市年轻群体，持续激发小红书、抖音平台UGC自发传播。本次快闪不仅落地了品牌先锋浪漫的美学理念，更高效放大新品市场声量，进一步夯实TAMBURINS高端艺术香氛的专属品牌定位。</p>
+      <div class="meta">上海 · 08-14~09-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Tamburins-Sunshine-Limited-Time-Space-Shanghai-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/5a50c2704cfa4482bd6ad89e7de71043.jpg" alt="海蓝之谜「深海奇迹夜境」体验空间（杭州）" loading="lazy">
+      <h2>海蓝之谜「深海奇迹夜境」体验空间（杭州）</h2>
+      <p class="description">海蓝之谜「深海奇迹夜境」体验空间于2026年8月14日至8月23日限时登陆杭州湖滨银泰in77广场（Apple西湖门口）。本次快闪以“奇迹前夜”为核心概念，将品牌50年专研的细胞生物科技与夜间修护理念深度融合，打造了一场沉浸式的夜愈焕新之旅。现场不仅同步展示了奇迹晚霜等明星产品，还融合了艺术装置打卡、专业护肤讲解与专属伴手礼，是杭州近期极具高级感与氛围感的美妆打卡地。
+现场空间以深邃的蓝白星空色调为主视觉，完美还原了深海的静谧与神秘。外部橱窗采用了极具巧思的云朵造型搭配动态星空屏幕，能模拟日夜交替的天幕变化，傍晚时分云层还会动态发光，仿佛误入夜间梦境。内部则精心打造了奇迹入梦、循迹深海、夜愈时刻、奇迹之源、愈颜新生五个沉浸式打卡区。其中“奇迹之源”被巨大的奇迹晚霜装置与蓝色星空包裹，视觉震撼；而“夜愈时刻”的沙发区则搭配了“奇迹，总在夜晚悄然发生”的治愈语录，随手一拍就能定格充满故事感的高光大片。
+逛展流程非常顺畅且充满仪式感。在门口扫码即可预约“奇迹前夜”快闪，每小时各有一场。进入空间后，工作人员会全程引导并帮忙拍照，即使单人前往也完全不用担心。在循迹深海区，可以深度了解奇迹晚霜背后的夜间生物热能科技；在愈颜新生区，能亲手试用产品，感受其奢润质地与快速吸收的肤感。完成所有打卡互动后，还能领取LAMER限定相簿和面霜造型限定金属钥匙扣作为伴手礼。此外，傍晚还有专属的入夜仪式，伴随着小提琴演奏与舞者翩翩起舞，灯光慢慢切换，氛围感直接拉满。
+本次“深海奇迹夜境”是海蓝之谜在夜间护肤场景化营销上的一次创新突破，标志着品牌从单一的产品展示向“沉浸式感官体验”的全面转型。通过将深海科技与星空艺术美学结合，海蓝之谜不仅将奇迹晚霜从“护肤单品”升级为“夜间自我疗愈的情感载体”，更传递了“在奇迹发生前的夜晚，悉心准备自己”的品牌态度。这种将高端护肤、艺术装置与情绪价值深度融合的策展方式，也为美妆品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">杭州 · LAMER 海蓝之谜 · 08-14~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LAMER-DEEP-SEA-MIRACLE-NIGHTSCAPE-POPUP-HZ-2026-8-18" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/7b25e063bf9a4c0dbf0f2bd258ddfb5f.jpg" alt="「喧嚣之外」情绪沉浸式艺术展" loading="lazy">
+      <h2>「喧嚣之外」情绪沉浸式艺术展</h2>
+      <p class="description">本项目是聚焦当代都市情绪痛点打造的沉浸式疗愈艺术空间，立足当下年轻人高压、焦虑的生活现状，以艺术疗愈为核心内核，赋予城市公共空间全新的情绪治愈价值。
+项目在空间造型与视觉制作上极具巧思，摒弃繁杂设计，采用雾灰、浅青低饱和素雅主色调，搭配流畅曲面墙体、柔和漫射光影与虚实交错的镜面装置，隔绝城市喧嚣，构筑纯粹静谧的精神秘境。整体空间科学划分情绪叙事长廊、多感官沉浸体验舱、情绪释放互动区、静谧休憩打卡四大功能区域，融合影像、雕塑、声音多元艺术形式，具象化演绎焦虑、自愈、松弛等多元情绪，依托白噪音、光影氛围打造全方位感官疗愈体验。
+活动期间，项目设置情绪留言封存互动、全域打卡兑礼玩法，以治愈系文创礼品提升用户参与感与留存度。场地多处极简光影框景场景适配氛围感人像拍摄，精准贴合社交传播审美。项目面向都市青年与文艺爱好者，紧抓当代大众情绪共鸣痛点，以艺术疗愈为传播主线，凭借高颜值、高质感的沉浸式场景，持续激活小红书、抖音UGC自发传播，实现口碑裂变，成功在都市场景中打造出可供大众解压喘息、安顿自我的精神自留地。</p>
+      <div class="meta">上海 · 08-14~08-20</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Beyond-the-Noise-Emotionl-Immersive-Art-Exhibition-SH-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/7d3adb91b7324e5da0e67c799c6c2311.jpg" alt="CPB肌肤之钥「精雕美学中心」限时体验空间" loading="lazy">
+      <h2>CPB肌肤之钥「精雕美学中心」限时体验空间</h2>
+      <p class="description">CPB肌肤之钥「精雕美学中心」限时体验空间落地上海西岸中環，是品牌依托高端护肤美学与科研实力，为全新4D精雕抗老系列打造的沉浸式线下体验项目，承载着品牌深耕熟龄抗老赛道、升级高端用户体验的重要意义。
+项目空间造型与制作极具高级质感，以纯白与鎏金为核心基调，依托巨型木质网格穹顶建筑结构，打造通透精致的光影美学场景，兼具艺术质感与科技氛围。场内科学划分四大科技互动展区、精雕时光长廊、产品品鉴区及私享护理沙龙区，通过球形互动装置可视化拆解肌肤抗老科研原理，同时梳理品牌4D精雕系列迭代历史，完整陈列全线星品，并提供一对一肌肤咨询、产品试用及专属mini SPA奢护体验，搭配精致茶歇，打造全方位高端奢护体验。
+活动期内，品牌以高端定向邀约模式，面向VIP会员、媒体及美妆达人开放体验，开幕嘉宾助阵提升活动格调，全域体验打卡兑换定制护肤礼的机制提升用户参与度。场地专属穹顶光影机位适配社交出片需求，依托高端圈层人群的口碑分享与平台UGC传播，精准传递立体精雕抗老理念，有效撬动圈层种草热度，强势助推全新精雕面霜声量突围，进一步夯实CPB高端抗老标杆的品牌定位。</p>
+      <div class="meta">上海 · CPB肌肤之钥 · 08-13~08-24</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/CPB-Carving-Aesthetics-Center-Shanghai-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-10">
+      <img class="cover" src="https://res.onsiteclub.com/58b353176b7241018e99fcd6968d5088.jpg" alt="TOM FORD「欲感花园」限时快闪（深圳）" loading="lazy">
+      <h2>TOM FORD「欲感花园」限时快闪（深圳）</h2>
+      <p class="description">TOM FORD「欲感花园」限时快闪于2026年8月13日至8月23日登陆深圳湾万象城C区B1层钻石广场。本次快闪以“刺痛欢愉，爱不松绑”为核心，携手全新七夕限定 TF 荆刺玫瑰 系列，打造了一座充满神秘张力与感官盛宴的浪漫秘境。现场不仅同步首发限定彩妆与香氛，还融合了四步互动打卡、专属特调饮品及会员限定礼遇，是深圳七夕期间极具高级感与暧昧氛围的美妆打卡地。
+现场空间以“解构禁忌之花”为灵感，将荆刺玫瑰的欲感美学与光影艺术深度融合。整体设计摒弃了传统展台的规整感，通过粉黑撞色、荆棘元素与迷离光影，营造出一种“致命危险”又让人向往的暧昧氛围。从步入花园的那一刻起，仿佛坠入一场感官极致盛宴，每一个角落都暗藏玄机，随手一拍就能定格充满故事感的高光大片，非常适合穿着深色系或带有玫瑰元素的服装前往，与空间氛围完美契合。
+现场互动玩法丰富且福利硬核，建议按照四步解锁流程体验：首先在展台周边感受男模邀约，步入欲感秘境；随后在产品陈列区试用 TF 荆刺玫瑰系列彩妆，体验轻柔雾光感与限定磨砂玫瑰烟粉的冷感魅力；接着参与限时问答或塔罗牌互动，定制专属香氛记忆；最后完成打卡并分享欲色，即可兑换惊喜礼遇。新会员可领取经典香氛1.5ML，老会员可领取旅行刷袋，现场还有七夕特调饮品等你赏味（数量有限，先到先得）。此外，现场还有限时满减活动及 POP UP 限定礼盒发售，购买正装产品更有机会获赠明星小卡。
+本次“欲感花园”是 TOM FORD 七夕限定系列在华南地区的独展，标志着品牌在节日营销中持续深化“感官与美学”的沉浸式体验路径。通过荆刺玫瑰的创意结合，TF 不仅将彩妆产品从“视觉单品”升级为“情感与欲望的载体”，更传递了“先听见自己，才能与世界共鸣”的女性自我表达态度。这种将高奢彩妆、艺术装置与感官体验深度融合的策展方式，也为高端美妆品牌在七夕等传统节日的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">深圳 · TOM FORD · 08-13~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/TOM-FORD-DESIRE-GARDEN-POPUP-SZ-2026-8-18" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-11">
+      <img class="cover" src="https://res.onsiteclub.com/950452e2589f465da474405d6f2bb7c7.jpg" alt="Bobbi Brown「大橘底气场」限时快闪项目" loading="lazy">
+      <h2>Bobbi Brown「大橘底气场」限时快闪项目</h2>
+      <p class="description">Bobbi Brown落地上海西岸梦中心滨江广场的「大橘底气场」限时快闪，是品牌依托滨江户外场景、围绕全新升级橘子面霜打造的沉浸式美妆体验项目，突破传统室内美妆快闪局限，以自然通透的户外空间承载底妆产品体验，是美妆品牌场景化营销与生活化体验升级的重要实践。
+项目空间制作简约高级，以纯净米白为基底色调，搭配标志性巨型橘子面霜装置打造主题门头，贴合产品核心IP视觉，氛围感辨识度极强。场地科学划分入会签到区、底妆体验区、江景拍摄区、宠物互动区与产品礼遇售卖区五大功能板块，场景布局兼顾体验、打卡、互动与消费多重属性。活动期间，现场提供一对一肌肤诊断、全系列底妆实测体验与专业免费拍摄服务，同时设置入会领样、全域打卡兑礼、消费解锁限定福利等多元玩法，创新增设宠物互动专区，拓宽客群覆盖面。
+依托西岸滨江优越的户外景观资源，通透氛围感点位适配社交传播需求，线下沉浸式体验持续产出优质UGC内容，联动线上话题扩散传播，有效传递产品贴妆提亮的核心优势，强化品牌底气美学调性，实现新品声量引爆、用户心智渗透与线下消费转化的完整营销闭环。</p>
+      <div class="meta">上海 · BobbiBrown 芭比波朗 · 08-13~08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Bobbi-Brown-Orange-Base-Aura-pop-up-Shanghai-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-12">
+      <img class="cover" src="https://res.onsiteclub.com/61f863a5634748d1935ea718e1646f62.jpg" alt="港汇恒隆 × Tatler China 夏日鸡尾酒户外街区" loading="lazy">
+      <h2>港汇恒隆 × Tatler China 夏日鸡尾酒户外街区</h2>
+      <p class="description">本项目为港汇恒隆携手Tatler China打造的都市夏日户外主题街区，立足城市夜间消费升级的市场背景，以滨海微醺夏日氛围为核心，创新拓展商圈户外沉浸式体验业态。项目空间造型与场景制作极具夏日辨识度，整体采用暖橙落日主色调，搭配标志性橙色弧形吧台与帆船遮阳装置，在徐家汇核心商圈打造开放式滨海风微醺乐园，构建松弛治愈的城市夏夜视觉地标。
+场地科学划分八大亚洲客座酒吧专区、落日打卡区、美食点位与舞台演艺区，集结多家亚洲50佳标杆酒吧主理团队限时驻场，融合热带食材与可持续调酒技法，推出城市限定「梧桐区特调」及多款创意酒品，呈现多元亚洲风味调酒文化。
+活动期内，项目联动「66 放肆一夏音乐节」，以现场live演艺搭配调酒品鉴，打造复合型夏夜消费体验；同时设置打卡集章兑券机制，提升用户互动粘性。依托市中心核心商圈的客流优势，项目精准覆盖都市青年、鸡尾酒爱好者与潮流KOL，凭借高氛围感落日场景适配社交创作，持续激活小红书、抖音UGC传播裂变，有效丰富商场夏日夜间业态，塑造松弛新潮的都市夏日社交场景，实现场景体验、文化传播与消费转化的双向赋能。</p>
+      <div class="meta">上海 · 08-13~08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Grand-Gateway-66-X-Tatler-China-Cocktail-Outdoor-Block-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-13">
+      <img class="cover" src="https://res.onsiteclub.com/bdd2049e42514caeba90c6bb8bc0b358.jpg" alt="希尔顿「和花｜魔法花花 开启花花盲盒」限时体验空间" loading="lazy">
+      <h2>希尔顿「和花｜魔法花花 开启花花盲盒」限时体验空间</h2>
+      <p class="description">希尔顿 X 大熊猫和花 滨江主题快闪，依托品牌「花样宠你，就住希尔顿」年度营销主题，携手顶流国宝IP大熊猫和花落地城市文旅联动活动，是希尔顿年轻化、场景化、亲民化品牌升级的重要实践，兼具文旅融合与品牌破圈的双重意义。
+项目空间造型与场景制作主打治愈萌趣风格，以青绿与暖白柔和色调为主，搭配核心巨型花花立体雕塑，依托西岸滨江景观优势，打造城市滨江专属治愈系视觉场景。场地规整划分签到乐园、故事长廊、盲盒互动区、滨江取景区与周边售卖区五大板块，通过影像图文完整呈现双方IP联动历程，展示六款「宠你体验官」人物设定及人气魔法花花形象，同时陈列全套主题文创周边。
+活动期内，盲盒互动游戏、专属会员礼遇、主题客房推广等多元玩法，有效提升访客参与度与会员转化意愿。项目精准面向亲子家庭与旅行爱好者，依托西岸滨江优质文旅流量与和花治愈IP影响力，借助高颜值滨江框景场景激发社交平台UGC传播，以温暖松弛的体验氛围传递品牌好客内核，有效推广全国酒店主题活动，全面拉动品牌声量、会员沉淀与酒店预订转化。</p>
+      <div class="meta">上海 · 08-13~08-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Hilton-Pamper-You-in-Hilton-Annual-Campaign-SH-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-14">
+      <img class="cover" src="https://res.onsiteclub.com/ac494ec5b9a74db28b5f662d49667a69.jpg" alt="MAC 魅可 X SKULLPANDA「万物生花，爱是永恒」限时快闪" loading="lazy">
+      <h2>MAC 魅可 X SKULLPANDA「万物生花，爱是永恒」限时快闪</h2>
+      <p class="description">MAC 魅可 ×SKULLPANDA「万物生花，爱是永恒」限时快闪
+MAC×SKULLPANDA 七夕联名快闪项目，为 MAC 携手泡泡玛特 SKULLPANDA 打造的七夕跨界联名快闪活动，立足七夕节日情感语境，以「爱，不设花期」为核心主张，融合先锋彩妆美学与「花的四幕戏」潮玩艺术，实现美妆潮流与艺术潮玩的跨界融合，是品牌借势节日节点破圈年轻化市场的重要营销实践。
+空间制作以暗调复古花艺为基底，红白繁花藤蔓交织点缀，搭配巨型尤雾弹唇膏、开放式气垫装置与两座大型 SKULLPANDA 艺术雕塑，依托西岸梦中心滨江工业风户外场地，构筑极具浪漫质感的开放式主题场景。场地分为联名展陈区、一对一彩妆体验区、繁花打卡区与限定售卖区四大板块，完整首发七夕限定礼盒及轻尤雾弹唇膏、24H 卷王气垫等核心新品，同步展示全套收藏级联名周边，并提供全色号试妆与专业七夕柔雾妆容定制服务。
+活动期间，全域打卡兑小样、阶梯消费解锁限定周边的玩法，有效提升用户体验深度与消费意愿。项目依托滨江优质客流，凭借彩妆与潮玩双重圈层属性吸引年轻群体与潮玩爱好者，依托高颜值主题场景持续催生小红书、抖音 UGC 传播，借七夕社交热度放大联名话题声量，高效完成新品曝光、圈层种草与线下零售转化。</p>
+      <div class="meta">上海 · MAC 魅可 · 08-12~08-17</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/MAC-X-POPMART-SKULLPANDA-POP-UP-SH-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-15">
+      <img class="cover" src="https://res.onsiteclub.com/f8e1430e78004c42adfbef14833f922e.jpg" alt="ONLY「赤境几何，自在先锋」万宁滨海快闪" loading="lazy">
+      <h2>ONLY「赤境几何，自在先锋」万宁滨海快闪</h2>
+      <p class="description">ONLY「赤境几何，自在先锋」万宁滨海快闪项目，以「赤境几何，自在先锋」为核心概念，顺应都市户外融合的时尚发展趋势，依托万宁独特的滨海地貌打造沉浸式线下体验场景，是品牌突破传统穿搭场景、塑造先锋女性时尚调性的重要市场布局。
+项目在空间造型与制作设计上极具辨识度，摒弃规整的传统设计，以红棕大地色系为主视觉，运用不规则斜面墙体、棱角艺术装置与镜面几何结构，将赤红砂砾质感与海岸线自然风貌巧妙融合，打造兼具荒野质感与高级先锋感的专属视觉场景。场地科学划分先锋成衣展陈、造型试穿、几何艺术打卡、滨海休憩四大功能区域，集中首发品牌秋冬先锋系列、丹宁主线及度假穿搭单品，提供全品类试穿服务，搭配主题特调饮品，构建穿搭体验与休闲社交一体的复合消费场景。
+活动期间，全域打卡兑换限定周边、专属消费礼遇等互动机制，有效提升用户参与积极性与消费转化率。项目精准依托日月湾年轻冲浪社群与度假客流，凭借独特的几何赤调场景打造海量出片机位，传递女性自由无界的先锋穿搭态度，夯实品牌都市与户外双向适配的时尚定位，高效实现秋冬新品曝光、圈层破圈与线下销售转化。</p>
+      <div class="meta">08-11~08-13</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/ONLY-COASTAL-POP-UP-STORE-WANNING-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-16">
+      <img class="cover" src="https://res.onsiteclub.com/28a71a294297470abe869b2b2afaa053.jpg" alt="The Ordinary 研度公式「成分实验室」快闪" loading="lazy">
+      <h2>The Ordinary 研度公式「成分实验室」快闪</h2>
+      <p class="description">The Ordinary 研度公式「成分实验室」快闪空间以「只为功效买单」为核心品牌主张，契合当下护肤市场理性消费、成分优先的发展趋势，是品牌弱化营销溢价、强化科研护肤属性的重点线下落地项目。
+整体空间制作延续品牌极简实验室视觉体系，采用冷调灰白工业风搭建开放式沉浸式体验场景，以巨型透明试剂瓶主装置复刻多伦多研发实验室氛围，将专业成分科研场景下沉至城市潮流街区。场地分为成分溯源长廊、肌肤诊断体验站、配方互动实验区、光影打卡区及礼品兑换区五大功能板块，系统陈列品牌王牌精华全线单品，可视化拆解烟酰胺、果酸、维A醇等核心成分配比与护肤原理，并搭配一对一专业肤质检测与定制护肤方案服务，让消费者直观理解配方针对各类肌肤问题的修护逻辑。
+活动期内，品牌通过配方解谜闯关、全域集章打卡等互动玩法提升用户参与深度，访客完成体验即可兑换护肤小样与定制周边。依托静安寺永源路潮流街区的年轻客流优势，极简实验室风格的干净框景机位适配社交出片需求，精准触达成分党与理性护肤人群，依托小红书、抖音UGC传播持续扩散品牌理念，有效传递品牌专注真实功效、拒绝过度营销的核心调性，完成品牌科研形象深化与用户心智沉淀。</p>
+      <div class="meta">上海 · 08-10~09-06</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/The-Ordinary-Ingredients-Lab-Pop-Up-Shanghai2-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-17">
+      <img class="cover" src="https://res.onsiteclub.com/c13f26bd4e5e4785a53e394ef51bd803.jpg" alt="上海杜木之香快闪" loading="lazy">
+      <h2>上海杜木之香快闪</h2>
+      <p class="description">本土香氛品牌杜木之香 DOMINURE 上海限时快闪，是品牌依托城市街巷人文氛围、落地线下美学体验的重要尝试，旨在以轻量化、沉浸式空间传递本土木质调香氛的极简松弛理念。
+项目根植安福路梧桐街巷的都市文艺基底，在空间造型与制作上摒弃繁复装饰，以原生木材质肌理搭配柔和柔光氛围，打造静谧纯粹的嗅觉实验室场景，高度贴合品牌简约素净的美学调性。场内科学划分主题试香区、品牌故事展区与限定产品陈列区，完整展示品牌全线香水、香薰蜡烛系列，首发多款专属快闪香氛礼盒，为访客提供全香型自由品鉴体验，深度诠释品牌核心木质调香韵表达。
+活动周期自8月10日至8月25日，期间设置气味情绪互动体验、小样申领、定制香氛卡片等趣味玩法，丰富用户沉浸式闻香体验。项目依托安福路成熟街区流量与文艺氛围，精准吸引香氛爱好者与都市文艺青年到访打卡，凭借精致治愈的空间质感形成街区特色视觉点位，依托线下访客自发分享完成社交平台传播，高效实现品牌文化输出、新品曝光与圈层种草，助力本土香氛美学完成市场声量沉淀。</p>
+      <div class="meta">上海 · 08-10~08-25</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/DOMINURE-POP-UP-STORE-SHANGHAI-2026-8-17" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-08-19
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
