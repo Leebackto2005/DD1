@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-08-20</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-08-20 周四</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">5</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/f6f461c95add4314b091d9bd92e69310.jpg" alt="天梭「小美人系列」主题快闪店（成都）" loading="lazy">
+      <h2>天梭「小美人系列」主题快闪店（成都）</h2>
+      <p class="description">天梭「小美人系列」主题快闪店于2026年8月17日至8月23日在成都万象城中心广场AD馆连廊下方举行。本次快闪以&quot;熊猫和花&quot;定制款腕表为核心展品，由天梭全球代言人刘亦菲出席站台。活动选址万象城，与成都城市文化深度绑定，借助世运会热度与代言人效应，打造一场融合在地文化、环保理念与制表工艺的沉浸式品牌体验。
+不同于以往小美人系列快闪的粉色花瓣浪漫风格，此次成都站整体以红色为主色调，视觉辨识度高。空间装置大量使用废弃竹材搭建，将环保理念与中式韵味巧妙结合。现场特别融入熊猫元素，呼应成都&quot;熊猫之城&quot;的城市名片，红色建筑体量与竹材肌理在万象城现代建筑背景下形成鲜明对比，出片效果突出。
+现场核心展品为熊猫和花定制款腕表，将大熊猫元素与小美人系列经典设计语言相结合。据发布信息来看，活动遵循&quot;更多惊喜现场解锁&quot;的思路，具体互动环节和参与方式在官方笔记中留有悬念，吸引到场后逐步释放。活动期间8月19日刘亦菲亲临现场，引发大量粉丝聚集，热度较高。
+天梭小美人系列（Bellissima）是天梭专为女性打造的标志性产品线，设计灵感源自罗马建筑，29毫米圆盘搭配罗马数字时标和蓝色指针，表冠镶嵌弧形宝石，兼具意式风情与现代感。
+天梭与成都的快闪渊源可以追溯到2022年，彼时&quot;发光吧小美人&quot;限时体验店曾空降春熙路红星路广场，以粉色悬浮花瓣墙为视觉核心，成为当年成都现象级快闪打卡点。从2022年的&quot;浪漫绽放&quot;到2026年的&quot;竹材环保+熊猫在地&quot;，快闪策略完成了从&quot;女性社交打卡&quot;到&quot;城市文化共创&quot;的迭代升级。 全球代言人刘亦菲与天梭的合作也已持续多年，她佩戴小美人系列的形象深入人心，消费者反馈中&quot;气质感强&quot;&quot;百搭不挑场合&quot;是该系列最被认可的标签。</p>
+      <div class="meta">成都 · TISSOT 天梭 · 08-17~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/TISSOT-LITTLE-BEAUTY-POPUP-CD-2026-8-19" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/93f3f45080544502abb6f925696197cb.jpg" alt="GOODBAI Minuet「踮踮舞房」限时快闪" loading="lazy">
+      <h2>GOODBAI Minuet「踮踮舞房」限时快闪</h2>
+      <p class="description">GOODBAI Minuet「踮踮舞房」限时快闪项目落地上海徐汇梧桐街区，于8月15日至9月15日打造Minuet「踮踮舞房」主题空间，是品牌融合芭蕾美学、偶像联名与城市街巷氛围的创新线下落地，进一步丰富品牌温柔松弛的潮流调性。项目在空间造型与场景制作上极具氛围感，以芭蕾练习室为核心概念，采用奶白基底搭配雾蓝柔纱帘幕，辅以经典芭蕾把杆装置，将小步舞曲的优雅韵律融入街区小店场景，营造轻盈治愈的沉浸式体验氛围。
+场地科学划分主题陈列区、上脚试穿区与打卡互动区，完整展出Minuet踮踮鞋星河银、奶油黄等四款基础配色，同步首发ITZY申留真联名猫爪蓝限定鞋款，完整呈现猫爪后跟设计、联名小卡等专属周边。活动期间，访客可沉浸式体验鞋款缎面材质与实穿脚感，消费即可解锁限定猫咪相框拍照打印权益，强化专属线下记忆。项目依托新乐路浓厚的城市漫步客流与文艺街区气质，精准覆盖潮流爱好者与粉丝群体，以高颜值芭蕾风场景持续产出社交UGC内容，通过沉浸式试穿体验、联名话题热度与街区打卡传播，实现新品曝光、粉丝种草与线下零售转化，打造梧桐街区标志性潮流打卡点位。</p>
+      <div class="meta">上海 · 08-15~09-15</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/GOODBAI-Minuet-Dance-Studio-POP-UP-STORE-SH-2026-8-19" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/69b4309112ce44b99fbe387f47a1f537.jpg" alt="Bottega Veneta《爱意有迹》艺术共创工作坊" loading="lazy">
+      <h2>Bottega Veneta《爱意有迹》艺术共创工作坊</h2>
+      <p class="description">Bottega Veneta《爱意有迹》七夕艺术共创项目是Bottega Veneta葆蝶家于七夕节点落地的高端艺术企划，携手艺术家郑雪在上海油罐艺术中心打造《爱意有迹》参与式艺术工作坊，展期为8月15日至8月23日。
+项目深度溯源品牌标志性Intrecciato编织匠艺，突破传统七夕情爱叙事，将编织工艺转化为承载亲情、友情与日常温情的情感载体，以艺术视角重塑品牌温柔内敛的奢艺调性。在空间制作与造型上，项目摒弃商业化陈列布局，采用竹篾、麻绳、苎麻等原生自然材质搭建大型编织艺术装置，构筑质朴纯粹、开阔松弛的公共艺术场域，弱化商业属性、强化人文艺术内核。场地分为主装置展区与手工共创体验区，线下访客可书写爱意寄语并亲手编织融入集体作品，同步收录品牌大使舒淇、杨祐宁的情感感悟，线上用户亦可通过小程序远程参与寄语投稿。活动期内的全民共创模式打通线上线下参与链路，
+所有公众素材将由艺术家二次打磨，成品于十一月上海艺术周公开展出。依托艺术中心的圈层影响力，项目以沉浸式手工共创替代传统营销形式，借大众参与内容持续发酵社交传播，有效实现品牌编织匠艺科普、节日情感营销与艺术圈层破圈，塑造品牌低调高级的文化艺术形象。</p>
+      <div class="meta">上海 · Bottega Veneta 葆蝶家 · 08-15~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Bottega-Veneta-Traces-of-Love-Workshop-Shanghai-2026-8-19" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/2205d49f491542afaac0ef5da4971d2b.jpg" alt="六福珠宝「盛放紫荆红」主题巡展（成都）" loading="lazy">
+      <h2>六福珠宝「盛放紫荆红」主题巡展（成都）</h2>
+      <p class="description">六福珠宝「盛放紫荆红」主题巡展于2026年8月14日至8月23日在成都龙湖西宸天街一楼中庭举行，这是该巡展的全国首站。活动恰逢六福珠宝35周年庆典，以&quot;焕彩35载 为爱盛放&quot;为主题，将品牌 anniversary 与七夕节点巧妙叠加，兼具品牌展示与情感消费的双重属性。
+展览以&quot;冰·钻光影金&quot;巨型黄钻为视觉核心，整体采用紫荆红与金色的配色方案，营造出高级复古的空间基调。现场设置了沉浸式光影装置，紫荆花瓣元素贯穿整个展陈动线，在商场中庭构建出一个兼具珠宝质感与花卉意象的花境空间。
+巡展以珠宝赏鉴与七夕选购为主要动线，现场可近距离欣赏六福珠宝典藏高珠作品。8月16日，2013届香港小姐冠军陈凯琳亲临现场与品牌共庆35周年，现场派送了百份足金好礼。
+六福珠宝成立于1991年，诞生于香港，与陈凯琳同岁——这一巧合也被品牌巧妙纳入了成都站的叙事中，&quot;因后冠加冕，结缘于香江之畔；以同岁之约，重逢在芙蓉城间&quot;。从港资珠宝品牌到全国性连锁，六福走过了三十五年，此次巡展选择在成都而非一线城市首展，也折射出品牌对新一线消费市场的重视。&quot;紫荆红&quot;这一命名本身即是对香港（紫荆花为香港区花）与内地文化联结的隐喻，在此时此地被重新激活。</p>
+      <div class="meta">成都 · 六福珠宝 · 08-14~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LUKFOOK-JEWELLERY-BAUHINIA-POPUP-CD-2026-8-19" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/3b2e6aa8fb9548dc8f75c0967102ab45.jpg" alt="POP JOY X 奇先生妙小姐「五彩农场」主题快闪项目" loading="lazy">
+      <h2>POP JOY X 奇先生妙小姐「五彩农场」主题快闪项目</h2>
+      <p class="description">POP JOY×奇先生妙小姐「五彩农场」主题快闪项目，本次POP JOY携手经典绘本IP奇先生妙小姐打造的「五彩农场」限时快闪，于8月12日至8月31日落地上海五角场合生汇，是品牌依托经典童年IP情怀、深耕亲子潮玩赛道的场景化营销项目，实现绘本IP从平面内容向沉浸式线下商业场景的创新转化。
+项目在空间造型与制作上主打多巴胺田园风格，采用高饱和明亮配色搭建沉浸式农场氛围，还原绘本童趣内核，打造农场候车站、小菜园等六大主题点位，搭配巨型IP角色装置，兼顾亲子家庭与年轻粉丝的打卡审美需求。场地规整划分主题打卡区、限定周边贩售区与趣味游戏互动区，首发农场盲盒、毛绒挂饰、文创周边等多款独家新品，完善潮玩消费体验。活动期间，套圈闯关、模拟农场体验、周末IP巡游等丰富互动玩法提升现场趣味性，访客可通过任务打卡、社交发帖、阶梯消费解锁限定周边与专属礼品。
+项目深度依托奇先生妙小姐的国民童年情怀号召力，将绘本故事转化为可逛、可玩、可购的多元体验场景，借助商场核心客流优势，依托高颜值童趣场景持续激发小红书、抖音UGC社交裂变，有效完成新品发售、粉丝沉淀与品牌热度提升，打造商圈高人气亲子潮玩标杆点位。</p>
+      <div class="meta">上海 · 08-12~08-31</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Mr-Qi-and-Miss-Qiao-Colorful-Farm-POP-UP-STORE-SH-2026-8-19" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-08-20
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
