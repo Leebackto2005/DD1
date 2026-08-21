@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-08-21</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-08-21 周五</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">6</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/fda6ee27234b47409406a2cd1454fd22.jpg" alt="【Leather在现场】捷途纵横 X 得物" loading="lazy">
+      <h2>【Leather在现场】捷途纵横 X 得物</h2>
+      <div class="meta">成都 · 捷途JETOUR · 08-20~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-JETOUR-X-DU-CHENGDU-2026-8-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/a1ab45640f8f4431bf1be222ac82fa1c.jpg" alt="【Leather在现场】无畏契约手瓦一周年玩家派对" loading="lazy">
+      <h2>【Leather在现场】无畏契约手瓦一周年玩家派对</h2>
+      <div class="meta">成都 · 无畏契约 · 08-20</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-VALORANT-1st-Annasinary-Party-CHENGDU-2026-8-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/9b39636c5c564c359bdd47192e29bb37.jpg" alt="【Leather在现场】首发春熙 奕见倾心 奕境X9七夕礼遇暨锦江浪漫消费季" loading="lazy">
+      <h2>【Leather在现场】首发春熙 奕见倾心 奕境X9七夕礼遇暨锦江浪漫消费季</h2>
+      <div class="meta">成都 · 奕境汽车 EPICALND · 08-18~08-20</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-EPICLAND-X9-STREET-SHOW-CHENGDU-2026-8-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/399554e3d5df4e0b844914aa2ccab661.jpg" alt="PHORM「非正式叛逆」主题快闪店（长沙）" loading="lazy">
+      <h2>PHORM「非正式叛逆」主题快闪店（长沙）</h2>
+      <p class="description">PHORM「非正式叛逆」主题快闪店于2026年8月14日至8月30日限时登陆长沙万象城一楼中庭。本次快闪以展现品牌率性叛逆姿态、塑造现代酷女孩内核为核心，同步呈现品牌2026夏季系列。现场不仅融合了艺术装置打卡与互动抽奖，还特邀了七夕超前一日店长亲临现场，是长沙近期极具格调与潮流感的原创设计师品牌打卡地。
+现场空间完美契合了PHORM作为原创设计师品牌的先锋气质，将“非正式叛逆”的潮流态度通过视觉与陈列具象化。整体设计摒弃了传统零售店的规整感，通过独特的面料质感、铆钉与格纹等经典元素的碰撞，营造出一种小众且充满张力的氛围。空间内设置了多个适合拍照的打卡点位，光影与服装廓形交织，随手一拍就能定格充满街头艺术感与高级感的大片，非常适合穿着休闲、酷飒或带有设计感的衣服前往，与空间氛围完美契合。
+逛展互动玩法丰富且福利满满。现场可以直接试穿体验PHORM的夏季新品，感受面料与设计的力量。参与打卡并拍摄图片发布小红书笔记，带上相关话题即可参与抽奖，赢取品牌限定好礼。此外，8月15日13:00至16:00，特邀七夕超前一日店长river. 空降现场，身着格纹铆钉衬衫与粉丝近距离互动、合影，解锁门店限定身份，开启心动甜蜜时刻，喜欢明星店长的粉丝千万不要错过。
+本次快闪是PHORM在核心商圈进行线下体验营销的重要一步，标志着原创设计师品牌从线上种草向线下沉浸式体验的深化转型。通过将“叛逆与酷飒”的品牌精神转化为实体空间，PHORM不仅降低了大众对小众设计师品牌的认知门槛，更让快闪店本身成为了一个表达独立态度的社交据点。这种“产品+打卡+明星互动”的轻量化跨界路径，不仅增强了品牌与年轻消费群体之间的情感连接，也为国内原创设计师品牌在商圈的线下推广与本土化融合提供了极具参考价值的范本。</p>
+      <div class="meta">长沙 · 08-14~08-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/PHORM-INFORMAL-REBELLION-POPUP-CS-2026-8-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/bd6bf4601d8640ec8548432aab56cf68.jpg" alt="迪奥小姐香水 · 爱意香系高订工坊（长沙）" loading="lazy">
+      <h2>迪奥小姐香水 · 爱意香系高订工坊（长沙）</h2>
+      <p class="description">迪奥小姐香水 · 爱意香系高订工坊于2026年8月14日至8月20日限时登陆长沙IFS百盛L1层（Moncler外）。本次快闪以“爱意香系”为核心概念，将迪奥小姐经典香氛与高订工坊的精致美学深度融合，打造了一场沉浸式的浪漫香氛之旅。现场不仅同步展示了Miss Dior全系列香水，还融合了艺术装置打卡、专属礼赠与互动体验，是长沙七夕期间极具高级感与仪式感的美妆打卡地。
+现场空间仿佛让人掉进了Miss Dior的香水瓶里，满眼都是高级感满满的高订元素。整体设计以粉色梦境为主视觉，搭配光影交错的艺术装置，每个角落都在致敬经典香氛大片。无论是香水瓶造型的陈列装置，还是充满浪漫气息的粉色花丛，都营造出一种电影女主般的即视感。空间摒弃了传统展台的生硬，让香气在空气中流动，光影在空间里交织，随手一拍就能定格充满故事感的高光大片，非常适合穿着浅色系或法式复古风格的衣服前往，与空间氛围完美契合。
+逛展流程充满仪式感且福利满满。入场后可以在场内收集满5个小拼图，拍照片发布小红书即可领取《迪奥小姐》动画电影MV彩册。现场还能近距离试闻迪奥小姐全系列4款香水，感受每一款独特的香气魅力。出口右手边可以免费拍摄迪奥小香风大头照，手伸到下方格子处还会喷出迪奥小姐香精款香水，互动感十足。此外，消费满额还可以体验DIY香水蝴蝶结，现场白色咖啡亭还能点一杯联名限定咖啡。别忘了凭会员信息去迪奥门店，还能免费领取一份内含香水小样和粉底液小样的小粉袋礼物套装。
+本次“爱意香系高订工坊”是迪奥在七夕节点上的一次创新营销尝试，标志着品牌从单一的产品展示向“沉浸式感官体验”的全面转型。通过将高订香氛工艺与浪漫爱意结合，迪奥不仅将香水从“嗅觉单品”升级为“情感与记忆的载体”，更传递了“为了爱你会做些什么”的深情品牌态度。这种将高端香氛、艺术装置与情绪价值深度融合的策展方式，不仅增强了品牌与年轻消费者之间的情感连接，也为奢侈美妆品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">长沙 · DIOR 迪奥 · 08-14~08-20</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/MISS-DIOR-PERFUME-POPUP-CS-2026-8-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/5158a41464f64ba980456176baf8a3f1.jpg" alt="优衣库合作系列快闪（长沙）" loading="lazy">
+      <h2>优衣库合作系列快闪（长沙）</h2>
+      <p class="description">优衣库漫画UT集英社创立100周年合作系列快闪于2026年8月14日至8月20日限时登陆长沙IFS国金中心（与长沙平和堂店同步开启）。本次快闪以重温热血青春与二次元情怀为核心，现场囊括了《间谍过家家》《游戏王》《BLEACH死神》《黑色四叶草》等超多本命IP。除了展示全套黑白漫画原画印花UT，现场还融合了互动打卡、Coser巡游与独家周边派发，是长沙近期极具情怀与趣味性的潮流打卡地。
+现场空间以漫画原画与热血青春为视觉基调，打造了极具二次元氛围的限定主题陈列。超人气IP投票墙是现场的视觉核心，让漫迷们为自己喜爱的角色和IP投出神圣一票；购物纸袋专属创作台则提供了DIY互动的空间，将日常购物袋变成展示个性的画布。整体设计摒弃了传统门店的单调感，通过原画立牌与漫画元素的巧妙交织，营造出轻松随性的街头派对氛围，非常适合穿着休闲或二次元风格衣服前往拍照。
+逛展互动玩法丰富且福利硬核。现场可以参与购物纸袋专属创作，打造属于自己的独一无二；在超人气IP投票墙为你喜欢的IP投票。8月14日至16日的13:00-17:00及18:00-20:00，还有Coser在现场巡游互动，可以和他们一起拍照合影。最重磅的是，在社交平台发布小红书打卡笔记，就有机会领取优衣库MANGA第三弹独家专属痛包（每天限量，先到先得，建议早点去排队拿号）。
+本次快闪是优衣库MANGA联名系列持续深化“IP+快消+线下体验”跨界联动的重要一环。通过集英社100周年这一重磅节点，优衣库成功将经典漫画IP与日常服饰结合，打破了传统服装零售的边界。这种“产品+打卡+粉丝互动”的轻量化快闪模式，不仅精准触达了庞大的二次元与年轻消费群体，增强了品牌与粉丝之间的情感连接，也为快消服饰品牌在核心商圈的线下体验创新与社群运营提供了极具参考价值的范本。</p>
+      <div class="meta">长沙 · UNIQLO优衣库 · 08-14~08-20</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/UNIQLO-COOPERATION-POPUP-CS-2026-8-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-08-21
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
