@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-08-22</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-08-22 周六</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">4</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/37039475d4684c73913f7c62a2c9b65c.jpg" alt="FOREVERMARK永恒印记心有所“蜀”快闪空间（成都）" loading="lazy">
+      <h2>FOREVERMARK永恒印记心有所“蜀”快闪空间（成都）</h2>
+      <p class="description">FOREVERMARK 永恒印记「心有所蜀」快闪空间于2026年8月21日在成都 IFS LG2层西侧中庭正式启幕。本次快闪以“经纬织光，心有所蜀”为核心概念，将蓉城的人文底蕴与天然钻光美学深度融合，构筑了一座沉浸式的雅致品鉴空间。现场不仅同步展示了永恒印记的经典美钻系列，还融合了光影艺术与互动打卡，是成都近期极具高级感与浪漫气息的珠宝打卡地。
+现场空间以“经纬织光”为灵感，巧妙融合了蜀地文化元素与天然钻石的璀璨光芒。整体设计摒弃了传统珠宝展柜的厚重感，通过轻盈的线条、流动的光影与雅致的材质，营造出一种方寸之间华彩流转的梦幻氛围。空间内精心布置了沉浸式品鉴区与光影打卡装置，将美钻的永恒璀璨与蓉城的柔美气质交织，随手一拍就能定格充满高级感与故事感的大片，非常适合穿着浅色系或优雅风格的衣服前往，与空间氛围完美契合。
+逛展互动充满仪式感且福利满满。步入空间后，可以在沉浸式品鉴区近距离欣赏永恒印记的天然美钻，感受每一颗钻石的极致火彩与精湛工艺。现场还设置了专属的互动打卡环节，完成打卡并分享至社交平台，即可解锁品牌限定伴手礼或惊喜小样。此外，现场专业顾问可提供一对一的美钻品鉴与穿搭建议，无论你是想挑选七夕礼物，还是单纯想感受珠宝美学，都能在这里找到专属的浪漫体验。
+本次「心有所蜀」快闪是 FOREVERMARK 永恒印记在区域文化营销上的一次创新突破，标志着品牌从单一的产品展示向“沉浸式文化体验”的全面转型。通过将天然钻光美学与蓉城人文底蕴结合，永恒印记不仅将美钻从“奢华单品”升级为“情感与地域文化的载体”，更传递了“此刻即永恒”的品牌态度。这种将高端珠宝、在地文化与艺术装置深度融合的策展方式，不仅增强了品牌与本地消费者之间的情感连接，也为奢侈珠宝品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">成都 · 08-21</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/FOREVERMARK-HEART-BELONGS-TO-SOMEONE-POPUP-CD-2026-8-21" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/937893ad1af948a8aeecbb93fafd445e.jpg" alt="【成都车展】FREELANDER 品牌展位制作" loading="lazy">
+      <h2>【成都车展】FREELANDER 品牌展位制作</h2>
+      <p class="description">山野瀑布搬进展馆｜FREELANDER 神行者，一场刚柔并济的空间叙事
+2026年8月21日，第二十九届成都国际汽车博览会在成都开幕。 FREELANDER神行者首次以独立品牌展台登陆西部顶级车展。
+如果说全球首秀解决的是“品牌第一次如何亮相”的问题，那么成都车展展台需要回答的，则是另一个挑战性的命题：如何在展馆之内，将观众从钢筋水泥带到山水旷野，让观众于车展的喧嚣中，重拾自然的从容与自由。FREELANDER神行者给出的答案是——将一座山野瀑布“搬”进展馆。
+“科技豪华全地形 SUV”，是FREELANDER神行者 8的核心产品定位。
+但对于普通观众而言，它更像一个标签，而非一种可感知的生活方式。
+如何将其转化为展台空间里的具体语言，是此次创意需要解决痛点。
+动可汹涌澎湃，冲破地势阻碍顺势而下；静可润物无声，沉淀之后静谧从容。
+它无处不在，却形态万千，恰好对应了一辆全地形SUV应当具备的多面能力。
+在车展展台上做水景，并不罕见。但做一座真正的瀑布——有落差、有水流、有声音——在车展环境中，几乎没有先例。
+为了实现这一真实瀑布效果，需要在创意之外，解决一系列执行难题。
+前期需通过多轮水循环及避水测试，配合完善的防水、排水措施，充分规避漏水、溢水等潜在风险，确保展台运行安全。
+进入展期后，驻场技术运维机制与突发情况应对预案同步建立，从设备运行、水量控制到异常处置进行全方位保障。
+每一个环节，都需要在创意呈现与展馆现实条件之间找到精准平衡，让一座真实瀑布得以在展台之上稳定、安全地持续“运转”。
+上层水流从展台顶部的仿岩石结构倾泻而下，中层经过平台转折形成二级落差，底层汇入浅水池并通过隐藏式循环系统回流。
+这种多层设计既增加了水流的视觉层次，形成了现场极具记忆点的视觉奇观，也让水声更加丰富自然，避免了单一流水线可能产生的单调感。
+奔涌的瀑布是奔赴山野的自由向往；沉静的流水是都市生活的从容优雅。
+一刚一柔之间，把品牌想要展现的多重产品力，直观交付给每一位到场观众。
+对于一个新品牌来说，第一次参加大型国际车展，需要在有限的展期内同时完成品牌认知建立、产品体验传递和潜客转化蓄水三重任务。
+FREELANDER神行者用一座瀑布，把这三件事放进了同一个空间叙事里。
+在成都车展信息高度密集的场景中，实体瀑布成为了展台体验的锚点。
+走进展台，FREELANDER神行者 8 以瀑布为景，伫立在流水之中。
+是机械工业的精密豪华，也是自然流水的鲜活力量，二者相互映照。
+整个展台不再把展车作为孤立的展示对象，而是让车与自然相融合。
+在车展同质化越来越严重的当下， FREELANDER 神行者成都车展展台给出另一种思路。车展“造”瀑布，不只是一次创意落地的突破，更是一个新品牌在大型车展场景中，用空间语言让观众真正“进入品牌世界”的一次有效尝试。</p>
+      <div class="meta">成都 · 08-21~08-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/CHENGDU-AUTO-SHOW-FREELANDER-BOOTH-2026-8-21" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/39fb8252c7e74d7c93c926d68024c8c7.jpg" alt="达尔肤七夕同频空间（广州）" loading="lazy">
+      <h2>达尔肤七夕同频空间（广州）</h2>
+      <p class="description">达尔肤七夕同频空间于2026年8月15日至8月23日限时登陆广州东山口 THE PATH CAFE，每日开放时间为10:00至20:30。本次快闪以“浪漫同频，肤见倾心”为核心概念，将品牌经典的护肤理念与七夕的浪漫氛围深度融合，打造了一场沉浸式的约会打卡之旅。现场不仅同步展示了七夕限定礼盒，还融合了玫瑰花海装置打卡、惊喜扭蛋抽奖与产品试用体验，是广州近期极具浪漫气息与互动趣味的美妆快闪活动。
+现场空间以红白撞色花艺与浪漫花海为主视觉基调，完美还原了七夕限定礼盒的同款浪漫氛围。巨型玫瑰花瀑布装置是全场绝对的视觉C位，搭配复古红框电话与浪漫花艺花车，随手一拍就是充满电影感的七夕大片。整体设计摒弃了传统展台的生硬感，将快闪空间巧妙融入东山口的街区咖啡馆场景中，营造出轻松随性又充满仪式感的约会氛围，非常适合穿着浅色系或法式复古风格的衣服前往，与花海背景完美契合。
+逛展互动玩法丰富且福利硬核，建议按照以下流程体验：首先在玫瑰花瀑布或主题装置前打卡拍照，发布互动笔记即可免费领取限定同频玫瑰一朵。随后可以参与惊喜扭蛋机活动，注册成为会员或进行店内消费即可参与抽奖，有机会随机掉落产品正装、中小样甚至饮品。在体验区还能近距离试用达尔肤明星产品抛光水和杏仁酸精华，感受清爽温和的肤感。此外，现场精心布置的七夕限定礼盒不仅适合自用，也非常适合作为礼物送给审美同频的对象。
+本次“同频空间”是达尔肤在七夕节点上的一次创新营销尝试，标志着品牌从单一的产品展示向“沉浸式情感体验”的全面转型。通过将护肤仪式感与浪漫爱意结合，达尔肤不仅将产品从“功能单品”升级为“情感与默契的载体”，更传递了“相遇就是最好的时机，同频的人见面即是礼物”的品牌态度。这种将专业护肤、花艺美学与街区场景深度融合的策展方式，不仅增强了品牌与年轻消费者之间的情感连接，也为美妆品牌在网红商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">广州 · 08-15~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/DRWU-QIXI-POPUP-GZ-2026-8-21" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/cb0f85f9da8d4e0c8a4c30d040a66ed1.jpg" alt="HEAD海德服饰「Court to Court」主题限时空间（深圳）" loading="lazy">
+      <h2>HEAD海德服饰「Court to Court」主题限时空间（深圳）</h2>
+      <p class="description">HEAD海德服饰「Court to Court」主题限时空间（深圳）
+奥地利高端运动品牌 HEAD 海德「Court to Court」主题限时空间于2026年8月15日正式揭幕，并将持续至12月31日，落地深圳 One Avenue卓悦中心东区中央大街。本次快闪以&quot;竞场人生&quot;为核心概念，将网球竞技精神与深圳这座城市的进取气质深度融合，传递&quot;专业即信仰，装备即武器&quot;的品牌态度。现场不仅展示了 HEAD 的专业网球装备与日常运动服饰，还融合了沉浸式互动打卡与城市限定福利，是深圳近期极具运动美学与街头氛围的潮流打卡地。
+现场空间分为户外与室内双区域，串联五大互动体验节点，打破了传统门店的封闭感。户外区域采用蓝黄撞色搭配巨型网球拱门，充满夏日活力，镜面六边形外立面白天能折射 CBD 街景，夜间灯光亮起后极具辨识度。室内则深度呈现了 HEAD 的品牌文化，从1950年创立至今的历史墙、球星传记、四大满贯奖杯墙，到球员亲签球拍展示区，硬核网球迷绝对狂喜。此外，全息光影暗房将球星动态与球拍技术细节投射眼前，营造出身临赛场的沉浸感，随手一拍都是充满力量感的大片。
+逛展互动玩法丰富且充满巧思。在户外可以体验挥拍测速装置，感受竞技网球的爆发力，打出高分还能兑换专属周边。步入室内，可以参与全息光影沉浸体验，或者玩一把趣味网球扭蛋机解锁幸运盲盒。现场还特别设置了城市限定文化衫定制环节，让每位顾客化身设计师，制作专属图案。如果消费并关注 HEAD 官方社媒，还能获赠快闪城市限定徽章。此外，现场陈列了秋季 Court Ivy 复古格纹套装等新品，兼顾专业性能与日常穿搭，非常适合喜欢运动风或 tenniscore 风格的朋友试穿体验。
+本次「Court to Court」快闪是 HEAD 加速向运动生活方式品牌转型的重要战略延续。从1950年首支铝合金网球拍的诞生，到如今签约 德约科维奇 等网坛巨星，HEAD 始终拥有深厚的专业基因。而本次深圳快闪通过&quot;专业赛场+都市生活&quot;的叙事升级，成功打破了大众对传统运动品牌的刻板印象，让网球不再只是一项专业运动，而成为一种可被感知、可被体验的日常态度。这种将硬核竞技与时尚穿搭深度融合的策展方式，不仅精准触达了追求松弛感的年轻消费群体，也为体育品牌在城市核心商圈的沉浸式落地提供了极具参考价值的范本。</p>
+      <div class="meta">深圳 · 08-15~12-31</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/HEAD-COURT-TO-COURT-POPUP-SZ-2026-8-21" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-08-22
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
