@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-08-26</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-08-26 周三</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">14</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/d34cb7690a1846b6bf8d2690e686c84d.jpg" alt="国泰航空「同心飞跃八十年」80 周年庆典" loading="lazy">
+      <h2>国泰航空「同心飞跃八十年」80 周年庆典</h2>
+      <p class="description">国泰航空「同心飞跃八十年」80周年沉浸式庆典展落地上海西岸穹顶艺术中心，是品牌立足1946年至今的发展积淀打造的周年纪念重磅项目，以“一张登机牌，开启八十年飞行时光”为叙事主线，突破传统航司品牌宣传模式，通过沉浸式场景回溯品牌航空发展史，是航空品牌依托城市艺术空间实现情怀传播与品牌升级的重要实践。
+项目空间延续品牌经典深绿与米白专属视觉体系，造型上以巨型飞机轮廓装置、复古登机柜台打造时空长廊，高度还原老式航空场景氛围。展区科学划分时光档案馆、复古票务打卡区、航线体验区、主题沙龙及限定周边商店五大功能板块，系统性展出历代机组制服、复古登机牌、机上餐单、历史影像等珍贵史料，完整梳理品牌八十年发展脉络。
+活动周期内容形式丰富，不仅开设机师分享、航线圆桌、线下播客等主题沙龙，搭配复古制服乘务员巡游互动，同时上线多款80周年独家周边藏品，设置全域打卡兑礼、社交发文抽奖等趣味玩法。依托西岸滨江艺术场地的氛围感优势，项目精准吸引飞友、旅行爱好者与城市年轻群体，以航空情怀内容撬动小红书、抖音UGC自发传播，有效强化品牌联通内地与全球的专业航司形象，助力全新航线与会员权益的市场推广，实现品牌情怀传播与商业运营的双向赋能。</p>
+      <div class="meta">上海 · 08-22~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Cathay-Pacific-80th-Anniversary-Exhibition-SH-2026-8-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/4b3b7548eae045599243f350e7e39a25.jpg" alt="Brooks布鲁克斯「风巷驿站」限时快闪（成都）" loading="lazy">
+      <h2>Brooks布鲁克斯「风巷驿站」限时快闪（成都）</h2>
+      <p class="description">百年专业跑步品牌 BROOKS 布鲁克斯「风巷驿站」限时快闪于 2026 年 8 月 22 日至 8 月 28 日空降成都太古里东广场。本次活动是 BROOKS 西南首店（太古里东里二层 2313 号）的配套快闪企划，以“穿巷不息，越瓴不止”为核心理念，将蓉城街巷文化与跑步精神深度融合。现场不仅全方位展示了品牌的百年历史与全品类跑鞋矩阵，还同步线下首发旗舰竞速碳板跑鞋 龙卷风6 红色款，是成都近期极具专业度与社群氛围的跑步打卡地。
+现场空间巧妙提取了成都街巷与川西建筑元素，打造了一座沉浸式的城市跑步坐标。户外快闪区以“风巷”为灵感，通过青砖铺就的流动路径与宽窄变化的动线，串联起各个互动点位，营造出随性自在的街头游牧氛围。室内门店则取意川西屋瓴连绵起伏的形态，将顶部结构设计成与环形跑道相互呼应的起伏线条，寓意跑者不断突破、持续奔向下一个目标。整体设计摒弃了传统运动门店的单调感，让专业装备与城市街景自然交织，随手一拍就能定格充满力量感与街头气息的大片。
+逛展互动玩法丰富且充满巧思，建议按照以下流程体验：在快闪区可以上脚试穿 龙卷风6 红色首发款，感受轻量化设计与澎湃的能量回馈；在 3D 光栅相机前拍一张“会动”的专属照片，解锁科技感滤镜；完成指定打卡任务还能领取定制小凉扇或草编蒲扇等限定周边。此外，8 月 23 日至 28 日，品牌还联合 DRC 推出了为期 6 天的“城市漫游”快闪企划，每天串联太古里周边的咖啡馆、Gelato 与老字号面馆，举办 4KM 的随性慢跑活动，跑友可以通过私信官方账号报名，在真实的街头场景中感受无负担的跑步乐趣。
+本次「风巷驿站」快闪及西南首店的落地，是 BROOKS 加速深耕中国西南市场的重要战略一步，标志着品牌从单一的产品销售向“城市跑步生态构建”的全面转型。作为与 亚瑟士、New Balance、Saucony 并称的“世界四大跑鞋品牌”，BROOKS 在重返中国市场后，通过“快闪+首店+跑团”的轻量化组合拳，成功打破了专业跑鞋的高门槛。这种将硬核竞技科技与成都独有的休闲街巷文化深度融合的策展方式，不仅精准触达了追求专业与松弛感并存的年轻跑者群体，也为国际专业运动品牌在核心商圈的本土化落地与社群运营提供了极具参考价值的范本。</p>
+      <div class="meta">成都 · 08-22~08-28</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/BROOKS-POST-STATION-POPUP-CD-2026-8-23" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/d7e035bfd4044b4481ce9a60bb67faa2.jpg" alt="Borsalino「帽艺匠心之旅」限时体验空间" loading="lazy">
+      <h2>Borsalino「帽艺匠心之旅」限时体验空间</h2>
+      <p class="description">Borsalino「帽艺匠心之旅」限时体验空间于8月22日至8月27日限时开放，是品牌依托170周年品牌积淀与大中华区首店开幕打造的高端制帽文化主题展，兼具品牌百年历史溯源与全新市场入市发声的双重意义，为高端奢品配饰品牌文化落地、线下场景营销提供优质范本。
+项目空间造型主打纯正意式复古工坊美学，采用黑钢框架、米白石材搭配精致黄铜细节，以通透开放式中庭展亭复刻意大利亚历山德里亚经典制帽工坊氛围，质感高级且极具视觉辨识度。展区科学划分古董帽藏品区、170周年限定系列区、工艺演示区与当季新品陈列区，系统展示跨年代馆藏古董礼帽，完整呈现百年手工制帽工艺演变，同时落地170周年珠宝帽饰系列全球首发。
+活动期内容丰富多元，特邀意大利本土匠人驻场演示塑形、缝制等传统技艺，解锁国内首次高端帽饰定制体验，前期首店剪彩活动联动艺人、时尚KOL与媒体造势引流。整场展览弱化传统商业售卖属性，以文化展陈、匠人演绎传递品牌匠心内核，依托高颜值沉浸式场景撬动圈层传播，完成高端品牌调性输出、精准客群吸纳，实现线下文化体验与品牌入市营销的双向赋能。</p>
+      <div class="meta">上海 · 08-22~08-27</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Borsalino-Journey-of-Hat-Craftsmanship-Exhibition-SH-2026-8-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/731011f22ae9429c9fd6aff87b35c579.jpg" alt="LINLEE林里 x KUN 主题空间（深圳）" loading="lazy">
+      <h2>LINLEE林里 x KUN 主题空间（深圳）</h2>
+      <p class="description">LINLEE林里 x KUN 主题空间于 2026 年 8 月 22 日至 8 月 23 日限时登陆深圳海岸城商场二层中庭（10号门进），同时 LINLEE林里 深圳海岸城形象店也在户外广场二层同步试营业。本次快闪以林里全球品牌代言人蔡徐坤（KUN）为核心，打造了一场沉浸式的粉丝互动与打卡盛宴。现场不仅融合了巨型装置、海报墙与打卡框，还准备了限量专属福利和惊喜抽奖，是深圳周末极具粉丝氛围与夏日清爽感的茶饮打卡地。
+现场空间以 KUN 的专属元素与 LINLEE 的经典小黄鸭为视觉基调，氛围感直接拉满。巨型黑胶场景是全场最出片的视觉 C 位，搭配复古质感，随手一拍就是杂志大片。KUN 立体字与小黄鸭装置巧妙交织，充满了青春与活力。此外，现场还设置了专属的海报墙和打卡框，细节满满，让每一位到场的粉丝都能找到属于自己的最佳拍摄角度，完美记录与 KUN 的“同框”时刻。
+本次“KUN 主题空间”是 LINLEE林里 在明星营销上的一次重要落地，标志着品牌从线上话题种草向线下沉浸式粉丝体验的全面转型。作为林里首位全球品牌代言人，蔡徐坤的加入不仅为品牌带来了巨大的流量与关注，更通过“快闪店+形象店试营业”的组合拳，成功将线上粉丝热情转化为线下实体消费。这种将顶流明星 IP、茶饮文化与线下空间深度融合的策展方式，不仅增强了品牌与年轻消费群体及粉丝之间的情感连接，也为新茶饮品牌在核心商圈的线下体验创新与粉丝经济运营提供了极具参考价值的范本。</p>
+      <div class="meta">深圳 · 08-22~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LINLEE-KUN-POPUP-SZ-2026-8-23" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/59cbfb9cab64402b859e7a7d86ae42d7.jpg" alt="COROS 高驰全球首家慢闪店（深圳）" loading="lazy">
+      <h2>COROS 高驰全球首家慢闪店（深圳）</h2>
+      <p class="description">COROS 高驰全球首家慢闪店于 2026 年 8 月 22 日至 10 月 11 日限时登陆深圳万象天地艺文广场。本次快闪以&quot;出发&quot;为核心概念，将品牌的专业运动精神与深圳这座&quot;出发之城&quot;的底层气质深度融合。不同于制造焦虑的传统快闪，这间小木屋不卖稀缺、不搞限时抢购，而是试图在快节奏的都市中为跑者和户外爱好者打造一个可以停下来发呆、聊天、感受归属感的&quot;客厅&quot;，是深圳近期极具人文温度与社群氛围的户外打卡地。
+现场空间以&quot;山野小木屋&quot;为灵感，摒弃了传统展厅的冰冷陈列，将户外元素自然融入城市街区。门口那句&quot;我们已经拥有地图、导航、卫星，但我们仍需要的是出发的决心&quot;，瞬间奠定了整个空间的基调。店内设置了一整面深圳跑山路线墙，记录着跑者一步步跑出的山脊与台阶轨迹；还有一张摊开的世界地图，寓意着世界很大，但出发终究要靠自己迈出那一步。整体设计让专业装备与城市街景自然交织，随手一拍就能定格充满力量感与街头气息的大片。
+现场 PACE、APEX 等全系产品可随意试戴体验，感受真实重量与质感。高驰 × SATISFY 联名款 APEX 4 作为线下唯一现货，需凭身份证购买，每人限购 1 台。到店可领取定制石头与登山扣参与户外画石活动，将画作带走或留在店内垒成&quot;玛尼堆&quot;。拍摄店照与深圳日落跑步照并带指定话题发布小红书，可领取涂鸦衣、落日跑步袜或帽子等限量周边。此外，品牌还联合 SATISFY 与本土跑团举办城市跑活动，跑完提供特色早茶补给。
+本次&quot;慢闪店&quot;是 COROS 高驰在品牌营销上的一次反直觉创新，标志着品牌从单一的产品销售向&quot;城市户外生态构建&quot;的全面转型。在跑步圈越来越卷配速、卷数据的当下，高驰选择用&quot;慢&quot;来对抗&quot;快&quot;，通过&quot;慢闪+首店+跑团&quot;的组合拳，让专业跑者产生真正的归属感。这种将硬核竞技科技与城市休闲文化深度融合的策展方式，不仅精准触达了追求专业与松弛感并存的年轻群体，也为户外运动品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">深圳 · 08-22</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/COROS-POP-UP-STORE-SHENZHEN-2026-8-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/3faf5ef42ac248d9ac6f2ebdcb9ea579.jpg" alt="MUSINSA「韩系潮流衣橱」限时概念店" loading="lazy">
+      <h2>MUSINSA「韩系潮流衣橱」限时概念店</h2>
+      <p class="description">MUSINSA「韩系潮流衣橱」限时概念店于8月21日至11月30日落地商场中岛，是韩国头部时尚平台MUSINSA打造的商场版买手快闪项目，也是品牌继安福路主力店之后，布局核心商圈、完善线下触点体系的重要落地动作，有效补齐城市商圈流量场景，与独栋主店形成差异化互补。项目空间秉持纯正韩系极简设计逻辑，整体采用浅灰与米白干净素雅的视觉基调，依托开放式中岛格局打造轻量化潮流集合空间，摒弃厚重艺术装置，将设计重心聚焦穿搭呈现与货品体验。
+空间打破传统品牌分区模式，以穿搭场景为核心划分松弛休闲、都市通勤、甜酷街头三大主题区域，通过模特成套造型陈列直观输出韩系穿搭灵感，搭配品牌标志性简约打卡墙，兼顾展示实用性与社交传播性。店内集合SCULPTOR、OSOI等多款高人气韩系设计师品牌，覆盖女装、鞋包与配饰，开放现场试穿体验并推出商圈限定礼遇。活动期联动时尚博主线下探店，依托商场通勤及休闲客流优势，将线上热门韩系穿搭IP落地实体场景，以高颜值、高适配的穿搭场景激发用户自发打卡传播，实现品牌声量扩散、年轻客群吸纳与线下零售转化的一体化营销闭环。</p>
+      <div class="meta">上海 · 08-21~11-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/MUSINSA-JAKC-Concept-Store-SH-2026-8-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/2f79ba34c44f4ae0a10229a60e1411da.jpg" alt="Keypote Golf「Autumn Swing 」概念快闪店（深圳）" loading="lazy">
+      <h2>Keypote Golf「Autumn Swing 」概念快闪店（深圳）</h2>
+      <p class="description">Keypote Golf「Autumn Swing 」概念快闪店（深圳）
+Keypote Autumn Swing「秋日挥杆季」全国首家快闪概念店于 2026 年 8 月 21 日至 10 月 18 日落地深圳万象天地 MXTR 街区 H06。本次快闪以&quot;高尔夫不止在球场&quot;为核心理念，将运动、时装与美式复古风格深度融合，打造了一场打破圈层边界的城市挥杆之旅。
+现场空间以 70 年代美式复古乡村俱乐部为灵感，将球场元素巧妙拆解并融入城市街角。外立面采用标志性玫红色与原木棕碰撞，搭配大面积玻璃镜窗，巨型高尔夫球杆斜立入口作为视觉锚点，极具辨识度。店内铺设仿真草坪，搭配拱形陈列橱窗与球洞弧度墙面，将秋日球场的松弛氛围感完美复刻。整体设计让专业装备与高街场景自然交织，随手一拍就能定格充满老钱风与街头气息的大片。
+现场展示了 Keypote 26 系列新品，低饱和度的绿、紫、卡其、柔粉等配色兼顾利落时装感与运动实用性。观众可近距离试穿体验美式复古剪裁，感受面料舒适度和日常穿搭的适配度。现场设有巨型高尔夫球装置、复古球车与鲜花装置等互动美陈，可体验挥杆互动。
+本次&quot;秋日挥杆季&quot;慢闪是 Keypote 在品牌营销与空间体验上的一次重要落地，标志着品牌从单一的运动服饰展示向&quot;城市生活方式美学&quot;的全面转型。通过将高尔夫文化与都市街头场景深度融合，Keypote 成功打破了传统高尔夫的小众圈层壁垒，让运动美学成为普通人日常 OOTD 的一部分。这种将&quot;轻运动&quot;、时装设计与城市公共空间结合的策展方式，不仅精准触达了追求松弛感的年轻消费群体，也为运动潮流品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">深圳 · 08-21~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/KEYPOTE-GOLF-AUTUMN-SWING-POPUP-SZ-2026-8-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/8eb255b0442f49acaf8bf50c6c6caf6d.jpg" alt="华住会「给你出行的勇气・青甘大环线」巡展发车活动" loading="lazy">
+      <h2>华住会「给你出行的勇气・青甘大环线」巡展发车活动</h2>
+      <p class="description">华住会于8月21日开启全国发车启动仪式，延续成熟的318川藏线巡展IP，在去年活动基础上迭代升级，以创新移动式酒店房车快闪形式落地暑期出行营销，是酒店文旅品牌跳出传统室内快闪模式、贴合西北自驾热潮的突破性营销实践。项目在空间制作与造型上极具创意，将三辆卡车改造为汉庭、全季、桔子三大品牌透明样板房车，高度还原真实客房空间格局，实现酒店场景实体外化。
+现场整体采用紫白主视觉，铺设仿真大草坪，搭配青甘大环线地标装置、西北民俗舞台与品牌市集摊位，结合马头琴演奏、藏族舞蹈等民俗演绎，沉浸式营造西北旷野旅行氛围。活动期整合多元体验与权益内容，开放房车客房参观、打卡集章兑礼等互动玩法，并联动东方航空、滴滴、一嗨租车等出行品牌打造权益嘉年华，释放全品类出行礼包。仪式结束后，三辆房车开启4268公里长线移动巡展，沿途停靠多个西北核心景点；线上同步发起话题抽奖、免房福利活动。线下沉浸式移动场景持续产出社交传播素材，借力暑期西北出游热度引爆全网UGC传播，打通“住-行”全链路场景，高效实现品牌曝光、会员拉新与旅行消费转化，构建文旅出行闭环营销体系。</p>
+      <div class="meta">上海 · 08-21</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Huazhu-Club-318-Grand-Circuit-Tour-Launch-Event-SH-2026-8-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/d87e17a7690a49229e741d0583a8bd84.jpg" alt="YSL「偏心站」限时快闪（香港）" loading="lazy">
+      <h2>YSL「偏心站」限时快闪（香港）</h2>
+      <p class="description">YSL「偏心站」限时快闪于8月19日至9月1日七夕节点正式落地，是品牌依托七夕情感营销语境、围绕全新偏心护手霜系列打造的沉浸式主题快闪项目，以“偏心，不想放手”为核心slogan，将产品情绪内核转化为具象场景叙事，成为美妆品牌节点化、场景化、情绪化营销的典型案例。
+项目以城市地铁月台为核心设计概念，整体空间高度复刻真实车站氛围，采用米灰小方砖墙面、轨道标识与主题站牌装置还原细节质感，搭配巨型「偏心站」站牌打造高辨识度主视觉打卡地标。场地科学划分月台打卡区、产品体验区、影像大屏区与礼品兑换区，完整陈列全新偏心护手霜全系列产品，配备专业试肤体验台，形成观赏、体验、打卡与礼赠兑换的完整功能闭环。
+活动采用免费预约入场模式，兼顾粉丝群体与普通消费者体验，开幕当晚携手品牌护肤全球代言人肖战到场造势，搭配商场星光大道动线、港铁全线及维港户外广告矩阵全域造势，快速引爆全城话题。线下沉浸式月台场景适配社交传播需求，持续产出优质UGC内容，结合代言人流量势能与七夕情感氛围，实现新品认知种草、全网话题传播、粉丝圈层渗透与线下零售转化的多维营销闭环。</p>
+      <div class="meta">香港 · YSL BEAUTE · 08-19~09-01</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/YSL-CARE-CRUSH-STATION-HK-2026-8-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-10">
+      <img class="cover" src="https://res.onsiteclub.com/5fb1a43664cb49aa82fec0ae3dac3f5d.jpg" alt="「爱的头等小事」七夕主题美陈活动" loading="lazy">
+      <h2>「爱的头等小事」七夕主题美陈活动</h2>
+      <p class="description">「爱的头等小事」七夕主题美陈活动，是以「东方时序里的情书」为核心内核打造的久光中心城市公共节庆艺术项目，打破传统七夕单一情侣向叙事局限，重构当代七夕情感表达体系，聚焦自爱、闺蜜情谊、日常烟火等多元温柔情感，是商业体弱化商业营销、主打城市情感治愈与公共浪漫氛围打造的创新实践。
+本次美陈无封闭式快闪空间，依托商场内外公共场景统筹布局，整体以柔粉信笺为核心视觉元素，造型设计温柔治愈、氛围感突出。户外创新打造情诗斑马线，将浪漫文案融入城市通行场景，主大屏投放专属女性心愿文案，阶梯区域搭配巨型告白信笺与鲜花艺术装置，构建多层次、沉浸式打卡界面，场内增设落地签互动点位，丰富场景体验维度。活动期间，访客可打卡留影、领取主题纪念物料，参与门槛低、受众覆盖面广，广泛适配单人访客、闺蜜群体与普通市民。项目以公共空间情绪输出为核心，弱化商业售卖属性，依托高颜值城市浪漫场景，撬动社交平台话题传播与UGC内容产出，通过情感共鸣沉淀大众好感度，同步实现商场客流拉升、线上曝光破圈与城市文旅氛围塑造的多重营销价值。</p>
+      <div class="meta">上海 · 08-19~08-31</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/The-Qixi-themed-Art-Installation-Campaign-Shanghai-2026-8-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-11">
+      <img class="cover" src="https://res.onsiteclub.com/993fd62c5e0b480cacebbd7ba76ca04d.jpg" alt="Fabrique 七夕限时花亭（北京）" loading="lazy">
+      <h2>Fabrique 七夕限时花亭（北京）</h2>
+      <p class="description">Fabrique 七夕限时花亭于 2026 年 8 月 19 日七夕当天，限时闪现北京三里屯太古里北区庭院及南区 Fabrique La Salle 门店。本次快闪以“让一束花成为与日常之美的一次相遇”为核心概念，将品牌的设计美学与七夕的浪漫氛围深度融合。现场不仅打造了充满鲜花与光影的沉浸式花亭空间，还融合了乐队现场演出、免费鲜花派送以及七夕限定礼遇，是北京七夕期间极具松弛感与仪式感的美妆穿搭打卡地。
+现场空间以“流动花园”与“花亭”为灵感，完美打破了传统门店的边界。北区庭院的限时花亭装置以繁花盛放为核心视觉，搭配暖调光影与摇曳烛光，营造出旖旎而浪漫的氛围。南区门店则化身为一座烛光闪烁、花香四溢的流动花园，将时装、艺术与自然花艺交织在同一个场域。整体设计摒弃了生硬的货架逻辑，用通透的橱窗、错落的绿植花艺与柔和的石材肌理，让品牌美学自然融入都市街景，随手一拍就能定格充满电影感的高光大片。
+逛展互动充满巧思且福利硬核，建议按照以下流程体验：在北区庭院的花亭装置前打卡拍照，即可免费领取七夕限定鲜花（每日限量，先到先得），现场还有乐队表演与晚风相伴，氛围感直接拉满。前往南区门店，不仅可以体验七夕限定礼遇（当日消费满 1500 元获赠七夕限定花束一份，或关注官方账号领取花礼），还能偶遇前 Gucci 合作设计师 Agustina Sorrentini 担任一日店长，分享花朵从手稿到面料的灵感之旅，在烛光中创造专属的“盛开时刻”。
+本次“七夕限时花亭”是 Fabrique 在七夕节点上的一次创新营销尝试，标志着品牌从单一的产品展示向“沉浸式情感体验”的全面转型。通过“花”这一通用语言，Fabrique 不仅将服装从“视觉单品”升级为“女性生命力与情感表达的载体”，更传递了“让每一种女性的生命力都被温柔看见”的品牌态度。这种将全球设计师美学、街头花艺装置与现场音乐表演深度融合的策展方式，不仅增强了品牌与年轻消费者之间的情感连接，也为设计师品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">北京 · 08-19</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/FABRIQUE-QIXI-POPUP-BJ-2026-8-23" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-12">
+      <img class="cover" src="https://res.onsiteclub.com/999c201535044e9a9f89ab7c1310dbb0.jpg" alt="TAD FAB「日常剧场」限时快闪" loading="lazy">
+      <h2>TAD FAB「日常剧场」限时快闪</h2>
+      <p class="description">TAD FAB「日常剧场」限时快闪于8月18日至8月31日全天候开放，是新锐配饰包袋品牌打造的沉浸式美学体验项目，以“让生活成为一场即兴演出”为核心概念，突破传统配饰商业展陈范式，将日常场景艺术化演绎，是新锐轻奢品牌依托城市漫步经济、传递生活化美学态度的创新营销实践。
+项目空间采用纯白极简基底，摒弃繁复装饰，通过生活化物件的艺术转译构建独特剧场叙事，彻底打破传统柜台陈列模式。中庭以艺术许愿喷泉为视觉核心，搭配创意鱼缸雨靴陈列、插座灯泡绳索挂展系统等趣味装置，结合多层迂回门洞设计，引导观众游走观景、切换场景氛围，层层递进呈现品牌美学。
+展区全景展示BOX锁盒包、Softie、Foldie变形系列及2026秋季全系新品，完整覆盖多品类包袋产品线。活动期邀请艺人曺薇娟及时尚KOL到场探店造势，依托永源路城市漫步客流优势，打造轻量化、高质感的美学展览场景，弱化商业售卖属性。线下沉浸式艺术场景持续产出优质打卡素材，联动社交平台完成大范围种草传播，将配饰产品定义为日常自我表达的载体，实现新品曝光、用户审美渗透与品牌年轻调性塑造的完整营销闭环。</p>
+      <div class="meta">上海 · 08-18~08-31</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/TAD-FAB-Daily-Theatre-Pop-Up-Event-Shanghai-2026-8-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-13">
+      <img class="cover" src="https://res.onsiteclub.com/094149a8fc6440a5a7ddddfc9d9103dc.jpg" alt="三丽鸥复古旅行列车户外快闪" loading="lazy">
+      <h2>三丽鸥复古旅行列车户外快闪</h2>
+      <p class="description">本次阿里鱼联合天猫超级品牌日打造的三丽鸥复古旅行列车户外快闪，依托成熟IP超品营销体系迭代落地，是品牌年度IP商业化的重点场景项目，以“好朋友就要一起出发”为温情主题，依托360㎡户外空间创新构建复古旅行叙事场景，为文娱IP与多品类品牌联名营销提供优质范本。
+项目空间造型以复古观光列车为核心原型，整体采用明快童话色彩，视觉辨识度极高，以巨型Hello Kitty气膜车头为主视觉地标，串联五大品牌联名车厢、行李候车厅、旅行停靠站、慢递邮局及旅行服务站，形成完整沉浸式旅行故事动线。场内全覆盖布置Hello Kitty、库洛米、玉桂狗等热门角色雕塑与主题美陈，场景层次丰富、氛围感饱满，适配湖滨步行街游客与年轻粉丝打卡需求。展区集中陈列心相印、周生生、乐扣乐扣等多个品牌的三丽鸥联名新品，同时设置明信片邮寄、全域集章抽奖等互动玩法，解锁限定周边福利。
+活动联动天猫超级品牌日线上会场同步首发全新系列周边，依托西湖湖滨超大客流优势，以线下沉浸式场景完成种草体验，借助高颜值打卡点位激发社交平台UGC传播，打通线下体验、全网曝光与电商发售的营销闭环，高效实现IP价值释放、联名货品展示与粉丝精细化运营。</p>
+      <div class="meta">杭州 · 08-17~08-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/SANRIO-CHARACTERS-FRIENDS-TRANS-HANGZHOU-2026-8-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-14">
+      <img class="cover" src="https://res.onsiteclub.com/2b36922a827b496c9103da75576d94dc.jpg" alt="LaPrairie莱珀妮「钴蓝之境」限时快闪（北京）" loading="lazy">
+      <h2>LaPrairie莱珀妮「钴蓝之境」限时快闪（北京）</h2>
+      <p class="description">LaPrairie 莱珀妮「钴蓝之境」限时快闪于 2026 年 8 月 16 日至 8 月 19 日限时登陆北京 SKP 一楼中庭。本次快闪以鱼子精华面霜为灵感，借由满蕴生机的钴蓝色，诠释其紧致之享与奢华质感，将建筑中点、线、面的哲思融入护肤体系，打造了一场兼具艺术氛围与奢护体验的沉浸式美学空间。
+现场空间由知名设计师 Sabine Marcelis 操刀，外层采用耀眼的钴蓝色玻璃墙，灵感源自鱼子精华面霜大胆的钴蓝色玻璃瓶身。内部则打造为截然不同的私闭空间，运用树脂、玻璃等材料，以柔和的形状和曲线让参观者仿佛被面霜奢润质地包覆。渐变色玻璃与大面积落地镜面使空间极具通透性，温柔高级的光影贯穿全场，营造出静谧、高级且松弛的蓝调氛围。
+现场提供专属奢享手部护理体验，由专业护理老师进行一对一精细化护理与深度咨询，可深度体验鱼子精华系列几乎全线产品，感受反重力精华与鱼子精华面霜的经典组合。此外，观众还可近距离试用并了解鱼子精华系列产品的紧致新升之力，在静谧的钴蓝之境中放慢节奏，沉浸式感受品牌的美学与护肤哲学。
+本次「钴蓝之境」是莱珀妮在品牌营销与空间体验上的一次重要落地，标志着品牌从单一的产品展示向“沉浸式生活方式体验”的全面转型。通过将“肌肤构筑大师”的理性护肤哲学与艺术装置深度融合，莱珀妮不仅将鱼子精华系列从“奢华单品”升级为“秩序与支撑的情感载体”，更传递了以精度为肌肤重构年轻秩序的品牌态度。这种将高端护肤、艺术设计与感官体验结合的策展方式，为奢侈美妆品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">北京 · 08-16~08-19</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LAPRAIRIE-COBALT-BLUE-REALM-POPUP-BJ-2026-8-26" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-08-26
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
