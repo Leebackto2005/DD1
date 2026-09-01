@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-09-01</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-09-01 周二</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">9</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/6e52ad46ad3c4c698bde46fd9a456f35.jpg" alt="香奈儿可可小姐心动香水限时体验空间" loading="lazy">
+      <h2>香奈儿可可小姐心动香水限时体验空间</h2>
+      <p class="description">香奈儿可可小姐心动香水限时体验空间落地于上海淮海中路 999 号环贸 IAPM 商场 L1 层，活动开放时间为 2026 年 9 月 4 日至 9 月 13 日，访客可通过香奈儿尊享香水与美容品会员小程序或现场预约免费入场，本次快闪围绕全新可可小姐心动香水打造，以 “绝对心动” 为核心主题，演绎香水所承载的自由鲜活的女性吸引力叙事。
+在空间搭建层面，整体复刻巴黎都市氛围感，融合深棕、柔粉、鎏金配色，搭配复古花藤纹样、复古花砖地面，打造多场景沉浸式香氛乐园，场馆划分为可可小姐电影院、心动吧台、可可小姐心动咖啡厅、心动热线电话亭、心动色彩彩妆站、可可小姐花店六大功能区域，外部设置巨幅主题海报装置，内部放置巨型香水瓶艺术陈列，影院区域设置屏幕循环播放由香水代言人 Gracie Abrams 出演的品牌广告大片，心动吧台以开放式吧台式结构打造专业闻香体验场景，复古咖啡厅布置法式藤编桌椅、刊物阅读角，复古电话亭作为标志性互动装置，搭配丝绒帘幕营造私密感，花店区域摆放大量鲜切花束，整体将影像、嗅觉、声音、阅读多重感官形式融为一体，兼顾奢牌高级质感与社交打卡属性，与环贸 IAPM 高端时尚的商场氛围高度契合。
+本次活动设置完整的沉浸式体验流程，访客入场领取香气电影票，即可进入可可小姐电影院观看品牌广告影片，前往心动吧台完成一对一香氛体验，亲身感受全新心动香水荔枝葡萄柚前调、玫瑰茉莉花香中调与琥珀木质后调的层次变化，在心动咖啡厅落座翻阅主题刊物与心动故事读物，书写心动明信片，明信片暗藏随机惊喜福利，走进 Crush Hotline 心动热线电话亭，拿起复古座机收听多版本心动主题语音留言，到访心动色彩彩妆站体验配套彩妆产品，还可在可可小姐花店凭明信片惊喜兑换鲜花等纪念礼品，现场提供限定咖啡饮品，访客发布社交平台笔记带上活动指定话题，还可解锁香奈儿香水小样等专属礼遇，整体集合观影观展、闻香试香、声音互动、手作书写、彩妆体验、礼品兑换于一体，兼顾普通消费者体验、香水深度品鉴与社交传播多重价值。
+这场限时体验空间的活动意义，在于跳出传统香水柜台单向售卖模式，把 “心动” 这一抽象情感概念转化为可看、可闻、可听、可参与的线下实体场景，将可可小姐系列自由不羁、忠于自我的品牌精神具象落地，面向大众完整传递全新心动香水馥郁琥珀调的香气特质与产品故事；依托环贸 IAPM 城市核心高端商业区位，借助代言人内容势能，强化新品香水的市场认知，让消费者不止接收嗅觉信息，更通过多维度感官体验理解香水背后的女性态度；以巴黎都市氛围感的场景叙事拉近奢侈美妆品牌与年轻消费者的距离，激发用户自发 UGC 社交扩散，完成新品上市阶段的品牌叙事、产品教育与情感价值的立体输出，也为奢侈香水新品落地沉浸式互动快闪提供成熟的实践样本。
+香奈儿可可小姐心动香水限时体验空间于2026年9月4日至9月13日落地上海IAPM环贸中心，是品牌围绕全新可可小姐心动香水打造的高端沉浸式新品营销项目，延续可可小姐系列自由鲜活、忠于自我的女性精神内核，以“绝对心动”为叙事主题，突破传统美妆专柜单向售卖模式，构建多感官沉浸式体验范式。
+项目空间造型深度复刻巴黎都市浪漫氛围，以深棕、柔粉、鎏金高级配色为主视觉，搭配复古花藤纹样与花砖地面，塑造兼具奢雅质感与法式松弛氛围的场景。空间科学划分影院、心动吧台、主题咖啡厅、复古电话亭、彩妆站与花艺展区六大功能区域，外部巨型主题海报、场内巨型香水瓶装置与循环播放的代言人影像，构筑完整的视觉、嗅觉、听觉多维叙事体系。
+活动期搭建全链路互动体验体系，访客可通过预约入场，完成观影、专业闻香、刊物阅读、语音互动、彩妆体验与礼品兑换等多元体验，直观感知香水层次香调与产品内核。同时依托社交平台话题种草、打卡礼遇激励用户自发产出UGC内容，借助高端商圈流量与代言人传播势能，将抽象心动情绪转化为可感知的场景记忆，完成新品深度科普、品牌精神传递与圈层社交扩散，实现高端香水新品上市的文化叙事、用户体验与商业转化一体化营销闭环。</p>
+      <div class="meta">上海 · CHANEL 香奈儿 · 09-04~09-13</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Chanel-Coco-Crush-Fragrance-Space-Shanghai-2026-8-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/70089055c63a486895e894123054370c.jpg" alt="雪花秀参公馆限时艺术空间" loading="lazy">
+      <h2>雪花秀参公馆限时艺术空间</h2>
+      <p class="description">雪花秀参公馆限时艺术空间于2026年8月29日至9月13日落地上海新天地壹号百年洋房，是品牌立足六十年人参科研积淀打造的沉浸式艺术快闪项目，跳出传统美妆柜台售卖模式，以老洋房复古历史底蕴为载体，融合东方草本美学与现代艺术装置，实现品牌科研实力与文化价值的创新传播升级。
+项目空间造型与制作极具东方质感，依托百年大宅原生建筑结构，以品牌标志性橙色为主视觉基调，入口搭配大面积橙色花艺装置营造仪式氛围，内部通过苔藓、绿植、岩石还原人参原生生长秘境，搭配大型悬浮艺术装置、光影特效与专业展柜，可视化呈现人参生长脉络与品牌六十年参研历程，完整陈列科研原料、实验器具与核心产品，兼顾复古建筑肌理、自然场景还原与现代艺术审美。场地规划五大沉浸式体验板块，串联品牌历程溯源、抗老科技解读、匠心互动工坊与全系列产品试用，同时设置限定礼品与社交打卡礼遇。
+活动依托新天地城市文旅地标优势，以轻量化艺术体验替代硬广宣讲，降低年轻受众距离感。访客社交种草打卡产出海量UGC内容，依托社交平台话题持续发酵，在传递“层层参透年轻紧贴”抗老理念的同时，立体化输出品牌故事、科研实力与产品价值，完成文化塑造、用户沉淀与品牌破圈传播的完整营销闭环。</p>
+      <div class="meta">上海 · Sulwhasoo 雪花秀 · 08-29~09-13</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Sulwhasoo-Ginseng-Mansion-Shanghai-2026-8-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/91feadeb157e4136acf91ab8daa5de46.jpg" alt="MOYNAT x 折纸艺术家巨巨 限时精品店（北京）" loading="lazy">
+      <h2>MOYNAT x 折纸艺术家巨巨 限时精品店（北京）</h2>
+      <p class="description">MOYNAT 携手折纸艺术家巨巨呈现的北京 SKP 限时精品店于 2026 年 8 月 28 日至 9 月 19 日落地北京 SKP 1 楼中庭。本次快闪以“折纸花园”为核心思路，将品牌百余年的旅行故事与手工折纸艺术深度融合，打造了一场充满童趣与高级感的沉浸式美学空间，定位为打破传统奢侈品高冷距离感的艺术打卡地。
+现场空间以经典硬箱堆叠为叙事载体，以手工纸张折叠为当代艺术语言。折纸艺术家巨巨以纸张、折叠和像素色彩为媒介，将 MOYNAT 经典老花纹路以像素化色彩流转其中，解构异型硬箱轮廓，以积木式折纸堆叠出充满童真的空间装置。整体设计让百年匠艺与奇幻想象自然交织，随手一拍就能定格充满艺术感与高级气息的大片。
+现场同步首发 M Canvas 系列 Dark Grey 深灰新色，涵盖 Hobo、Mini Hobo、Tote、48H 旅行包及护照夹、行李牌等旅行配件，观众可近距离感受深灰新调的低调冷淡质感。店内还陈列了 MOYNAT 与 Labubu 的联名系列，The Monster 家族角色出现在空间各处。此外，Réjane、Pauline、Gabrielle 等众多经典手袋也在店内展出并售卖，一站式延续 MOYNAT 的旅行美学。
+本次“折纸花园”限时店是 MOYNAT 在品牌营销与空间体验上的一次重要落地，标志着品牌从单一的经典皮具展示向“手工匠艺与当代艺术跨界融合”的全面转型。通过将百年硬箱文化解构为充满童真的折纸艺术，MOYNAT 成功打破了传统奢侈品牌的严肃边界，让旅行美学以更轻盈、更具想象力的方式触达年轻消费群体。这种将老牌皮具、先锋艺术与限时空间结合的策展方式，为奢侈品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">北京 · MOYNAT · 08-28~09-19</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/MOYNAT-JUJU-POPUP-BJ-2026-8-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/b2da8249786c4fcbb85409cb8e77c3f6.jpg" alt="ARKET「衣橱人生」限时影像展" loading="lazy">
+      <h2>ARKET「衣橱人生」限时影像展</h2>
+      <p class="description">ARKET「衣橱人生」限时影像展于2026年8月28日至9月13日落地上海环贸iapm公共长廊，是品牌配合2026早秋女装上新打造的人文纪实类线下展览，打破服饰品牌快闪重售卖、轻内容的传统模式，以“A Life in Clothes”为核心主题，挖掘衣物与人生的情感联结，落地品牌北欧长久主义穿搭美学，具备差异化品牌叙事价值。项目空间造型延续品牌标志性极简调性，以素白、浅灰为基底，依托商场开放式长廊打造轻量化展览场景，摒弃繁复装置，通过模块化展墙、灯箱影像与静物陈列板有序排布，搭配柔和漫射灯光，营造纯粹的纪实观展氛围。
+展区以五位不同领域女性的真实衣橱为叙事载体，结合肖像影像、静物摄影与珍藏旧物复刻，搭配文字注解诠释衣物承载的生活故事，同时设置社交打卡点位，完美适配商场轻奢简约环境。活动期以纪实内容体验为核心，动线化展示人物故事与2026早秋系列核心单品，直观呈现品牌主打面料与实穿廓形的适配性。通过社交打卡兑礼、线上主题大片联动的双线模式，实现内容传播破圈，弱化商业营销属性，将北欧设计理念结合本土女性故事落地共情叙事，强化品牌人文质感与长久主义美学定位，完成新品故事化种草与品牌调性升级的营销闭环。</p>
+      <div class="meta">上海 · 08-28~09-13</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/ARKET-Photographic-Exhibition-Shanghai-2026-8-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/b218aefee62e4cb4984786aa5f1b2ecb.jpg" alt="CAMPER「Junction」模块快闪空间（重庆）" loading="lazy">
+      <h2>CAMPER「Junction」模块快闪空间（重庆）</h2>
+      <p class="description">CAMPER「Junction」模块快闪空间于 2026 年 8 月 28 日至 9 月 6 日落地重庆龙湖重庆北城天街中心广场。本次快闪以可替换鞋头为灵感，将模块化设计延伸至趣味互动空间，打造了一场打破常规的商业快闪体验。现场不仅展示了品牌标志性的 Junction 系列鞋履，还融合了巨型装置打卡与周末限定 DIY 互动，是重庆近期极具设计感与玩趣氛围的潮流打卡地。
+现场空间以模块化几何语言为核心视觉，将 Junction 系列招牌的可替换橡胶鞋头抽象为几何模块，通过堆叠、旋转与撞色重组，构建出充满视觉冲击力的空间装置。红色的巨型模块装置在街头极具辨识度，仿佛将积木游戏搬进了城市广场。整体设计摒弃了传统快闪的粗暴陈列，让鞋履的设计哲学与城市公共空间自然交织，随手一拍就能定格充满趣味与先锋气息的大片。
+现场集中展示了 CAMPER Junction 系列鞋款，观众可近距离体验可替换鞋头的模块化搭配乐趣，感受不同配色的穿搭效果。在每周六、周日的 13:00-14:00 及 18:00-19:00，现场特别开放帆布包烫印 DIY 体验，让参与者亲手打造专属配饰。此外，现场还设有巨型模块互动美陈，供观众拍照打卡并参与社交互动，全方位感受品牌的模块化创意与街头活力。
+本次“模块快闪空间”是 CAMPER 在空间体验与可持续理念上的一次重要落地，标志着品牌从单一的产品零售向“模块化空间实验”的全面转型。通过将鞋履的模块化基因转译为可互动、可重组的空间建筑语言，CAMPER 成功打破了传统鞋服快闪的边界，让设计哲学以更轻盈、更具参与感的方式触达大众。这种将产品创新、艺术装置与城市街区结合的策展方式，不仅精准触达了追求个性与创意的年轻群体，也为鞋履品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">重庆 · 08-28~09-06</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/CAMPER-JUNCTION-POPUP-CQ-2026-8-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/fb8c40e7168c47f3bfa61c5d2134208d.jpg" alt="妮维雅干爽音浪站" loading="lazy">
+      <h2>妮维雅干爽音浪站</h2>
+      <p class="description">妮维雅干爽音浪站落地于秦皇岛阿那亚虾米音乐节现场，活动时间为 2026 年 8 月 28 日‑8 月 30 日，作为音乐节官方合作品牌快闪站点，面向全体音乐节入场观众开放体验。
+在空间搭建上，站点依托阿那亚滨海场地环境，贴合音乐节热烈松弛的户外氛围，以妮维雅标志性蓝色为主视觉色调，融合音乐、音浪、浪潮等设计元素打造开放式潮玩快闪空间，整体没有封闭隔断，与海边音乐节场景融为一体，现场划分五大功能打卡区块，设置巨型喷雾艺术装置、互动游戏装置、产品体验区以及礼品兑换区域，装置兼顾互动可玩性与海边出片属性，灯光视觉呼应音乐节现场舞台氛围，把止汗产品功能概念转化为可视化、可参与的线下场景，构建音乐与个护体验结合的沉浸式潮玩点位。
+本次活动围绕 “压制热汗，无拘上场” 核心主题设计完整体验流程，设置喷雾体验、止汗暴击、焕亮节拍、干爽体验、礼品兑换五大体验板块，参观者可以打卡巨型喷雾装置拍摄海边主题大片，参与以热汗为概念的解压击打游戏、跟随现场音乐节奏完成节拍互动挑战，在产品体验区直接试用妮维雅爽身气雾等止汗系列产品，切身感受 72 小时长效干爽的产品效果，完成互动打卡即可兑换产品小样、降温贴、主题显眼包、歌词贴等限定周边，用户在社交平台发布相关笔记，凭截图还可以解锁额外专属礼遇，整个站点集游戏互动、产品试用、打卡出片、福利领取于一体，适配音乐节年轻人蹦迪休闲的游玩节奏。
+妮维雅干爽音浪站的活动意义，在于深度绑定音乐节目标消费场景，抓住户外音乐节高温多汗的真实用户痛点，跳出传统硬广输出模式，将止汗爽身的产品卖点融入音乐节玩乐体验之中，让消费者在真实使用场景下感知产品价值，传递 “尽兴玩乐，不受出汗尴尬束缚” 的品牌态度；借助阿那亚虾米音乐节的青年流量，拉近品牌与年轻群体的距离，强化妮维雅止汗系列年轻潮流的产品认知，同时依靠现场用户社交自发传播，完成场景化营销扩散，实现品牌理念、产品实力与青年文化的双向融合。
+妮维雅干爽音浪站于2026年8月28日至8月30日落地秦皇岛阿那亚虾米音乐节，作为官方合作品牌快闪空间，是品牌深耕青年户外场景、绑定潮流音乐文化的创新性场景营销项目，精准贴合音乐节高温多汗的真实场景痛点，突破传统日化品牌生硬宣讲的推广模式。
+项目空间依托阿那亚滨海自然场地与松弛热烈的音乐节氛围，以品牌标志性蓝色为主视觉，融合音浪、浪潮等潮流设计元素打造开放式无隔断潮玩空间，与海边户外场景自然融合。场地科学划分五大功能区块，搭配巨型喷雾艺术装置、互动游戏设施、产品体验区与礼品兑换点位，结合舞台氛围灯光系统，将抽象的长效止汗功能转化为可视化、可互动的沉浸式场景体验，兼顾游玩趣味性与社交出片属性。活动围绕“压制热汗，无拘上场”核心主题搭建完整体验链路，涵盖喷雾试用、解压互动、节拍挑战、干爽体验与福利兑换，让年轻受众在真实户外运动场景中直观感受72小时长效干爽的产品核心优势。
+同时依托用户现场打卡、社交平台种草分享解锁专属礼遇的机制，激发海量自发UGC传播，深度联动青年潮流圈层，将产品卖点、品牌态度与音乐节玩乐场景深度融合，有效拉近品牌与年轻群体的距离，完成产品种草、青年文化赋能与品牌年轻化升级的营销闭环。</p>
+      <div class="meta">NIVEA 妮维雅 · 08-28~08-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Nivea-Dry-Wave-Station-Aranya-2026-8-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/ffc93fed215c45d9947db937098b07c0.jpg" alt="蒜头熊「潮汐之声」主题艺术快闪" loading="lazy">
+      <h2>蒜头熊「潮汐之声」主题艺术快闪</h2>
+      <p class="description">蒜头熊「潮汐之声」主题艺术快闪为 SunToBear 蒜头熊 IP 全国首展，落地于上海荟聚 L1 山脉中庭，地址为上海市长宁区金钟路 788 号，展期从 2026 年 8 月 19 日持续至 9 月 13 日，每日开放时段 10:00‑22:00，面向商场内全体访客免费参观打卡，由潮玩品牌 JOTOYS 奇偶潮乐打造，以 “潮汐” 作为核心叙事意象，借潮汐往复起落隐喻爱与陪伴从未停歇的内核，传递治愈温暖的 IP 精神。
+在空间搭建方面，快闪选址购物中心开阔中庭，整体以深海潮汐为设计灵感，主视觉采用层次丰富的蓝白色调，融入海浪、气泡、音符等海洋元素，打造沉浸式潮汐深海场景，现场设置三大核心打卡场景，包含 TVC 同款巨型浴缸装置、充满氛围感的回响灵感空间、蓝色琴键音符艺术装置，搭配巨型蒜头熊雕塑、海浪造型造景、流动光影与泡泡特效，划分 IP 形象展示区、盲盒展品陈列区、集章互动区、周边售卖区，空间兼顾艺术氛围感与拍照出片属性，将 IP 故事视觉化呈现，后期叠加品牌代言人主题场景，实现潮玩艺术空间与粉丝向主题场景的融合，适配普通观展人群与粉丝群体双重打卡需求。
+本次快闪活动内容多元丰富，参观者可以循着潮汐主题线索完成点位打卡，领取集章地图完成集章任务即可兑换限定礼品，现场陈列蒜头熊系列盲盒全款式展品，开放潮玩、主题周边的线下选购，展期内不定期开展艺术家签绘、蒜头熊人偶巡游等特色活动；在品牌代言人官宣之后，展区同步上线专属主题打卡内容，开放限定闪光礼包、星光盲盒等限定商品线下发售，观众拍摄现场画面发布社交平台并带上相关话题，还可解锁额外的专属礼遇，整体集合观展打卡、IP 故事体验、潮玩选购、互动福利、粉丝应援于一体，兼顾艺术体验、商业售卖与社交传播多重功能。
+这场潮汐之声限时快闪的活动意义，在于将蒜头熊治愈系 IP 内核借助潮汐的诗意概念具象落地，跳出潮玩单纯售卖产品的模式，用线下艺术空间完整讲好蒜头熊 “带走坏情绪、传递陪伴与勇气” 的 IP 故事，让消费者脱离线上图片，沉浸式感知 IP 的情绪价值；作为 IP 全国首站，借助上海商业地标的流量，进一步扩大蒜头熊 IP 的大众认知度，同时联动品牌代言人资源，打通普通潮玩爱好者与粉丝圈层，实现破圈传播；依托购物中心快闪的形式，构建潮玩艺术、大众打卡、粉丝文化共生的线下场景，完成 IP 形象、产品实力与情感理念的立体输出，也为原创国潮 IP 提供线下叙事、用户运营的样本，推动原创潮玩文化的公众传播。
+由JOTOYS奇偶潮乐打造的蒜头熊「潮汐之声」全国首展，于2026年8月19日至9月13日落地上海荟聚中庭，是原创国潮IP依托城市核心商业地标打造的沉浸式艺术快闪项目，以潮汐往复起落的自然意象隐喻陪伴与治愈的核心精神，突破传统潮玩快闪单一售卖模式，实现IP情感叙事与线下艺术场景的深度融合。项目空间以深海潮汐为核心设计灵感，采用层次渐变蓝白主色调，融合海浪、气泡、音符等海洋元素，构建治愈系深海沉浸式场景。
+场地依托开阔中庭优势，打造巨型浴缸装置、回响灵感空间、蓝色琴键艺术装置三大核心打卡场景，搭配巨型IP雕塑、流动光影与泡泡特效，科学划分展品陈列、集章互动、周边售卖等功能区域，兼顾艺术氛围感与社交出片属性，后期叠加代言人主题场景，同步覆盖普通观展人群与粉丝圈层需求。展期内容丰富多元，常态化开放打卡集章、全系列盲盒观赏选购与限定周边发售，不定期开展艺术家签绘、人偶巡游特色活动，配合社交平台话题打卡解锁专属礼遇，形成观展、互动、消费、传播的完整体验链路。
+活动依托上海商圈流量优势，以具象潮汐场景落地IP治愈内核，跳出浅层货品营销，通过沉浸式体验强化用户情感共鸣，借助粉丝应援与大众UGC扩散实现圈层破圈，立体输出原创IP的形象、产品与价值理念，为国潮IP线下长线运营与文化传播提供优质实践样本。</p>
+      <div class="meta">上海 · 08-24~09-13</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Ginger Bear &quot;Tidal Sound&quot;  Art Pop-Up Event" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/cdbe971dcb2f45d8acc135fc4a89dd37.jpg" alt="SABON慢闪空间" loading="lazy">
+      <h2>SABON慢闪空间</h2>
+      <p class="description">SABON 感官情绪绿洲慢闪空间落地于上海徐汇西岸中环 L1 层中岛，具体地址为徐汇区大木桥路 900 号，慢闪周期从 2026 年 8 月 22 日持续至 11 月 19 日，面向商场访客免费开放体验，选址于徐汇滨江兼具艺术氛围与品质消费属性的西岸中环商业街区，以法式花房秘境为创作灵感，在都市之中打造一处香氛疗愈型的城市情绪绿洲。
+在空间搭建层面，整体复刻法式玻璃花房形态，以品牌标志性清新绿色为主色调，搭配白绿条纹遮阳篷、大面积玻璃格窗，外部布置鲜活绿植造景，还原欧洲花房的通透浪漫质感，内部划分香氛体验区、打卡出片区、海盐相框 DIY 工坊、产品陈列区与空瓶回收环保专区，空间借助通透采光、自然花艺陈设与香氛气味氛围，弱化传统门店的销售感，将香氛、身体护理产品如同艺术品一般陈列展示，把嗅觉体验、视觉美学融为一体，适配滨江商圈散步打卡、松弛漫游的场景节奏，实现沉浸式闻香体验与社交拍摄的双重功能。
+本次慢闪空间以 “循香入秘境，都市情绪绿洲” 为核心主题，设置完整的寻香体验流程，访客可以自由试闻品牌全线香调，亲身感受磨砂膏、沐浴油、身体精油等明星产品的质地与香气，参与店内特色海盐相框 DIY 手作工坊，制作专属法式主题手作作品，到店即可领取入店专属礼遇与限量法式周边，同时开展空瓶再生环保活动，消费者携带 SABON 标准装玻璃空瓶前来，可参与可持续主题互动，践行品牌环保理念，访客发布社交平台笔记带上指定话题还能解锁额外福利，整体集合闻香试香、手作工坊、产品体验、环保互动、周边福利于一体，兼顾休闲漫游、手工体验与消费选购多重价值。
+这场慢闪活动的意义，在于依托西岸中环滨水艺术商业的客群土壤，跳出传统美妆柜台的销售逻辑，把香氛身体护理上升到情绪疗愈的生活方式层面，借助法式花房的空间叙事，传递 SABON 自然香氛、慢节奏悦己的品牌理念，让消费者通过视觉、嗅觉、动手体验全方位感知品牌美学；区别于短期快闪，本次长达三月的慢闪模式，深度融入徐汇滨江城市漫游的日常场景，触达追求生活质感的都市人群，强化品牌法式松弛的调性认知，同时将空瓶回收的可持续理念落地线下，传递品牌环保主张，依靠用户自发社交传播完成破圈，实现品牌文化、产品体验、可持续价值与城市公共商业空间的有机结合。
+蒜头熊「潮汐之声」主题艺术快闪是JOTOYS奇偶潮乐推出的SunToBear蒜头熊IP全国首展，于2026年8月19日至9月13日落地上海荟聚中庭，以潮汐起落的自然意象承载爱与陪伴的治愈内核，是原创国潮IP从线上内容走向线下艺术叙事的重要落地项目。项目空间以深海潮汐为设计基底，采用层次细腻的蓝白色调，融合海浪、气泡、音符等海洋元素打造一体化沉浸式场景，造型装置兼具艺术氛围与视觉叙事性，依托商场开阔中庭打造巨型浴缸装置、回响灵感空间、蓝色琴键艺术场景，搭配巨型蒜头熊雕塑、流动光影与泡泡特效，同时划分IP陈列、盲盒展示、集章互动与周边售卖功能区域，后期新增代言人主题场景，兼顾普通游客打卡体验与粉丝应援需求。
+活动期内容体系完善，开放点位打卡集章、限定周边售卖、全系列盲盒展示选购，不定期开展艺术家签绘、人偶巡游特色活动，用户通过社交平台话题种草即可解锁专属礼遇。本次项目打破传统潮玩快闪以售卖为主的单一模式，依托上海核心商圈流量优势，以沉浸式空间制作具象化传递IP治愈情绪价值，通过线下多元体验激发大众自发UGC传播，打通普通潮玩爱好者与粉丝圈层，实现IP形象、情感文化与产品价值的立体化传播，为国内原创潮玩IP线下艺术化运营、破圈传播提供了优质参考范式。</p>
+      <div class="meta">上海 · 08-22~11-19</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/SABON-POP-UP-STORE-SHANGHAI-2026-8-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/52de16aebb86447fb9c0c6ce8f647ed4.jpg" alt="【成都车展】TBA项目合集" loading="lazy">
+      <h2>【成都车展】TBA项目合集</h2>
+      <p class="description">在本届成都国际汽车展览会中，TBA为12家参展车企提供了精准定制的高质量服务。针对不同品牌的需求，我们的服务模块覆盖 设计、搭建、运营、发布会、互动多媒体 等全流程环节。无论是单一模块的深度支持，还是多模块协同配合，我们都以确保客户获得最优展出效果为核心，以专业能力护航每一家合作伙伴的成功亮相。
+阿维塔07L亮相成都车展，家族全系车型闪耀蓉城。现场可以打卡张凌赫同款座驾、合拍美学大片并赢取限量周边；在塔可茶歇补能站，可以获得沉浸式体验、打卡治愈系萌宠元素、品味主题特饮，畅享暖心陪伴。
+别克至境家族三款齐发，GL8双子星坐镇，世纪、昂科威、君越等燃油旗舰悉数亮相，现场设置三大沉浸打卡区：花海婚礼区、满分阅读角、周杰伦专区，拍照、带娃、听歌一站满足，同时还可以参与互动解锁限定周边好礼。
+TBA为比亚迪打造共创式科技艺术现场，以舞蹈快闪、情景演绎、互动游戏等五大板块串联引流、互动与感官三重升级，区域快闪聚拢人气，灵动演绎拉近距离，人屏互动激活科技感，《迪迪都兜》快闪强势引流主舞台，以年轻化演绎贴合品牌表达。细节处融入熊猫元素与成都特色，&quot;小野熊饼干&quot;车模组合惊艳亮相，技术走廊熊猫手偶营造特色场景，展期客流源源不断、持续释放比亚迪产品实力与品牌焕新魅力。
+全新XT5 PHEV正式亮相成都车展，搭载Momenta R7辅助驾驶与电动蜂鸟底盘等硬核科技；同台集结CT5彰显赛道基因，VISTIQ凯威德则凭全尺寸公路旗舰与AKG音响诠释旗舰品质。现场更设有打卡赢好礼的互动机制，带领观众全方位领略凯迪拉克的性能与豪华魅力。
+长城汽车以“亲”为感情主线，通过“潮酷巴蜀一家亲”、“硬核巴蜀一家亲”、“热爱巴蜀一家亲”三大篇章，邀请真实车主登台分享驾驶故事，串联起产品和情感，让观众深切感受到用户对长城汽车的高度认可，生动诠释了“长城一家亲”的深厚情怀。同时，六大品牌集中亮相，让产品真正成为连接用户的重要纽带。
+腾势而上，乐享蓉城。腾势Z9S&amp;腾势Z9GT双车闪耀成都、共启美好出行；腾势Z镜湖银硬顶版与洱海蓝敞篷版同台亮相，以极致美学自成焦点，展现巅峰性能，定格每一次驻足与惊叹。全场景、真智能、更安全的易三方动态体验与无人漂移秀联袂登场，带来双重震撼；此外，腾势全系车型悉数亮相，更设有缤纷花海、精美演绎等超多花样。
+硬核魅力，非凡人气。方程豹钛9迎来全球首秀，方程S、方程SGT全新内饰惊艳登场。展台全景呈现全系产品矩阵，规划流畅的观展动线，划分车型展示区、静谧洽谈区，兼顾观展体验与商务洽谈。现场好戏接连上演，模特舞蹈演绎氛围感拉满，硬核豹力爬坡动态展演尽显性能锋芒，更有趣味互动打卡，解锁专属精美好礼。多维体验精彩纷呈，诠释方程豹不一样的美好生活。
+FREELANDER神行者首款车型神行者8亮相成都车展，以把山野瀑布搬进展馆为核心创意，通过多层叠水结构、动态循环系统和驻场运维，在展馆中真实复刻出有落差、有水流、有水声的自然瀑布，让观众在闻水声、见真水、看车的过程中，直观感知全地形SUV刚柔并济的产品力与自由旷野的品牌精神。
+理想汽车高人气亮相成都车展，全系车型齐整集结，观众不仅能近距离见识最前沿的具身智能、一睹后备厢变出移动厨房的巧思，还能以有理想的创作者身份赢取丰厚积分奖励、领取品牌代言人限定周边，在沉浸式体验中，感受理想汽车带来的科技温度与生活方式。
+岚图全系车型与重磅首发的全球首款FUV岚图追光S集结成阵。活动现场，人气演员麦迪娜惊喜亮相，追光S交付仪式感拉满，伴随车主互动与展台点位巡游，展台热度持续攀升。观众还可领取追光护照并获赠专属好礼，全方位感受高端新能源的颜值与实力。
+极氪艺术馆璀璨亮相成都车展，多款8X9X等核心车型登场，全方位呈现千里浩瀚体系、浩瀚-S超级电混架构、神盾金砖电池硬核技术实力。现场打造光辉尊享体验空间，Z Club融合非遗，机械臂绘画等多重展示，传递品牌温度，带来沉浸式极致体验，共赴高光时刻。
+纵横展台以“巴适成都，尽兴纵横”为主题打造纵横之境。展台设计以“生命树”为符号，构建起大气磅礴的辽阔格局。将技术展示、产品体验与公益守护深度串联，并结合独具成都特色的多重沉浸式体验，直观传递品牌从守护人到守护自然的全领域价值主张。</p>
+      <div class="meta">成都 · 阿维塔 AVATR · 08-21~08-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/CHENGDU-AUTO-SHOW-TBA-WORKS-2026-8-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-09-01
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
