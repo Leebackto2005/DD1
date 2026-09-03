@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-09-03</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-09-03 周四</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">10</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/a5627beef39d4c27b807fcbaa5d55bcd.jpg" alt="Veuve Clicquot × Jacquemus｜当一场午宴成为品牌体验本身" loading="lazy">
+      <h2>Veuve Clicquot × Jacquemus｜当一场午宴成为品牌体验本身</h2>
+      <p class="description">Veuve Clicquot × Jacquemus｜当一场午宴成为品牌体验本身
+2026年4月，Veuve Clicquot 携手 Simon Porte Jacquemus，在韩国 Museum SAN 呈现了一场特别的品牌体验。项目围绕 La Grande Dame 2018 Jacquemus Edition 展开，由创意餐饮工作室 WE ARE ONA 参与打造，将香槟、料理、建筑、自然与艺术共同放进一场完整的 Culinary Experience 中。
+项目选择 Museum SAN 本身就已经构成了体验的一部分。这座美术馆由安藤忠雄设计，建筑与山地自然环境之间有非常明确的空间关系。活动没有采用传统酒店晚宴或发布会的方式，而是借助美术馆环境，将午宴变成一次更轻、更自然，也更具有生活方式感的品牌聚会。
+WE ARE ONA 在这里承担的也不仅是传统 Catering。餐桌设计、菜单、食物呈现、服务方式以及宾客体验共同参与品牌叙事，料理成为和空间、音乐、产品同样重要的内容媒介。
+从活动行业来看，这类项目值得关注的地方，是奢侈品牌正在重新定义“餐饮”在活动中的位置。
+过去，Food &amp; Beverage 更多属于项目执行中的供应商模块；但在越来越多 Luxury Experience 中，Culinary 已经开始进入 Creative Concept。品牌不一定需要大型舞台、复杂装置或者一场正式发布会，而是通过一顿午餐、一张餐桌、一处建筑和几十位宾客，完成一次更加克制却完整的品牌表达。</p>
+      <div class="meta">09-03</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Veuve-Clicquot-X-Jacquemus-Dinner-Experience-KR-2026-9-3" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/0e9200d90ad542ee8cff73a740c13071.jpg" alt="JACK&amp;JONES x NBA 黑金质感主题快闪（呼和浩特）" loading="lazy">
+      <h2>JACK&amp;JONES x NBA 黑金质感主题快闪（呼和浩特）</h2>
+      <p class="description">JACK&amp;JONES x NBA 黑金质感主题快闪（呼和浩特）
+JACK&amp;JONES x NBA 黑金质感主题快闪于 2026 年 9 月 2 日至 9 月 29 日落地呼和浩特凯德广场诺和木勒 L1 层中厅。本次快闪以黑金质感与街头篮球文化为核心思路，将 NBA 联名系列服饰与潮流穿搭场景深度融合，打造了一场兼具运动感与都市型格的沉浸式体验空间，定位为面向年轻男性及潮流爱好者的线下打卡地。
+现场空间以黑金配色为主视觉基调，营造出强烈的潮酷氛围与高级质感。巨型艺术篮球装置作为全场打卡 C 位，极具视觉冲击力；球星高光影像墙通过光影与画面交织，还原赛场热血瞬间；珍稀签名球衣陈列展出则增添了浓厚的收藏与竞技氛围。整体设计摒弃了传统服装店的单调陈列，将运动、街头与日常穿搭灵感自然融合，随手一拍就能定格充满力量感与街头气息的大片。
+现场集中展示了 JACK&amp;JONES x NBA 联名系列服饰，观众可近距离试穿体验版型与面料质感，感受运动街头与日常穿搭的适配度。现场设有专属互动美陈与打卡点位，供观众拍照留念。此外，部分门店还同步上线了黑金扭蛋机互动环节，参与互动即可解锁专属 NBA 限定礼物，全方位感受联名系列的潮酷魅力。
+本次“黑金质感主题快闪”是 JACK&amp;JONES 在跨界联名与空间体验上的一次重要落地，标志着品牌从单一的日常服饰零售向“体育 IP+潮流生活方式”的全面转型。通过将 NBA 篮球文化与都市街头场景深度融合，JACK&amp;JONES 成功打破了传统男装的品牌边界，让运动美学融入年轻人的日常 OOTD。这种将体育 IP、潮流设计与城市商业空间结合的策展方式，不仅精准触达了追求个性与质感的年轻消费群体，也为快时尚品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">呼和浩特 · 09-02~09-29</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/JACK-JONES-NBA-POPUP-HHHT-2026-9-2" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/46622154fd7747baab9460d9cc8caae1.jpg" alt="RicoVea x Mookipet联名主题快闪（北京）" loading="lazy">
+      <h2>RicoVea x Mookipet联名主题快闪（北京）</h2>
+      <p class="description">RicoVea x Mookipet 联名主题快闪「Life With Voky」于 2026 年 9 月 1 日至 10 月 7 日落地北京朝阳合生汇 B2 中庭。本次快闪以“与 TA 见面”为核心思路，将 RicoVea 的品牌 IP「Voky 香氛小狗」与 Mookipet 的宠物服饰深度融合，打造了一个可以接住情绪、充满治愈感的自在衣橱，定位为面向都市年轻女性与人宠家庭的沉浸式线下体验空间。
+现场空间以日常治愈与毛茸茸的松弛感为视觉基调，巧妙融合了人宠穿搭美学与互动打卡装置。整体设计摒弃了传统店铺的单调陈列，通过暖色调的软装与趣味美陈，营造出轻松随性的“Puppy time”氛围。空间内不仅展示了秋冬新品，还设置了专属的拍照互动区，让人与宠物都能在这里找到属于自己的治愈角落，随手一拍就能定格充满温馨感与潮流感的大片。
+现场集中展示了 RicoVea x Mookipet 联名秋冬新品，观众可近距离试穿体验人宠同款的版型与舒适度。打卡玩法丰富，前往打卡成为品牌会员即可惊喜开拍限定人生四格；购买任意快闪活动款，即可获得 Voky 娃衣挂件。此外，现场还设有互动装置供观众拍照留念，全方位感受人宠生活的治愈与快乐。
+本次「Life With Voky」联名快闪是 RicoVea 在跨界联名与空间体验上的一次重要落地，标志着品牌从单一的设计师服饰零售向“人宠生活方式美学”的全面转型。通过将 Voky 香氛小狗 IP 与宠物服饰品牌 Mookipet 结合，RicoVea 成功打破了传统服饰零售的边界，让治愈松弛的生活方式融入年轻人的日常穿搭与社交场景。这种将设计师品牌、宠物经济与线下快闪结合的策展方式，不仅精准触达了追求情绪价值的年轻消费群体，也为设计师品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">北京 · 09-01~10-07</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/RICOVEA-X-MOOKIPET-POP-UP-STORE-BJ-2026-9-2" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/7267998ead8c433c96f79cfe76018244.jpg" alt="FILA「PLAY AS ONE 合力致美」意式运动艺术空间（香港）" loading="lazy">
+      <h2>FILA「PLAY AS ONE 合力致美」意式运动艺术空间（香港）</h2>
+      <p class="description">FILA「PLAY AS ONE 合力致美」意式运动艺术空间（香港）
+FILA「PLAY AS ONE 合力致美」限时意式运动艺术空间于 2026 年 9 月 1 日至 10 月 6 日落地香港启德体育公园（启德零售馆 2）。本次快闪以 FILA 陪伴中国香港队走过 15 年、见证 153 次登上国际领奖台的深厚羁绊为背景，结合第 20 届亚运会出征契机，将意式美学与体育精神深度融合，打造了一场兼具高智感与热血氛围的沉浸式体验空间。
+现场空间以「意式运动艺术」为核心视觉基调，巧妙融合了运动张力与档案美学。外场设置了「运动张力」动态雕塑，定格极具爆发力的瞬间；内馆则通过展馆式产品陈列与档案化历史展区，将运动精神赋形于专业装备，并留存 FILA 与港队长久相伴的回忆。整体设计摒弃了传统快闪的喧闹感，以高级的意式美学和光影交织，营造出兼具专业度与艺术感的沉浸式氛围。
+现场集中展示了中国香港队的全新出征团服与领奖服（如融入香港狮子山天际线设计的 Settanta 胜利夹克），观众可近距离感受象牙白主调搭配红白蓝线条的高智感审美。现场提供定制印名 T 恤服务，让参与者留下专属印记。此外，外场还设有「全民共创」互动环节与「合力撑港队」打卡装置，观众可沉浸式参与互动，全方位感受不同项目运动员「合力致美」的体育内核。
+本次「合力致美」快闪是 FILA 在体育 IP 营销与空间体验上的一次重要落地，标志着品牌从单一的运动装备展示向「意式美学+体育精神」的全面转型。通过将 15 年陪伴港队的深厚情感与亚运出征的荣耀时刻结合，FILA 成功打破了传统运动品牌的场景边界，让专业竞技精神以更艺术化、更具情感共鸣的方式触达大众。这种将体育 IP、意式设计与城市公共空间结合的策展方式，不仅精准触达了追求质感与热血的年轻消费群体，也为运动品牌在大型赛事节点的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">香港 · FILA · 09-01~10-06</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/FLIA-PLAY-AS-ONE-POPUP-HK-2026-9-2" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/6f17cddaac1b41208e345c38267f2cb7.jpg" alt="2026天猫金妆奖颁奖盛典" loading="lazy">
+      <h2>2026天猫金妆奖颁奖盛典</h2>
+      <p class="description">2026 天猫金妆奖颁奖盛典于 2026 年 8 月 31 日在上海展览中心盛大启幕。本次盛典以“美至新境”为核心主题，不仅是一场汇聚了众多明星、品牌与行业大佬的时尚艺术盛宴，更是依托数亿消费者真实交易数据，深度洞察美妆行业趋势、发布年度风向标榜单的权威盛会。
+本次盛典星光璀璨，已官宣出席的嘉宾包括华晨宇（以重点品牌联合创始人身份赴约）、古力娜扎、欧阳娜娜、佟丽娅、陈妍希、何超莲、周翊然（解锁天猫礼遇大使新身份）、尚雯婕、沈梦辰、姚安娜、张予曦、黄灿灿、马柏全、余承恩、刘萧旭、刘令姿、赵昭仪、王鹤润、李娜、洪晃等。此外，李佳琦团队也现身现场，并荣获“年度最具影响力主播奖”。
+现场一次性解锁四场视觉盛宴。毛戈平带来国风大秀，将东方纹样与戏剧感妆造完美融合；MAC 呈现街舞大秀，以潮流街头态度打破常规；卡诗与欧莱雅 PRO 联手打造高定发艺秀，聚焦发丝美学；天猫“美至新境”主题大秀则融合美妆、科技与多元审美，勾勒美妆未来。此外，盛典还揭晓了年度重磅奖项，并新增四大主题奖，涵盖 AI 突破、场景创新、人群破圈与文化美学，理肤泉、雅诗兰黛、六神、毛戈平等品牌凭借在技术、场景与文化上的深度探索斩获殊荣。
+本届金妆奖释放了美妆行业回归“长期主义”的强烈信号。现场数据显示，今年 1-7 月超 500 个大牌在天猫破亿，头部大牌重回快车道。这标志着美妆行业已从单纯的流量砸爆款，转向依靠产品力、品牌力和消费者关系沉淀“经营复利”。金妆奖不仅总结过去，更在指引行业未来的结构性变化与可能性。</p>
+      <div class="meta">上海 · 天猫 · 08-31</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/TMALL-BEAUTY-AWARDS-EVENT-SH-2026-9-2" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/3056d949ba7346cbac467d48088a1e06.jpg" alt="奥利奥 × 肯德基 四城联名快闪店" loading="lazy">
+      <h2>奥利奥 × 肯德基 四城联名快闪店</h2>
+      <p class="description">北京五棵松冰雪店、杭州京杭大运河店、长沙开福万达店、上海美罗城店
+奥利奥 × 肯德基四城联名快闪店于 2026 年 8 月 28 日至 9 月 14 日，在北京、杭州、长沙、上海四城同步空降。本次快闪以“一块扭开，解锁多重惊喜”为核心思路，将奥利奥的“扭”与肯德基的“吮指”趣味结合，主打咸甜碰撞的猎奇美食体验。现场不仅同步上线了吮指原味鸡味奥利奥等联名新品，还融合了巨型装置打卡、花式扭开互动与限定周边派发，是近期极具话题度与互动性的跨界快闪活动。
+现场空间以奥利奥经典的蓝红配色与肯德基的标志性元素为主视觉，打造了一座充满潮流感与食欲感的联名主题空间。巨型奥利奥装置作为全场打卡 C 位，不仅极具视觉冲击力，还能触发隐藏福利。整体设计摒弃了传统门店的单调感，通过趣味美陈与品牌元素的巧妙交织，营造出轻松随性的街头派对氛围，随手一拍就能定格充满趣味与潮流感的大片。
+现场设有小红书图文打卡与视频互动玩法，发布指定内容的图文笔记可领取吮指原味鸡味奥利奥，拍摄两人及以上演绎的“花式扭开”视频则有机会解锁超酷的联名桶包。每日整点时段，现场还会惊喜掉落吮指奥秘套餐，数量有限先到先得。此外，现场还设有扭蛋机与限定周边发放区，观众可以近距离品尝咸甜碰撞的联名新品，体验脑洞大开的隐藏吃法。
+本次四城联名快闪是奥利奥与肯德基在跨界营销上的一次创新突破，标志着两大品牌从单一的产品联名向“沉浸式感官体验”的全面转型。通过将“扭”的趣味互动与“吮指”的味觉体验结合，品牌不仅将联名产品从“猎奇单品”升级为“社交与情感分享的载体”，更传递了“一块扭开，解锁惊喜”的轻松品牌态度。这种将快消食品、互动游戏与线下空间深度融合的策展方式，不仅精准触达了庞大的年轻消费群体，也为食品品牌在核心商圈的线下体验创新与社交传播提供了极具参考价值的范本。</p>
+      <div class="meta">北京 · 08-28~09-14</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/OREO-X-KFC-POPUP-BJ-HZ-CS-SH-2026-9-2" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/b7f5f310acc54d598e20a8d50eb1fcf3.jpg" alt="【虾米音乐节】MAC「24H无瑕底妆专线」快闪空间（阿那亚）" loading="lazy">
+      <h2>【虾米音乐节】MAC「24H无瑕底妆专线」快闪空间（阿那亚）</h2>
+      <p class="description">【虾米音乐节】MAC「24H无瑕底妆专线」快闪空间（阿那亚）
+M·A·C「24H 无瑕底妆专线」快闪空间于 2026 年 8 月 28 日至 8 月 30 日，伴随阿那亚·虾米音乐节同步落地阿那亚。本次快闪以“音浪开场，尽享狂欢”为核心思路，将品牌无瑕底妆家族的 24H 持妆科技与音乐节热血氛围深度融合，打造了一场兼具音浪狂欢与专业底妆体验的沉浸式海边补给站，定位为面向年轻乐迷与美妆爱好者的场景化线下互动空间。
+现场空间以音乐现场与底妆补给站为灵感，将试妆台直接搬入音乐节场地。整体设计摒弃了传统专柜的拘束感，结合海边音浪与舞台灯光，营造出充满先锋感与活力的沉浸式氛围。空间内设置了专属的妆容补给站与互动打卡美陈，让专业底妆体验与音乐节狂欢场景自然交织，随手一拍就能定格充满舞台感与夏日气息的大片。
+现场提供专业彩妆师一对一的改妆服务，观众可体验 MAC 无瑕底妆家族产品，感受 24H 持妆不脱妆的遮瑕力。现场设有限定扭蛋机，拍照打卡并带话题发布笔记即可解锁限量扭蛋礼遇。8 月 28 日与 29 日，博主陈土豆与模特 yanyann_ 将作为一日店长限时空降，分享出片秘诀并带来专属惊喜。此外，线上参与互动还有机会抽取虾米音乐节单日门票，以及 500 份无瑕粉底液正装与小样限时掉落。
+本次「24H 无瑕底妆专线」是 M·A·C 在音乐节场景化营销上的一次创新突破，标志着品牌从单一的产品展示向“沉浸式感官体验”的全面转型。通过将底妆科技与阿那亚虾米音乐节的音浪氛围结合，M·A·C 不仅将无瑕底妆从“护肤单品”升级为“尽兴狂欢、时刻在线的情感载体”，更传递了“循着热爱奔赴夏日音浪”的品牌态度。这种将高端彩妆、音乐现场与社交互动深度融合的策展方式，不仅精准触达了庞大的年轻乐迷群体，也为美妆品牌在文旅音乐节场景下的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">阿那亚 · MAC 魅可 · 08-28~08-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/MAC-XIAMI-MUSIC&amp;ARTS-FESTIVAL-POPUP-ANAYA-2026-9-2" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/8eaaa5733d1345cc952a0c804c316611.jpg" alt="【虾米音乐节】天猫超级品类日 x FIGARO「Go Live」海边巡演专列（阿那亚）" loading="lazy">
+      <h2>【虾米音乐节】天猫超级品类日 x FIGARO「Go Live」海边巡演专列（阿那亚）</h2>
+      <p class="description">【虾米音乐节】天猫超级品类日 x FIGARO「Go Live」海边巡演专列（阿那亚）
+费加罗携手天猫超级品类日打造的「Go Live」海边巡演专列，于 2026 年 8 月 28 日至 8 月 30 日伴随阿那亚虾米音乐节同步亮相。本次快闪以“海浪不止，音乐不停”为核心思路，将潮流生活趋势与海边音乐节的狂欢氛围深度融合，打造了一场兼具音浪狂欢与生活方式体验的沉浸式海边补给站，定位为面向年轻乐迷与潮流爱好者的场景化线下互动空间。
+现场空间以复古音乐巴士为核心视觉载体，蓝白双层车身搭配海边落日与晚霞，随手一拍就能定格充满 Chill 氛围的夏日大片。巴士内部打造了趋势体验展区，结合品牌产品与音乐场景，营造出沉浸式的感官体验。整体设计将生活趋势科技与海边音乐节的自由气息自然交织，让专业产品体验与街头潮流场景完美融合。
+现场观众可以打卡复古音乐巴士与蓝白双层车装置，感受海边音浪的沉浸氛围。在巴士内的互动展区，乐迷们可以体验各类潮流生活方式品牌产品，感受先锋趋势与日常生活的结合。此外，现场还设有品牌合集区，联动多个潮流生活方式品牌，观众可一站式打卡体验并参与互动抽奖，解锁音乐节限定周边与清凉好物。
+本次「Go Live」海边巡演专列是天猫超级品类日在音乐节场景化营销上的一次重要落地，标志着平台从单一的商品展示向“沉浸式生活方式体验”的全面转型。通过将生活趋势与阿那亚虾米音乐节的音浪氛围结合，天猫不仅将潮流好物从“消费单品”升级为“尽兴狂欢、时刻在线的情感载体”，更传递了“Go Live，去现场，去感受，去热烈生活”的品牌态度。这种将电商趋势、音乐现场与社交互动深度融合的策展方式，不仅精准触达了庞大的年轻乐迷群体，也为电商平台在文旅音乐节场景下的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">阿那亚 · 08-28~08-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/TMALL-FIGARO-XIAMI-MUSIC&amp;ARTS-FESTIVAL-POPUP-ANAYA-2026-9-2" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/cc7e8205f26a4fcf885a6bbd0d51054a.jpg" alt="【虾米音乐节】Fender Telecaster® 「声源在此 乐聚虾米」75 周年特别活动" loading="lazy">
+      <h2>【虾米音乐节】Fender Telecaster® 「声源在此 乐聚虾米」75 周年特别活动</h2>
+      <p class="description">【虾米音乐节】Fender Telecaster® 「声源在此 乐聚虾米」75 周年特别活动
+Fender Telecaster® 75 周年特别活动「声源在此 乐聚虾米」于 2026 年 8 月 28 日至 8 月 30 日，伴随 2026 阿那亚虾米音乐节同步落地。本次活动依托阿那亚社区独特的海边人文景观，打造了“孤独图书馆深度体验”与“北侧沙滩快闪空间”两处场地，将 Telecaster 跨越四分之三个世纪的传奇历程与海边音乐节的狂欢氛围深度融合，是近期极具文化厚度与音浪活力的吉他文化打卡地。
+现场空间巧妙结合了阿那亚的极简建筑美学与海边沙滩的自然野趣。在孤独图书馆内，通过珍稀琴款陈列、影片展映与主题对谈区，营造出静谧且充满文化沉淀的室内艺术空间；而在图书馆北侧沙滩，则搭建了「虾米·Fender 海边快闪体验空间」，将 75 周年纪念款新品与 AI 互动装置直接置于海浪与晚霞之间。当西部旷野的 Telecaster 来到渤海沙滩，整个空间不仅是一件件乐器，更是一部活生生的流行音乐发展史。
+8 月 28 日 10:30-18:00，在孤独图书馆可参与 Telecaster 文化深度体验特别场，近距离观赏 1951 Nocaster、1957 Esquire 等四把古董珍稀 Vintage 老琴及六把 Masterbuilt 大师定制琴，并参与音乐人影片展映与主题对谈（需提前预约）。8 月 28 日至 30 日，凭虾米音乐节门票即可进入北侧沙滩快闪空间，无需预约，乐迷可上手试弹 75 周年纪念版 Telecaster 及 Precision Bass 全系列新品，亲身感受经典的 Twang 音色，并参与文化体验与 AI 互动。现场还展示了 Fender 与中国红十字基金会嫣然天使基金合作的三把嫣然天使限定 Telecaster，参与互动还可解锁多重互动好礼。
+本次「声源在此 乐聚虾米」是 Fender 在音乐节场景化营销与吉他文化传播上的一次重要落地，标志着品牌从单一的产品展示向“沉浸式文化体验”的全面转型。通过将 75 年历史的传奇琴型与阿那亚虾米音乐节的音浪氛围结合，Fender 不仅将 Telecaster 从“乐器单品”升级为“跨越时代的音乐情感载体”，更深化了品牌与中国本土音乐生态的联结。这种将硬核乐器文化、音乐现场与公益行动深度融合的策展方式，为乐器品牌在文旅音乐节场景下的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">08-28~08-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/FENDER-TELECASTRE-XIAMI-POPUP-ANAYA-2026-9-2" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-10">
+      <img class="cover" src="https://res.onsiteclub.com/3412034670534a4b962f29ebb3e13b2d.jpg" alt="Jordan THE ONE DISTRICT 玩沪街区｜THE ONE 全球总决赛线下主题空间" loading="lazy">
+      <h2>Jordan THE ONE DISTRICT 玩沪街区｜THE ONE 全球总决赛线下主题空间</h2>
+      <p class="description">Jordan THE ONE DISTRICT 玩沪街区｜THE ONE 全球总决赛线下主题空间
+Jordan THE ONE DISTRICT 玩沪街区｜把篮球赛事变成一座城市潮流街区
+Jordan THE ONE DISTRICT 玩沪街区落地上海，围绕 Jordan THE ONE 全球总决赛打造了一处集合篮球、产品、潮流文化与社群互动于一体的复合型品牌体验空间。
+整个项目并没有把 THE ONE 仅仅作为一场篮球赛事进行传播，而是将赛事内容进一步延伸到线下街区。现场以篮球文化与街头视觉为主要设计语言，通过赛场元素复刻、球鞋及服饰展示、篮球互动游戏、粉丝应援打卡以及赛事观赛等不同功能区域，把原本发生在赛场中的竞技氛围转化为普通消费者也能够参与的品牌体验。
+产品同样被放进整个体验动线之中。限定球鞋、服饰及城市限定周边不再只是独立陈列，而是与篮球场景、互动内容和拍照点位结合，让“看比赛、玩篮球、看新品、拍内容”成为一条连续的体验路径。
+现场设置的赛事直播观赛区域，则进一步承担了社群聚集功能。篮球爱好者能够在线下共同观看全球总决赛，让一场远端赛事在上海形成真实的线下应援场景。
+从 ONSITECLUB 的角度来看，这类项目值得关注的并不是搭建了多少互动装置，而是品牌正在把体育赛事从单一的 Event，延伸成一个能够被城市消费者进入的 Experience Platform。
+赛事负责制造内容，产品负责完成连接，街区负责聚集人群，而社群最终让赛事的影响力继续留在线下。
+Jordan THE ONE DISTRICT 玩沪街区，本质上是一次 Sports Event × Brand Activation × Retail Experience × Youth Community 的复合型体验营销项目。</p>
+      <div class="meta">上海 · NIKE 耐克 · 08-22~08-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Jordan-THE-ONE-DISTRICT-Campaign-Shanghai-2026-9-3" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-09-03
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
