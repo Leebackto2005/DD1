@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-09-10</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-09-10 周四</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">12</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/47476bc85d244593912566c0700828f3.jpg" alt="RUNRUN RABBIT 兴业太古汇公共艺术空间" loading="lazy">
+      <h2>RUNRUN RABBIT 兴业太古汇公共艺术空间</h2>
+      <p class="description">兴业太古汇南广场携手DreamToys旗下RUNRUN RABBIT打造的开放式公共艺术空间，是商场「爱混敢嗲·一拍即合」秋日活动季的核心标杆项目，深度溯源敦煌莫高窟藻井“三兔共耳”传统纹样，以“联结、友谊”为核心叙事内核，实现东方传统文化与当代潮玩艺术的创新融合。
+项目空间造型极具辨识度，场地入口矗立8米巨型白色三耳兔子主装置，搭配橙色脚手架与原木木箱搭建的工业风开放式展棚，巧妙糅合敦煌壁画典雅色彩与现代街头潮流质感，整体制作层次丰富、风格反差鲜明。场地科学划分艺术装置区、潮玩陈列区、休憩打卡区与周边零售区，全方位展出RUNRUN RABBIT系列雕塑、毛绒公仔与艺术手作，并设置兔头造型心愿投递装置，邀请访客填写心愿卡片参与公众艺术共创，强化沉浸式互动体验。
+项目立足南京西路核心商圈流量优势，紧扣中秋、国庆双节节点，邀约潮流与艺术类KOL探店传播，精准触达年轻消费群体。它突破传统商业快闪的单一售卖属性，融入公益与文化传播内核，以城市户外艺术地标的形式强化商场艺术调性与人文质感，通过线下沉浸式体验、社交平台UGC种草，有效激活商圈客流，完成品牌文化出圈、用户情感共鸣与商业消费转化的完整营销闭环。</p>
+      <div class="meta">上海 · 09-08~11-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/RUNRUN-RABBIT-XINGYE-YAIKOOHUI-Art-Space-SH-2026-9-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/07b68768fd1243418dd81613f6725948.jpg" alt="NOSE IDEA《时间之叙》嗅觉艺术项目" loading="lazy">
+      <h2>NOSE IDEA《时间之叙》嗅觉艺术项目</h2>
+      <p class="description">NOSE IDEA嗅觉艺术项目《时间之叙》于9月8日至10月12日落地上海百年石库门张园，是依托海派历史老建筑打造的沉浸式感官艺术展，以气味为核心媒介，串联空间、时间与个体记忆的独特叙事，为老旧历史建筑注入全新的艺术表达维度。项目空间设计秉持低饱和极简美学，最大化保留张园原生建筑肌理，摒弃繁杂商业化装饰，借助光影层次、原生材质与定制香氛装置搭建多层嗅觉场景，有序划分时序回廊、气味记忆舱、时间标本室等主题展区。
+空间动线循序渐进，以不同专属香气对应差异化时光切片，引导观众沉浸式感知气味与记忆的深层联结。展期主打纯粹艺术感知，弱化商业香品售卖属性，配套开设专业气味导览、调香沙龙等深度体验活动，营造安静内敛的观展氛围。项目精准面向艺术爱好者与香氛圈层人群，邀约艺术、香氛、生活方式类KOL探店种草，依托张园独特的海派建筑氛围感，在小红书及高端艺术圈层持续传播。以小众嗅觉艺术实现老建筑的活化新生，打造城市文艺打卡地标，完成艺术文化传播、圈层心智渗透与品牌质感升级的完整营销链路。</p>
+      <div class="meta">上海 · 09-08~10-12</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/NOSE-IDEA-Immersive-Sensory-Exhibition-SH-2026-9-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/5ece1e99c6f54ad4883ee9fcf9d27f28.jpg" alt="百度AI Day·2026小度新品发布会" loading="lazy">
+      <h2>百度AI Day·2026小度新品发布会</h2>
+      <p class="description">百度 AI Day2026 小度新品发布会于 9 月 8 日在北京举办，是小度依托百度搭子 Agent 底座，面向家庭智能硬件赛道推出的技术与产品发布会，承接小度多年深耕家庭 AI 交互的技术积淀，标志着通用智能体正式落地居家场景。
+现场空间采用简约科技风格打造，主舞台配备超大高清 LED 屏，呈现智能体系统架构与家庭场景演示画面；配套产品体验展区划分多组家庭实景模拟场景，陈列添添闺蜜机 Ultra、智能屏 X9 Ultra、智能摄像机 C1500、智能音箱 Pro Max 四款新品，访客可现场体验超能小度智能体自主规划、多设备联动等能力，弱化传统静态产品陈列模式。发布会现场面向媒体、行业 KOL 与开发者，主会场完成技术解读与新品发布，体验区开放沉浸式实操演示，同步通过线上直播全网分发。
+项目把底层 AI 智能体技术转化为普通家庭可感知的硬件体验，依托媒体报道、科技博主现场实测产出内容，打通技术科普、新品种草与线上销售转化，完成从技术发布到大众市场教育的完整营销传播链路。
+场地供应商：思贝思（SPACE） www.360space.cn
+思贝思（SPACE）成立于2014年，致力于整合全国各类商业场地资源，为品牌提供线下营销全场景场地及审批服务。资源覆盖全国特色场地、商业中心、城市地标、步行街、大型发布场馆及艺术中心、试驾场地等，期待各类合作伙伴！</p>
+      <div class="meta">北京 · 百度 Baidu · 09-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Baidu0AI-DAY-2026-XIAODU-LAUNCH-BJ-2026-9-9" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/eed03a01c2c84fbea9067fef1b436a52.jpg" alt="修丽可敦煌「守护石窟守护美」沙漠晚宴" loading="lazy">
+      <h2>修丽可敦煌「守护石窟守护美」沙漠晚宴</h2>
+      <p class="description">修丽可SkinCeuticals敦煌戈壁沙漠公益晚宴，是品牌多年持续落地的「守护石窟守护美」公益项目核心环节，联动敦煌研究院、中国敦煌石窟保护研究基金会打造的高端文化公益事件，深度联结文物守护与肌肤修护的品牌核心理念，赋予品牌科研护肤属性深厚的人文历史意义。
+项目选址敦煌大漠旷野，依托戈壁原生自然地貌打造沉浸式丝路美学场景，场地长桌贴合戈壁艺术装置铺陈延展，以自然星空、氛围烛光搭配大漠原生景观，构建极具稀缺性的户外晚宴空间。活动配套多元沉浸式内容，设置石窟保护科普展区，直观展示千年壁画修复工作，开设敦煌非遗游园体验，同步落地公益捐赠仪式助力莫高窟修护。
+现场融合文化分享、艺术演绎与星空无人机光影秀，夜空动态呈现敦煌飞天、九层楼及品牌产品符号，具象化诠释品牌抵御氧化、守护时光的核心主张。本次定向邀约品牌大使、行业专家、媒体与KOL参与私享晚宴，依托独一无二的沙漠场景与公益文化内核，激发圈层深度内容传播，打破传统美妆营销模式，将文物遗产守护与皮肤科学抗老叙事深度绑定，在提升品牌专业质感与社会价值的同时，完成高端圈层种草与品牌价值升华的完整营销链路。</p>
+      <div class="meta">SkinCeuticals 修丽可 · 09-07</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/SkinCeuticals-Protect-Grottoes-Protect-Beauty-Campaign-2026-9-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/8519ae7bafa945128133d63a858784ce.jpg" alt="Charlotte Tilbury「柔焦魔法秘境」限时美妆快闪" loading="lazy">
+      <h2>Charlotte Tilbury「柔焦魔法秘境」限时美妆快闪</h2>
+      <p class="description">Charlotte Tilbury「柔焦魔法秘境」限时美妆快闪落地上海新世界新丸中心一层中庭，是品牌围绕全新精灵散粉打造的新品上市核心企划，延续品牌经典鎏金复古魔法美学体系，依托品牌长期深耕美妆艺术与魔法质感的视觉基因，完成新品场景化落地与品牌调性升级。
+项目空间造型极具专属风格，以柔光镜、星光舞台为核心视觉载体，整体延续奢华复古的品牌质感，精心打造产品体验试妆区、柔焦光影打卡秘境与定妆魔法互动装置，场景制作贴合底妆柔焦、通透的产品核心特质，将抽象的定妆美妆效果转化为可视觉、可体验的沉浸式空间氛围。活动期开放新品实地体验，消费者可直观感受微米级粉质、柔焦控油与长效持妆的产品优势，同时联动品牌全球代言人蔡徐坤视觉物料，丰富场景内容。
+用户可打卡拍照、参与互动玩法，解锁品牌限定小样与专属周边礼遇。项目立足南京路核心商圈流量优势，邀约美妆达人探店造势，凭借精致梦幻的秘境场景激发小红书、抖音等平台UGC自发传播，深度传递品牌底妆魔法核心理念，跳出传统美妆快闪单一试妆模式，构建新品场景种草、线下体验、圈层传播与终端零售转化的完整营销闭环。</p>
+      <div class="meta">上海 · Charlotte Tilbury · 09-07~09-13</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Charlotte-Tilbury-Soft-Focus-Magic-Wonderland-pop-up-SH-2026-9-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/35a39b9ca9364595a5e33dd52b67f75d.jpg" alt="SASAKIDS 「WONDER BASE 奇妙基地」限时慢闪空间" loading="lazy">
+      <h2>SASAKIDS 「WONDER BASE 奇妙基地」限时慢闪空间</h2>
+      <p class="description">SASAKIDS 「WONDER BASE 奇妙基地」限时慢闪空间
+儿童童装品牌SASAKIDS落地上海GATE M西岸梦中心，打造「WONDER BASE 奇妙基地」限时慢闪空间，以“释放孩童想象力”为核心主题，依托西岸滨江工业遗存建筑的独特肌理，将工业场地氛围与自然童趣美学相融，构建兼具艺术感与松弛质感的亲子体验场景，是品牌传递年轻化穿搭审美的线下重点企划。
+空间制作摒弃传统童装门店密集陈列模式，以柔和原木材质与温润大地色系为整体基调，搭配流畅曲线造型与自然绿植装置，弱化商业售卖感，打造轻盈治愈的场地氛围。场内科学划分趣味试衣区、儿童艺术创作角、户外游乐打卡区与限定商品陈列区，集中展示品牌当季主打舒适面料的松弛系童装系列。活动期开设涂鸦、手工创作等多元亲子互动项目，给予孩童自由创作空间，访客打卡即可领取限定贴纸、童趣配饰等伴手礼。
+项目精准面向注重穿搭质感与审美培养的新生代父母，依托西岸片区优质文艺亲子客流，邀约亲子、童装垂类达人探店造势，打造可逛、可玩、可打卡的城市亲子目的地，在小红书亲子圈层持续发酵，完成品牌审美价值输出、新品场景种草与线下体验转化的完整营销链路。</p>
+      <div class="meta">上海 · 09-06~12-31</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/SASAKIDS-Slow-pop-up-Shanghai-2026-9-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/c11c04f645c14ed791f82dddc94b39e4.jpg" alt="TOM FORD「绝色之夜」" loading="lazy">
+      <h2>TOM FORD「绝色之夜」</h2>
+      <p class="description">TOM FORD BEAUTY年度重磅IP「绝色之夜」以“雾棕起势，权欲都市”为核心叙事，采用双线落地模式，涵盖高端明星私享晚宴与城市商场巡回唇妆剧场，聚焦超细管口红、黑金唇雾等全新唇妆单品，演绎品牌标志性的奢华欲感美学，是品牌深化高端美妆市场布局、传递先锋唇妆美学的核心年度企划。高端私享晚宴落地上海翡翠画廊，环球金融中心等滨江顶级场地，空间以经典黑红为核心色调，搭配低暗质感光影塑造高级氛围感，打造艺术化晚宴长桌与精致产品陈列展区，依托顶级场地质感拔高活动规格。
+活动邀约品牌大使、明星名流、主流媒体及美妆头部KOL参与，通过新品揭幕、美学沙龙分享、明星红毯拍摄等环节，打造高规格行业社交与美学传播事件。同步落地长沙IFS等高端商场巡回快闪，延续黑红奢华视觉体系，放大口红几何艺术装置造型，设置专业试妆台与红唇主题打卡区，可供消费者全系列试色体验、打卡兑换品牌小样。项目以高级红唇美学贯穿全程，依托明星流量引爆全网话题，在抖音、小红书美妆圈层持续传播，精准传递产品气场型妆效内核，双线联动完成新品全域曝光、品牌高端质感升级与线下零售转化的完整营销闭环。</p>
+      <div class="meta">上海 · TOM FORD · 09-04</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/TOM-FORD-BEAUTY-Noir-Allure-Night-Campaign-2026-9-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/190494cd4d44481c8845fb139b4fd717.jpg" alt="Diptyque「沐愈之艺」限时感官空间" loading="lazy">
+      <h2>Diptyque「沐愈之艺」限时感官空间</h2>
+      <p class="description">为传承品牌六十余年法式香氛艺术底蕴，法国香氛品牌Diptyque于2026年9月3日至13日，在上海外滩沙美大楼落地「沐愈之艺」限时感官艺术空间，是品牌深耕中国市场、深化感官艺术基因、拓展身体护理品类的标志性线下企划。项目选址外滩百年历史建筑，巧妙融合老上海石库门复古肌理与巴黎诗意美学，依托沙美大楼老洋房原生窗格与建筑结构，搭配光影艺术与分层香氛装置，打造沉浸式治愈感官场景，摒弃商业化堆砌陈列，以极简诗意造型凸显品牌高级美学质感。
+现场以「一日时序」为核心体验动线，划分晨间唤醒至夜间放松的完整体验环节，引导访客沉浸式感知全新身体护理系列的香气与质地，其中夜间仪式沉浸式氛围成为核心亮点。立足当代年轻消费者重视情绪疗愈与感官体验的消费趋势，本次空间跳出单一香氛产品展示，以建筑与香氛的跨时空对话，传递品牌从香氛延伸至身体护理的全方位生活艺术理念。
+依托沙美大楼网红艺术地标属性，活动吸引美学、香氛类达人探店传播，通过高品质场景产出大量社交UGC内容，完成品牌美学理念输出、新品体验种草与用户心智沉淀，构建高端香氛品牌文化传播与品类拓展的完整营销链路。</p>
+      <div class="meta">上海 · diptyque 蒂普提克 · 09-04~09-13</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Diptyque-The-Art-of-Soothing-Sensory-Space-SH-2026-9-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/9b539d05da474f158af96778f3b3527c.jpg" alt="GROTTO LIMITED 慢闪空间" loading="lazy">
+      <h2>GROTTO LIMITED 慢闪空间</h2>
+      <p class="description">作为轻奢皮具品牌GROTTO个乐25周年的重磅线下企划，品牌全新街区慢闪店型GROTTO LIMITED首站于2026年9月4日至10月3日落地上海永源路潮流街区，以「个，自不同 Difference is a GIFT」为核心品牌态度，围绕王牌解构单品Double Z系列打造沉浸式体验空间，突破传统商场零售的固化模式。
+项目空间造型与场景制作极具质感层次，外立面采用渐变绿搭配金属银灰的撞色视觉，室内延续低饱和绿色基调，以粗犷顶面结构与柔和光影形成材质反差，塑造高级极简的空间氛围。场内中央开放式陈列台融合黑胶、艺术书籍等生活方式道具，墙面有序陈列品牌全系列包袋，同步上线慢闪专属Double Z Mini限定款式；户外街区搭配弧形阶梯、皮革工艺样本、艺术雕塑与行李车打卡装置，延伸场景叙事边界，同时开放专属皮具手工定制体验。
+项目依托永源路小众潮流街区的文艺属性，打造集产品展示、艺术打卡、匠人互动、社交休闲于一体的城市潮流沙龙空间，跳出单纯货品售卖，聚焦品牌个性态度输出。借助街区自然客流与年轻圈层探店传播，激活社群自发分享与社交种草，有效放大新品曝光与25周年品牌声量，完成线下沉浸式体验、圈层传播与产品转化的完整营销闭环，塑造城市新晋潮流文艺打卡地标。</p>
+      <div class="meta">上海 · 09-04~10-03</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/GROTTO-LIMITED-Slow-Edition-Space-SH-2026-9-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-10">
+      <img class="cover" src="https://res.onsiteclub.com/d6795366aa864605b7ea33f0d12ec77f.jpg" alt="百雀羚95周年「灵玉羽翼装置」限时快闪" loading="lazy">
+      <h2>百雀羚95周年「灵玉羽翼装置」限时快闪</h2>
+      <p class="description">百雀羚为致敬品牌95周年华诞、助力新一代灵玉面霜焕新上市，百年国货品牌百雀羚于2026年9月4日至6日，在上海北外滩国际客运中心码头打造「灵玉羽翼装置」限时快闪活动，延续品牌深耕东方美学的创作脉络，承接七夕非遗缂丝联名的文化布局，实现传统国货美学的现代化焕新表达。
+项目依托北外滩滨江江景视野打造户外艺术场景，以巨型金色镂空灵雀羽翼装置为核心视觉地标，精致通透的造型与黄浦江都市天际线相互映衬，将古典东方意象与现代都市夜景融合，构建极具仪式感的江畔沉浸式美学场景。现场整合新品体验与互动福利体系，设置新一代灵玉面霜专属体验区域，可供市民实地感受新品护肤功效，同时配备绝佳江景打卡机位，消费者参与体验即可解锁代言人限量周边、复古道具等专属礼遇。
+本次活动是品牌95年匠心沉淀的具象化呈现，以灵雀展翅的艺术意象诠释品牌迭代升级、迈向国际的发展内核。依托外滩核心景区流量与明星代言人影响力，活动引爆社交平台话题热度，通过大众打卡种草、美学内容传播，唤醒大众对百年国货的情感共鸣，打通文化传播、新品种草与品牌焕新升级的完整营销闭环。</p>
+      <div class="meta">上海 · 百雀羚 · 09-04~09-06</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Pechoin-95th-Anniversary-Celebration-pop-up-SH-2026-9-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-11">
+      <img class="cover" src="https://res.onsiteclub.com/7fe4f9593ca24114b8bcaa58a2e6d68c.jpg" alt="美团买药&amp;小葵花-小小探险家（北京蓝色港湾）" loading="lazy">
+      <h2>美团买药&amp;小葵花-小小探险家（北京蓝色港湾）</h2>
+      <p class="description">美团买药联合小葵花「小小探险家」亲子主题活动于 2026 年 9 月 6 日落地北京蓝色港湾，是面向亲子家庭打造的健康科普线下体验项目，依托小葵花长期深耕儿童健康领域的品牌积淀，把儿童健康防护理念融入童趣互动场景。
+项目空间整体采用明亮活泼的黄白主色调，呼应小葵花品牌视觉，打造开放式亲子互动乐园，设置彩绘创作区、健康科普打卡点位，围绕 “小小探险家 都有小‘葵’甲，小手画大世界” 主题搭建童趣装置，弱化生硬科普宣讲感。活动现场邀请小朋友参与手绘创作，在绘画游戏中感知儿童防护知识，家长同步了解儿童健康护理相关产品与科普内容。
+项目选址蓝色港湾亲子流量商圈，借助亲子家庭现场产出的绘画作品与打卡图文，在社交平台自然扩散，将品牌儿童健康理念通过轻松的亲子互动完成传递，跳出医药品牌传统硬广模式，以亲子体验完成情感种草，打通线下现场互动、家庭圈层传播与产品认知教育的完整营销链路。
+场地供应商：思贝思（SPACE） www.360space.cn
+思贝思（SPACE）成立于2014年，致力于整合全国各类商业场地资源，为品牌提供线下营销全场景场地及审批服务。资源覆盖全国特色场地、商业中心、城市地标、步行街、大型发布场馆及艺术中心、试驾场地等，期待各类合作伙伴！</p>
+      <div class="meta">北京 · 美团 · 09-04~09-06</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Meituan-Pharmacy-X-XiaoKuihua-Roadshow-BJ-2026-9-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-12">
+      <img class="cover" src="https://res.onsiteclub.com/a44c0243557e42aab06ff5e3eb419979.jpg" alt="帕沙曼萌宠家居馆" loading="lazy">
+      <h2>帕沙曼萌宠家居馆</h2>
+      <p class="description">帕沙曼聚焦年轻养宠消费群体，打造沉浸式人宠共居主题快闪馆，以「人宠友好家居」为核心概念，针对性解决养宠家庭家居软装痛点，是品牌深耕年轻化家居赛道、深化人宠共生家居理念的重要线下企划。项目空间制作贴合当下主流审美，整体采用柔和治愈的奶油风美学搭建场景，高度还原真实居家客厅氛围，摒弃传统家居展厅刻板陈列模式，搭配萌宠主题打卡装置，营造温馨松弛的沉浸式体验场景。
+场馆集中展示泡芙沙发、云涧座电动沙发床、云沐可拆洗沙发等多款明星爆款，核心打造面料耐磨实测互动体验区，直观演示品牌自研13防5A抗菌猫抓布防抓、防水防污、全拆水洗的硬核性能优势，将抽象的家居材质卖点转化为可视化、可体验的现场内容。活动面向铲屎官群体开放携宠体验，到场打卡即可兑换冰箱贴、联名特调饮品等限定礼遇。同时邀约家居、宠物垂类达人探店造势，精准触达养宠家装核心客群，依托真实场景体验完成痛点种草，持续强化帕沙曼“高颜值又耐造”的养宠家居专属标签，借助社交平台UGC传播实现品牌年轻化破圈，构建线下体验感知、圈层传播种草、品牌心智固化的完整营销闭环。</p>
+      <div class="meta">上海 · 09-03~09-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Pasaman-co-living-themed-pop-up-Pavilion-SH-2026-9-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-09-10
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
