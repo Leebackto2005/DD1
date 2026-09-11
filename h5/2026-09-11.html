@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-09-11</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-09-11 周五</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">13</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/3daf5ac721f344d4a3100a4aa261bbfe.png" alt="IRO × SIINONO「Choose Your No」限时联名系列快闪（北京）" loading="lazy">
+      <h2>IRO × SIINONO「Choose Your No」限时联名系列快闪（北京）</h2>
+      <p class="description">IRO × SIINONO「Choose Your No」限时联名系列快闪（北京）
+IRO × SIINONO「Choose Your No」限时联名系列快闪于 2026 年 9 月 9 日在北京 SKP 三层限时启幕。本次快闪以法式极简美学与萌趣潮玩创想深度融合为核心思路，将 IRO 的现代时装语境与 SIINONO 的柔软形态巧妙结合，打造了一场兼具情绪张力与奇趣氛围的沉浸式体验空间，定位为面向年轻潮流群体的线下打卡地。
+现场空间以复古氛围与艺术装置为视觉基调，黑胶墙与各类艺术装置巧妙交织，营造出浓厚的复古与摩登气息。整体设计摒弃了传统快闪的单调感，将法式极简与潮玩趣味自然融合，随手一拍就能定格充满复古感与时髦气息的大片。
+现场集中展示了 IRO × SIINONO 联名系列新品，包括焦糖棕外套、联名毛绒挂件等，观众可近距离试穿体验版型与质感。9 月 12 日至 13 日 13:00 至 17:00，带话题 #ChooseYourNo 发布小红书笔记并打卡北京 SKP 三层 IRO 快闪空间，即可获得限定拍立得，将这场奇趣相遇定格。
+本次「Choose Your No」联名快闪是 IRO 在跨界联名与空间体验上的一次重要落地，标志着品牌从单一的高级成衣零售向“时尚与潮玩文化融合”的全面转型。通过将法式极简美学与 SIINONO 的萌趣 IP 结合，IRO 成功打破了传统时装展示的边界，让摩登态度以更轻松、更具互动性的方式触达年轻消费者。这种将轻奢女装、潮玩 IP 与线下快闪结合的策展方式，不仅精准触达了追求个性与质感的消费群体，也为时尚品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">北京 · 09-09</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/IRO-SIINONO-CHOOSE-YOUR-NO-POPUP-BJ-2026-9-9" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/4a4834351b4d4130a6513e6474f79fa1.jpg" alt="李宁户外东方山河影像展（成都）" loading="lazy">
+      <h2>李宁户外东方山河影像展（成都）</h2>
+      <p class="description">李宁户外「与山河共彩」东方山河影像展于 2026 年 9 月 8 日至 9 月 10 日落地成都东郊记忆·东区超现场。本次展览以“撷山河色彩之气韵，洞见天地万象流转”为核心思路，取东方山河五色为脉络，将传统国风美学与户外山野精神深度融合，打造了一场兼具沉浸感与氛围感的沉浸式影展空间，是成都近期极具东方意境与户外氛围的免费打卡地。
+现场空间以“五色幻境”为视觉基调，巧妙融合了东方色彩美学与工业风厂房。瓷青绿、郎釉红、松烟墨、羊脂白、鎏金蓝五种东方传统色彩在斑驳墙面上铺开，搭配雾霭缭绕的山体装置、沙漠帐篷、红日装置与山水投影，将东方山河的气韵搬进室内。巨幅的自然影像与艺术装置交织，工业的硬朗与自然的辽阔在此和解，随手一拍就能定格充满清冷高级感的国风大片。
+展览每日 10:00 至 20:00 开放，观众可沉浸式探寻「山河入色系列」，近距离感受瓷青绿、郎釉红等五色灵感背后的自然意境与户外装备设计。9 月 8 日至 10 日晚 20:00 至 22:30，展厅切换至派对模式，开启菲林周末趣玩派对，现场有神秘嘉宾助阵、音乐律动与特调饮品。展览与夜间派对均免费且无需预约，直接前往即可参与。
+本次「东方山河影像展」是李宁户外在东方美学与户外文化融合上的一次重要落地，标志着品牌从单一的产品展示向“沉浸式文化体验”的全面转型。通过将千年古韵（如宋代汝窑、清代郎窑红）与户外山河的辽阔意境结合，李宁不仅将户外装备从“功能单品”升级为“承载东方哲思与情绪价值的载体”，更传递了“溯之东方，任我逍遥”的品牌态度。这种将传统色彩美学、影像叙事与线下快闪结合的策展方式，不仅精准触达了追求质感与东方浪漫的年轻群体，也为国潮户外品牌在核心商圈的线下体验创新提供了极具参考价值的范本。
+众迪公关是一家新锐的公关活动公司，业务范围主要为线下公关活动策划及执行，众迪拥有资深的创意团队及靠谱儿的执行团队，新颖独特的美学审美，从活动概念包装、视效舞美、视频制作、多媒体互动等多种方面，为品牌提供定制化解决方案。</p>
+      <div class="meta">成都 · 李宁 · 09-08~09-10</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LINING-COUNTERFLOW-POPUP-CD-2026-9-10" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/e8302c4717644d6bbd52676e57501a95.jpg" alt="Laurèl 26AW 限时快闪店（深圳）" loading="lazy">
+      <h2>Laurèl 26AW 限时快闪店（深圳）</h2>
+      <p class="description">Laurèl 26AW 限时快闪店于 2026 年 9 月 5 日在深圳湾万象城 A 区 L2 层（L2AI18）正式启幕。本次快闪以“极简几何构筑艺术空间”为核心思路，将品牌 2026 秋冬秀款全新亮相，打造了一场兼具艺术氛围与静奢质感的沉浸式体验空间，定位为面向都市女性的高级成衣打卡地。
+现场空间以极简几何为视觉基调，巧妙融合了艺术装置与服装陈列。整体设计摒弃了传统快闪的喧闹感，通过简洁的线条、柔和的光影与考究的材质，营造出轻松随性的艺术氛围。空间内没有繁杂的装饰，让服装的面料质感与剪裁版型成为主角，行走其间像逛一场私人美学展，随手一拍就能定格充满松弛感与高级气息的大片。
+现场集中展示了 Laurèl 26AW 本季秀款及秋季新品，观众可近距离触摸面料并试穿体验，感受品牌考究的做工与适合日常通勤的版型剪裁。到店打卡可解锁限定礼遇（如紫色化妆包或联名零钱卡包，具体以门店当日库存为准）。此外，现场还提供一对一专属造型体验服务，由专业造型师根据个人风格提供穿搭建议。
+本次“限时快闪店”是 Laurèl 在品牌空间体验上的一次重要落地，标志着品牌从单一的高级成衣零售向“沉浸式艺术美学体验”的全面转型。通过将极简几何设计与秋冬秀款结合，Laurèl 不仅将服装从“日常单品”升级为“承载艺术感与情绪价值的载体”，更传递了“简约而不简单”的静奢生活哲学。这种将高品质面料、极简设计与线下快闪结合的策展方式，不仅精准触达了追求质感与长期主义的都市女性，也为德国高端女装品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">深圳 · 09-05</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LAUREL-26AW-COLLECTION-POPUP-SZ-2026-9-9" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/e7a7b53aa00d4ef0840a32cc003ab504.jpg" alt="Hervé Chapelier 中国首展（深圳）" loading="lazy">
+      <h2>Hervé Chapelier 中国首展（深圳）</h2>
+      <p class="description">Hervé Chapelier 中国首展「海岸色彩工作室」于 2026 年 9 月 4 日至 10 月 12 日落地深圳万象天地时光广场东侧。本次展览正值品牌创立 50 周年，也是该法国包袋品牌正式入华的首站。展览以“从比亚里茨海岸出发，跨越一段关于色彩与旅行的航程”为核心思路，将南法海滨的自由精神与鲜明色彩美学深度融合，打造了一场兼具度假氛围与老钱风的沉浸式体验空间。
+现场空间以“海岸色彩工作室”为视觉基调，一座粉调快闪小屋自带南法度假感，随手一拍就是法式松弛大片。从室外的 1976 报刊亭、条纹遮阳伞与躺椅，到室内橙、绿、粉、蓝自由碰撞的色彩装置，空间巧妙复刻了比亚里茨海岸的明快气息。简洁的几何线条与经典的帆船包穿插其中，阳光、海风与旅行元素自然交织，让鲜活的色彩融入都市街景，营造出轻盈、自然、自在的优雅氛围。
+现场集中展示了 Hervé Chapelier 的多个核心系列，包括轻薄双色尼龙的 N 系列、耐磨考杜拉面料的 C 系列（含复古豹纹限定款），以及顶配质感的 GP 鹅卵石帆布系列。观众可近距离触摸鹅卵石纹面料与彩色织带的质感，体验包包自重轻、包型利落的特点。现场还陈列了全套原装配饰，如爱心皮质挂饰与可改造肩带，可一包解锁手提与斜挎两种用法。此外，现场还带来了五十周年限定礼盒，并设有“海薇夏佩老友记”互动，老粉可通过官方账号晒包分享故事，获取专属入场凭证与老友礼遇。
+本次中国首展是 Hervé Chapelier 在品牌全球化布局上的一次重要落地，标志着品牌从单一的产品销售向“沉浸式生活方式体验”的全面转型。作为源自法国比亚里茨海岸的低调宝藏品牌，Hervé Chapelier 不追逐短期潮流，而是依靠松弛优雅的法式调性与轻量化材质立足。选择深圳万象天地作为入华首站，不仅体现了品牌耕耘中国市场的发展信心，也通过“海岸色彩工作室”的策展方式，将法式生活美学无缝触达国内消费者，为小众轻奢包袋品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">深圳 · 09-04~10-12</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/HERVE-CHAPELIER-COAST-COLOR-STUDIO-POPUP-SZ-2026-9-9" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/6edaf900c9024faeb51091a57216fbc7.jpg" alt="FILA解闷探索营（厦门）" loading="lazy">
+      <h2>FILA解闷探索营（厦门）</h2>
+      <p class="description">FILA 解闷探索营于 2026 年 9 月 4 日至 9 月 6 日落地厦门 SM 二期红宝石 1 楼中庭。本次快闪以“自然会呼吸”为核心思路，将山野户外氛围与城市日常深度融合，打造了一场充满绿意与松弛感的沉浸式体验空间，定位为面向都市年轻群体的城市轻户外打卡地。
+现场整体打造绿意露营风场景，巧妙融合了户外元素与商场空间。自然绿植、露营装备与柔和光影交织，营造出轻松随性的户外氛围。整体设计摒弃了传统快闪的喧闹感，让山野气息自然融入城市日常，随手一拍就能定格充满治愈感与户外气息的大片。
+现场设置了三大核心体验板块。解闷咖啡 Bar 提供特调饮品，让人在市集里走走停停，把生活调到更松弛的频道；呼吸合拍区设有专属打卡装置，可记录属于城市的「呼吸时刻」；绳结 DIY 手工坊则提供互动体验，亲手制作户外风小物件。此外，线上征集活动（8月22日至9月3日）已同步开启，发布笔记分享户外运动时刻并带指定话题，有机会抽取 2 篇优质笔记作者，获得线下参与 FILA 解闷探索营及云南丽江 Club Med 度假村三天两晚之旅的机会。
+本次「解闷探索营」是 FILA 在户外生活方式营销上的一次重要落地，标志着品牌从单一的运动装备展示向“城市轻户外沉浸式体验”的全面转型。通过将山野氛围与城市商场场景深度融合，FILA 成功打破了传统户外运动的场景桎梏，让户外灵感以更轻松、更具互动性的方式触达年轻消费者。这种将户外文化、市集互动与线下快闪结合的策展方式，不仅精准触达了追求松弛感的年轻群体，也为运动品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">厦门 · FILA · 09-04~09-06</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/FILA-NATURE-BREATHES-POPUP-XM-2026-9-9" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/363d115d4e9845229cde6312f71b668c.jpg" alt="【IFA2026】MOVA" loading="lazy">
+      <h2>【IFA2026】MOVA</h2>
+      <p class="description">智能生活科技品牌MOVA登陆2026柏林IFA国际消费电子展，于9号馆打造超1700㎡超大主题展台，以「The AI MOVAment」为核心理念，是品牌迭代AI全域智能生态、升级全球化品牌布局的里程碑项目，承接品牌多年家用机器人技术积淀，正式对外发布M∞VA宇宙全新战略体系，完成从单一清洁设备向全场景智慧生活服务商的品牌跃迁。
+展台空间采用未来极简科技造型，以开放式一体化空间结构替代传统分区展位，结合通透光影与立体几何架构打造沉浸式科技场域，摒弃机械冰冷的工业陈列，依托多场景实景造景工艺，还原居家清洁、庭院养护、厨卫生活等多元应用场景，整体制作兼具未来感与生活化温度。展会集中亮相22款全球新品与15项全新技术，重点展示TactiPercept触觉感知AI、全屋清洁机器人、智能割草与泳池清洁设备，通过现场动态实测、技术发布会与互动体验，直观呈现主动感知、自主作业的新一代AI机器人能力。
+展期汇聚全球渠道商、科技媒体与海外数码达人，依托IFA全球行业影响力，通过海外媒体深度报道、达人探展种草、前沿技术话题传播持续破圈，以实景体验传递品牌技术革新，完成战略发声、新品全球首发、海外渠道深化与高端品牌心智塑造的完整营销闭环。</p>
+      <div class="meta">09-04~09-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/IFA-2026-Berlin-MOVA-Booth-2026-9-10" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/7c5c4491b3664cf4a4e64f769a3ae5ea.jpg" alt="【IFA2026】Laifen 徕芬" loading="lazy">
+      <h2>【IFA2026】Laifen 徕芬</h2>
+      <p class="description">徕芬2026柏林IFA项目落地柏林展览中心9号馆125号展位，是品牌登顶全球高速吹风机销量榜首后，迈向全场景智能个人护理生态的关键全球化里程碑项目，打破外界对品牌单一吹风机品类的固有认知，承载品牌深耕欧洲市场、完善全域个护矩阵的战略意义。
+项目空间采用极简科技美学设计，整体以通透开放式造型打造轻量化未来感展台，摒弃传统家电展厚重堆砌的陈列形式，依托干净利落的几何线条与柔和光影层次，划分产品静态展示区、动态功能实测区与互动体验区，空间制作精致克制，兼具科技质感与轻奢生活氛围。展会集中首发智能卷发棒、高显色智能化妆镜、扫振电动牙刷与全新男士理容系列，覆盖美发、美妆、口腔、男士护理四大赛道，现场开设高速气流挑战互动体验，直观展示品牌自研高速电机与智能传感核心技术。
+活动期面向全球渠道商、海外科技媒体与跨境生活类达人开放体验，依托IFA国际顶级消费电子展的全球流量，通过海外媒体专业评测、达人沉浸式探展、社交平台内容种草持续扩散声量。本次展会以场景化技术体验完成品牌品类升级叙事，借助国际展会权威背书强化海外用户认知，实现技术展示、品牌破圈传播、海外渠道拓展与商业转化的完整营销闭环。</p>
+      <div class="meta">09-04~09-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/IFA-2026-Berlin-Laifen-Booth-2026-9-10" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/ebcdf4b2083449208c6bd55861f9db8f.jpg" alt="【IFA2026】ECOVACS 科沃斯" loading="lazy">
+      <h2>【IFA2026】ECOVACS 科沃斯</h2>
+      <p class="description">科沃斯2026柏林IFA项目落地柏林展览中心9号馆核心展位，以“从地面玩家到玩转全家”为参展主题，是品牌突破单一室内清洁、构建全屋全场景智能机器人生态的全球化战略级展会项目，延续品牌多年深耕海外智能家居赛道的技术积淀，依托IFA全球消费电子风向标舞台，完成多品类新品的海外集中首发与品牌战略升级。
+项目空间制作极具场景化创新，摒弃传统参数化展台陈列，以400㎡实景还原沉浸式居家空间，精细打造室内木地板客厅、落地玻璃窗清洁区、户外仿真草坪庭院与迷你泳池四大实景场景，整体造型简约高级、场景层次完整，高度复刻欧美家庭真实居住环境，让科技产品融入生活化视觉氛围。展期集中亮相地宝X12S、窗宝W3、GOAT T割草机器人、ULTRAMARINE泳池清洁机器人等全矩阵新品，现场开展污渍清洁、无边界割草、水下智能作业等动态实测演示，直观展示全场景AI清洁技术优势。
+本次项目重磅联动体育跨界IP，特邀新赛季加盟德国杜塞尔多夫乒乓球俱乐部的樊振东空降展台，以俱乐部成员身份参与互动体验，现场用英文向海外队友介绍产品核心功能，实现体育竞技精准属性与机器人智能清扫技术的深度联动。展会同步邀约全球渠道商、海外科技媒体与数码达人打卡传播，依托IFA全球流量与樊振东海外体育影响力破圈引流，相关互动内容、产品实测素材在海外社交平台广泛发酵，形成沉浸式场景体验、跨界流量传播、品牌技术种草与海外商业转化的完整营销闭环。</p>
+      <div class="meta">09-04~09-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/IFA-2026-Berlin-ECOVACS-Booth-2026-9-10" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/da57c26f1109496585a85b3c951c7c9f.jpg" alt="【IFA2026】Baseus 倍思" loading="lazy">
+      <h2>【IFA2026】Baseus 倍思</h2>
+      <p class="description">数码快充生态品牌倍思Baseus登陆2026柏林IFA国际消费电子展，于H4.2展馆打造国际化科技体验展台，是品牌深耕全球智能数码赛道、深化欧洲主流市场布局的年度核心全球化项目，延续品牌多年出海创新积淀，依托IFA全球顶级行业展会平台，集中展示消费数码快充、音频穿戴、便携储能的全品类技术迭代成果。
+项目空间采用简约未来科技造型，以通透开放式布局搭配高清动态主视觉屏幕，摒弃传统数码展静态陈列模式，划分新品首发区、功能实测体验区、荣誉展示区与商务洽谈区，整体制作干净利落、层次分明，兼顾科技氛围感与访客动线体验，贴合年轻国际化审美。展会期间重磅展出MC2 NC降噪耳机、AM71超薄快充充电宝等年度旗舰新品，现场开展功能实测演示与技术分享沙龙，多款创新产品斩获IFA官方创新大奖，充分印证品牌硬核研发实力。
+项目面向全球渠道商、海外科技媒体与数码达人开放体验，依托IFA全球流量优势，通过海外达人实测种草、权威媒体深度报道、展会直播导览等形式持续扩散声量。以场景化体验与专业奖项背书强化全球用户认知，完成新品国际化首发、海外渠道深化与高端品牌形象升级，构建集技术展示、口碑传播、商业洽谈于一体的全球化营销闭环。</p>
+      <div class="meta">09-04~09-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/IFA-2026-Berlin-Baseus-Booth-2026-9-10" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-10">
+      <img class="cover" src="https://res.onsiteclub.com/e4c1a2fde8d64428879df9bd15ff1c54.jpg" alt="【IFA2026】Aiper" loading="lazy">
+      <h2>【IFA2026】Aiper</h2>
+      <p class="description">全球智能庭院清洁领军品牌Aiper亮相2026柏林IFA国际消费电子展，落地9号馆打造户外智能科技主题展台，是品牌深耕海外智能家居赛道、拓展欧洲庭院智能清洁市场的核心年度全球化项目，承接品牌全球泳池清洁机器人头部品牌的市场积淀，持续完善庭院全屋智能清洁生态布局。
+本次展台空间采用未来科技极简造型，以通透开放式展陈结构取代传统封闭式展位，结合模拟泳池、庭院实景造景制作，高度还原户外清洁真实使用场景，整体线条利落简约，科技质感与生活化场景相融，弱化硬科技的冰冷感。现场聚焦AI认知级清洁技术，全球首发Scuba V3智能泳池清洁机器人、EcoSurfer Senti水质管理设备与IrriSense 2智能灌溉系统，设置动态实景演示区、技术解析沙龙与新品专属发布会，直观展示设备自主清扫、水质监测、智能灌溉的全链路自动化能力。
+展会面向全球渠道商、科技媒体与海外数码达人开放，依托IFA国际顶级行业展会的流量影响力，通过海外达人实景测评、媒体技术专访、行业内容种草持续扩散声量。项目以场景化技术体验替代单一产品陈列，完成新品全球首发、海外渠道深耕与品牌技术认知普及，构建技术展示、国际传播、商业转化的完整全球化营销闭环。</p>
+      <div class="meta">09-04~09-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/IFA-2026-Berlin-Aiper-Booth-2026-9-10" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-11">
+      <img class="cover" src="https://res.onsiteclub.com/2462869b63f64a68bd7ab1447c9c78b6.jpg" alt="【IFA2026】ASKO" loading="lazy">
+      <h2>【IFA2026】ASKO</h2>
+      <p class="description">高端北欧奢品家电品牌ASKO亮相2026年9月4日至8日柏林IFA国际消费电子展，落地23:A展馆打造沉浸式家居美学展台，是品牌依托全球顶级家电展会，传递北欧精工设计、智慧家居理念的年度核心海外营销项目，延续品牌百年高端厨洗家电的技术积淀与极简美学基因。
+展台空间延续品牌标志性北欧极简设计语言，以低饱和素色质感材质、利落对称的几何造型搭建沉浸式全屋家居场景，摒弃传统家电展会的堆砌式陈列，还原真实居家厨电、洗护空间氛围，整体制作克制高级、兼具艺术质感与精工细节。现场重点展出迭代升级的Scandinavian Laundry Care 2.0洗护系列与全新智慧厨电产品，集中展示品牌无缝互联的全屋智能家电技术、高端材质工艺与人性化功能创新。展会同步联动知名设计师Marcel Wanders合作内容，通过场景化体验、技术讲解与媒体专访，深度输出品牌精工美学与现代居家生活理念。
+项目面向全球渠道商、行业媒体与海外生活方式KOL开放体验，依托IFA全球行业影响力，借助海外媒体深度报道、达人场景种草与行业沙龙传播，将硬核家电技术转化为可视化的高端生活美学体验，强化ASKO在全球高端奢品家电赛道的专业定位，实现品牌海外声量升级、渠道赋能与高端用户心智沉淀的完整营销闭环。</p>
+      <div class="meta">09-04~09-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/IFA-2026-Berlin-ASKO-Booth-2026-9-10" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-12">
+      <img class="cover" src="https://res.onsiteclub.com/08434c8fb56a4ac5814363a9f9cac028.jpg" alt="【IFA2026】Anker 安克创新" loading="lazy">
+      <h2>【IFA2026】Anker 安克创新</h2>
+      <p class="description">安克创新2026柏林IFA项目落地德国柏林展览中心2.2号馆，是品牌创立15周年里程碑式全球营销项目，依托IFA作为全球消费电子行业风向标地位，在展会前夕举办全球媒体发布会，官宣旗下五大子品牌统一整合为单一Anker品牌，完成品牌战略归一升级。
+项目空间以极简科技美学打造大面积展台，中央设置巨型环形LED主舞台，呈现“Ultimate, Unified”品牌核心标语，打破传统电子展单品陈列模式，按个人生活与家庭全屋两大场景划分体验区块，设置AI耳机、家庭AI中枢、储能设备、智能机器人等实景体验空间，构建连贯的全场景智能生活图景。现场搭配产品互动测试台、媒体专访区与创作者沙龙点位，同步联动柏林选帝侯大街直营门店举办联名周边发布派对，实现展馆内展台与城市线下空间联动。展期邀请全球科技媒体、海外数码KOL到场深度体验，集中发布搭载端侧AI芯片的多款硬件新品，传递品牌由单一充电配件向全屋智能生态服务商转型的战略叙事。
+依托IFA全球行业流量，通过海外创作者实拍、媒体专访、直播展台导览持续扩散内容，完成品牌战略官宣、全球新品首发、欧洲渠道深化的完整营销闭环，树立中国智能硬件品牌全球化升级的行业样本。
+Uniplan优尼，一家全球品牌体验公司。 1960年，公司全球首席执行官及董事会主席Christian Zimmermann先生的父亲，在德国科隆建立了优尼。自公司成立以来，优尼不断重塑自我，从未停下变革的脚步。如今，从德国科隆总部再到欧洲亚洲的各分部，优尼已成为一家国际化公司。从概念到项目的最终完成，我们运用战略，创意，设计，工程，制造以及执行层面的多重技能，力求完美。 遍布全球8个地区的400名优尼人，将富有远见、大胆可行的创意想法变为现实 —— 这一切都是为了改变人们的看法和创造价值。 Uniplan. A brand experience agency. Uniplan was founded in Cologne in 1960 by Hans Bruehe, father of the current CEO and owner Christian Zimmermann. Since then, we have reinvented ourselves again and again, and with a sense for future trends and developments, we have combined our artisanal origins with creative imagination. As a holistic brand experience agency, Uniplan combines all disciplines related to brand experiences and staging – from strategic consultancy to creation and realization. We accompany our clients from the initial idea to the final touch: 400 Uniplan employees at eight locations in Asia and Europe bring visionary ideas to life with high feasibility standards – all for that one moment that makes the brand experience unique.</p>
+      <div class="meta">09-04~09-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/IFA-2026-Berlin-Anker-Booth-2026-9-10" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-13">
+      <img class="cover" src="https://res.onsiteclub.com/0c449b05fe634ade82b359a7597a9f18.jpg" alt="【IFA2026】roborock 石头科技" loading="lazy">
+      <h2>【IFA2026】roborock 石头科技</h2>
+      <p class="description">石头科技Roborock 2026柏林IFA项目落地柏林展览中心9号馆，以「Rocking Life With You」为主题，依托IFA全球消费电子行业舞台，在品牌登顶全球扫地机器人销量与销售额双第一的行业节点，完整展示从室内全屋、庭院草坪到泳池水域的全场景智能清洁生态，是品牌突破单一室内清洁赛道、拓展海外多元品类布局的标志性全球营销项目。
+展台造型采用简约工业科技风格，摒弃传统产品静态陈列，以分层实景场景搭建，划分居家客厅、户外草坪、仿真泳池三大体验模块，还原真实使用环境，集中全球首发泳池清洁机器人RockAqua P1，同步展出割草机器人RockNeo Q2 LiDAR、轮足式G-Rover及Saros系列旗舰扫地机。现场设置产品动态实测演示台、全球媒体专访区与海外创作者体验沙龙，直观展示机器人建图、避障、跨场景作业的技术能力。展期邀约全球行业媒体、海外数码KOL、欧洲渠道商到场体验，举办新品技术发布会，传递以人为中心、简化日常家务的品牌理念。
+借助IFA全球行业流量，通过海外达人实拍、海外媒体深度报道、直播展台导览持续扩散内容，面向欧洲市场完成新品发布、渠道深化与品牌技术叙事输出，构建实景体验、国际传播、商业洽谈的完整营销闭环，树立中国智能机器人品牌全球化升级标杆。</p>
+      <div class="meta">09-04~09-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/IFA-2026-Berlin-Roborock-Booth-2026-9-10" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-09-11
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
