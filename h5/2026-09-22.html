@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-09-22</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-09-22 周二</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">13</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/5113037d411c4f4e981b2b3a83aeed75.jpg" alt="KEADA X MONIKAMARCHEWKA 艺术联名主题展" loading="lazy">
+      <h2>KEADA X MONIKAMARCHEWKA 艺术联名主题展</h2>
+      <p class="description">KEADA X MONIKAMARCHEWKA 艺术联名主题展
+KEADA × MONIKA MARCHEWKA 艺术联名主题展于 2026 年 9 月 19 日至 10 月 14 日落地长沙 IFS L3 中庭。本次快闪以“以珍珠绘造一片粉色海洋”为核心思路，将 KEADA 的“珍珠女孩”千金美学与波兰当代艺术家 Monika Marchewka 的超现实艺术笔触深度融合，打造了一场兼具梦幻感与艺术气息的沉浸式体验空间，是长沙近期极具少女感与温柔氛围的免费打卡地。
+现场空间以梦幻粉蓝为主色调，巧妙融合了珍珠装饰、云朵状艺术装置与柔美元素。从入口的珍珠拱门到珠光绮境长廊，再到艺术联名陈列区，每一处都藏着“珍珠元素”的巧思。粉嫩的毛绒墙搭配珠光流苏与贝壳秘境，光影在纱幔间流转，将艺术画作中的朦胧温柔具象化，随手一拍就能定格充满富家千金氛围感的大片。
+现场集中展示了 KEADA 与 Monika Marchewka 的联名系列成衣，观众可近距离触摸珠光面料与手工缝制珍珠的质感，感受温柔千金风的穿搭魅力。在打卡互动区，完成指定拍照并发布小红书笔记，即可领取精美礼品（如珍珠手链、贴纸等限定周边）。现场还设有专属拍照点位，观众可以沉浸式感受粉色云朵与珍珠装置交织的梦幻氛围，记录属于自己的“珍珠女孩”时刻。
+本次艺术联名展是 KEADA 在品牌美学与空间体验上的一次重要落地，标志着品牌从单一的日常服饰零售向“沉浸式艺术美学体验”的全面转型。通过将艺术家 Monika Marchewka 的超现实绘画世界与 KEADA 的“优雅且有力量”的品牌内核结合，不仅将服饰从“日常单品”升级为“承载艺术感与情绪价值的载体”，更传递了“致敬女性不懈探索”的品牌态度。这种将高端女装、当代艺术与线下快闪结合的策展方式，不仅精准触达了追求质感与浪漫表达的都市女性，也为国内设计师品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">长沙 · 09-19~10-14</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/KEADA-MONIKAMARCHEWKA-POPUP-CS-2026-9-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/6eda8ae1f44745f5bf5bb370d1b5cce7.jpg" alt="ELSEWHERE「游牧自然」限时主题展空间" loading="lazy">
+      <h2>ELSEWHERE「游牧自然」限时主题展空间</h2>
+      <p class="description">ELSEWHERE「游牧自然 Nomadic Natures」限时主题展于 2026 年 9 月 18 日至 9 月 27 日落地深圳湾万象城 B 区 B1 中庭。本次快闪以“从草原抵达城市，寻绒溯源”为核心思路，将内蒙古罕山羊绒的天然禀赋与都市游牧风穿搭哲学深度融合，打造了一场兼具自然质感与松弛氛围的沉浸式体验空间，是深圳近期极具治愈感与高级感的免费打卡地。
+现场空间以自然原生态氛围为视觉基调，巧妙融合了草原地貌、天然纤维肌理与极简美学。空间摒弃了生硬的货架陈列，通过天然材质、柔和光影与流动的线条，营造出一种“推门即旷野”的诗意场域。来自远方草原的风、温度与触感被具象化地融入都市空间，让身心在步入的瞬间自然放松，随手一拍就能定格充满松弛感与高级气息的大片。
+现场集中展示了 ELSEWHERE 2026 冬季“都市游牧风”系列新品，甄选内蒙古羊绒、藏地牦牛绒等珍稀天然材质，观众可近距离触摸面料质感，试穿体验围裹式线条与垂坠流苏带来的松弛廓形。9 月 20 日 14:30，品牌特邀嘉宾春夏将亲临现场，共溯罕山羊绒的温暖故事，并于 15:00 开启「游牧自然」直播大秀。此外，现场还设有专属打卡点位与互动体验，观众可沉浸式感受从草原到城市的自然流动，记录属于自己的“游牧时刻”。
+本次“游牧自然”限时展是 ELSEWHERE 在品牌美学与空间体验上的一次重要落地，标志着品牌从单一的高级成衣零售向“沉浸式自然生活方式体验”的全面转型。通过将罕山羊绒的溯源旅程与都市游牧风结合，ELSEWHERE 不仅将服装从“日常单品”升级为“承载自然感知与情绪价值的载体”，更传递了“觉知自我，憩而自在”的品牌态度。这种将天然材质美学、可持续理念与线下快闪结合的策展方式，不仅精准触达了追求质感与松弛感的都市女性，也为国内高端女装品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">深圳 · 09-18~09-27</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/ELSEWHERE-NOMADIC-NATURE-POPUP-SZ-2026-9-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/addb918b19954e3c9ef5501eaf36a04c.jpg" alt="IORE × 屈臣氏「潮流玩妆能量站」限时快闪（广州）" loading="lazy">
+      <h2>IORE × 屈臣氏「潮流玩妆能量站」限时快闪（广州）</h2>
+      <p class="description">IORE × 屈臣氏「潮流玩妆能量站」限时快闪于 2026 年 9 月 18 日至 9 月 20 日落地广州天河领展广场 L1 层。本次快闪以“专业底妆线下实测”为核心思路，将 IORE 作为专业化妆师品牌的秀场级无瑕妆感与屈臣氏的线下体验场景深度融合，打造了一场兼具专业度与互动性的沉浸式玩妆空间，定位为面向美妆爱好者与年轻群体的免费打卡地。
+现场空间以 IORE 品牌视觉与屈臣氏潮流彩妆能量站为基调，巧妙融合了专业化妆台与街头打卡元素。整体设计摒弃了传统快闪的单调感，通过品牌标识墙、互动美陈与产品展示区的交织，营造出轻松随性的玩妆氛围。空间内设置了专属拍照点位，让专业底妆体验与街头潮流自然结合，随手一拍就能定格充满美妆氛围感的大片。
+现场提供专业底妆产品的线下沉浸式试妆体验，观众可近距离上手实测 IORE 持妆粉底液与无暇持妆气垫，感受原生无瑕妆效。9 月 19 日，特邀一日店长小狼惊喜现身现场，与粉丝近距离互动、合影，并限量放送签名照与 TO 签小卡。参与现场打卡互动并关注官方账号，即可解锁专属惊喜好礼；现场还设有扭蛋抽奖环节，好礼接连掉落。此外，满赠福利同步上线，买到就是赚到。
+本次“潮流玩妆能量站”快闪是 IORE 在专业化妆师品牌线下化与场景化营销上的一次重要落地，标志着品牌从单一的线上种草向“沉浸式线下实测体验”的全面转型。通过将秀场级底妆实力与屈臣氏的线下零售场景结合，IORE 不仅将底妆产品从“线上盲买单品”升级为“可触摸、可实测的情感载体”，更传递了“原生妆效直接封神”的专业品牌态度。这种将专业彩妆、明星一日店长与线下快闪结合的策展方式，不仅精准触达了追求妆效与性价比的年轻消费群体，也为美妆品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">广州 · 09-18~09-20</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/IORE-WATSONS-ENERGY-STATION-POPUP-GZ-2026-9-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/4ec2ec5297764df0a07e711f28dbfcad.jpg" alt="edition「好心情公园」popup" loading="lazy">
+      <h2>edition「好心情公园」popup</h2>
+      <p class="description">edition「好心情公园」popup 于 2026 年 9 月 17 日至 9 月 30 日限时登陆北京三里屯太古里北区下沉广场。本次快闪以“拥抱好心情”为核心思路，将品牌“轻生活系列”的松弛穿搭美学与城市情绪疗愈深度融合，打造了一座闹市中的治愈停靠点。现场不仅融合了复古拍照、DIY 手作与特调咖啡，9 月 20 日还特邀品牌大使高圆圆亲临门店分享新季轻适风格，是北京近期极具松弛感与氛围感的免费打卡地。
+现场空间以浅蓝色“大沙发”咖啡亭为视觉核心，巧妙融合了都市公园的松弛感与冬日暖绒的温度感。周围随意错落的长椅像是为匆忙的日常按下了暂停键，空间没有生硬的物理切割，而是用材质和色彩引导动线与情绪的递进。冷调的蓝与冬日特调咖啡杯上红白相间的针织“毛衣”形成了极佳的色彩平衡，光影在纱幔间流转，随手一拍就能定格充满治愈感与高级气息的大片。
+在报纸拍照机前按下快门，立拍立取一张专属的《好心情报纸》复古快照，把笑容打包带走。前往咖啡亭领取一杯冬日特调咖啡，感受杯身针织毛衣带来的暖绒触感，坐在长椅上短暂放空发呆。在 DIY 明信片区亲手绘制并盖上超 cool 的印章，写下细碎美好后邮寄给自己或远方好友。互动体验结束后，可移步至不远处的 edition 实体门店，沉浸式感受当季轻生活系列的穿搭美学与暖光质感。
+本次“好心情公园”快闪是 edition 在情绪价值营销与空间体验上的一次重要落地，标志着品牌从单一的日常服饰零售向“沉浸式情绪疗愈体验”的全面转型。通过将“拥抱好心情”的品牌态度与城市下沉广场的公共空间结合，edition 不仅将服装从“日常单品”升级为“承载松弛感与情绪价值的载体”，更传递了“在城市缝隙里，自在从容拥抱好心情”的品牌哲学。这种将穿搭美学、情绪练习与线下快闪结合的策展方式，不仅精准触达了追求松弛感的都市女性，也为时尚品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">北京 · edition · 09-17~09-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/EDITION-GOOD-MOOD-PARK-POPUP-BJ-2026-9-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/64b6e0c6ebee41709fcdfbefd4eb11fe.jpg" alt="lululemon「wunder puff™ 动态剧场」" loading="lazy">
+      <h2>lululemon「wunder puff™ 动态剧场」</h2>
+      <p class="description">lululemon「wunder puff™ 动态剧场」落地沈阳粮仓文化创意园，是品牌联动专业艺术剧场、突破运动服饰常规展示形式的艺术化线下企划，依托文创园工业艺术基底，重构冬季羽绒穿搭的审美表达，推动运动生活美学与当代艺术的跨界融合，具备品牌调性升级与冬季新品场景化种草的双重意义。
+项目空间造型极具艺术张力，以本季Wunder Puff羽绒系列缤纷色彩为核心视觉脉络，通过多色块交织碰撞的场景制作，打造层次丰富、动态感十足的沉浸式体验街区，打破冬季服饰沉闷的视觉刻板印象，贴合品牌多元鲜活的时尚态度。活动携手陶身体剧场共创艺术现场，以肢体舞蹈演绎产品特性，同时邀请品牌大使李宇春助阵，舞者身着全系列配色羽绒单品演绎现代舞，将服饰版型、肢体律动与现场音乐深度融合，生动诠释“生动，不止一个调”的活动主题。
+展区设置开放式产品试穿区与互动体验空间，可供访客体验不同版型羽绒单品，参与即兴肢体互动，直观感知产品保暖性能与穿搭表现力。项目将冬季穿搭升级为可感知、可参与的艺术体验，凭借艺术演艺与高质感场景打造强传播打卡内容，适配社交平台UGC扩散，有效完成新品曝光、用户体验教育与运动生活方式理念传播，形成艺术赋能品牌营销的完整闭环。</p>
+      <div class="meta">沈阳 · lululemon · 09-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/lululemon-Wunder-Puff-Dynamic-Theater-Shenyang-2026-9-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/8c012ea82061413a90b25972856b5c5c.jpg" alt="Swisse斯维诗【自然更健康】城市快闪" loading="lazy">
+      <h2>Swisse斯维诗【自然更健康】城市快闪</h2>
+      <p class="description">【自然更健康】Swisse斯维诗城市快闪于 2026 年 9 月 15 日至 9 月 16 日限时空降杭州湖滨银泰in77（湖滨步行街广场）。本次快闪以“健康自然发生”为核心理念，将自然营养、趣味运动与正念冥想深度融合，打造了一座闹市中的“城市自然自留地”。活动不仅融合了沉浸式互动体验，9月15日还特邀品牌大使金靖、许昕及嘉宾庞博惊喜到场，是杭州近期极具治愈感与松弛感的免费打卡地。
+现场以标志性的“自然之门”为视觉核心，跨进门便仿佛从喧嚣闹市瞬移到一片绿意盎然的自然绿洲。整体空间以自然原木、热带绿植和暖色调光影为基调，巧妙融合了城市沙滩、白色帆船装置与躺椅，营造出海边度假般的松弛氛围。空间摒弃了生硬的科普展板，通过流动的自然元素与沉浸式光影，让身心在步入的瞬间自然放松，随手一拍就能定格充满治愈感与多巴胺色彩的大片。
+现场分为三大沉浸式体验区，观众可自由探索。在自然营养区，通过趣味测试解锁专属自然营养菜单，挑选适配的天然原料卡片亲手组合营养包，直观感受自然滋养的力量。在自然运动区，设置趣味高尔夫互动体验，无需讲究标准姿势，跟随身体节奏随意挥杆，在运动中释放日常压力。在自然正念区，躲进独立的海上正念船舱，在 1 分钟的海浪光影与环境音效环绕中沉浸式冥想，隔绝城市嘈杂，屏幕中还会随机闪现“凤尾鱼”彩蛋，抓拍即可解锁专属行李牌。完成三个区域的体验并集齐“自然瞬间”印章，即可兑换明星同款编织斜挎包或条纹行李牌等周边好礼。
+本次“城市快闪”是 Swisse 在健康生活方式营销与线下场景体验上的一次重要落地，标志着品牌从单一的营养补充剂展示向“沉浸式身心疗愈体验”的全面转型。通过将“营养、运动、正念”三大健康支柱转化为可感知的线下互动，Swisse 不仅将健康理念从“刻意的自律内卷”升级为“顺应自然的松弛状态”，更传递了“健康自然发生”的品牌态度。这种将自然美学、身心疗愈与城市公共空间深度融合的策展方式，不仅精准触达了追求松弛感的年轻消费群体，也为健康品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">杭州 · 09-15~09-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/SWISSE-NATURALLY-HEALTHIER-POPUP-HZ-2026-9-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/2694080ea5fc441fa47376552627ad11.jpg" alt="沃集鲜“简单食铺”快闪" loading="lazy">
+      <h2>沃集鲜“简单食铺”快闪</h2>
+      <p class="description">沃集鲜“简单食铺”快闪于 2026 年 9 月 14 日至 9 月 21 日限时落地深圳福田深业上城 L3 层东广场。本次快闪以“秋时新味，简单为鲜”为核心思路，将沃集鲜中秋月饼礼盒与中式古风美学深度融合，打造了一场兼具治愈感与互动性的沉浸式体验空间。现场不仅有多款时令秋味小食和月饼礼盒免费试吃，还融合了五感食材体验与 DIY 手作，是深圳近期极具中秋氛围感的免费打卡地。
+现场以中式美学为底蕴，外观是一个超大的木质“百子柜”盒子装置，搭配门口的巨型月饼模型和网红立式镜子，新中式氛围感直接拉满。暖黄灯光从一格一格抽屉里透出来，仿佛闹市中一处安静的小院落。整体设计摒弃了传统商超的喧闹感，通过木色框架、草本植物与古风布景的交织，营造出松弛、出片、好玩的场域，随手一拍就能定格充满秋日诗意的大片。
+现场互动玩法丰富且充满治愈感，建议按照以下流程体验：进店先从木抽屉百子柜中抽取一张中秋祝福小笺，凭小笺即可在后续环节免费领取对应口味的月饼尝鲜。跟着“望、闻、泡、尝”的指引，近距离观察当季桂花、茯苓、黄芪、枸杞等草本食材的色泽与泡水状态，直观感受食材本源与品质。挑选喜欢的草本好料，亲手装袋缝制一枚专属香囊，把秋日的草木香带回家，过程非常解压。现场有多款沃集鲜月饼礼盒（如珍膳秋养、秋月食珍、奶皮子月饼等）及时令小食（如桂花炒米牛乳茶、HPP果茶）免费试吃。看中的礼盒可以直接扫沃尔玛 APP 下单配送到家，解放双手不耽误逛街。
+本次“简单食铺”快闪是 沃集鲜 在中秋节点与线下场景体验上的一次重要落地，标志着品牌从单一的产品销售向“沉浸式生活方式体验”的全面转型。通过将中式传统美学（百子柜、草本香囊）与现代商超自有品牌结合，沃集鲜不仅将月饼从“节日食品”升级为“承载秋日仪式感与情绪价值的载体”，更传递了“简单为鲜，不时不食”的自然生活态度。这种将国风美学、食材科普与线下快闪结合的策展方式，不仅精准触达了追求松弛感与中式浪漫的年轻消费群体，也为零售品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">深圳 · 09-14~09-21</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/WALMART-SIMPLE-FRESH-MARKET-POPUP-SZ-2026-9-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/00520ca6d1f64ef9a55395fa1b117c56.jpg" alt="HR赫莲娜小露珠「好状态」嘉年华" loading="lazy">
+      <h2>HR赫莲娜小露珠「好状态」嘉年华</h2>
+      <p class="description">HR赫莲娜小露珠「好状态」嘉年华于 2026 年 9 月 12 日至 9 月 20 日限时空降深圳万象天地 LG 层小中庭。本次快闪以“饱满如露，鲜活透光”为核心思路，将品牌专利露珠微囊科技与线下沉浸式互动深度融合，打造了一场兼具科技感与治愈氛围的沉浸式体验空间，定位为面向追求鲜活透光好状态人群的免费打卡地。
+现场空间以赫莲娜标志性的水光饱满美学为视觉基调，巧妙融合了露珠微囊的科技感与沉浸式光影设计。整体设计摒弃了传统快闪的单调感，通过流动的光线、晶莹的露珠元素与极简高级的陈列，营造出轻松随性的探索氛围。空间内没有繁杂的装饰，让“饱满透光”的产品理念与街头光影自然结合，随手一拍就能定格充满高级感与清透气息的大片。
+现场互动玩法丰富且福利硬核，最吸睛的是扔球抽奖环节，据说 10ml 小露珠的中奖率非常高，大奖更是直接送出正装小露珠（每日数量有限，先到先得）。除了抽奖，观众还可以近距离体验小露珠饱满水的露珠微囊质地，感受轻润秒吸收的鲜活肤感。参与现场打卡互动，还能解锁专属惊喜好礼，沉浸式感受“饱满的脸，饱满地活”的品牌态度。
+本次“好状态”嘉年华是 HR赫莲娜 在核心商圈进行线下场景体验的重要落地，标志着品牌从单一的产品展示向“沉浸式感官体验”的全面转型。通过将“专利露珠微囊科技”与街头快闪空间结合，赫莲娜不仅将小露珠饱满水从“护肤单品”升级为“承载鲜活透光好状态的情感载体”，更传递了“由内而外焕发饱满力量”的品牌态度。这种将硬核护肤科技、互动游戏与线下快闪结合的策展方式，不仅精准触达了追求高效护肤的年轻消费群体，也为高端护肤品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">深圳 · HR赫莲娜 · 09-12~09-20</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/HR-LITTLE-DEW-GOOD-STATE-POPUP-SZ-2026-9-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/65c6d462d5214ea7875dcbfdc8588273.jpg" alt="JIU JIU BIRDS「候鸟邮差自然乐园」" loading="lazy">
+      <h2>JIU JIU BIRDS「候鸟邮差自然乐园」</h2>
+      <p class="description">JIU JIU BIRDS「候鸟邮差自然乐园」是联合国家动物博物馆打造的全国性自然科普巡展项目，突破传统科普展览的枯燥宣讲模式，将生态保护理念、自然美育与商业沉浸式场景结合，是文旅科普年轻化、场景化升级的代表性企划，具备生态科普传播与亲子商业赋能的双重价值。
+项目以候鸟迁徙故事为核心叙事主线，空间造型与场景制作贴合自然治愈的生态主题，打造多元沉浸式体验展区，落地鸟语电话亭、鸟翼科普墙、候鸟标本仓、无动力飞鸟装置等丰富打卡点位，兼顾科普专业性与场景观赏性。IP创新塑造五款拟人化候鸟形象，弱化科普的严肃感，强化童趣治愈属性。
+活动期开设鸟类填色艺术工坊、候鸟邮差集章打卡等互动玩法，让访客沉浸式聆听鸟鸣、认知候鸟物种，在趣味体验中吸收生态知识。现场配套主题快闪店，推出两百余款专属文创产品，打通科普体验与轻消费场景。项目精准覆盖亲子家庭与自然爱好者群体，将候鸟迁徙守护的生态理念融入全场景体验，依托高颜值自然系装置与趣味互动形式适配社交传播，激发用户自发打卡分享，实现生态美育普及、亲子客群沉淀、IP影响力扩散与商业场景赋能的完整营销传播闭环。</p>
+      <div class="meta">上海 · 09-11~09-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/JIU-JIU-BIRDS-Migrant-Bird-Postman-Nature-Paradise-2026-9-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-10">
+      <img class="cover" src="https://res.onsiteclub.com/6174c467b2794ec29950c7057ff5c165.jpg" alt="2026贵州酒博会--五粮液展区" loading="lazy">
+      <h2>2026贵州酒博会--五粮液展区</h2>
+      <p class="description">在2026第十五届中国（贵州）国际酒类博览会上，BRANDX中嘉 再次携手中国白酒领军品牌——五粮液，倾力呈献了一座融合东方美学与数智创意的精彩展区。
+从玉珩之礼到庑殿之尊，从酒樽之骨到五粮之脉，BRANDX 以“古法今承，时酿新声”为核心策展主线，打破传统封闭展台的边界，打造一座“可以品读的立体史诗”。一起回顾这场兼具东方气度、科技互动与商业势能的活态文化盛宴。
+BRANDX 深度挖掘中国古代礼仪文化与五粮液的活态传承，从传统架构中汲取四重灵感，赋予 450㎡ 空间宏大的生命力与视觉秩序：
+灵感提取自西汉“出廓龙纹玉珩”。作为古礼中“礼天”的半圆弧形玉器，BRANDX 将其转化为开放式的入口主造型，寓意五粮液以至臻佳酿敬献四方宾朋，架起沟通世界的桥梁。
+借鉴故宫最高等级建筑形制“庑殿顶”，以其稳重堂皇的架构寓意五粮液作为行业龙头尊贵、堂皇的气度与坚守传统酿造礼法的匠心。
+提取古代酒樽（爵、觚）舒展挺拔的结构线条作为展台骨架，呼应白酒本质，隐喻五粮液“包容万物、酿化天成”的文化胸怀。
+将高粱、大米、糯米、小麦、玉米“五谷精粹”转化为贯穿全场的自然线条与肌理暗纹，象征着自然的馈赠与生生不息的风味本源。
+在空间规划上，BRANDX 以中央“同心双核”，配合自然的环形参观动线，将贵阳酒博会展台巧妙划分为六大主题区域，将五粮液深厚的历史底蕴与现代化科技表达完美结合：
+位于展台绝对中央的巨型圆形服务台，以“和美共聚”为主题，不仅是整个展台的人流枢纽，更象征着五粮液包容并蓄、和美共生的品牌胸怀。
+位于展位后方核心壁面，以生肖酒与经典八代形成宏大的陈列墙，配合动态灯箱呈现“匠心工艺”，直观彰显品牌厚重的文化积淀与行业领跑者的实力。
+位于中轴左右两侧。“1-8代”展示区将五粮液历代经典产品封存呈现，观众步入其中宛如走入白酒发展的“时光长河”；“核心展酒”结合“水天共酿”设计——观众靠近展台即可触发感应水波震动与水光效果，感受白酒“天地共酿”的风味灵感。
+该区域从“风味轮、勾调技艺、微生物菌群”三个维度解密五粮液的风味基因，展现传承与创新共进的时代精神：
+风味轮： 观众可通过触发按键获取真实气味，中央屏幕实时联动显示对应的风味画面，实现“嗅觉与视觉”的双重体验。
+勾调技艺： 采用触控透明屏与桌面上的实物勾调工具进行互动，深入了解基础勾调工艺细节，并与大尺寸 LED 屏幕实时联动，宛如勾调大师亲临现场授课。
+微生物菌群： 将透明屏与菌群拨片相结合，多维展示五粮液的微观风味密码。既满足了酒类学者的专业探索，又为普通观众带来了趣味十足的科普体验。
+将新潮的 29°五粮液「一见倾心」产品展示区 与现代感十足的 机械臂调酒 深度融合。精准触达年轻消费群体，展现五粮液时尚、年轻的时代新声。
+展区右上方以“五重致臻”为主题，深入溯源五粮液明清古窖池群“八大酒坊”的活态传承，阐释得名早、窖池老、工艺优、品质佳、口碑好的生生不息密码。
+位于入口右侧形象墙区域，重点聚焦“瓶、标、盒、箱、盖”五项产业协作，展现五粮液践行绿色产业链与可持续发展的品牌承诺，传递“载礼承香”的品牌厚度。
+在第十五届贵州酒博会上，BRANDX中嘉助力五粮液打造一座融合东方美学、数智科技与商业势能的活态展览空间。大国浓香奏响时代“新声”！</p>
+      <div class="meta">09-11~09-13</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Guizhou-Liquor-Expo-Wuliangye-Exhibition-Zone-2026-9-19" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-11">
+      <img class="cover" src="https://res.onsiteclub.com/a893f98305b346448a5b9ebfd261f916.jpg" alt="泡泡玛特「星星人农场」主题快闪店&amp;主题展" loading="lazy">
+      <h2>泡泡玛特「星星人农场」主题快闪店&amp;主题展</h2>
+      <p class="description">泡泡玛特「星星人农场」主题快闪店与主题展于 2026 年 9 月 10 日至 11 月 1 日落地南京万象天地。活动分为三大核心点位：星星人农场主题快闪店（9.10-11.1，L1 云章公所）、星星人农场主题展（9.17-11.1，梧桐广场及 L1 街区），以及 POP BAKERY 主题甜品快闪车（8.21-11.29，梧桐广场）。本次快闪将超 1000㎡ 的沉浸式空间与百年古建街区深度融合，打造了一场充满童话感与治愈氛围的线下体验，是南京近期极具软萌氛围的免费打卡地。
+现场以复古手绘农场布景与软萌 IP 装置为核心视觉基调，巧妙融合了古建老宅与当代潮玩美学。8+ 组星星人打卡装置依次铺开，包括伫立梧桐广场的“勇敢甜心”、编织礼物的“温暖小羊”、默默守护的“相信小狗”、外冷内热的“忠诚灰狼”以及漫天星光下的“风车之野”等。沿街玻璃、街区立牌与巨型灯箱大屏也布满了星星人农场元素，古建老宅碰撞软萌 IP，随手一拍就能定格充满童话感与治愈气息的大片。
+在 L1 云章公所的星星人农场主题快闪店内，可以近距离挑选人气 IP 潮玩盲盒，店内布置了星光农舍小屋等温馨场景，非常适合拍照。在快闪店领取集章卡后，前往梧桐广场及 L1 街区的 8+ 组打卡装置处盖章，集齐后可兑换贴纸或小卡等小礼品。关注南京万象天地官方账号并互动，在指定时间参与转盘许愿，有机会随机获得星星人农场主题冰箱贴或水晶贴纸等独家限定周边（每日限量 200 份）。在梧桐广场的 POP BAKERY 甜品快闪车旁，可以购买星星人主题冰淇淋和甜品，和星星人一起喝个漂亮下午茶。需要注意的是，快闪店内可能没有农场系列盲盒，若专程为了买特定款式，建议提前确认库存。
+本次“星星人农场”华东首展是泡泡玛特在 IP 场景化与街区沉浸式体验上的一次重要落地，标志着品牌从单一的盲盒零售向“超大型主题空间叙事”的全面转型。通过将星星人农场系列完整的叙事线（从为小狗编织礼物的小羊到默默守护的伙伴）与南京万象天地的百年古建街区动线结合，泡泡玛特不仅将潮玩从“收藏单品”升级为“承载温暖与陪伴的情感载体”，更让 IP 以可游逛、可拍照、可消费的深度体验方式触达大众。这种将热门 IP、古建街区与线下快闪深度融合的策展方式，为潮玩品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">南京 · 泡泡玛特POPMART · 09-10~11-01</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/POPMART-THE-STARS-PEOPLES-FARM-POPUP-NJ-2026-9-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-12">
+      <img class="cover" src="https://res.onsiteclub.com/bcb333a479d14d3485affbaa0873e4fd.jpg" alt="AFIONA妍丽 × Cellcosmet瑞妍官方「奇愈巡光」快闪列车" loading="lazy">
+      <h2>AFIONA妍丽 × Cellcosmet瑞妍官方「奇愈巡光」快闪列车</h2>
+      <p class="description">AFIONA妍丽 × Cellcosmet瑞妍官方「奇愈巡光」快闪列车
+AFIONA妍丽 × Cellcosmet瑞妍「奇愈巡光」快闪列车于 2026 年 9 月 10 日至 9 月 30 日限时停靠重庆万象城北区二楼（中区L2妍丽快闪店）。本次快闪以“奇愈巡光限时停靠”为核心思路，将瑞士细胞科技护肤的硬核实力与线下沉浸式体验深度融合，打造了一场兼具未来科技感与暖光治愈氛围的奢护空间，定位为面向抗衰与修护需求人群的免费打卡地。
+现场空间以“红色列车”为灵感载体，巧妙融合了瑞士实验室的科技感与艺术展的精致美学。玻璃橱窗透出暖光，内部陈列精致如艺术展，标志性的正红包装搭配未来感装置，极具视觉冲击力。整体设计摒弃了传统快闪的单调感，通过光影流转与红白配色的经典交织，营造出高端且治愈的沉浸式氛围，随手一拍就能定格充满贵妇级抗衰氛围感的大片。
+现场提供全方位的沉浸式护肤体验与打卡福利。观众可以近距离试用瑞妍的明星产品，感受轻盈不黏腻的肤感与细胞级修护力。参与现场打卡互动并关注官方账号，即可免费领取瑞妍惊喜体验礼（如调理水 5ml，每日限量，赠完即止）。此外，现场还有专业美容顾问提供一对一的皮肤检测与定制护肤方案，让每一位到场的顾客都能精准破译肌肤密码，开启专属的焕肤之旅。
+本次“奇愈巡光”快闪是 AFIONA妍丽 与 Cellcosmet瑞妍 在高端护肤线下体验上的一次重要落地，标志着品牌从单一的产品销售向“沉浸式细胞科技体验”的全面转型。通过将瑞士前沿的细胞控制法与线下快闪列车结合，不仅将抗衰产品从“日常单品”升级为“承载肌肤自愈力与自信的情感载体”，更传递了“科技定格年轻”的品牌态度。这种将硬核护肤科技、艺术装置与线下快闪结合的策展方式，不仅精准触达了追求高效抗衰的年轻与熟龄消费群体，也为高端院线护肤品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">重庆 · 09-10~09-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/AFIONA-CELLCOSMET-TRAIN-POPUP-CQ-2026-9-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-13">
+      <img class="cover" src="https://res.onsiteclub.com/e17f9586a3e140d3a8917b06c8ce9d94.jpg" alt="小米18Fold展新体验展" loading="lazy">
+      <h2>小米18Fold展新体验展</h2>
+      <p class="description">小米 18 Fold「展·新」体验展于 2026 年 9 月 10 日至 9 月 13 日限时登陆成都春熙路步行街。本次快闪以“新形态中折叠，一手掌握，一眼开阔”为核心思路，将小米 18 Fold 的旗舰科技与成都的潮流生活场景深度融合，打造了一场兼具科技感与时尚氛围的沉浸式体验空间，是成都近期极具先锋气息的数码打卡地。
+现场空间以小米 18 Fold 标志性的“西野红”为主视觉基调，搭配哑光金属质感，高级又吸睛。展区巧妙搭建了网球、露营等三大实景空间，将折叠大屏的实用场景自然融入街头潮流氛围中。整体设计摒弃了传统数码展台的生硬感，通过互动屏、机械折痕挑战装置与实景美陈的交织，营造出轻松随性的探索氛围，随手一拍就能定格充满科技与时尚气息的大片。
+现场提供了真机沉浸式体验，观众可以近距离上手感受 219g 轻薄机身与护照般大小的折叠形态，体验 7.58 英寸大屏带来的平板级开阔视野。在网球场景区，可以体验外屏实时预览拍照功能，搭配徕卡两亿超清主摄轻松拍出大片；在露营场景区，可以体验大屏分屏多任务处理，一边查攻略一边做笔记。此外，现场还设有互动屏与折痕挑战装置，参与打卡互动还能领取主题限定冰美式或参与抽奖赢取不锈钢直饮杯等周边好礼。
+本次“展·新”体验展是小米 18 Fold 在全国范围内的首展亮相，标志着小米在折叠屏赛道从“参数竞争”向“新形态生活方式体验”的全面转型。通过将“中折叠”概念与春熙路的潮流街头场景结合，小米不仅将折叠屏手机从“硬核数码单品”升级为“兼顾效率与时尚的随身配饰”，更传递了“展开新视野，从容探索世界”的品牌态度。这种将前沿自研科技、实景交互与城市核心商圈深度融合的策展方式，为国产旗舰手机品牌的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">成都 · 小米 · 09-10~09-13</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/XIAOMI-18FOLD-POPUP-CD-2026-9-20" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-09-22
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
