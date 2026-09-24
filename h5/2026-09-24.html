@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-09-24</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-09-24 周四</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">17</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/ac24ad4a9c924a50bf5a5c15b7a58429.jpg" alt="Timberland「鞋印，先踩个点」限时快闪" loading="lazy">
+      <h2>Timberland「鞋印，先踩个点」限时快闪</h2>
+      <p class="description">Timberland「鞋印，先踩个点」限时快闪于 2026 年 9 月 21 日至 10 月 31 日落地北京西单大悦城正门广场。本次快闪以“京味儿正浓，踢不烂的你来面基”为核心思路，将经典大黄靴元素与中式传统审美深度融合，打造了一场兼具户外精神与本土文化的沉浸式体验空间，是京城近期极具秋日氛围感的免费打卡地。
+现场以标志性的“小麦黄”为主视觉基调，门口设置了极具视觉冲击力的巨型大黄靴装置，成为全场最吸睛的潮流打卡点。空间巧妙融入了中式京味儿元素，将美式经典工装与北京秋日街景自然交织，摒弃了传统快闪的单调感，随手一拍就能定格充满复古与街头气息的大片。
+现场互动玩法丰富且充满京味儿特色，建议按照以下流程解锁：在快闪展台参与现场互动，就能体验非遗糖画，把经典大黄靴元素变成可以带走的京味限定记忆。每天前 30 位在小红书打卡的用户，可领取黑牛仔耳机包兑换券，并前往大悦城门店核销领取。在店内任意消费后，还能回到快闪展台参与 Timberland 帆布包手工 DIY 活动，亲手制作专属周边。此外，现场还有定制工坊和鞋带 DIY 等互动环节，店员热情满满，可以沉浸式感受“踢不烂”的匠心精神。
+本次“鞋印，先踩个点”快闪是 Timberland 在品牌本土化与线下场景体验上的一次重要落地，标志着品牌从单一的大黄靴零售向“城市户外文化沉浸式体验”的全面转型。通过将非遗糖画等中式传统元素与美式工装经典结合，Timberland 成功打破了传统户外品牌的场景边界，让“踢不烂”的精神以更接地气、更具互动性的方式触达年轻消费者。这种将户外文化、非遗美学与城市核心商圈结合的策展方式，不仅精准触达了追求个性与质感的年轻群体，也为户外品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">北京 · 09-21~10-31</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/TIMBERLAND-SHOE-PRINT-POPUP-BJ-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/cc7174141e9f46ebb8baed23ce97767d.jpg" alt="Clarks「行走实验室」限时快闪" loading="lazy">
+      <h2>Clarks「行走实验室」限时快闪</h2>
+      <p class="description">Clarks「行走实验室」限时快闪于 2026 年 9 月 21 日至 10 月 4 日落地长春欧亚卖场一楼太平洋厅。本次快闪以“行走，再进化”为核心思路，将 Clarks 与德国巴斯夫联合研发的 TriEase 轻松走 科技与线下沉浸式体验深度融合，打造了一场兼具科技感与舒适度的探索空间，是长春近期极具实用价值与互动趣味的鞋履打卡地。
+现场空间以“行走实验室”的精密逻辑与科技感为视觉基调，巧妙融合了人体工学与街头潮流氛围。空间内设置了等高线科技树装置与机械臂喷涂工艺展示区，将硬核的鞋底科技转化为可感知的视觉语言。整体设计摒弃了传统鞋店的单调陈列，通过科技元素与舒适理念的交织，营造出轻松随性的探索氛围，随手一拍就能定格充满科技感与街头气息的大片。
+现场集中展示了 Clarks 2026 年重磅推出的 TriEase 轻松走系列，观众可以近距离试穿体验，感受与巴斯夫合作开发的 Elastopan® 喷涂聚氨酯材料带来的软弹脚感，以及宽楦设计对大脚趾的舒适包容。现场设有互动打卡区，参与体验并完成打卡即可解锁现场专属礼遇（数量有限，先到先得）。此外，观众还能深入了解 Spray 机械臂一体成型喷涂工艺与双密度硬壳软心鞋底科技，直观感受百年英伦品牌在行走科技上的“再进化”。
+本次“行走实验室”快闪是 Clarks 在科技鞋履营销与线下场景体验上的一次重要落地，标志着品牌从单一的经典鞋款零售向“沉浸式人体工学体验”的全面转型。通过将前沿的化工材料与人体工学科技结合，Clarks 不仅将舒适鞋履从“日常单品”升级为“承载健康步履与情绪价值的载体”，更传递了“以科技为底，以自在为序”的品牌态度。这种将硬核科技、互动体验与线下快闪结合的策展方式，不仅精准触达了需要长时间行走与追求舒适脚感的消费群体，也为传统鞋履品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">09-21~10-04</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/CLARKS-WALKING-LABORATORY-POPUP-CC-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/b5c59c1ce14d4c708df9254bcec7f84b.jpg" alt="2026 云栖大会" loading="lazy">
+      <h2>2026 云栖大会</h2>
+      <p class="description">云栖大会2026于9月22‑24日在杭州举办，以“智以致用”为年度主题，采用杭州国际博览中心主会场叠加云栖小镇分会场的双城模式，并配套全球首个Agent线上专属会场，作为国内云计算与人工智能领域历史悠久的顶级行业盛会，大会历经十余年演进，从早期开发者技术沙龙成长为具备全球影响力的科技产业平台，见证国内云计算到大模型、Agent智能体的完整技术迭代，本届进一步完成从技术概念展示向产业落地实践的转向，具备技术成果公开、产业生态聚合、产学研交流、城市科技名片塑造的多重价值。
+项目空间与展陈制作依托杭州国际博览中心大型会展硬件基础，整体展区规模超5万平方米，联合一千余家企业共同策展，划分为智能馆、算力馆、创造馆、产业馆四大主题展馆，展陈叙事严格遵循“算力‑芯片‑大模型‑智能体‑行业应用”的全产业链逻辑，空间造型以极简科技风格为主，大量采用模块化特装展台、沉浸式实景装置、实物算力硬件陈列、交互式体验终端，把服务器集群、具身智能产线等硬核硬件实体化展出，兼顾专业技术可视化、观众可交互体验与人流疏导，场景制作兼顾大型会议的仪式感与产业展览的务实属性，主论坛舞美、导视系统、功能配套均按照国际顶级科技峰会标准落地，实现底层技术与上层应用在物理空间的叙事串联。
+活动期设置三场重磅主论坛与120余场垂直分论坛，两千余位行业嘉宾参与分享，发布阿里云全栈AI技术体系、千问大模型迭代成果，展出制造、零售、医疗、汽车等领域AI真实落地案例，同时开设首发首秀舞台扶持中小科创企业，同步落地AIGC影视共创成果展、技术实操体验，首创Agent原生参会模式，参会者可搭载数字分身参与线上线下联动，打通线下实体参会与数字虚拟体验的边界。面向技术开发者、企业决策者、科研从业者、科创企业与科技爱好者，大会以高密度的论坛输出、实物展品、现场实操体验构建完整产业交流场域；同时通过官方直播、媒体专题报道、行业KOL现场探馆、社交平台展品实拍与观点分享形成多层级传播链路，不仅完成前沿技术与产品的公开发布，也推动行业共识扩散、商业合作对接，实现技术输出、产业招商、品牌传播与公众科技普及一体化的营销传播闭环。
+云栖大会主会场（Keynote Forums）管理与运营：hofo
+云栖大会分会场（Session &amp; Forum）管理与运营：THINKPARK
+云栖大会展区设计、运营管理：卡司通、上海扬思、THINKPARK、蓝色方略</p>
+      <div class="meta">杭州 · 阿里云 ALIYUN · 09-21~09-24</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/APSARA-Conference-Hangzhou-2026-9-23" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/e7c3642ff2fa413e8730c748eb7682bf.jpg" alt="BOGNER博格纳「奢雪都市 驰骋有型」快闪店" loading="lazy">
+      <h2>BOGNER博格纳「奢雪都市 驰骋有型」快闪店</h2>
+      <p class="description">BOGNER 博格纳「奢雪都市 驰骋有型」快闪店于 2026 年 9 月 20 日限时登陆北京 SKP 2F D 区。本次快闪以“将高山度假氛围引入都市语境”为核心思路，将品牌硬核的滑雪性能与低调的老钱风美学深度融合，打造了一场兼具专业度与时尚感的冬日奢雅型旅，是京城近期极具奢滑氛围的打卡地。
+现场空间将高山雪域的冷冽与都市奢雅的暖调巧妙碰撞，摒弃了传统快闪的喧闹感。通过极简的线条、高级的面料质感与沉浸式光影，营造出一种“推门即雪场”的松弛氛围。空间内不仅展示了品牌标志性的滑雪装备，还融入了户外用具细节与先锋灵感设计，让专业雪服与都市时装的边界自然消融，随手一拍就能定格充满老钱风与高级气息的大片。
+现场集中展示了 BOGNER 2026 雪季新品，包括带有仿羊羔绒马甲内搭的粉色滑雪服、800+ 蓬鹅绒填充的蓝色长羽绒面包服，以及搭配可翻折鞋钉的羊剪绒雪地靴等。观众可以近距离触摸四向弹力面料与高蓬鹅绒的质感，感受专业雪服与都市日常穿搭的双向兼容。此外，现场还设有社交互动环节，关注官方账号并参与“雪场穿搭 vs 都市日常”的讨论互动，就有机会赢取品牌随身杯等惊喜好礼。
+本次“奢雪都市”快闪是 BOGNER 博格纳在都市奢滑生活方式营销上的一次重要落地，标志着品牌从单一的专业滑雪装备展示向“城市户外美学体验”的全面转型。通过将 89 年的德国高奢滑雪基因与 SKP 的先锋商业空间结合，BOGNER 不仅将雪服从“专业装备”升级为“承载奢雅态度与情绪价值的载体”，更传递了“从雪场到都市，暖意与型格我都要”的品牌哲学。这种将硬核户外科技、老钱风美学与线下快闪结合的策展方式，为高奢运动品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">北京 · BOGNER 博格纳 · 09-20</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/BOGNER-LUXURY-SNOW-CITY-POPUP-BJ-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/98ee2d317ae14a38bca63490fd66193f.jpg" alt="丝芙兰×毛戈平·光韵「光影筑境 韵生万象」品牌展" loading="lazy">
+      <h2>丝芙兰×毛戈平·光韵「光影筑境 韵生万象」品牌展</h2>
+      <p class="description">丝芙兰联合毛戈平·光韵落地上海衡复艺术中心品牌艺术展，是毛戈平·光韵品牌焕新升级后的首次重磅线下公开展示，依托衡复艺术中心复古建筑人文底蕴，实现高端彩妆与东方艺术的跨界融合，对品牌全新形象落地、新品市场发声具有标志性意义。
+本次展览以“光”为核心叙事主线，空间造型与场景制作极具东方美学质感，划分留白之韵、雕琢之韵、流动之韵三大主题篇章，并联动瓷艺术家、灯工玻璃艺术家跨界创作，以白瓷、琉璃艺术装置具象化演绎彩妆光影理念，打破传统美妆展陈的商业化模式，构建兼具艺术性与专业度的沉浸式观展空间。
+活动期集中亮相品牌焕新全系产品，完成底妆8色新色扩容展示，同步推出底妆、光影、色彩三大品类新品，并开放全品类现场试妆体验，让受众直观感受产品升级优势。同时配套开设毛戈平大师彩妆课堂，专业解读东方光影化妆技法，深化品牌技术内核。项目精准覆盖美妆爱好者、东方美学追随者与高端彩妆客群，依托丝芙兰独家渠道势能，赋能新品传播落地，以艺术化场景打造高质感打卡内容，撬动美妆达人圈层探店分享与社交传播，完成品牌调性升级、专业理念科普与新品市场种草的完整营销闭环。</p>
+      <div class="meta">上海 · SEPHORA 丝芙兰 · 09-20</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Sephora-Mao-Geping-Brand-Exhibition-SH-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/6e0179835e9f4a4ab6f4b89c7d8875af.jpg" alt="欧莱雅美发「粉晶晶豹闪街区」限时快闪（武汉）" loading="lazy">
+      <h2>欧莱雅美发「粉晶晶豹闪街区」限时快闪（武汉）</h2>
+      <p class="description">欧莱雅美发「粉晶晶豹闪街区」限时快闪于 2026 年 9 月 19 日至 10 月 18 日落地武汉楚河汉街一街区。本次快闪以“头发粉晶晶，回头秒动心”为核心思路，将欧莱雅粉晶晶洗发水与 Hello Kitty 的粉色豹纹元素深度融合，打造了一条超长的粉色豹纹“痛街”。现场不仅融合了巨型装置打卡与互动福利，还特邀巴黎欧莱雅美发代言人宋雨琦的限定元素，是武汉近期极具少女心与甜妹氛围的免费打卡地。
+现场空间以梦幻粉色和豹纹元素为视觉基调，将整条街区变成了超大的沉浸式拍照棚。入口处矗立着极具视觉冲击力的粉色豹纹巨型拱门，沿途分布着 Hello Kitty 粉色花墙、粉色豹纹 Kitty 立牌以及亮片装饰的互动打卡区。最吸睛的莫过于粉色豹纹蝴蝶结装置，搭配街道上的粉色斑马线和路灯旗帜，细节满满。整体设计摒弃了传统快闪的封闭感，让甜美元素与汉街的街景自然交织，随手一拍就能定格充满少女感与 BlingBling 气息的大片。
+现场互动玩法丰富且充满甜妹福利，建议按照以下流程解锁：前往粉色豹纹蝴蝶结装置处“按一按”，即可带走两张宋雨琦绝美限定小卡；在粉晶晶派样机前完成互动打卡任务，就能把粉晶晶洗发水小样带回家；在巨型粉色 Kitty 花墙和豹纹拱门处拍照打卡，记录专属的豹闪时刻。现场还设有多种趣味互动小游戏，集满指定印章还能解锁限定 Gelato 冰淇淋或参与套圈赢取洗发露中样。建议穿着粉色或白色浅色系衣服前往，与满街的粉色豹纹装置搭配更出片。
+本次“粉晶晶豹闪街区”是欧莱雅美发在 IP 联名与街区型营销上的一次创新突破，标志着品牌从单一的产品展示向“沉浸式情绪体验”的全面转型。通过将粉晶晶洗发水与 Hello Kitty 的超级 IP 结合，并将装置分散嵌入楚河汉街的各个角落，欧莱雅不仅将洗护产品从“日常单品”升级为“承载少女心与情绪价值的载体”，更传递了“从头开始闪闪发亮”的品牌态度。这种将热门 IP、代言人效应与城市核心街区深度融合的策展方式，不仅精准触达了追求甜妹氛围感的年轻消费群体，也为美妆个护品牌在户外商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">武汉 · L’Oreal Paris 欧莱雅巴黎 · 09-19~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LOREAL-PINK-GLITTER-LEOPARD-DISTRICT-POPUP-WH-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/6a57e5fb1fb14cffb7263895402b7725.jpg" alt="施丹兰25周年「点时成金」限时空间" loading="lazy">
+      <h2>施丹兰25周年「点时成金」限时空间</h2>
+      <p class="description">STENDERS 施丹兰 25 周年「点时成金」限时空间于 2026 年 9 月 19 日至 9 月 27 日落地成都万象城 A 馆 L1 中庭。本次快闪以“点时成金”为核心思路，将品牌 25 年的北欧沐浴疗愈沉淀与黄金臻护系列深度融合，打造了一场兼具自然丰饶与身心疗愈的沉浸式感官之旅。现场不仅融合了鎏金美学装置与互动打卡，还特邀品牌挚友 樊治欣 空降现场，是成都近期极具贵气与治愈感的免费打卡地。
+现场空间以北欧桑拿小木屋与鎏金美学为视觉基调，巧妙融合了自然原木与黄金奢护元素。巨大的鎏金沙漏装置是全场最吸睛的 C 位，仿佛可以翻转时间；黄金浴缸与鎏金木屋营造出高级治愈的氛围，随手一拍就能定格充满贵气与松弛感的大片。整体设计摒弃了传统快闪的喧闹感，通过水、香气与光影的交织，将北欧沐浴仪式的净化、唤醒与疗愈具象化，让身心在步入的瞬间自然放松。
+现场互动玩法丰富且充满疗愈感，建议按照以下流程解锁：在快闪展台参与互动打卡，集齐 4 个印章即可领取沐浴油旅行装（数量有限，先到先得）。可以沉浸式体验黄金臻护系列的奢护香氛，感受自然之金在水与香气间的丰饶，还能在现场体验一次舒适的手部黄金 SPA。此外，现场还设有专属主题场景供拍照留念，解锁限定礼盒开启奢护时刻。9 月 21 日，品牌挚友樊治欣将空降现场担任一日店长，与粉丝近距离互动、合影并分享宠粉时刻，粉丝还可入手明星限定黄金臻护套盒。
+本次“点时成金”限时空间是施丹兰在 25 周年节点与线下场景体验上的一次重要落地，标志着品牌从单一的产品展示向“沉浸式感官疗愈体验”的全面转型。通过将北欧桑拿文化与黄金臻护系列结合，施丹兰不仅将洗护产品从“日常单品”升级为“承载身心疗愈与情绪价值的载体”，更传递了“在一天中拥有属于自己的第 25 小时”的品牌态度。这种将天然植萃、感官艺术与线下快闪结合的策展方式，不仅精准触达了追求松弛感与疗愈体验的年轻消费群体，也为高端洗护品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">成都 · 09-19~09-27</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/STENDERS-25TH-EVERY-MOMENT-TURNS-TO-GOLD-POPUP-CD-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/c0322f2ffcb74ba198a3f54c00279b96.jpg" alt="揽胜品牌 无出其胜 胜境之旅（济南站）" loading="lazy">
+      <h2>揽胜品牌 无出其胜 胜境之旅（济南站）</h2>
+      <p class="description">依托城市核心高端商业场景，打造揽胜家族沉浸式静态品牌体验空间。现场陈列揽胜旗舰车型，全方位呈现揽胜系列现代豪华设计、精工内饰以及SV专属定制文化。现场设置品牌展示、贵宾洽谈接待区域，配备专属产品顾问，为受邀客户及商场到访宾客提供一对一车型解读。
+本次商场内为静态品鉴展示，不开展动态驾驶。意向客户可于现场完成信息登记，预约场外深度道路试驾，近距离感受揽胜旗舰驾乘质感。活动面向揽胜老车主、意向客户以及恒隆广场高端流动客群，在都市商圈之中，传递揽胜的豪华品牌理念。
+置身城市核心商圈，沉浸式品鉴揽胜家族旗舰座驾，领略现代豪华设计美学。现场可咨询车型详情，预约深度试驾，恭迎莅临。
+场地供应商：思贝思（SPACE） www.360space.cn</p>
+      <div class="meta">济南站 · LANDROVER 路虎 · 09-19~09-20</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LandRover-RoadShow-JINAN-by-SPACE-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/b689645372c74988a3260fd7d1b85cf3.jpg" alt="《迷你世界》上海久光中心线下亲子主题乐园" loading="lazy">
+      <h2>《迷你世界》上海久光中心线下亲子主题乐园</h2>
+      <p class="description">《迷你世界》线下亲子主题乐园落地上海久光中心L1户外广场，是热门沙盒游戏IP走向实体生活化场景的重要文旅企划，打破虚拟游戏与线下休闲的边界，为商业综合体赋能亲子沉浸式体验业态，兼具IP线下破圈传播与商场客流激活的双重价值。项目空间造型高度还原游戏经典方块农场场景，以游戏原生方块美学为设计核心，实景复刻虚拟游戏世界，打造适配全年龄段的亲子游乐空间。
+场地精心搭建谷仓滑梯、金色啵啵球池等趣味游乐装置，搭配迷斯拉等经典IP形象打卡点位，同时设置方块搭建、农场任务互动等沉浸式体验玩法，整体场景制作童趣饱满、还原度高，兼顾游玩安全性与视觉观赏性。活动期间落地特色拼豆大赛等限定主题活动，倡导亲子协同创作，强化家庭互动体验，同步开设主题周边售卖区域，完善场景消费链路。
+项目精准覆盖亲子家庭与资深游戏玩家群体，将虚拟游戏内容实景化、体验化，打造城市核心商圈沉浸式遛娃新场景。依托久光中心商圈流量优势，以高还原度IP场景与丰富互动体验吸引客群到访，有效提升商场家庭客群到店率与停留时长，同时借助大众日常打卡分享，实现IP粉丝沉淀、亲子圈层传播与商场商业活力提升的双向营销效果。</p>
+      <div class="meta">上海 · 09-18~11-01</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Block-Farm-Shanghai-Jiuguang-Center-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-10">
+      <img class="cover" src="https://res.onsiteclub.com/e5595ed34516471f8f249e4d275b03af.jpg" alt="卡地亚「寻踪豹影 INTO THE WILD」限时体验空间" loading="lazy">
+      <h2>卡地亚「寻踪豹影 INTO THE WILD」限时体验空间</h2>
+      <p class="description">卡地亚「寻踪豹影 INTO THE WILD」限时体验空间落地上海外滩老市府百年历史建筑，是品牌依托城市地标人文空间、回溯百年猎豹美学脉络的高端艺术展览，承载着品牌经典IP传承、匠艺文化传播与高端形象升级的重要意义。项目以卡地亚标志性猎豹IP为核心叙事线索，结合百年老建筑的厚重肌理与复古质感打造沉浸式展陈空间，打破传统珠宝静态陈列模式。
+整体场景制作还原自然野性丛林氛围，通过多层次主题展区规划，系统梳理1914年至今猎豹元素在品牌珠宝、腕表系列中的美学迭代与设计演变，集中呈现珍稀典藏珠宝作品，直观诠释宝石精工技艺与自然动物灵感的巧妙融合。活动期邀请品牌大使出席开幕仪式，拔高活动关注度与圈层影响力，以名人效应拓宽传播广度。
+展览将品牌百年匠心工艺、野性自由的自然美学与历史建筑的空间艺术深度结合，在兼具高端观赏性与艺术叙事性的同时，打造极具质感的社交打卡场景。依托外滩地标流量与展览高级视觉质感，精准吸引高端客群、艺术爱好者与时尚达人到访观展，激发圈层自发分享与社交传播，有效传递猎豹符号所代表的自由不羁的品牌精神，实现品牌文化焕新、高端心智夯实与口碑破圈传播的完整营销闭环。</p>
+      <div class="meta">上海 · Cartier 卡地亚 · 09-17~09-27</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Cartier-Immersive-Exhibition-INTO-THE-WILD-SH-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-11">
+      <img class="cover" src="https://res.onsiteclub.com/4c2385ee85f9466ba620fb14032c59cb.jpg" alt="MFK「晶红540」五感艺术巡展" loading="lazy">
+      <h2>MFK「晶红540」五感艺术巡展</h2>
+      <p class="description">MaisonFrancisKurkdjian梵诗柯香「感官炼金术」艺术展
+MFK国际巡展首站落地上海新天地时尚一期中庭，是品牌以王牌香氛「晶红540」为核心打造的高端艺术落地企划，突破传统香氛快闪的单一试香模式，以艺术策展视角重构香氛传播逻辑，具有深化高端香氛艺术属性、普及香氛美学文化的重要行业意义。
+本次项目空间造型极具典藏艺术质感，整体装置复刻艺术品专属典藏木箱形态，以极简高级的造型制作打造沉浸式展览视觉核心，围绕视听嗅味触五感维度构建完整体验体系。品牌联动调香大师弗朗西斯・库尔吉安，携手钢琴家、作曲家、米其林主厨与动态雕塑艺术家跨界共创，将抽象无形的香气转化为可全方位感知的艺术叙事，让香氛体验跳出单一嗅觉维度。活动期同步落地多元艺术内容，于凯迪拉克上海音乐厅举办《永恒符号》纪录片中国首映，深度解读晶红540的创作溯源与品牌内核。
+同时搭建线上线下联动传播体系，用户完成社交平台打卡任务即可兑换香氛小样，以轻量化福利撬动大众参与。项目依托高端艺术策展形式，持续强化MFK的艺术香氛品牌调性，通过专业艺术内容输出与大众社交UGC传播相结合，实现高端文化破圈、香氛理念普及与品牌质感升级的完整营销闭环。</p>
+      <div class="meta">上海 · 09-17~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Maison-Francis-Kurkdjian-Art-Exhibition-SH-2026-7-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-12">
+      <img class="cover" src="https://res.onsiteclub.com/4a3d6c55bd594ee8bcbde519a9abcf39.jpg" alt="LILY商务时装2026「大师大衣」新品预览会" loading="lazy">
+      <h2>LILY商务时装2026「大师大衣」新品预览会</h2>
+      <p class="description">LILY商务时装于上海举办2026「大师大衣」新品预览会，以「万国窗前，衣通东西」为核心主题，是品牌深耕26年商务时装赛道、融合国际化设计与本土穿搭需求的重磅新品发布企划，具备迭代秋冬主力品类、升级高端商务产品线的重要战略意义。
+本次活动以沉浸式品牌展览为载体，以“窗”为核心叙事线索，整体空间造型简约高级、兼具海派雅致与国际极简质感，通过层层递进的场景制作，系统回溯品牌发展历程与大师设计理念，构建沉浸式品牌叙事场景。新品系列由前Max Mara设计总监Zoe Turner主导研发，重磅推出五大IP大衣矩阵，甄选澳洲美丽奴羊毛、山羊绒等高端面料，结合中国女性身形优化版型，兼顾保暖性能、廓形质感与职场穿搭场景。活动期设置大师对谈环节，品牌联合创始人与主创设计师深度拆解创作思路，同时邀请品牌代言人李沁现场演绎五大系列对应的当代女性形象，丰富内容层级与话题热度。
+项目精准面向都市职场女性、商务时装爱好者与时尚达人，融合海派底蕴与国际设计视野，打破高端大衣品类溢价壁垒，同步开启新品预售。依托沉浸式场景陈列、明星流量与专业设计师内容输出，快速引爆时尚圈层社交传播，为秋冬大衣品类完成市场预热与品牌声量沉淀。</p>
+      <div class="meta">上海 · 09-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LILY-Business-Fashion-2026-Collection-Preview-SH-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-13">
+      <img class="cover" src="https://res.onsiteclub.com/4b2d44b4fa224168a09b43e1a3743baa.jpg" alt="Fenty Beauty「星尘流光商店」快闪项目" loading="lazy">
+      <h2>Fenty Beauty「星尘流光商店」快闪项目</h2>
+      <p class="description">Fenty Beauty「星尘流光商店」限时快闪落地上海新天地时尚1期，是品牌依托美式潮流美学、围绕王牌单品打造的沉浸式玩妆体验企划，打破传统美妆专柜的售卖模式，以年轻化、趣味化的场景表达传递品牌多元包容的彩妆理念，进一步夯实潮流彩妆的市场定位。
+项目空间造型极具辨识度，以美式复古便利店与复古餐厅为设计原型，整体采用温柔粉调视觉体系，打造松弛潮流的沉浸式玩妆空间。场景制作极具巧思，创新设置标志性唇釉冰柜陈列全线唇釉产品，搭配霓虹打卡墙、全脸专业试妆台，兼顾产品展示、实景体验与打卡传播属性，空间风格统一且潮流氛围感突出。活动期重点上新星尘热可可、星尘蜻蜓粉、琥珀瑰棕三款全新唇釉色号，同步开放钻石炸弹高光等明星单品体验，全方位展示产品流光嘭润的独特质地。
+现场设置打卡集章玩法，访客完成互动即可领取限定美妆小样，沉浸式传递品牌适配多元肤色的彩妆内核。项目精准覆盖美妆爱好者、Rihanna粉丝与城市潮流打卡群体，以轻松自由的线下玩妆场景降低体验门槛，依托高颜值场景与新品亮点激发美妆圈层自发种草与社交UGC传播，有效拉升新品曝光度，实现品牌调性输出、用户体验转化与新品销量提振的完整营销链路。</p>
+      <div class="meta">上海 · 09-15~09-17</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Fenty-Beauty-The-Gloss-Bomb-Shop-POP-UP-SH-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-14">
+      <img class="cover" src="https://res.onsiteclub.com/0992fb7737f140d4a47460e626d7f63e.jpg" alt="MAX&amp;Co.「天生主角」四十周年限时体验空间" loading="lazy">
+      <h2>MAX&amp;Co.「天生主角」四十周年限时体验空间</h2>
+      <p class="description">MAX&amp;Co. ×Alimentari Mulino 限时体验空间
+意大利时尚品牌MAX&amp;Co.迎来品牌创立四十周年，推出以「天生主角」为主题的2026秋冬系列，并联合意大利生活方式餐饮品牌Alimentari Mulino打造双城限时体验空间，是品牌开启创意革新、重塑当代女性穿搭主张的标志性企划，打破时装展示单一化模式，将时装理念融入日常餐饮场景，传递风格自由的品牌内核。
+项目空间围绕「天生主角」主题搭建沉浸式艺术装置，融合时装美学与意式餐饮空间质感，弱化传统时装秀场的距离感，以生活化场景制作诠释“主角感不止在衣橱，也在日常餐桌”的创意概念，空间氛围松弛自然，兼具时装陈列、餐饮体验与打卡叙事功能。活动率先落地上海丰盛里，之后移师深圳福田星河COCO Park，现场设置多重趣味互动触点，让访客沉浸式感受2026秋冬系列设计灵感。系列创作从真实日常与个体个性汲取灵感，剥离固化的穿搭标签，主张服装是表达自我的个人语言，赞颂每个人都是自身故事的主角。
+项目面向追求独立风格的都市女性群体，借由时装与美食结合的跨界场景，打造具有社交传播潜力的体验空间，吸引时尚爱好者打卡分享，借助双城巡展扩大品牌声量，传递全新的品牌创意主张，完成新品理念传递、品牌形象焕新与社交圈层种草的完整营销闭环。</p>
+      <div class="meta">上海 · 09-14</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/MAX-Co-2026-AW-Collection-40th-Anniversary-Space-SH-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-15">
+      <img class="cover" src="https://res.onsiteclub.com/7de80145a165448b8eb23de5ee165bba.jpg" alt="BURTON 50 周年盛典" loading="lazy">
+      <h2>BURTON 50 周年盛典</h2>
+      <p class="description">BURTON 50周年盛典落地上海上生新所海军俱乐部，以「经典新绎 先锋开局」为核心主题，同时落地全新品牌概念店，是品牌深耕中国市场五十周年的里程碑式活动，也是小众单板滑雪文化破圈走进城市潮流场景的重要企划，承载着品牌历史传承、文化输出与新雪季市场赋能的多重意义。
+项目在城市商圈空间创新打造专业滑雪场景，突破传统线下活动形式，实景搭建都市雪坡，结合艺术展陈空间，兼顾专业运动质感与潮流视觉造型，场景制作融合复古雪具底蕴与先锋街头运动风格。
+活动期内容丰富多元，由比利白策划单板收藏特展，系统性展出半世纪经典手工雪板与历代藏品，完整梳理单板滑雪器物演进历史；独创城市雪地「弄堂Battle」果酱赛，邀请滑手现场即兴竞技炫技。同时集结品牌全球CEO、国际传奇滑手与国内单板名将，开设文化沙龙对谈，深度分享单板文化发展脉络，并限量发售50周年纪念系列产品。项目精准面向滑雪爱好者、户外社群与潮流玩家，将极致雪山单板文化移植都市场景，以藏品展、城市赛事、精英社群对话的多维形式，诠释「WE RIDE TOGETHER」的品牌内核，有效激活滑雪圈层口碑传播与社交UGC扩散，顺利完成新雪季品牌声量铺垫与市场预热。</p>
+      <div class="meta">上海 · 09-12</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/BURTON-50th-Anniversary-Celebration-SH-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-16">
+      <img class="cover" src="https://res.onsiteclub.com/b4935a18af1c44fa8433f6e5b76ad637.jpg" alt="2026 徕卡摄影节" loading="lazy">
+      <h2>2026 徕卡摄影节</h2>
+      <p class="description">2026徕卡摄影节落地上海西岸中环·徕卡之家，为期一月的长期艺术企划，是徕卡依托百年影像积淀、深耕国内人文摄影生态的标志性文化活动，兼具经典影像传承、大众美育普及与品牌人文调性深化的多重意义。项目空间依托徕卡之家艺术展厅质感，以极简光影美学为造型核心，空间制作克制高级、层次纯粹，围绕「光影宗师·徕卡名人堂」核心主题展打造沉浸式影像观展场域，通过艺术化展陈布局呈现经典纪实作品，让百年摄影史以可视化、场景化的方式落地都市公共空间。
+展期内容兼具专业性与大众性，核心展出马克·吕布《中国记忆》珍贵原作及海量经典纪实影像，系统回溯百年摄影发展脉络；同步配套大众影像征集展、大师对谈沙龙、光影工坊、人像实拍体验与纪录片放映等丰富活动，开幕夜专属地标点亮仪式进一步拉升活动仪式感与话题度。
+项目精准覆盖摄影爱好者、徕卡用户、影像藏家与艺术受众，打通专业影像学术圈层与普通大众体验边界，以展览、交流、实操体验构建完整的影像文化场域，深度强化徕卡人文纪实的百年品牌内核。同时依托高质感艺术展场景，激发用户自发打卡分享与社交传播，实现文化价值输出、用户圈层沉淀与品牌形象升维的营销闭环。</p>
+      <div class="meta">上海 · Laica 徕卡 · 09-12~12-03</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leica-Photography-Festival-Shanghai-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-17">
+      <img class="cover" src="https://res.onsiteclub.com/6ff8dcd81ac444d7a97ee49eb06985a2.jpg" alt="LISA × MINISO 全球巡展上海站" loading="lazy">
+      <h2>LISA × MINISO 全球巡展上海站</h2>
+      <p class="description">LISA × MINISO 全球巡展上海站落地上海港汇恒隆广场南座中庭，于9月12日至10月11日限时呈现，是MINISO全球化IP战略布局下的重磅明星联名企划，依托顶流艺人IP势能，实现潮流文创场景升级与年轻消费圈层深度渗透，具备品牌国际化形象焕新与潮流商业赋能的双重意义。
+项目空间造型与视觉制作紧扣「Born to Shine. Ready to Rock」主题，汲取LISA个人专辑《Alter Ego》多面艺术人设灵感，以金属银与甜酷粉色为主色调，大面积融入星形核心视觉元素，打造兼具舞台质感与少女氛围的沉浸式潮流展区。现场匠心打造巨型星形打卡墙、LISA人像大屏与专属留言互动区域，场景层次丰富、出片属性极强，适配社交平台传播调性。展期完整陈列角色盲盒手办、YOYO换装毛绒挂件、箱包、数码周边、服饰等全套限定联名单品，采用预约入场模式规范观展体验，配套打卡集章、限定礼品派发等粉丝专属福利，强化现场互动粘性。
+项目精准覆盖LISA粉丝、潮流青年与IP收藏爱好者，以沉浸式追星场景激活线下客流与周边产品销量，依托小红书、抖音等平台UGC自发打卡扩散形成全网传播热度，后续联名货品下沉城市常规门店，实现短期快闪造势与长期产品销售联动，构建完整的IP营销传播闭环。</p>
+      <div class="meta">上海 · 09-12~10-11</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LISA-X-MINISO-POP-UP-Exhibition-SH-2026-9-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-09-24
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
