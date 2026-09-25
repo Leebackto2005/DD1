@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-09-25</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-09-25 周五</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">3</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/a8b7e09755184bcaa090feaf78f89082.jpg" alt="【成都太古里】「成为河流 Becoming The River」秋季主题活动暨大型公共艺术装置" loading="lazy">
+      <h2>【成都太古里】「成为河流 Becoming The River」秋季主题活动暨大型公共艺术装置</h2>
+      <p class="description">【成都太古里】「成为河流 Becoming The River」秋季主题活动暨大型公共艺术装置
+成都太古里秋季主题活动暨大型公共艺术装置「成为河流 Becoming The River」于 2026 年 9 月 22 日至 10 月 11 日在漫广场正式启幕。本次装置以“河流”为主题意象，将河流深处的生态交织与岁月沉淀转化为可步入、可感知的公共艺术空间，呈现一片超现实的水中秘境。活动免费开放且无需预约，是成都近期极具科幻感与冥想氛围的免费打卡地。
+现场以“触碰”为创作灵感，将一片超现实的水中秘境于秋日浮现。粼粼波光倾泻，悬浮的水草与自在舒展的水生植物在光影里交织，折射出朦胧诗意之美。充满感光材料的蓝色灯柱与反射呈现的水滴造型相互呼应，营造出灵动飘逸的场域感。整体设计摒弃了传统水景的静态怀旧，用科技语言重释水形态，让古老意象获得当代性，随手一拍就能定格充满科幻感与清冷气息的大片。
+现场最核心的是专属的温感互动设计，当人们伸出手去触碰蓝色灯柱，斑斓的色彩会像脉搏一样随温度缓缓流淌，让冰冷的装置拥有人类的温度与生命力。观众可以循着光影与色彩，在装置中漫步、停留，感受河流包容万物的姿态。夜幕降临后灯光亮起，整个装置仿佛点亮了内心，非常适合在秋日傍晚来一场沉浸式的城市漫游与冥想。
+本次“成为河流”是成都太古里在在地文化表达与先锋艺术策展上的一次重要落地，标志着漫广场持续以“在地性×先锋性”策略打造城市公共生活窗口。河流不仅是成都因水而生的城市 DNA，更唤醒了太古里脚下历史上曾有解玉溪穿流而过的地块记忆。这种将古老水文化符号与未来感光影装置深度融合的策展方式，不仅让公共艺术成为连接城市情感与当代审美的载体，也为商业地产在核心商圈的线下空间创新提供了极具参考价值的范本。</p>
+      <div class="meta">成都 · 09-22~10-11</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/TAIKOOLI-BECOMING-THE-RIVER-ART-INSTALLATION-CD-2026-9-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/ad2e812f458c4c819e121e55868a7a63.jpg" alt="比亚迪海洋网闪充技术商超展深圳站" loading="lazy">
+      <h2>比亚迪海洋网闪充技术商超展深圳站</h2>
+      <p class="description">2026年9月19日，比亚迪海洋网闪充技术商超展|深圳站 在卓悦INTOWN购物中心顺利举办。本次活动聚焦比亚迪闪充技术升级，比亚迪第二代刀片电池及闪充技术，核心数据是“‌5分钟充好、9分钟充饱，零下30℃只多3分钟‌”为深圳市民带来一场智能出行的沉浸式体验。 闪充技术赋能，开启高效补能新时代随着比亚迪闪充技术的全面落地 海洋网产品矩阵正式迈入焕新升级新阶段。活动现场设置闪充实测环节，直观呈现闪充技术带来的高效补能体验，让参与者近距离感受“9分充饱”的便捷出行新方式。 场景化体验升级，深耕深圳本地市场 本次品鉴会落地龙岗龙城万科里商圈，通过静态展示、道路试驾等环节，让参与者从视觉、动态等多维度感受四款车型的产品实力。活动现场，媒体与市民近距离体验车型外观设计与座舱配置，道路试驾环节则直观展现了车辆的操控性能与智能驾驶表现。 本次活动以“闪充技术”为核心，通过技术展示与场景体验，传递了比亚迪海洋网升级出行生态的品牌理念，也为深圳新能源汽车市场注入了新的活力。
+场地供应商：思贝思（SPACE） www.360space.cn</p>
+      <div class="meta">深圳 · 比亚迪 BYD · 09-19~10-17</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/BYD-Ocean-Fast-Charging-Technology-SZ-2026-9-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/184aafa94abe40628531950af63e50e5.jpg" alt="京东旅行「月过千山去见你」" loading="lazy">
+      <h2>京东旅行「月过千山去见你」</h2>
+      <p class="description">京东旅行联合鸣沙山月牙泉景区和京东 域头部品牌，共同开展为期3天的中秋主题快闪活动。以中秋文化与京东旅行&amp;京东域品牌进行融合场景展示，并通过趣味互动环节共同打造沉浸式体验；同时通过线上社交媒体的矩阵式传播，持续扩散活动影响力。与鸣沙山月牙泉景区强强联合，营造温馨的旅行氛围，提升旅客出行体验，共同为旅客打造一段温暖、欢乐、充满惊喜的团圆之夜
+场地供应商：思贝思（SPACE） www.360space.cn</p>
+      <div class="meta">京东 · 09-19~09-21</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/JD-Travel-DUNHUANG-EVENT-by-SPACE-2026-9-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-09-25
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
