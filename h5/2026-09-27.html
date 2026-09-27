@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-09-27</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-09-27 周日</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">3</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/793a864b6b7841928ff246e71fd24e25.jpg" alt="KAWS HOLIDAY 杭州" loading="lazy">
+      <h2>KAWS HOLIDAY 杭州</h2>
+      <p class="description">作为 KAWS 标志性的全球公共艺术巡展，KAWS:HOLIDAY 系列一直以巨型 COMPANION 充气装置落地全球多地地标，将潮流艺术置入城市公共空间，拉近大众与当代潮流艺术之间的距离。
+本次杭州站由 AllRightsReserved 主办、杭州恒隆广场作为当地合作伙伴，于 2026 年 9 月 24 日至 27 日在西湖柳浪闻莺公园落地，同步在杭州恒隆广场 L1 南中庭设立限时周边快闪店，是该巡展首次采用全新机器人造型的 COMPANION 进行呈现，选择中秋佳节这一特殊时间节点落地西湖这一杭州文化地标，实现古典江南山水与当代潮流 IP 的跨界碰撞，既延续 KAWS:HOLIDAY 系列 “休憩、松弛、假日” 的核心精神，也呼应杭州创新活力的城市气质，让潮流艺术走出美术馆围墙，面向普通市民免费开放，完成公共艺术的大众普及，同时借助地标流量赋能商业地产，为艺术 IP 与城市文旅、商业综合体的联动提供可参考的范本。
+在空间、造型与现场制作层面，项目采用双场域联动的模式，主展场依托西湖柳浪闻莺的自然湖景与草坪作为天然展场，30 米全长的柔黄色机器人 COMPANION 充气装置悠然躺卧于西湖边的大草坪之上，色调选取金桂黄，呼应杭州市花以及中秋明月意象，不增设大量人工硬质展具，以西湖山水、桂香月色作为装置的天然背景，将巨型充气雕塑嵌入真实的城市自然景观，观众可以自由环绕、近距离观赏，形成人与艺术、自然三者共生的开放式公共艺术场景；作为第二现场，杭州恒隆广场的快闪店则构建室内商业体验空间，聚焦藏品陈列与售卖，形成户外艺术观赏、室内藏品消费的互补格局。
+活动周期内的内容呈现多元丰富，西湖主场地向公众免费开放，艺术家 KAWS 本人也现身现场，成为活动一大惊喜彩蛋，大量潮玩爱好者、普通市民、摄影游客前来打卡，在中秋月夜之下观赏装置与湖月交相辉映的景象；恒隆广场快闪店则发售杭州站限定收藏品，包含亮面黄、哑面黑两款机器人 COMPANION 公仔，还有服饰、马克杯、中式茶具套装、铜制线香座等城市限定生活好物，线上 DDT Store 同步开启全球独家发售。从传播营销的关系来看，项目依托西湖地标的先天话题优势，中秋节日加持、艺术家空降现场，激发大量普通观众、收藏玩家在小红书等社交平台产出 UGC 打卡内容，路人随手记录、玩家藏品分享、艺人联动内容共同构成多层级传播矩阵。
+户外公共装置承担大众破圈传播任务，提升 IP 城市影响力，室内快闪店承接流量转化，完成限量藏品的商业落地；公共艺术场景制造社交话题，商业空间承接粉丝消费需求，文旅价值、艺术价值与商业价值相互赋能，实现 IP 文化扩散、城市文旅宣传、商业地产客流带动以及限定藏品市场热度提升的完整闭环。</p>
+      <div class="meta">杭州 · 09-24~09-27</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/KAWS-HOLIDAY-HANGZHOU-2026-9-24" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/69cc4684627b478893cc42e6937447de.jpg" alt="娜尔思NAERSI「东方雅园」限时主题展" loading="lazy">
+      <h2>娜尔思NAERSI「东方雅园」限时主题展</h2>
+      <p class="description">作为深耕国内高端女装赛道的 NAERSI 娜尔思，秉持 “东方为骨，西方为韵” 的长期品牌理念，落地西安万象城 L1 北中庭「东方雅园」限时主题展。项目选址千年古都西安，将东方庭院意境搬进现代商业空间，是品牌立足三十余年成衣积淀，把服饰面料美学向外延伸至公共艺术的重要实践，传递 “新经典不盲从潮流，回归内在优雅” 的价值主张，为本土女装开展城市文化联动提供可参考样本。
+在空间造型与制作层面，展览以花卉为核心灵感，解构品牌花纱面料，打造层叠通透的巨型花瓣装置，搭配金属结构构建沉浸式东方庭院场景，织物材料成为空间的诗意表皮，空间动线模拟游园体验，将时装面料质感与建筑装置融为一体，实现服装与空间艺术的对话。活动期内，代言人李冰冰到场，与品牌主理人开展 “新经典” 主题对谈，现场陈列品牌成衣系列，让访客沉浸式感受面料与东方雅致美学。
+从传播营销角度看，古都城市底色、巨型织物花艺装置具备很强打卡属性，明星到场放大话题热度，驱动社交平台 UGC 扩散。展览把服装文化转化为可体验的公共场景，强化品牌东方优雅的心智认知，实现品牌文化输出、线下客流带动与成衣价值传播的营销闭环。</p>
+      <div class="meta">西安 · 09-22~09-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/NAERSI-POP-UP-STORE-XIAN-2026-9-23" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/433934c470e44893a49e6c3d06501edd.jpg" alt="CHAUMET 尚美闭门高珠私享活动" loading="lazy">
+      <h2>CHAUMET 尚美闭门高珠私享活动</h2>
+      <p class="description">源自法国的百年高级珠宝世家 CHAUMET 尚美，将法式冠冕珠宝美学落地北京悉昙酒店，这家罗莱夏朵成员酒店坐落门头沟潭柘寺镇的西山山谷，拥有东方庭院与山林自然禀赋。本次闭门高珠私享活动，是品牌跳出城市商业展厅，把高级珠宝叙事置于东方山居秘境的创新尝试，以东西方奢雅美学对话为内核，面向高净值 VIP 打造沉浸式鉴赏场景，为奢侈珠宝借特色度假酒店开展圈层私域活动提供参考。
+在空间造型与制作层面，项目依托酒店原生中式院落、山林借景的先天条件，不做大规模硬体改造，以柔和展陈道具、局部艺术装置、氛围感灯光完成场地二次营造，把珠宝陈列融于古建庭院、山景窗景之间，利用山林暮色、庭院廊檐构建含蓄高级的观览动线，实现珠宝璀璨质感与东方山居禅意的平衡。活动期为定向邀约制，嘉宾在山水庭院间鉴赏品牌高级珠宝系列，举办私享晚宴与主题交流，感受珠宝创作背后的故事。
+从传播营销维度看，项目属于圈层闭门活动，不追求大众流量，依靠嘉宾、艺人及行业媒体产出精致内容进行小范围圈层扩散。借悉昙酒店的稀缺山野场景加持，强化尚美高级珠宝的艺术格调，深化高净值客群的品牌认同，完成高级珠宝艺术表达、私域客群维护与品牌格调升维的营销闭环。</p>
+      <div class="meta">北京 · CHAUMET · 09-19~09-20</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/CHAUMET-VIP-EVENT-BEIJING-2026-9-25" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-09-27
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
