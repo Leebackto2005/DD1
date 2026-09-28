@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-09-28</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-09-28 周一</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">3</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/98d0f267e44540ad9ba45a2d0a21f197.jpg" alt="Marisfrolg「时序有织」艺术巡展（天津）" loading="lazy">
+      <h2>Marisfrolg「时序有织」艺术巡展（天津）</h2>
+      <p class="description">Marisfrolg「时序有织」艺术巡展于 2026 年 9 月 25 日至 10 月 11 日落地天津万象城 L1 楼日辉厅。本次展览以“走入时序之门，以镜为映”为核心思路，将 2026 秋冬系列的织物视为时间的容器，超时空镜面折射出每一次驻足与转身，叠映成无限延伸的人生轨迹，是天津近期极具艺术感与女性力量的免费打卡地。
+现场空间以镜面反射与时光褶皱为视觉基调，巧妙融合了时装美学与当代艺术装置。层层叠映的镜面空间构成了展览的核心场域，仿佛踏入某条时间的褶皱。站在镜前，看见的不只是此刻的自己，还有被时间织就的那些未曾抵达的可能。服装轮廓与空间线条彼此呼应，简约质感与现代时尚在这里完成了一场温柔碰撞，随手一拍就能定格充满艺术气息与高级感的大片。
+现场集中展示了 Marisfrolg 2026 秋冬「时序有织」系列新品，观众可近距离触摸织物面料，感受时间沉淀出的质感与风格。9 月 26 日 15:00-18:00，时尚博主 Little Nothing 将作为一日店长空降现场，与观众面对面交流，提供专属穿搭建议并解锁更多造型灵感。此外，现场还设有注册新手礼与打卡伴手礼，完成互动即可领取，沉浸式感受艺术抵达生活的温柔时刻。
+本次“时序有织”艺术巡展是 Marisfrolg 在品牌美学与空间体验上的一次重要落地，标志着品牌从单一的高级成衣零售向“沉浸式艺术美学体验”的全面转型。通过将织物、镜面与时间哲学结合，Marisfrolg 不仅将服装从“日常单品”升级为“承载女性生命力与情绪价值的载体”，更传递了“柔软亦可蕴藏力量”的品牌态度。这种将时装叙事、当代艺术与线下快闪结合的策展方式，不仅精准触达了追求质感与独立精神的都市女性，也为国内高端女装品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">天津 · 玛丝菲尔 Marisfrolg · 09-25~10-11</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/MARISFROLG-2026AW-POPUP-TJ-2026-9-27" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/dc4cabe550364910ab23b81910c2ac5b.jpg" alt="修丽可 X emoji®表情自由体验空间" loading="lazy">
+      <h2>修丽可 X emoji®表情自由体验空间</h2>
+      <p class="description">修丽可 × emoji®「表情自由体验空间」于 2026 年 9 月 22 日至 10 月 10 日限时登陆成都春熙路红星广场（近 IFS 爬墙熊猫下方）。本次快闪围绕修丽可抗皱精华（PTIOX 精华）与 emoji 的联名核心，将“表情催生表情纹”的护肤痛点与趣味互动深度融合，打造了一场好玩、好拍、好福的沉浸式体验空间，是成都近期极具趣味性与科技感的免费打卡地。
+现场以极具科技感的金属质感展墙与冷光互动区为视觉基调，巧妙融合了街头潮流与未来风设计。最吸睛的是全场出片天花板的“巨型表情墙”，一整面墙铺满了夸张鲜活的 emoji 表情装置，紧扣产品概念。此外，现场还设有智能机器人装置与超大的 emoji 定制相框打卡点，将硬核护肤科技与鲜活的街头情绪自然交织，随手一拍就能定格充满趣味与高级感的大片。
+现场互动玩法丰富且福利硬核，建议按照以下动线解锁：前往派样机扫码即可领取修丽可抗皱精华 4ml 体验装（每日限量 1000 份）；在巨型表情墙前模仿搞怪表情对拍或怼脸特写，拍摄 3 张活动照片并发布小红书笔记带上指定话题，即可领取超大四宫格照片和 emoji 专属相框（9月25日-10月10日每日限 80 份，先到先得）。还可以体验院线级专业肌肤检测，由美容顾问一对一解读图谱并定制专属护肤方案。此外，在小程序搜索“修丽可会员中心”参与 emoji 人格测试，DIY 专属表情包并参与抽奖，看看你符合哪种 emoji 人格。
+本次“表情自由体验空间”是修丽可在跨界联名与场景化营销上的一次创新突破，标志着品牌从单一的成分科普向“沉浸式情绪与科技体验”的全面转型。通过将 emoji 的趣味情绪价值与抗皱精华的硬核科技结合，修丽可不仅将产品从“护肤单品”升级为“承载表情自由与自信的情感载体”，更传递了“不用害怕大笑长纹，尽情表达自我”的品牌态度。这种将热门 IP、科技护肤与城市核心商圈深度融合的策展方式，为美妆品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">成都 · SkinCeuticals 修丽可 · 09-22~10-10</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/SKINCEUTICALS-EMOJI-POPUP-CD-2026-9-27" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/ff04ff2971c542eaba943cf447196aae.jpg" alt="自然造物 x 北京SKP 非遗雅集快闪空间" loading="lazy">
+      <h2>自然造物 x 北京SKP 非遗雅集快闪空间</h2>
+      <p class="description">自然造物 x 北京SKP 非遗雅集快闪空间于 2026 年 9 月 19 日至 9 月 27 日落地北京 SKP 4F K大道。本次快闪以“桂月赴雅，非遗东方意趣”为核心思路，将传统民艺与中秋美学深度融合，打造了一场兼具静谧温柔与国潮氛围的沉浸式体验空间，是京城近期极具新中式美学的免费打卡地。
+现场空间以中式庭院与东方诗意美学为视觉基调，巧妙融合了竹编、花灯、油纸伞等传统元素。满场错落的竹编灯笼徐徐摇曳，暖光漫落在每一个角落，搭配古雅木构与柔缓布幔，将传统中秋的雅致意境完美还原。超吸睛的巨型纸兔花灯与灵动纸兔装置是全场最出片的 C 位，在高端前卫的商场空间里，这种传统东方美学与现代商业的反差感，随手一拍就能定格充满清冷高级感的大片。
+现场互动玩法丰富且充满手作温度，建议按照以下动线解锁：前往巨型纸兔花灯和国风画卷前打卡拍照，感受新中式氛围；在“玉兔工坊”泥塑手工坊，由非遗老师驻场指导，亲手捏制并彩绘一件凤翔泥塑兔，把非遗手艺的温度带回家；漫步非遗民艺展，细看竹编、皮影等传统风物，触摸匠人的质朴温度；活动期间还有“凤鸣马跃”国风巡游表演，步履演绎国潮风华，让传统民艺的浪漫在秋日佳景中定格。
+本次“非遗雅集”是自然造物在非遗民艺商业化与空间体验上的一次重要落地，标志着品牌从单一的非遗展示向“沉浸式东方美学体验”的全面转型。通过将传统民艺与 SKP 的高端商业空间结合，自然造物不仅让非遗文化以更年轻、更具互动性的方式触达大众，更传递了“回归自然本真，传承东方匠意”的品牌态度。这种将非遗文化、节日美学与核心商圈结合的策展方式，不仅精准触达了追求国风与质感的消费群体，也为非遗品牌在商业空间的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">北京 · 09-19~09-27</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/BJSKP-ZIRANZAOWU-ZHONGQIU-POPUP-BJ-2026-9-27" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-09-28
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
