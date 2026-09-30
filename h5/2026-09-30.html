@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-09-30</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-09-30 周三</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">2</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/2f0879c19b7544d383d4c573bfdf601a.jpg" alt="“蒙牛有好礼 有爱才会拼” 粤拼粤有爱中秋游园会" loading="lazy">
+      <h2>“蒙牛有好礼 有爱才会拼” 粤拼粤有爱中秋游园会</h2>
+      <p class="description">作为国民乳制品代表品牌，蒙牛一直依托传统节日开展城市级品牌文化活动，2026 年 9 月 25 日于广州塔广场落地 “蒙牛有好礼 有爱才会拼” 粤拼粤有爱中秋游园会。项目立足中秋团圆的文化内核，以 “拼” 作为核心创意概念，串联广府地域文化、市民情感表达与品牌精神，跳出单纯产品促销的活动逻辑，把品牌营销升级为一场城市中秋文化庆典。
+活动将广州酒家、陈家祠、六榕寺等本土文化符号进行现代化转译，既是蒙牛双节营销体系的关键线下环节，也是快消品牌将在地传统文化与城市地标相结合，实现品牌、城市、大众三方共情的典型实践，具备文化传播、公众情感连接与商业转化的多重价值。在空间造型与现场制作层面，活动选址广州塔城市地标广场，划分四大主题展区，整体空间围绕岭南风情进行氛围营造，不追求奢华装置堆砌，更多借助主题美陈、传统纹样视觉、古风场景布置搭建游园式体验场地。
+各个展区分别对应饮食、纹样、诗词、心愿四大主题，场地规划出完整 “寻月” 游园动线，将互动游戏、试吃体验、NPC 情景演绎融入广场开放空间，场地制作兼顾大众游园的通行容量、打卡观赏性与互动实操性，为后续广州塔塔身灯光点亮仪式做好场景铺垫，实现户外公共广场从游园体验到城市灯光事件的叙事递进。
+活动期内市民沿着寻月路径参与四大展区体验，品尝广式月饼与蒙牛饮品，动手完成陈家祠祥纹拼图，参与六榕寺月下诗局对诗，扫码提交个人中秋心愿；集齐月亮拼图碎片即可参与整点抽奖，当收集到 9999 份用户祝福，广州塔于晚间 20 点完成灯光点亮，完成个人心愿向城市公共景观的情感升华。“拼” 的内涵被逐层演绎，涵盖游戏玩法、文化融合、情感汇聚以及蒙牛 “天生要强” 的生活态度。从传播营销维度来看，线下游园会、广州塔亮灯打造极具记忆点的城市事件，激发现场游客打卡 UGC 扩散；线上联动美团上线拼好礼积分拼图活动，形成线下体验、线上话题发酵再到电商消费转化的链路。活动借由文化体验弱化硬广感，强化大众对蒙牛温情、国民向的品牌认知，完成节日情感共鸣、地域文化表达、社交声量提升与消费转化的完整营销闭环。
+场地供应商：思贝思（SPACE） www.360space.cn</p>
+      <div class="meta">广州 · 09-25~09-27</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/MENGNIU-GUANGZHOU-Mid-Autumn-by-SPACE-2026-9-29" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/21793550c96e42cda7986d9ec5b506d3.jpg" alt="京东旅行 × 京东买药秒送「月圆赴红山之约」双节快闪" loading="lazy">
+      <h2>京东旅行 × 京东买药秒送「月圆赴红山之约」双节快闪</h2>
+      <p class="description">作为国内头部电商平台，京东持续推进文旅与健康服务的生态融合，继敦煌鸣沙山月牙泉 “大漠中秋宴” 之后，于 2026 年 9 月 25‑26 日在南京红山森林动物园落地京东旅行 × 京东买药秒送「月圆赴红山之约」双节快闪项目。
+恰逢中秋国庆叠加的出游高峰，项目针对景区出游购药不便的现实痛点，将买药秒送的即时配送能力嵌入动物园文旅场景，跳出传统旅游平台只做票务售卖的模式，把低频的购药需求转化为旅行场景下的高频健康认知，既是京东 “文旅 + 健康” 战略又一次线下实践，也为互联网平台将数字健康服务落地线下文旅场景提供行业参考，兼顾游客服务升级、品牌心智教育与节日情感传递多重价值。
+在空间造型与现场制作层面，快闪点位设置于动物园的开放园区之内，场地依托动物园原生自然环境，采用轻量化主题美陈搭建，结合中秋月圆的视觉符号完成氛围包装，不做大规模硬体改造。现场划分互动打卡区与健康科普展示区，规划流畅游园式动线，把集章互动、健康知识科普、品牌信息展示融为一体，兼顾亲子家庭、年轻游客的通行体验，装置轻量化便于景区现场搭建与快速撤场，适配动物园公共场地的使用要求。活动期内，到访游客参与现场集章打卡，领取联名周边；针对秋季出游肠胃不适、过敏、流感、皮肤救急四大健康痛点，向游客科普景区即时购药服务，游客可体验 “快至 9 分钟达” 的买药秒送能力。
+线上同步上线 “秋日轻松社过” 任务专区，用户参与线上抽奖，赢取景点门票与健康礼品，传递 “健康是最好团圆礼” 的中秋价值主张。从传播营销维度来看，动物园场景自带流量，现场打卡互动带动游客自发 UGC 传播；线上任务专区承接线下流量，打通曝光、互动到服务体验的链路。项目并不直接推销商品，而是通过真实出游场景教育用户建立户外出行健康保障认知，强化京东买药秒送在文旅户外场景的心智，完成场景体验科普、社交声量扩散、服务心智塑造的完整营销闭环。
+场地供应商：思贝思（SPACE） www.360space.cn</p>
+      <div class="meta">南京 · 09-25~09-26</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/JD-Travel-JD-Medical-POP-UP-STORE-NJ-SPACE-2026-9-29" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-09-30
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
