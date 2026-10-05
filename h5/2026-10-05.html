@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-10-05</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-10-05 周一</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">7</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/9da2f2727e3d4d7c9851696bdc979bfd.jpg" alt="2026上海劳力士大师赛" loading="lazy">
+      <h2>2026上海劳力士大师赛</h2>
+      <p class="description">2026 上海劳力士大师赛于 10 月 5 日至 10 月 18 日在上海旗忠网球中心举办，作为亚太地区唯一 ATP1000 级别男子网球赛事，赛事植根上海网球发展历史，旗忠网球中心以白玉兰可开合花瓣屋顶为标志性建筑造型，自 2009 年落地 ATP 大师赛以来，成为上海对外展示国际体育软实力的核心载体。
+本届赛事冠名赞助商为劳力士，尊贵合作伙伴包含奔驰、美国运通、水井坊、喜力等品牌，尤尼克斯为官方指定用球供应商，各赞助商在场馆内设置品牌体验展位、贵宾接待区与主题互动装置，深度参与赛事全周期商业运营。
+在空间造型与现场制作层面，主场馆标志性八瓣钢结构白玉兰可开合屋顶，可模拟市花绽放形态，应对阴雨天气保障赛事不间断进行；赛场包含中央主赛场、二号馆、三号馆以及多片室外练习场地，今年升级二号馆顶棚与专属观众练习球场，场地全部采用 ATP 官方标准硬地地坪，场馆外围规划赞助商品牌展示长廊、网球主题博物馆、文创零售区、嘉年华互动区域，完整构建竞技观赛、品牌展示、休闲消费一体化空间体系，既有专业竞技空间严谨的赛事工艺标准，也兼顾大众球迷沉浸式打卡体验需求。
+赛期安排上，10 月 5‑6 日进行资格赛角逐，12 位选手突围晋级正赛；7‑18 日开启正赛阶段，完整上演 162 场对抗，世界排名顶尖男子球员齐聚赛场，开展单打、双打多轮比拼，18 日决出双打与单打最终冠军。
+活动期除核心竞赛以外，同步开展 “ACE 汇师” 城市联动嘉年华，场馆内部开设球星训练观摩、网球主题文物展、亲子互动体验、赞助商品牌互动体验；场外联动龙华码头打造滨水城市网球派对，延伸赛事场景边界，覆盖硬核球迷、亲子家庭、城市休闲游客多元人群。从项目意义与传播营销的关联来看，赛事依靠全球电视转播、现场赛事内容输出，同时激发大量球迷 UGC 社交内容。赞助商借助赛场内展位、场地围挡、贵宾权益、线下互动活动完成品牌曝光与用户体验，赛事 IP 为品牌赋予高端体育调性；反过来赞助商资源保障赛事的高规格落地。线上全网话题发酵，线下承接全国乃至全球球迷客流，完成专业赛事竞技、品牌商业活化、城市文旅传播的完整营销闭环，为国内顶级国际赛事商业赞助与城市体育运营打造范本。
+今年的上海劳力士大师赛嘉年华，在10月1日-10月4日在旗忠网球中心提前开始</p>
+      <div class="meta">上海 · 10-05~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/The-2026-Rolex-Shanghai-Masters-2026-10-4" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/58bf07e3cfba4c2aba9dd780d3e8c0eb.jpg" alt="Nike「021‑决胜主场」限时屋顶网球快闪" loading="lazy">
+      <h2>Nike「021‑决胜主场」限时屋顶网球快闪</h2>
+      <p class="description">Nike「021‑决胜主场」限时屋顶网球快闪项目落地上海静安区苏河湾福新面粉厂旧址屋顶，毗邻苏河湾万象天地，北临苏州河，周边环绕成片石库门旧式民居。福新面粉厂是上海近代民族工业重要遗存，属于苏河湾城市更新带上的历史工业建筑，本次快闪项目是耐克配合上海劳力士大师赛网球赛季打造的城市文体营销项目，借用上海区号 021 作为项目命名，将专业网球运动场景植入历史厂房屋顶，实现近代工业遗存、老城石库门风貌与潮流体育文化的碰撞，也是苏河湾存量老建筑开展短期文体活化的一次创新实践。
+在空间造型与现场制作层面，项目依托老厂房原有屋顶平台，不改动建筑主体结构，采用模块化临时搭建工艺，在屋顶之上设置三片标准网球场地，地面铺设专业运动地胶，分别呈现蓝、紫不同球场底色。围挡画面印刷 “热爱无高下，胜负不相让” 的项目 slogan 以及网球主题视觉物料，四周保留原有建筑边界，向外可以眺望苏州河河湾景观与连片红瓦石库门屋顶，形成 “工业屋顶之上打网球” 极具反差的独特视觉画面。整个展陈全部为临时装置，遵循轻介入原则，活动结束后全部拆除复原屋顶原始状态，最大程度保护历史建筑本体。活动周期内，该屋顶球场作为网球赛季城市第二现场，面向网球爱好者开放预约体验，举办网球体验课、明星球员到访互动、社群对抗等线下活动，把专业网球运动从封闭式球场带到城市公共视野之中。
+从项目意义以及活动内容与传播营销的关联来看，老厂房屋顶、苏州河、石库门交织的独特城市景观赋予项目天然的打卡属性与话题点，高空航拍视角产出大量视觉素材，驱动社交媒体 UGC 传播。线下实体体验承接网球爱好者社群，借大师赛赛事热度完成内容联动，打破品牌传统线下门店的展示逻辑，将运动精神嵌入上海本土城市记忆。项目将近代工业遗产、城市更新叙事、网球赛事 IP 与品牌营销融为一体，线下体验夯实运动心智，线上视觉内容持续扩散破圈，形成赛事热度承接、线下体验、社交传播的完整营销闭环，为体育品牌在城市历史遗存空间开展短期快闪活动提供优秀参考范本。</p>
+      <div class="meta">上海 · NIKE 耐克 · 10-04~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Nike-TENNIS-021-EVENT-SHANGHAI-2026-10-4" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/b395776bd52347a79f3fc7f0f9124fb9.jpg" alt="第二届小红书 Redland" loading="lazy">
+      <h2>第二届小红书 Redland</h2>
+      <p class="description">第二届小红书 Redland 大型次元兴趣盛典于2026年10月2日至6日落地上海杨浦区复兴岛，是小红书基于平台年轻兴趣生态重磅升级的全域线下IP活动，也是杨浦区城市更新进程中盘活滨江老工业空间的标杆性文商旅融合项目。
+作为黄浦江唯一的内陆江心岛，复兴岛留存着沪东造船厂百年船台、老旧厂房、工业码头等丰厚近代工业遗存，在《上海2035总体规划》中被定义为城市战略留白核心地块，具备极高的存量更新与文化再造价值。长期以来，杨浦区政府坚持“不大拆大建、一房一策、有机微更新”的城市更新理念，摒弃传统大拆大建的粗放改造模式，以“数字智能岛、设计艺术岛、人民城市岛”为核心发展定位，持续推动滨江工业锈带向青年文化、科创文创、公共休闲的复合型活力水岸转型。
+本次小红书 Redland 活动正是政府活化闲置工业场地、利用青年潮流IP赋能老城更新、实现“工业遗存年轻化转型”的重点落地实践，为上海超大城市存量工业空间的柔性更新、场景再生、业态升级提供了全新可复制的样本。相较首届活动，本届盛典完成全方位量级升级，场地规模从8万平方米扩容至10万平方米以上，汇聚160余款顶流游戏、动漫IP，以“一场开放世界的兴趣探险”为核心主题，打破传统漫展单一陈列、商业售卖的固化模式，以兴趣社交、沉浸式体验、场景共创为核心，构建无边界的线下次元冒险岛屿，实现小红书线上二次元社群生态与城市更新公共空间的双向赋能、双向激活。
+在空间造型与现场制作层面，项目严格遵循杨浦区“镶牙式微更新”原则，最大限度尊重复兴岛原生粗犷工业场地肌理，不进行大规模土建改造与结构破坏，依托岛屿开阔的户外存量空地，整体规划打造翻身时空港、重生试炼场、黄金海岸线三大主题探索分区。整体空间设计跳出商业化规整展馆布局，贴合“开放世界”的游戏化叙事逻辑，采用轻量化模块化艺术装置、主题造景与沉浸式氛围灯光，将梦幻潮流的二次元世界观植入厚重的百年工业场地，形成硬核工业肌理与柔软青春次元场景的极致视觉反差，塑造独属于复兴岛的工业潮玩美学。项目创新打造日夜双模式体验体系，日间主打开放式IP互动、打卡漫游、同好社交，夜间解锁专属NPC剧情演绎、沉浸式氛围夜景、限定舞台内容，搭配全球首创二次元花车巡游、冒险者营地演艺舞台，兼顾超大客流的安全疏散、沉浸式打卡质感与全城青年狂欢氛围，真正将曾经封闭沉寂的废弃工业荒地，改造为可漫游、可体验、可社交、可打卡的城市公共文化客厅。
+活动周期内，现场落地AI陪伴互动游戏、全场景NPC任务体系、国际Coser实景演绎等多元内容，彻底打破线上次元浏览的单向壁垒，让年轻用户实现从线上云种草到线下沉浸式探险、圈层社交的完整体验。从项目价值与传播营销的深层关联来看，本次活动构建了“政府城市更新规划+平台内容生态+青年潮流文化”的全新联动模式。工业遗存与二次元潮流的差异化场景自带超强社交话题属性，持续催生海量用户UGC内容，在全网形成长效传播，既对外全方位展示杨浦区滨江工业更新的全新成果，塑造复兴岛青年文化地标的全新城市名片，又借助线下实景体验承接小红书亿级线上兴趣流量，激活沉寂老城空间、聚拢青年客群、拉动区域文商旅活力。最终形成空间活化、人气激活、内容破圈、品牌升级、消费赋能的完整城市营销闭环，深度夯实小红书在青年兴趣文旅赛道的领先地位，也为国内工业遗产年轻化、潮流化、场景化更新提供重要参考。</p>
+      <div class="meta">上海 · 小红书 · 10-02~10-06</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Red-Redland-Shanghai-2026-10-4" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/467c1df6ab904288975b71082f4e8b2b.jpg" alt="2026 北京亦庄 GT 世界挑战赛" loading="lazy">
+      <h2>2026 北京亦庄 GT 世界挑战赛</h2>
+      <p class="description">2026 北京亦庄 GT 世界挑战赛于 10 月 2 日‑4 日国庆黄金周落地通明湖畔，作为北京纳入 “双奥 100” 精品赛事体系、确定十年常驻的国际顶级街道汽车赛事，项目依托亦庄本地雄厚的汽车科创产业基础，将城市市政道路临时改造为竞赛赛道，填补北京本土顶级 GT 汽车赛事的发展空白，实现竞速体育、城市科创展示、文商旅消费的融合发展。
+赛道全长 4.9 公里，由 F1 赛道设计团队操刀打造国内少见的 “8 字形” 立体交叉路线，一共设置 12 处弯道，赛道串联通明湖自然湖景与亦庄现代化科创建筑群，赛车最高时速接近 299 公里；街道赛天然缓冲区狭小，对车手控车能力、赛道施工安全标准都提出极高要求。
+在空间造型与现场制作层面，赛道在原有城市道路基础上开展轻量化改造，铺设高耐磨专业沥青路面，全线加装国际汽联标准预制式防撞护栏、围网，对井盖、路灯等市政设施做加固处理，不新建永久土建建筑，赛事结束之后全部设施拆除，道路恢复城市通行功能，践行临时城市赛事低干预的建设理念。场地同步搭建多组观众看台、维修 P 房、主舞台与 8K 沉浸式大屏，联动周边信创园、信万广场打造 “尚 Garden・车迷 Town” 赛车文化聚落，把竞赛赛道、汽车文化展、互动体验区、美食市集在城市湖畔空间串联成片，形成赛场内外一体化的场景布局。
+活动周期内，赛场内部开展练习赛、排位赛、GT3 与 GT4 组别多轮正赛，全球 20 支车队的保时捷、法拉利、兰博基尼等专业 GT 赛车同场竞技；场外配套汽车摩托车特技表演、花车巡游，同时开放模拟赛车座舱、MicroCar 仿真漂移体验、经典老爷车展、美食文创市集等多元体验内容，兼顾硬核车迷观赛与全家庭休闲度假需求北京亦庄。从项目意义和传播营销的关联来看，湖景 + 科创楼宇的独特赛道画面具备极强传播属性，全球赛事转播与社交平台用户 UGC 内容向外输出亦庄城市形象与汽车科创实力。
+赛事以专业竞速内容为核心，向外延伸嘉年华消费场景，线上全媒体矩阵宣传引流，线下承接跨区域车迷客流，带动本地假日消费，完成国际赛事竞技、城市品牌曝光、产业展示、文旅消费拉动的完整营销闭环，为国内城市街道赛的运营模式提供可参考范本。</p>
+      <div class="meta">北京 · 10-02~10-04</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/BEIJING-E‑TOWN-GT-WORLD-CHALLENGE-2026-10-4" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/041a4a4536754dc39f7fbdac26aaa960.jpg" alt="lululemon featherweight 秋冬新品静态展（北京、成都）" loading="lazy">
+      <h2>lululemon featherweight 秋冬新品静态展（北京、成都）</h2>
+      <p class="description">lululemon featherweight 秋冬新品静态展
+lululemon Featherweight 秋冬新品静态展于 2026 年 9 月 30 日至 10 月 7 日，每日 10:00-21:00，同步落地成都太古里东广场与北京太古里。
+本次项目以 “轻盈、温暖与自在” 为核心创意，围绕 Featherweight 羽绒系列 900 蓬松度鹅绒科技，把专业户外面料性能和城市街头场景结合，借助 16 组差异化冬日穿搭造型，展现羽绒服饰多元穿搭潜力，是品牌面向秋冬市场打造的城市公共空间体验项目。
+在空间造型与现场制作层面，项目搭建大型沉浸式装置，运用流动光影塑造轻盈冬日氛围，将抽象的产品 “轻盈感” 视觉化落地；展区不设置封闭展台，打破传统静态陈列的刻板边界，让 16 组完整冬日造型在光影中依次呈现，展陈场景与太古里街巷空间自然相融，兼顾产品展示功能与打卡出片的视觉效果，访客可以近距离触摸体验 Featherweight 羽绒外套的轻盈触感与拒水特性。
+活动期间，李宇春与刘易斯・汉密尔顿演绎的全球广告同款造型线下实景呈现，访客可打卡同款场景，同时品牌鼓励参观者分享个人秋冬穿搭，汲取明星穿搭灵感，打造个性化冬日造型；展览联动焕新升级的 lululemon 成都太古里三层门店，设置李宇春冬季之选专区、成都限定熊猫定制服务以及露台庭院体验，延伸线下消费链路。从项目意义与传播营销关系来看，本次静态展是品牌线下体验升级的重要实践，推动品牌由单纯展示产品参数，转向打造沉浸式运动生活方式体验。空间装置、明星同款场景天然具备社交传播属性，访客打卡产出大量 UGC 内容，在小红书、抖音等社交平台扩散，降低品牌传播成本。策展思路将面料硬核科技、明星 IP 与城市商圈公共空间融合，重塑大众认知，把羽绒单品从单纯的保暖服饰，转化为表达自我状态的风格载体，传递 “无论何种天气，依然走出去感受生动” 的品牌主张。线下沉浸式体验为品牌种草，带动门店客流与转化，为运动生活方式品牌在核心商圈打造线下展览提供可参考的策展范式。</p>
+      <div class="meta">成都 · lululemon · 09-30~10-07</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/lululemon-Featherweight-AW-New-Collection-Event-BJ-CD-2026-10-1" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/04e1e0082ccb4323aec42b694658a1e7.jpg" alt="Max Mara 2026秋冬系列“Outerwear”主题限时体验空间" loading="lazy">
+      <h2>Max Mara 2026秋冬系列“Outerwear”主题限时体验空间</h2>
+      <p class="description">Max Mara 2026秋冬系列“Outerwear”主题限时体验空间
+Max Mara 2026秋冬系列“Outerwear”主题限时体验空间于 2026 年 9 月 29 日至 10 月 11 日落地沈阳万象城 L1 层中庭。本次快闪作为全国首展，以“意式传统与匠心理念的当代演绎”为核心思路，将品牌经典的隽永优雅风范与 2026 秋冬新季大衣深度融合，打造了一场兼具艺术感与治愈氛围的沉浸式体验空间。现场还特邀品牌挚友 李小冉 惊喜空降，是沈阳近期极具高智感与出片率的免费打卡地。
+现场空间巧妙融合了红色线条艺术、巨型泰迪熊装置与包豪斯风格的灰色工业风墙面。红线在空间中延展交织，呼应了创始人母亲在缝纫学校教女孩子们用红线练针脚的品牌传承故事，串联起女性、匠心与时光。整体设计摒弃了繁复的装饰，用克制的色彩与利落的线条勾勒出先锋氛围，与 Max Mara 大衣不靠繁复装饰、全靠结构撑起高级感的剪裁理念完美契合，随手一拍就能定格充满清冷高级感的大片。
+现场集中展陈了 Max Mara 2026 秋冬系列的新季大衣与外套，包括经典的 101801 驼色大衣、温柔的 Manuela 束腰款以及爆款泰迪大衣等，观众可以近距离触摸顶级羊绒与驼毛面料的细腻肌理，感受立体剪裁带来的松弛气场。在沉浸式探索之余，还可以品尝一杯“Max Mara 定制饮品”。参与现场惊喜互动，有机会赢取超可爱的“Teddy Bear 手机支架”。此外，9 月 29 日品牌挚友李小冉亲临现场，与粉丝近距离互动，分享关于女性力量与松弛感的穿搭心得。
+本次“Outerwear”限时体验空间是 Max Mara 在 75 周年节点与空间体验上的一次重要落地，标志着品牌从单一的高级成衣零售向“沉浸式匠心美学体验”的全面转型。通过将红线传承故事、包豪斯建筑美学与秋冬外套结合，Max Mara 不仅将大衣从“保暖单品”升级为“承载女性力量与情绪价值的软铠甲”，更传递了“不追赶潮流，自成经典”的长期主义态度。这种将品牌历史、艺术装置与线下快闪结合的策展方式，为奢侈品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">沈阳 · 09-29~10-11</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/MAX-MARA-OUTERWEAR-POPUP-SY-2026-10-1" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/930150eb0da941258f07b8432c3fb4e2.jpg" alt="迪奥烈艳蓝金惊艳派对（长沙）" loading="lazy">
+      <h2>迪奥烈艳蓝金惊艳派对（长沙）</h2>
+      <p class="description">迪奥烈艳蓝金惊艳派对于 2026 年 9 月 29 日至 10 月 7 日限时登陆长沙 IFS。本次快闪以全新迪奥烈艳蓝金惊艳系列（柔雾唇釉与哑光唇膏）为核心，将品牌高定美学与沉浸式彩妆体验深度融合，打造了一场兼具视觉冲击力与互动趣味的线下派对，是长沙近期极具高级感与出片率的免费打卡地。
+现场空间以迪奥标志性的红黑经典配色与镜面、霓虹元素为视觉基调，巧妙融合了高定秀场与派对氛围。入口处通常设有巨型红色折叠式“DIOR”字母造型或霓虹灯带勾勒的星星通道，搭配镜面马赛克拼接墙面与发光爱心、无限符号轮廓，极具视觉冲击力。整体设计摒弃了传统专柜的拘束感，用克制的色彩与利落的线条勾勒出先锋氛围，随手一拍就能定格充满奢牌高级感与派对气息的大片。
+现场互动玩法丰富且福利硬核，可以前往全色号陈列区自由试色，近距离体验 24H 持妆不脱色的锁色黑科技，感受柔焦雾感与丝滑质地，寻找你的本命色号。在唇印墙选色号领贴纸，或在多个高定美学拍照点位随手出片，完成指定区域的产品试用并集齐三枚打卡印章，即可在出口兑换惊喜礼赠。现场通常配备专业彩妆师，提供一对一的妆容体验与高定妆容打造，帮你解锁最适合秋冬的惊艳唇妆。此外，新会员现场入会即享专属新客礼，若在现场消费满额，还可解锁调酒师定制的惊艳特调饮品，在派对氛围中感受唇色入酒的浪漫。
+本次“烈艳蓝金惊艳派对”是迪奥在彩妆新品营销与线下场景体验上的一次重要落地，标志着品牌从单一的产品展示向“沉浸式感官与情绪体验”的全面转型。通过将高定美学、全色号试色与派对互动结合，迪奥不仅将唇妆从“日常单品”升级为“承载自信与锋芒的情感载体”，更传递了“风格由你定义，主场由你点亮”的品牌态度。这种将顶级美妆 IP、互动游戏与城市核心商圈深度融合的策展方式，为奢侈美妆品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">长沙 · DIOR 迪奥 · 09-29~10-07</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/DIOR-BEAUTY-BLUE-AND-GOLD-STUNNING-POPUP-CS-2026-10-1" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-10-05
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
