@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-10-08</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-10-08 周四</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">9</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/7d7f826fcf5e41ec967c59cc5e305011.jpg" alt="【Leather在现场】lululemon featherweight 秋冬新品静态展（北京）" loading="lazy">
+      <h2>【Leather在现场】lululemon featherweight 秋冬新品静态展（北京）</h2>
+      <p class="description">lululemon Featherweight 秋冬新品静态展于 2026 年 9 月 30 日至 10 月 7 日，每日 10:00-21:00，同步落地成都太古里东广场与北京太古里。本次项目以 “轻盈、温暖与自在” 为核心创意，围绕 Featherweight 羽绒系列 900 蓬松度鹅绒科技，把专业户外面料性能和城市街头场景结合，借助 16 组差异化冬日穿搭造型，展现羽绒服饰多元穿搭潜力，是品牌面向秋冬市场打造的城市公共空间体验项目。
+在空间造型与现场制作层面，项目搭建大型沉浸式装置，运用流动光影塑造轻盈冬日氛围，将抽象的产品 “轻盈感” 视觉化落地；展区不设置封闭展台，打破传统静态陈列的刻板边界，让 16 组完整冬日造型在光影中依次呈现，展陈场景与太古里街巷空间自然相融，兼顾产品展示功能与打卡出片的视觉效果，访客可以近距离触摸体验 Featherweight 羽绒外套的轻盈触感与拒水特性。
+活动期间，李宇春与刘易斯・汉密尔顿演绎的全球广告同款造型线下实景呈现，访客可打卡同款场景，同时品牌鼓励参观者分享个人秋冬穿搭，汲取明星穿搭灵感，打造个性化冬日造型；展览联动焕新升级的 lululemon 成都太古里三层门店，设置李宇春冬季之选专区、成都限定熊猫定制服务以及露台庭院体验，延伸线下消费链路。从项目意义与传播营销关系来看，本次静态展是品牌线下体验升级的重要实践，推动品牌由单纯展示产品参数，转向打造沉浸式运动生活方式体验。空间装置、明星同款场景天然具备社交传播属性，访客打卡产出大量 UGC 内容，在小红书、抖音等社交平台扩散，降低品牌传播成本。策展思路将面料硬核科技、明星 IP 与城市商圈公共空间融合，重塑大众认知，把羽绒单品从单纯的保暖服饰，转化为表达自我状态的风格载体，传递 “无论何种天气，依然走出去感受生动” 的品牌主张。线下沉浸式体验为品牌种草，带动门店客流与转化，为运动生活方式品牌在核心商圈打造线下展览提供可参考的策展范式。</p>
+      <div class="meta">北京 · lululemon · 10-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-lululemon-Featherweight-Event-BJ-2026-10-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/75c2f47448354ed895c1fc10fbea50ff.jpg" alt="lululemon “一起好状态” 感受日" loading="lazy">
+      <h2>lululemon “一起好状态” 感受日</h2>
+      <p class="description">2026 年 10 月 7 日，主题为 “一起好状态” 感受日落地上海，作为面向大众的沉浸式体验类项目，活动围绕健康生活理念搭建体验场景，传递身心平衡的生活主张。从项目空间、造型与落地制作层面来看，整体场地摒弃繁复华丽的装置堆砌，采用柔和通透的空间逻辑，以浅白、柔绿为主色调，划分多个功能体验板块。场地主视觉造型以流动的曲线作为核心设计语言，呼应 “状态舒展” 的主题意象；现场搭建大量轻量化模块化展陈结构，兼顾快速搭建、拆装复用的制作需求，同时利用光影、软质隔断划分互动区、静态打卡区、分享沙龙区，在有限场地内实现动静分区，保障人流疏导与体验的舒适度。活动现场设置多元体验内容，包含状态自测互动体验、健康主题分享沙龙、轻运动体验、主题打卡点位，邀请生活方式 KOL、健康领域达人到场参与体验与现场分享，让访客从视觉、体感、听觉多维度感受 “好状态” 的内核。
+追溯项目背景，当代城市人群长期面临高压生活节奏，大众对于情绪调节、身心养护的需求持续上涨，本次感受日正是以此社会趋势为切入点，跳出单向品牌宣讲的传统模式，转向沉浸式体感沟通。活动期内的现场内容与传播营销形成紧密联动：线下现场的打卡装置、体验流程天然适配社交媒体图文与短视频拍摄，到场嘉宾、普通访客产出原生 UGC 内容；达人在现场参与沙龙与体验项目，同步在社交平台输出深度体验笔记，将线下场景影响力向外扩散。线下体验承担感知种草的作用，线上传播持续放大活动声量，二者互相赋能。项目的核心意义在于，以线下实体空间作为载体，把抽象的 “好状态” 概念转化为可触摸、可参与的真实体验，借助空间氛围烘托主题，通过现场活动沉淀传播素材，搭建品牌与大众之间情感沟通的桥梁，在城市生活方式场景中建立认知，完成品牌理念的落地渗透。</p>
+      <div class="meta">上海 · lululemon · 10-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/lululemon-Together-for-Good-State-Experience-Day-2026-10-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/f32c32fc6bab425aa92bf9479fd9cec3.jpg" alt="【Leather在现场】王一博的「小嗷 AOO 万物可爱守则」主题展览" loading="lazy">
+      <h2>【Leather在现场】王一博的「小嗷 AOO 万物可爱守则」主题展览</h2>
+      <p class="description">【Leather 在现场】记录的「小嗷 AOO 万物可爱守则」主题展览落地北京蓝色港湾，作为本土原创 IP 小嗷 AOO 的线下首展，项目依托蓝色港湾开放式滨水商业街区的特质，打造治愈系沉浸式 IP 主题空间。当下国内原创艺术 IP 持续崛起，区别于海外成熟 IP 的流量逻辑，本土 IP 更侧重情绪共鸣与生活化叙事，本次展览正是原创 IP 走出线上内容阵地，在线下商业空间建立实体形象、拉近和大众距离的重要实践。
+从项目空间、造型与制作角度解读，展览沿蓝色港湾滨湖步道分散式布局，没有设置封闭展厅，采用开放式场景植入的方式，将小嗷 AOO 的软萌形象融入湖畔景观。整体以柔和奶蓝色与米白为主色调，多个大小不一的立体雕塑装置错落分布，包括主视觉巨型小嗷 AOO 立像、守则语录打卡墙、云朵休憩装置与趣味互动标牌，以圆润柔和的造型语言诠释 “万物可爱” 的核心主题。现场道具多采用玻璃钢雕塑、柔性软包与轻量化喷绘展板组合制作，兼顾户外滨水环境的耐候性，同时保留柔软治愈的视觉质感，和蓝色港湾湖景、欧式建筑形成柔和呼应。
+活动周期内，展区设置漫游式打卡动线，访客沿着滨湖路线依次打卡各主题点位，收集不同版本的「万物可爱守则」语录；现场配套 IP 限定周边商店，发售小嗷 AOO 公仔、贴纸、帆布袋等原创衍生品，参与打卡集章活动还可兑换限定小礼品。活动内容与传播营销形成紧密联动，圆润治愈的 IP 雕塑、湖畔场景自带极佳的拍照属性，鼓励访客、美学博主在社交平台发布打卡图文短视频，生成大量 UGC 内容。开放式滨水场景降低观展门槛，线上内容持续扩散，吸引城市年轻群体、亲子家庭专程前往打卡，带动商圈客流与衍生品销售。本次展览代表国内原创 IP 的线下运营新思路，不再局限于商场中庭封闭快闪，而是利用滨水街区的自然场景做散点式空间叙事，将 IP 从线上平面形象转化为可触摸、可漫游的实体体验，为本土原创艺术 IP 在开放式商业街区的线下策展与品牌运营提供了可参考的范本。</p>
+      <div class="meta">北京 · 10-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Leather-ONSITE-AOO-Code-of-Loveliness-BJ-2026-9-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/fed13fe2c77e47399a54c8ad7646899c.jpg" alt="On昂跑 x Zendaya赞达亚 主题快闪空间" loading="lazy">
+      <h2>On昂跑 x Zendaya赞达亚 主题快闪空间</h2>
+      <p class="description">On 昂跑 × Zendaya 赞达亚「特工代号：Z」主题快闪空间于 2026 年 10 月 1 日至 10 月 11 日限时登陆成都太古里旗舰店。本次快闪全球仅在巴黎、洛杉矶、温哥华、东京、成都五家旗舰店开放，成都太古里是中国唯一入选门店。活动围绕双方受动作电影启发的第二季共创系列打造，将运动性能与先锋时尚深度融合，是国庆期间极具稀缺性与出片率的免费打卡地。
+现场空间以蛇纹与蛇形意象为核心设计元素，将平面的蟒蛇印花转化为立体的建筑语言。蜿蜒流动的曲面结构、实体鳞片肌理装置贯穿内外，搭配流线型的服装展架与充满张力的建筑形态，生动诠释了蛇纹主题。空间巧妙融合了 On 昂跑的工程基因与 Zendaya 的时尚美学，利用光影与材质打造多处天然打卡点，让消费者沉浸式走入产品纹样本身的故事场景，随手一拍就能定格充满赛博感与高级气息的大片。
+现场集中展示了 Zendaya 深度参与共创的全新鞋服系列。服饰涵盖宽松圆领卫衣、运动裤、蛇纹 Studio 系列紧身连体衣、长袖 T 恤及半拉链外套，加入抽褶与弹力绳细节，轮廓版型可自由切换。鞋履方面，全新 Cloudnova Moon 玛丽珍风格廓形鞋款首次亮相，搭配工程针织鞋面与快速系带系统，共有丁香白、晨露鹿角灰、经典黑白三种配色。到店抢先体验并购买 Zendaya 系列任意产品，即赠送专属鞋饰（数量有限，赠完即止）。此外，10 月 1 日当日还可参与 DIY 鞋饰活动，这是成都太古里旗舰店的独家限定福利。
+本次快闪是 On 昂跑在明星深度共创与空间叙事上的一次重要落地，标志着品牌从传统的流量代言向“内容共创与沉浸式体验”的全面转型。Zendaya 与其造型师 Law Roach 深度参与从廓形到面料的产品定义，让快闪空间、产品与宣传短片形成完整的叙事闭环。这种将动作电影美学、蛇纹先锋设计与线下快闪结合的策展方式，不仅精准触达了追求个性与质感的年轻群体，也为运动品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">成都 · 10-02~10-11</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/ON-ZENDAYA-POPUP-CD-2026-10-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/ddeb414e47ea4e8ea8c2bc976e2e0a6c.jpg" alt="足下FOOT INDUSTRY「方寸之间」限时空间" loading="lazy">
+      <h2>足下FOOT INDUSTRY「方寸之间」限时空间</h2>
+      <p class="description">FOOT INDUSTRY 足下工业「方寸之间」限时空间于 2026 年 10 月 1 日正式启幕，并持续至 2027 年 3 月 31 日，落地成都麓湖 CPI P03。这是品牌继秦皇岛阿那亚与深圳万象天地之后，再度以空间为媒介构建的制鞋工艺感知场域。此次慢闪不仅集中呈现了足下 2026 秋冬系列，还带来了麓湖 CPI 限定及部分经典款，让访客在湖畔感受属于成都的“巴适步调”。
+现场空间的设计原型来自一只被打开的匠人工具箱，整体充满了克制柔和的东方美学。方格木构作为空间筋骨，搭配透光和纸与蜀纸推拉门作为肌理，低垂的黑色瓦檐勾勒出沉静的仪式感。空间内没有刺眼的主灯，光线从木构格子里漫射出来，如同工具箱中一盏安静的灯。陈列格中不仅摆放着鞋履，还安放着裁刀、缝针、刷子等带着使用痕迹的老制鞋工具，静默记录着品牌十二年的匠心足迹。
+现场集中展示了足下 2026 秋冬系列，包括毛绒乐福鞋、乐福堆堆靴等适合冬季的鞋款，观众可以近距离触摸细腻材质并试穿感受柔软舒适的脚感。开业期间特别设置了蜀纸拓印体验，访客可以亲手将制鞋工具的纹理拓印在蜀纸上，把工艺痕迹变成一份可以带走的实体记忆。此外，空间保留了室内的树木，模糊了室内外的边界，在檐下空间喝杯茶、发发呆，感受慢节奏的呼吸感。
+本次“方寸之间”慢闪是足下工业在空间叙事与品牌表达上的一次重要落地，标志着品牌从单一的产品零售向“沉浸式工艺美学体验”的全面转型。品牌没有选择热闹的泛流量商圈，而是落地需要专程前往的麓湖 CPI，用半年的时间与同频用户深度对话。通过将东方建筑美学、制鞋工艺与成都的松弛气质结合，足下工业不仅将鞋履从“日常单品”升级为“承载时间与匠心的载体”，也为设计师品牌在非标商业空间的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">成都 · 10-01~03-31</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/FOOT-INDUSTRY-TRACE-OF-CRAFT-POPUP-CD-2026-10-7" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/71981b0e44f94fe0b17cec3b9f7a10ba.jpg" alt="祖玛珑「海盐与佛手柑」限时快闪" loading="lazy">
+      <h2>祖玛珑「海盐与佛手柑」限时快闪</h2>
+      <p class="description">祖玛珑「海盐与佛手柑」限时快闪于 2026 年 10 月 1 日至 10 月 7 日落地成都太古里马家巷与东里。本次快闪以全新上市的「海盐与佛手柑」香氛为核心，将英国凯尔特海的海风、海浪与矿物气息融入城市街区，打造了一场兼具清冽香气与趣味互动的英伦海滨漫游体验，是国庆期间极具治愈感与出片率的免费打卡地。
+现场空间以英伦海岸为灵感基调，巧妙融合了礁石、灯塔与海滨小屋等自然元素，将户外的海岸场景搬进太古里的街巷中。超吸睛的海岸礁石装置与灯塔美陈错落分布，搭配海风香气与清冷色调，营造出仿佛置身英国西南海域的松弛氛围。整体设计摒弃了传统快闪的封闭感，让清冽的海盐香气与太古里的街头潮流自然交织，随手一拍就能定格充满清冷高级感与度假气息的大片。
+现场互动玩法丰富且充满巧思，建议按照以下动线解锁。你可以近距离沉浸式嗅闻全新「海盐与佛手柑」的香气，感受佛手柑的清新开场、海盐的清冽矿物感与浮木的温润收尾。参与「寻怪启事」AR 寻宝互动，拿着专属报刊穿梭在海岸礁石、灯塔与海滨小屋间扫描触发 AR，集齐海怪印记即可领取限定小礼物（如身体乳和冰箱贴）。此外，现场还联动了 0566 珈琲製作所推出限定海盐咖啡，清冽的海盐混着佛手柑的香气，像迎面撞进咸润海风里，非常适合边喝边逛。
+本次“海盐与佛手柑”快闪是祖玛珑在香氛新品营销与线下场景体验上的一次重要落地，标志着品牌从单一的产品展示向“沉浸式五感疗愈体验”的全面转型。通过将英国海岸的自然气息与 AR 互动、限定咖啡结合，祖玛珑不仅将香水从“嗅觉单品”升级为“承载松弛感与情绪价值的载体”，更传递了“在城市中纵身入浪，唤醒感官”的品牌态度。这种将自然香氛、科技互动与城市街区深度融合的策展方式，为奢侈美妆品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">成都 · Jo Malone London 祖玛珑 · 10-01~10-07</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/JO-MALONE-SEA-SALT-AND-BERGAMOT--POPUP-CD-2026-10-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/534af06ed00b478c8d6b94f97bbd0bed.jpg" alt="LANCOME兰蔻「尽兴」LIVE HOUSE" loading="lazy">
+      <h2>LANCOME兰蔻「尽兴」LIVE HOUSE</h2>
+      <p class="description">兰蔻「尽兴」LIVE HOUSE 限时快闪于 2026 年 9 月 30 日至 10 月 31 日落地广州白鹅潭万象城（南庭至 B1 国际美妆长廊及 L1 主中庭）。本次快闪以全新兰蔻鎏光唇釉为核心，将流光溢彩的视觉美学与松弛愉悦的 LIVE HOUSE 氛围深度融合，打造了一场兼具互动趣味与跨界惊喜的沉浸式体验空间，是广州近期极具氛围感与出片率的免费打卡地。
+现场空间以流光溢彩的艺术装置为视觉基调，巧妙融合了巨型苹果艺术装置与南庭广场的古建筑风貌。红棕高级感的快闪展台搭配 360 度灯光拍照装置，营造出浓厚的 LIVE HOUSE 派对氛围。整体设计摒弃了传统专柜的拘束感，让鎏光唇釉的流光质感与白鹅潭万象城的江畔街景自然交织，随手一拍就能定格充满高级感与松弛气息的大片。
+现场互动玩法丰富且福利硬核，前往鎏光试妆区，近距离体验全新鎏光唇釉（强推 702 裸调独白），感受水光质感与 24H 持妆的锁色黑科技。在巨型苹果艺术装置前打卡拍照，发布小红书笔记并带上指定话题，即可领取【尽兴】礼遇卡及品牌小样（如粉底液、精华小样等，每日限量）。现场还联动了 pickchill 与 O&#x27;eat 推出专属跨界限定特调饮品，边喝边逛超 Chill。此外，10 月 1 日至 10 月 3 日国庆假期期间，每天 19:30-20:30 还有现场歌手驻唱，邀您沉浸式感受兰蔻鎏光的松弛氛围。
+本次“尽兴 LIVE HOUSE”是兰蔻在彩妆新品营销与线下场景体验上的一次重要落地，标志着品牌从单一的产品展示向“沉浸式感官与情绪体验”的全面转型。通过将鎏光唇釉的流光美学与 LIVE HOUSE 的松弛氛围结合，兰蔻不仅将唇釉从“日常单品”升级为“承载自信与愉悦的情感载体”，更传递了“尽兴愉悦，无需妥协”的品牌态度。这种将顶级美妆 IP、跨界餐饮与城市核心商圈深度融合的策展方式，为奢侈美妆品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">广州 · LANCOME · 09-30~10-31</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LANCOME-HAVE-A-GOOD-TIME-POPUP-GZ-2026-10-6" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/b82272e5ac4549b288aac8b8ed66f8ca.jpg" alt="Max Mara 2026秋冬系列「Outerwear」主题限时体验空间（杭州）" loading="lazy">
+      <h2>Max Mara 2026秋冬系列「Outerwear」主题限时体验空间（杭州）</h2>
+      <p class="description">Max Mara 2026秋冬系列「Outerwear」主题限时体验空间（杭州）
+Max Mara 2026秋冬系列「Outerwear」主题限时体验空间于 2026 年 9 月 30 日至 10 月 28 日落地杭州大厦购物城 B 座 2 层中庭。本次快闪以“意大利传承，匠心理念的当代演绎”为核心思路，将品牌经典的隽永优雅风范与 2026 秋冬新季大衣深度融合，打造了一场兼具艺术感与治愈氛围的沉浸式体验空间。此前，品牌还特邀 朱珠 和 唐艺昕 亲临杭州贵宾预览会，共赴意式优雅之约，是杭州近期极具高智感与出片率的免费打卡地。
+现场空间巧妙融合了极简高级的红白质感布景与原木质感展陈，温柔又大气。整体设计摒弃了繁复的装饰，用克制的色彩与利落的线条勾勒出先锋氛围，与 Max Mara 大衣不靠繁复装饰、全靠结构撑起高级感的剪裁理念完美契合。柔和的灯光打在面料上，让每一件大衣都仿佛自带柔光滤镜，随手一拍就能定格充满清冷高级感的大片。
+现场集中展陈了 Max Mara 2026 秋冬系列的新季大衣与外套，包括经典的 101801 驼色大衣、温柔的 Manuela 束腰款、爆款 泰迪大衣以及气场满分的红色战袍。观众可以近距离触摸顶级羊绒与驼毛面料的细腻肌理，感受立体剪裁带来的松弛气场。在沉浸式探索之余，还可以品尝一杯 Max Mara 定制特饮，参与现场惊喜互动还有机会赢取超可爱的泰迪小熊周边。
+本次「Outerwear」限时体验空间是 Max Mara 在 75 周年节点与空间体验上的一次重要落地，标志着品牌从单一的高级成衣零售向“沉浸式匠心美学体验”的全面转型。通过将品牌传承故事、极简美学与秋冬外套结合，Max Mara 不仅将大衣从“保暖单品”升级为“承载女性力量与情绪价值的软铠甲”，更传递了“不追赶潮流，自成经典”的长期主义态度。这种将品牌历史、艺术装置与线下快闪结合的策展方式，为奢侈品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">杭州 · 09-30~10-28</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/MAX-MARA-OUTERWEAR-POPUP-HZ-2026-10-7" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/53dd5a4ed821401486f6f08f8a443309.jpg" alt="CASETiFY「Hello Kitty 爆闪甜心街」限时快闪" loading="lazy">
+      <h2>CASETiFY「Hello Kitty 爆闪甜心街」限时快闪</h2>
+      <p class="description">CASETiFY「Hello Kitty 爆闪甜心街」限时快闪
+CASETiFY x Hello Kitty「爆闪甜心街」限时快闪于 2026 年 9 月 29 日至 10 月 7 日限时登陆深圳万象天地·水广场。本次快闪是 CASETiFY x Hello Kitty 的全国首展，以“甜酷千禧风”为核心思路，将 Hello Kitty 的经典元素与 Y2K 复古美学深度融合，打造了一场超大面积的场景式打卡空间，是国庆期间深圳极具少女心与出片率的免费打卡地。
+现场空间以粉色主调、水钻蝴蝶结与爱心元素为视觉基调，巧妙融合了千禧辣妹风与街头潮流氛围。超吸睛的打卡装置包括豹纹斑马线、巨屏手机、粉色敞篷车以及老爷车复古装置，将 Hello Kitty 的甜美与 Y2K 的酷感完美碰撞。整体设计摒弃了传统快闪的封闭感，让甜酷美学与万象天地的街景自然交织，随手一拍就能定格充满复古气息的大片。
+现场互动玩法丰富且限定单品超好买，建议按照以下动线解锁。你可以前往巨屏手机前与千禧风 Hello Kitty 对镜自拍，或者坐进粉色敞篷车用鱼眼镜头拍复古大片。现场抢先发售两款快闪首发限定款手机壳，其中定制款还能自选 Kitty 姿态和千禧风标语 DIY。限量毛绒盲盒挂件（经典白、甜心粉、酷感黑、千禧银、豹纹五色）每日限量发售，配爱心锁扣和 MagSafe 磁吸设计，手机包包都能挂。任意消费送主题购物袋，打卡带 Tag 拿限定贴纸，单笔消费满 799 还能获得 Hello Kitty 爆闪包袋（数量有限，送完即止）。
+本次“爆闪甜心街”是 CASETiFY 在 IP 联名与场景化营销上的一次重要落地，标志着品牌从单一的手机壳零售向“沉浸式千禧美学体验”的全面转型。通过将 Hello Kitty 的经典 IP 与当下 Y2K 回潮的审美语境结合，CASETiFY 不仅将数码周边从“实用单品”升级为“承载情绪价值与社交表达的载体”，更传递了“甜酷反差、玩转色彩”的品牌态度。这种将经典 IP、潮流设计与线下快闪结合的策展方式，为数码周边品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">深圳 · 09-29~10-07</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/CASETIFY-HELLO-KITTY-POPUP-SZ-2026-10-7" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-10-08
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
