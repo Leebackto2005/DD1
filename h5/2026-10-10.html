@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-10-10</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-10-10 周六</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">13</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/0e8a15f18b404e5e991937da8780a46a.jpg" alt="G-SHOCK好奇心研究所城市巡展" loading="lazy">
+      <h2>G-SHOCK好奇心研究所城市巡展</h2>
+      <p class="description">G-SHOCK「好奇心研究所」城市巡展华南首站于 2026 年 10 月 2 日至 11 月 1 日限时登陆南宁万象城 B1 万象广场。本次巡展以“跳出对时间的固有想象”为核心思路，将 G-SHOCK 的硬核抗冲击基因与全球知名设计师 NIGO® 打造的原创角色世界深度融合，打造了一场集多元表款展示、创意定制与潮流互动于一体的限时实验场，是南宁近期极具极客感与街头氛围的免费打卡地。
+现场空间以“潮流实验室”为视觉基调，巧妙融合了硬核机械美学与街头潮玩文化。空间内不仅展示了 G-SHOCK 的多元表款，还深度还原了 NIGO® 倾力打造的原创角色世界（如 GORO、ROCK、WANG-TENG、DUNO 等）。整体设计摒弃了传统手表展台的生硬感，通过创意装置与互动美陈的交织，营造出轻松随性的探索氛围，让硬核科技与潮流艺术自然碰撞，随手一拍就能定格充满极客感与街头气息的大片。
+现场互动玩法丰富且限定福利硬核，建议按照以下动线解锁。你可以近距离上手体验 CRW-H001 智能戒指手表，感受将手表戴在指尖的科幻体验；还能触摸 CRW-001 联名戒指表与经典升级的 GN-BC5000，感受复古做旧金属表身的质感。10 月 17 日，拼豆大师 泡菜 将驻场开坊，带来立体拼豆大师课，大小朋友可以一起拼出天马行空的创意；同场还有顶尖研究院竞速挑战赛，同台角逐赢取 G-SHOCK 手表。此外，NIGO® 打造的「ORIGIN: G-SHOCK SOUVENIR COLLECTION」限定周边仅在快闪现场专属发售，购表赠礼、满额抽奖、万象星兑礼同步解锁。线上参与 #我心目中的GSHOCK# 话题互动，手绘或 AI 创作还有机会赢取 G-SHOCK 行李牌。
+本次“好奇心研究所”城市巡展是 G-SHOCK 在跨界联名与场景化营销上的一次重要落地，标志着品牌从单一的功能性手表零售向“沉浸式潮流文化体验”的全面转型。通过将硬核抗冲击科技与 NIGO® 的原创 IP 角色结合，G-SHOCK 不仅将腕表从“计时单品”升级为“承载个性态度与潮流表达的载体”，更传递了“时间是一场不断探索与创造的游戏”的品牌哲学。这种将硬核科技、潮流 IP 与城市核心商圈结合的策展方式，为运动腕表品牌在核心商圈的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">南宁 · 10-02~11-01</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/GSHOCK-CURIOSITY-RESEARCH-INSTITUTE-POPUP-NN-2026-10-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/239cef3db38b46a589c3509c85b9d0b9.jpg" alt="乐高「开花展」" loading="lazy">
+      <h2>乐高「开花展」</h2>
+      <p class="description">乐高「开花展」作为品牌年度「玩心未眠」核心艺术项目，落地上海油罐艺术中心，以乐高花植系列为核心创作载体，打造涵盖乐高花浪、造浪花源、玩心花廊三大主题的沉浸式艺术展，依托西岸艺术地标属性，完成积木创意美学与城市公共艺术的深度融合，是品牌跳出传统玩具零售、转向公共艺术策展的代表性实践。
+当下城市青年愈发追求松弛治愈的艺术体验，自然花艺美学成为主流审美趋势，乐高借此以积木重构自然繁花，打破大众对积木玩具的固有认知，将玩乐创意升级为可落地、可感知的城市艺术叙事。
+从空间造型与现场制作层面来看，项目采用户外巨型装置+室内艺术共创+生活化场景陈列的复合空间架构，充分利用油罐艺术中心工业罐体的独特建筑肌理，形成工业硬核质感与柔美花艺的极致视觉反差。户外核心的巨型花浪装置，由38万余朵乐高花植手工构筑，总长30米、覆盖800㎡，从油罐罐体自然奔涌延展，造型灵动且极具视觉张力；室内造浪花源展区突破单一积木材质限制，融合金属、织物、镜面等多元材质打造18组艺术家共创作品，搭配360°环绕屏构建数字花海互动空间。整体采用模块化积木搭建、数字光影系统与轻量化艺术展陈结合的制作方式，兼顾大型装置的结构稳定性与艺术场景的细腻质感，日夜双场景设计适配日间观展与夜间光影展演。
+活动周期内体验内容丰富多元，访客可亲手拼搭乐高花朵，扫码上传汇入线上数字花海，实现虚实场景联动；户外玩心花廊打造18组居家花艺生活场景，配套「玩心花店」快闪店，同时联动上海国际光影节，夜间解锁油罐专属花植主题光影秀。从项目意义与传播营销的关联来看，展览免费预约的开放模式适配全年龄段人群，巨型花浪、数字互动花海、夜间光影场景具备极强出片属性，吸引艺术爱好者、亲子家庭与小红书博主持续打卡。平台#乐高玩心想开了#官方话题持续发酵，海量UGC内容实现全域传播，线下沉浸式艺术体验夯实品牌创意美学调性，线上社交传播持续引流破圈，形成艺术体验、用户共创、社交传播、品牌价值升华的完整营销闭环。该项目为潮流玩具品牌跨界公共艺术、活化城市地标空间、实现年轻化内容营销创新提供了优质参考范本。</p>
+      <div class="meta">上海 · LEGO 乐高 · 10-01~10-29</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LEGO-Play-Never-Sleeps-Brand-Project-SH-2026-10-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/2834cf74e79e4ad4a53cec17d0d41bc2.jpg" alt="FINDING VISION 50周年全球巡展" loading="lazy">
+      <h2>FINDING VISION 50周年全球巡展</h2>
+      <p class="description">VISION Street Wear「FINDING VISION」50周年全球巡展是品牌诞生半世纪的里程碑回溯大展，整体巡展采用全球三城递进节奏，首站落地洛杉矶、第二站登陆上海张园、收官站设于东京，系统性梳理品牌五十年街头文化发展脉络。作为源自美国南加州的经典街头潮流品牌，VISION见证了现代滑板运动、街头视觉设计与潮流服饰体系的共生发展，本次巡展以450余份珍贵馆藏档案为核心，收录70年代原版设计手稿、复古滑板板面、菲林原稿、经典海报、历史影像与全套复古服饰藏品，完整复刻南加州街头文化的起源与迭代历程，既是品牌历史的系统性复盘，也是当代街头潮流文化溯源的公共艺术项目。
+从空间造型与落地制作角度解读，上海张园站结合百年石库门历史建筑肌理与美式街头潮流风格，形成新旧碰撞的独特空间叙事。室内展区以极简沉浸式展陈为主，采用低饱和基底、线性灯光与档案式陈列方式，最大化还原 vintage 视觉质感，完整呈现品牌史料与艺术创作脉络；户外专属打造超长滑板街区，定制50周年主题专业滑板道具，依托模块化运动设施搭建竞赛体验场地，兼顾专业运动安全性与街头视觉氛围，让复古档案静态展陈与动态街头运动形成互补。整体场地采用轻介入搭建工艺，不破坏张园历史建筑结构，以可拆装装置实现潮流场景与老建筑的有机融合。
+活动周期内内容多元立体，除经典档案静态观赏外，现场开设Remake手工共创工坊、复古街机体验、模拟暗房互动，同时举办专业滑板赛事与街头展演，邀请传奇职业滑手到场交流分享，串联跨世代街头创意力量，覆盖专业滑手、潮流玩家与青年艺术群体。从项目价值与传播营销的关联来看，百年洋房与硬核滑板场景的反差美学、稀缺五十年馆藏史料、专业街头赛事内容具备极强社交传播力，持续吸引圈层博主与爱好者产出UGC内容。线下沉浸式文化体验夯实品牌自由反叛的街头内核，线上话题持续破圈扩散，让品牌复古基因与年轻潮流审美完成双向链接，形成文化展示、用户共创、圈层传播、品牌焕新的完整营销闭环，为国际老牌街头IP周年策展与城市历史空间潮流活化提供优质参考范本。</p>
+      <div class="meta">上海 · 10-01~10-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/FINDING-VISION-50th-Anniversary-Global-Exhibition-2026-10-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/83f394c4ea3b466aba7aeedd987dbc1f.jpg" alt="喜力 ®「网球星友俱乐部」" loading="lazy">
+      <h2>喜力 ®「网球星友俱乐部」</h2>
+      <p class="description">喜力 ®「网球星友俱乐部」落地上海北外滩国客中心码头，是 2026 上海劳力士大师赛重要配套线下体验项目，依托北外滩滨江江岸场地，在江面之上搭建专属江上网球场，并与北外滩城市沙滩嘉年华同步开幕，把专业网球赛事文化迁移至城市滨江公共空间，实现顶级赛事 IP 与都市滨水场景的跨界融合。网球赛事在中国市场持续破圈，受众从核心网球迷拓展至追求休闲社交的都市青年，喜力借大师赛合作契机，跳出传统单纯品牌展位模式，打造沉浸式网球主题社交场域，延续品牌长期深耕体育营销的历史脉络。
+从项目空间造型与制作层面来看，项目最大亮点在于利用滨江码头得天独厚的江景资源，搭建「重返 1998 喜力公开赛中心球场」复刻赛场，将经典网球赛场叙事放置于开阔江景背景之中，形成城市天际线、江水与球场场景的独特视觉层次。场地整体采用模块化可拆装搭建工艺，兼顾临水施工安全与快速搭建需求；空间分区逻辑清晰，划分为互动运动区、法式花园打卡区、赛事观赛区与饮品体验区。法式花园板块以花艺绿植搭配巨型星形相框，柔和自然景观呼应网球主题；星友高光片场搭载自动抓拍设备，实现打卡影像即时生成。活动周期内设置丰富分层体验内容，巨拍挑战赛、星友连线双人击球等低门槛网球互动，让零基础访客也能感受挥拍乐趣；星友网球工坊开放 DIY 网球挂件创作，星友观赛区实时转播大师赛赛事，江畔星饮站提供喜力主题特调，叠加球星到场助阵，融合江风、沙滩与现场音乐，构建挥拍、观赛、微醺一体化的休闲场景。
+在传播营销层面，江上网球场这一稀缺独特场景自带强社交属性，极具出片效果，吸引网球迷、运动博主与城市潮流人群到场打卡产出 UGC 内容。线下沉浸式体验把专业网球文化转化为轻松的青年社交语言，传递 “有热爱就有星朋友” 的核心主题，线下体验持续反哺线上社交话题热度，实现赛事曝光、品牌理念传递、用户自发传播的营销闭环，为体育赛事配套快闪项目、滨水场地的体育营销落地提供优秀实践样本。</p>
+      <div class="meta">上海 · Heineken 喜力 · 10-01~10-14</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Heineken-Tennis-Star-Club-SH-2026-10-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/22719c97db9e4524b525f3ec7826aa11.jpg" alt="SMP白玉兰广场 X TROUBLESMILE 笑脸游乐园" loading="lazy">
+      <h2>SMP白玉兰广场 X TROUBLESMILE 笑脸游乐园</h2>
+      <p class="description">2026年10月1日至10月12日，SMP上海白玉兰广场联合潮流艺术IP TROUBLESMILE，落地「笑脸游乐园」沉浸式限时潮流乐园，依托北外滩滨江地标视野，结合陆家嘴城市天际线，打造兼具艺术治愈感与潮流社交属性的城市公共体验空间。当下年轻群体普遍存在情绪解压需求，治愈系潮流艺术逐步成为商业空间焕新的核心趋势，TROUBLESMILE以艺术家颜程Run创作的三眼笑脸为核心符号，诠释“历经生活依旧乐观”的多巴胺生活态度，本次跨界合作正是商业地标联动小众艺术IP，实现情绪价值赋能、场景消费升级的典型落地实践。
+从项目空间、造型与制作维度解读，项目采用内外双场联动布局，L1南广场主打户外多巴胺潮流场景，以标志性7米巨型黄色三眼笑脸装置为视觉核心，搭配网红笑脸蹦蹦云柔性互动装置，高饱和暖黄主色调打造强烈视觉记忆点，适配滨江开阔视野打卡出片；LG2中庭打造室内沉浸式快乐迷宫阵，融合Trouble Museum艺术复刻作品与趣味哈哈镜场景，形成户外轻互动、室内深体验的分层空间逻辑。现场采用轻量化模块化装置搭建，柔性游乐设施与艺术展陈结合，兼顾亲子游玩安全性、潮流展示质感与快速拆装的商业落地需求，将艺术装置、互动游乐、演艺市集多元场景有机融合。
+活动周期内内容体系丰富多元，除基础迷宫闯关、笑脸投投乐、徽章DIY工坊外，同步落地迷你逛吃市集、DJ Live与主题音乐会；10月1日至4日限时开启机器人对战擂台，智能机器人兼具擂台展演、场内导购、高空演绎多重功能，极大丰富场景趣味性与科技感。消费满额即可参与迷宫闯关、兑换专属限定气球福利，进一步提升用户参与度与消费转化。从传播营销关联来看，极具辨识度的三眼笑脸艺术装置、滨江独家视野、分层游乐场景自带超强社交传播力，适配潮流博主、亲子家庭多元人群打卡种草，产出海量UGC内容持续刷屏社交平台。线下沉浸式情绪治愈体验深化IP内核与商场年轻化调性，线上话题热度持续引流，反向带动商场零售、餐饮与夜游消费，形成艺术赋能、场景引流、内容传播、商业转化的完整营销闭环，为城市滨江商业体的节日潮流策展与情绪场景化运营提供优质参考范本。</p>
+      <div class="meta">上海 · 10-01~10-12</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/TROUBLESMILE-Smile-Amusement-Park-SH-2026-10-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/90ded76d5cda4e09bed8d0c1532c4e96.jpg" alt="Vuori「自在游园」嘉年华" loading="lazy">
+      <h2>Vuori「自在游园」嘉年华</h2>
+      <p class="description">Vuori「自在游园」嘉年华落地上海西岸梦中心GATE M剧院广场，依托黄浦江畔开阔户外场地打造沉浸式加州松弛风游园盛会。品牌源自美国加州海岸，秉持“面料为先”的设计理念，主打运动功能与日常穿搭兼容的生活方式服饰，打破传统运动服饰的场景局限。本次线下嘉年华是Vuori立足都市轻运动趋势，将加州海岸松弛生活美学引入国内城市公共空间的重要落地实践，贴合当下都市人群解压松弛、轻量运动、户外社交的消费需求，重塑功能性运动服饰的生活化场景表达。
+从项目空间、造型与制作角度解读，整体场地依托西岸滨江自然江景，摒弃商业化厚重围挡，采用通透开放式游园布局，以清爽简约的加州户外风格搭建整体场景调性。空间分区清晰，合理划分品牌面料体验区、轻运动互动区、萌宠打卡区与江畔休憩市集区，整体装置轻量化、模块化，适配户外露天场地特性，兼顾氛围营造、人流疏导与安全落地标准，将滨江自然景观与品牌松弛质感深度融合，营造无束缚、治愈松弛的游园氛围。
+活动周期内现场体验内容丰富多元，品牌体验区开放DreamKnit、BlissBlend等明星面料服饰试穿体验，让访客直观感知面料兼具运动机能与日常舒适的核心优势。游园配套美式沙包投掷、桌上冰球、迷你高尔夫、户外轻瑜伽等零门槛趣味运动项目，覆盖全年龄段体验需求；联动多家咖啡、甜点、酒水品牌打造滨江市集，特邀客座调酒师限时驻场，丰富休闲微醺体验。现场推出集章护照机制，访客通过打卡互动、市集消费、小红书发帖即可集章，集齐印章可兑换品牌限定周边，有效提升用户参与粘性与互动深度。活动内容与传播营销深度绑定，滨江户外松弛场景、轻运动趣味玩法、萌宠友好氛围极具社交出片属性，精准触达都市轻运动爱好者、瑜伽群体与生活方式博主。大量优质UGC内容在社交平台持续扩散，线上话题热度反向引流线下客流，形成沉浸式场景体验、用户自发传播、品牌理念渗透的完整营销闭环。本次项目让品牌加州海岸生活美学完成具象化落地，跳出传统服饰静态陈列模式，为高端轻运动品牌线下场景化、生活化体验营销提供优质参考范本。</p>
+      <div class="meta">上海 · 10-01~10-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Vuori-Free-Garden-Carnival-SH-2026-10-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/a83fc4be81e747158db95ff80a343556.jpg" alt="水星STARZHOME「水星睡眠实验室」限时快闪" loading="lazy">
+      <h2>水星STARZHOME「水星睡眠实验室」限时快闪</h2>
+      <p class="description">深耕家纺领域三十余年、秉持“科学守护睡眠”理念的国货头部品牌水星家纺，落地全新升级STARZHOME体系下的「水星睡眠实验室」限时快闪，于10月1日至10月3日登陆上海瑞虹太阳宫。面对当代青年普遍存在的睡眠焦虑，传统家纺静态陈列已难以打动年轻消费群体，本次项目以“用水星，稳躺赢”为核心主题，将专业睡眠科研体系转化为沉浸式互动策展场景，是品牌从传统床品售卖转向科技睡眠生活方式输出的重要年轻化转型实践，进一步夯实品牌“科技助眠、舒适守护”的长期市场定位。
+从空间造型与制作维度解读，项目打破传统家纺展厅的居家柔和范式，打造未来科技感沉浸式睡眠破译空间，整体场景视觉简约高级、氛围静谧治愈。场地科学划分五大主题体验展区，包含闪睡密码区、热气球深睡装置、破茧蝶翼亲肤场景、AI智睡测枕区与躺WIN共享站，各展区主题视觉差异化鲜明，装置采用轻量化艺术美陈、科技光影交互与沉浸式场景造景结合的制作方式，兼顾打卡视觉质感与大众互动体验需求，实现睡眠科技可视化、场景化、可触摸化呈现。
+活动周期内体验体系完整丰富，访客可领取专属集章手册，逐一打卡五大密码展区集齐印章，兑换品牌限定周边礼品；现场搭载AI智配定制枕设备，通过人体压力传感检测完成个性化睡眠数据测算，实现“一人一枕”的精准科学适配。展区同步陈列泡芙鹅绒被、胶原蛋白蚕丝被、闪睡被等主力科技床品，让消费者直观感知面料、工艺与科技优势。10月3日品牌代言人王濛空降现场，联动脱口秀嘉宾开展睡眠主题对话，以明星影响力与趣味内容拉高活动热度。在营销传播层面，科技感沉浸式场景、趣味打卡集章玩法、明星线下助阵形成多重传播亮点，精准触达饱受睡眠困扰的年轻群体，激发用户自发产出社交UGC内容。线下沉浸式体验有效消解科技品类的距离感，强化水星科技睡眠的年轻化、潮流化品牌形象，线上话题持续发酵破圈，形成场景体验、内容种草、社交传播、用户心智沉淀的完整营销闭环，为国货家纺品牌年轻化场景营销、科技理念大众化传播提供优质参考范本。</p>
+      <div class="meta">上海 · 10-01~10-03</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Shuixing-Home-Textile-STARZHOME-Sleep-Lab-pop-up-SH-2026-10-3" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/e599672dce1f41379fa8a2d7a1da4c89.jpg" alt="腾势汽车「易三方科技体验日」限时" loading="lazy">
+      <h2>腾势汽车「易三方科技体验日」限时</h2>
+      <p class="description">腾势汽车「易三方科技体验日」限时落地上海爱琴海购物中心，活动周期为 2026 年 10 月 1 日至 10 月 3 日，是品牌面向国庆消费窗口期，以实车场景化演示传递易三方平台核心技术实力的线下科技体验项目。依托比亚迪体系在新能源底盘、混动与智能电控领域多年技术积累，腾势持续深耕豪华智能电动赛道，本次活动跳出传统车展静态看车模式，把车辆动态性能从专业测试场地平移至城市购物中心，将硬核汽车工程技术转化为大众可直观感知的沉浸式场景，让普通消费者理解高端智电底盘技术的实用价值，完成豪华新能源技术的科普与产品种草。
+从项目空间、造型与制作角度解读，场地在商场公共空间内搭建实景路况模拟场地，复刻上海老城厢窄巷、城市高架弯道等本土典型道路环境，用模块化围挡、地面标线与场景道具搭建封闭安全试驾体验区，兼顾商场人流安全与动态演示效果。展区整体分为整车静态展示区、易三方动态操控体验区、极速补能演示区与购车洽谈福利区，空间动线清晰，静态展区陈列腾势 N9、Z9 系列、D9 等全矩阵旗舰车型，重点突出腾势 N9 搭载的易三方平台、2.0T 超级混动、云辇‑A 双腔空气悬架、天神之眼 B 四大核心配置。动态体验区专门设置智能蟹行、极致转向、圆规掉头三大演示场景，直观展示横向移动、超小转弯半径与 360° 全景转向的黑科技。
+活动周期内内容层次分明，除实车动态演示、极速补能技术展示之外，配套完整的试驾福利与购车权益体系，试驾访客可领取腾势原厂 IP 玩偶；活动期间下定可参与百分百中奖的现场抽奖，提车赠送价值 16888 元礼包，腾势、比亚迪、奔驰车主置换最高享受 30000 元置换补贴，十重专属权益拉动现场转化。活动内容与传播营销深度绑定，购物中心自带巨大自然客流，极具视觉冲击力的蟹行、圆规掉头等车辆特技演示具备极强的短视频传播属性，吸引汽车爱好者、家庭用户、汽车博主到场拍摄，产出大量短视频 UGC 内容在社交平台扩散。线下实景技术演示打破新能源技术晦涩难懂的认知壁垒，直观塑造腾势豪华智电的产品形象，线上短视频持续破圈引流，形成场景体验、技术科普、社交传播、试驾转化与订单收割的完整营销闭环，为新能源车企在商场内落地动态实车科技体验活动提供可参考的实践样本。
+场地供应商：思贝思（SPACE） www.360space.cn</p>
+      <div class="meta">上海 · 比亚迪 BYD · 10-01~10-03</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Denza-Three-Way-Technology-Experience-Day-SH-2026-10-3" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/9c88eb16bc7d48dc8fe0d53dc729bce5.jpg" alt="巴拉巴拉「玩具羽绒」限时体验空间" loading="lazy">
+      <h2>巴拉巴拉「玩具羽绒」限时体验空间</h2>
+      <p class="description">巴拉巴拉「玩具羽绒」限时体验空间落地上海武康路390号百年花园洋房，作为衡复风貌区该历史建筑的首次对外开放实践，项目依托百年老洋房的人文底蕴，结合城市儿童友好更新趋势，以轻量化、低干预的改造方式活化历史建筑，是童装品牌跨界城市文旅、实现商业内容与历史空间共生融合的标杆项目。项目以品牌全新「玩具羽绒」秋冬新品系列与“风的朋友”赛车主题为核心叙事，打破传统童装静态售卖模式，将产品展示、亲子游乐、艺术氛围与街区文旅深度绑定，传递品牌“活在热爱里”的年轻化理念，适配当下亲子家庭高品质休闲、城市青年街区漫游的消费需求。
+从空间造型与现场制作维度解读，项目遵循“最小干预”原则，完整保留百年洋房原始建筑肌理与结构风貌，采用模块化、可拆除的轻量化装置进行场景搭建，既保护历史建筑原貌，又实现沉浸式童趣氛围升级。室内空间围绕赛车主题与羽绒产品序列分层布局，搭配巨型IP艺术装置、趣味泡泡池、复古扭蛋机构成核心游玩场景；夜间植入庭院星光光影装置，利用光影层次柔化老建筑质感，打造日夜双景的沉浸式视觉体验。整体场景兼顾高级历史质感与童真松弛氛围，实现复古建筑美学与潮流童趣设计的巧妙碰撞。
+活动周期内现场内容丰富多元，常态化开放风火轮小车开箱、赛车体验、亲子手工DIY、公益集市与IP人偶见面会等互动内容，兼顾趣味性与亲子陪伴价值。项目进一步联动武康路沿线商户打造专属儿童友好打卡街区，访客可凭借打卡地图沿街集章兑换限定礼品，同时推出玩具羽绒主题痛车街区巡游，拓展线下活动的城市传播边界。在营销传播关联上，百年洋房+童趣乐园的稀缺场景自带极强社交话题属性，差异化视觉体验精准吸引遛娃家庭、亲子博主与城市漫游人群打卡创作，产出海量UGC内容持续扩散传播。线下沉浸式文旅体验深化品牌温柔治愈、热爱生活的产品内核，线上社交种草持续引流，带动街区客流与品牌声量双向增长，形成空间活化、内容体验、社交传播、品牌价值升华的完整营销闭环，为童装品牌依托城市历史风貌区开展沉浸式场景营销、践行城市文化更新提供优质参考范本。</p>
+      <div class="meta">上海 · 巴拉巴拉 · 09-30~10-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Balabala-Toy-Down-Experience-Space-SH-2026-10-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-10">
+      <img class="cover" src="https://res.onsiteclub.com/bbbf84619f2f46e38dd73381946a0014.jpg" alt="我的 “跷” 能力乐园限时快闪 2026 大悦城品牌特别企划「大写自己」联合社交平台 Soul" loading="lazy">
+      <h2>我的 “跷” 能力乐园限时快闪 2026 大悦城品牌特别企划「大写自己」联合社交平台 Soul</h2>
+      <p class="description">2026 大悦城品牌特别企划「大写自己」联合社交平台 Soul，于 9 月 30 日至 10 月 30 日在上海长风大悦城 L1 中庭落地 我的 “跷” 能力乐园 限时快闪。本次项目是商业地产与线上社交平台的跨界合作，聚焦当代年轻人自我认同的情绪需求，跳出传统商业美陈单纯装饰引流的思路，以 “接纳自我、发掘个人闪光点” 为核心叙事，将线上社交的情绪表达迁移至线下实体空间，为年轻群体打造情绪向社交场景，也是大悦城持续深耕青年文化、强化商场年轻化标签的一次品牌实践。
+从项目空间、造型与制作角度解读，场地利用 L1 主中庭开阔空间，设置我的 “跷” 能力乐园主展区与「我」门碰头点两大核心打卡场景。整体装置采用轻量化模块化搭建，适配中庭挑高空间，造型设计轻松活泼，以柔和明快的色彩与趣味互动装置构建沉浸式体验场域，不做厚重硬质围挡，保持商场通透感，兼顾空间视觉美感、游客通行安全与拍照出片属性，把抽象的自我接纳概念转化为可触摸、可参与的实体场景。
+活动周期内，访客可体验现场多款趣味互动游戏，完成体验即可免费领取「提我包好使」限定周边，强化参与记忆。项目依托商场主中庭天然客流优势，将打卡拍照、轻互动体验融为一体，同时联动微醺放风节、手帐市集等同期配套活动，丰富国庆假日多元逛游体验，打通看展、逛市集、消费休闲的完整动线，有效带动商场零售与餐饮业态转化。在传播营销层面，青年情绪主题自带共情力，趣味艺术装置与可爱限定周边极易激发年轻社交群体自发打卡分享，产出 UGC 内容在线上 Soul 及其他社交平台扩散，实现线上社区话题与线下实体场景双向联动。线下沉浸式情绪体验传递接纳自我的价值主张，加深年轻客群对大悦城与 Soul 的品牌好感，线上话题持续反哺线下客流，形成情绪叙事、场景体验、社交种草、商业转化的完整营销闭环，为商业综合体联合社交平台打造青年情绪向限时快闪、激活假日商圈活力提供优秀参考范本。</p>
+      <div class="meta">上海 · 09-30~10-30</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Joy-City-2026-Brand-Special-Project-with-Soul-SH-2026-10-7" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-11">
+      <img class="cover" src="https://res.onsiteclub.com/c5536fa9272b4132ba3e8435254e1611.jpg" alt="Wilson 威尔胜「海派网球场」限时快闪" loading="lazy">
+      <h2>Wilson 威尔胜「海派网球场」限时快闪</h2>
+      <p class="description">Wilson威尔胜「海派网球场」限时快闪落地上海新天地时尚一期户外广场，与品牌全新城市概念店「青邸」同步启幕，是百年运动品牌结合上海在地网球文脉、海派建筑底蕴打造的城市文化体验项目。作为近代中国网球运动的发源地，上海拥有深厚的百年网球积淀，而新天地石库门建筑更是海派城市风貌的标志性载体。
+本次项目创新性交汇Wilson百年品牌历程、上海百年网球发展史与新天地百年建筑文脉，跳出传统运动品牌器械陈列模式，以空间叙事重构网球运动的都市优雅生活属性，契合当下城市轻运动、运动美学生活化的市场趋势，是运动IP深耕在地文化、升级线下体验的重要实践。
+从空间造型与现场制作角度解读，项目最大亮点是将通透沉浸式透明网球场装置植入石库门里弄街区，打破专业球场的封闭竞技属性，打造可步入、可观赏、可互动的城市网球艺术馆。空间造型轻盈简约，通透材质适配新天地复古青砖肌理与街巷格局，形成现代运动美学与百年海派建筑的视觉碰撞；球场下方打造结构化百年球拍矩阵展陈，以器物阵列梳理品牌百年工艺迭代与上海网球发展脉络。整体采用轻量化模块化搭建，兼顾户外街区安全性、空间通透质感与历史街区风貌保护要求，克制且高级的场景设计让运动氛围与城市人文肌理自然相融。
+活动周期内设置丰富沉浸式体验内容，现场搭载专业发球机，开启一分钟定点打靶计分挑战，访客挑战达标即可兑换复古限定周边；同时配套网球文化史料展示、专业球拍穿线体验，将专业运动知识、工艺体验与趣味互动结合，弱化竞技门槛，适配普通都市人群与网球爱好者参与。在传播营销层面，石库门街巷中的透明网球场具备极强差异化视觉记忆点，海派优雅运动氛围极易激发用户打卡分享，精准覆盖网球爱好者、都市潮流人群与生活方式博主。大量UGC内容持续在社交平台扩散，依托新天地商圈流量优势实现圈层破圈，线下沉浸式文化体验强化品牌百年质感与优雅生活方式调性，线上话题传播反哺门店客流与品牌声量，形成文化叙事、场景体验、社交传播与商业转化的完整营销闭环，为高端运动品牌融合城市历史文脉、打造在地化沉浸式快闪范本。</p>
+      <div class="meta">上海 · 09-30~10-11</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Wilson-Shanghai-Style-Tennis-Court-pop-up-SH-2026-10-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-12">
+      <img class="cover" src="https://res.onsiteclub.com/cfedfc821adf4c7c879950a960608c2f.jpg" alt="百雀羚 x 恭王府「灵雀衔福 润养随行」限时快闪" loading="lazy">
+      <h2>百雀羚 x 恭王府「灵雀衔福 润养随行」限时快闪</h2>
+      <p class="description">百雀羚 x 恭王府「灵雀衔福 润养随行」限时快闪于 2026 年 9 月 30 日至 10 月 7 日落地恭王府博物馆前广场。本次快闪以“灵雀衔福，邀您共启东方福礼”为核心思路，将百雀羚的国妆匠心与恭王府的百年府韵深度融合，打造了一场沉浸式寻“福”之旅。现场不仅展示了恭时尚限定系列新品，还融合了非遗文化体验与互动打卡，是国庆期间北京极具东方浪漫与福气氛围的免费打卡地。
+现场空间巧妙融合了恭王府的百年府邸建筑美学与百雀羚的东方花鸟元素。蝙蝠纹样与雀鸟图腾“双纹呈祥”，寓意福意相伴，将传统非遗图腾与现代国妆美学完美交织。在金秋的阳光下，百年府韵与限定美陈相映生辉，一步一景，随手一拍就能定格充满中式浪漫与高级感的大片。
+现场互动玩法丰富且充满福气，建议按照以下动线解锁。你可以前往「蝠」运到手区，近距离试用百雀羚恭时尚限定系列新品，感受经典冷霜与香氛手霜的润养质地，把福气握在掌心。参与「蝠」运集章打卡，收集限定印章，记录属于此刻的美好记忆。在「蝠」伴左右区，扫码下单即可带走这份东方福礼，现场还有恭时尚限定版冷霜和香氛手霜（搭配专属福气挂件）供选购。
+本次“灵雀衔福”快闪是百雀羚在国潮跨界与非遗文化传承上的一次重要落地，标志着品牌从单一的产品营销向“沉浸式东方美学体验”的全面转型。通过将百年国妆与恭王府的“万福”文化结合，百雀羚不仅将护肤品从“日常单品”升级为“承载东方福意与情绪价值的礼赠载体”，更传递了“承千年福意，润东方之美”的品牌态度。这种将国货美妆、非遗图腾与历史古迹深度融合的策展方式，为老字号品牌在核心景区的线下体验创新提供了极具参考价值的范本。</p>
+      <div class="meta">北京 · 百雀羚 · 09-30~10-07</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/PECHOIN-GONGWANGFU-POPUP-BJ-2026-10-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-13">
+      <img class="cover" src="https://res.onsiteclub.com/c24172874f644ce4b350a914276a8fd2.jpg" alt="ALO 中国内地首家限时体验空间" loading="lazy">
+      <h2>ALO 中国内地首家限时体验空间</h2>
+      <p class="description">源自洛杉矶、2007年创立的高端生活方式品牌ALO，依托Air、Land、Ocean自然共生的品牌内核与正念 wellness 理念，落地中国内地首家限时体验空间于上海百年张园石库门建筑群，是品牌正式深耕国内市场、完成海外生活方式与本土历史空间融合的标杆性首秀项目。随着都市消费从功能性运动穿搭转向身心平衡的松弛生活美学，ALO打破传统运动服饰品牌单一场景零售模式，将加州海岸舒展自愈的 wellness 体系植入百年老建筑，依托张园海派人文底蕴，构建集运动、正念、疗愈、社交、零售于一体的复合型体验场域，重塑高端轻运动的城市生活叙事。
+从空间造型与现场制作角度解读，项目采用三层室内展区加户外庭院的立体布局，整体以低饱和象牙白为基底，搭配自然绿植造景，摒弃冗余装饰，用克制柔和的视觉语言打造静谧疗愈氛围，完美呼应品牌极简松弛的加州美学调性。空间改造遵循历史建筑保护原则，以轻量化、低干预的软装布置与模块化展陈搭建，保留石库门原始建筑肌理，实现复古人文底蕴与现代健康生活美学的和谐共生。分层空间功能清晰，一层作为全域产品零售区，覆盖全系列服饰、鞋履与配饰，搭配冥想音疗静息空间舒缓身心；户外庭院打造开放式社交场景，配套ALO Café实现轻食休憩体验。二层为专属邀请制疗愈专区，提供一对一私教、按摩、音疗与静心冥想等定制化身心服务；三层规划专业瑜伽、普拉提教室，上线品牌体系课程与社群活动，依托小程序实现精准预约，搭建完整的沉浸式身心疗愈体系。
+活动期丰富的分层体验内容与品牌传播深度联动，差异化的百年洋房疗愈场景、多元正念运动体验与高端定制服务，精准触达瑜伽、普拉提爱好者与都市轻运动人群。极具质感的极简空间与松弛氛围具备高社交打卡属性，持续吸引生活方式博主与都市青年产出UGC内容，通过圈层种草实现精准破圈。线下沉浸式五感体验深化大众对ALO“从运动穿搭到全维 wellness 生活方式”的品牌认知，线上话题热度持续引流，形成场景体验、社群沉淀、内容传播与品牌心智升级的完整营销闭环，为海外高端生活方式品牌入华首展、历史建筑年轻化活化提供优质创新范本。</p>
+      <div class="meta">上海 · 09-28~02-11</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/ALO-1st-pop-up-experience-space-SH-2026-10-8" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-10-10
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
