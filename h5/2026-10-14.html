@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-10-14</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-10-14 周三</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">15</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/7b44447c406246dfb5559606409ea0b3.jpg" alt="【2026巴黎车展】东风风行 FORTHING" loading="lazy">
+      <h2>【2026巴黎车展】东风风行 FORTHING</h2>
+      <p class="description">东风风行 FORTHING 在2026巴黎国际车展（Mondial de L’Auto）
+东风风行 FORTHING 登陆 2026 巴黎国际车展，是品牌 “乘风双擎” 海外战略的关键落地节点，展台完成全新 TK 系列欧洲首秀，展出 TK5、TK7 与 V9 PHEV 露营版，面向全球媒体、经销商与欧洲家庭用户，集中展示面向海外市场正向开发的新能源产品矩阵与动力技术实力。项目历史背景根植于全球汽车电动化浪潮，欧洲市场家庭多用途车型需求旺盛，欧盟严苛的 WVTA 认证与碳排标准抬高市场准入门槛；东风风行依托东风柳汽三十余年整车制造积淀，持续推进从产品出海向体系化生态出海升级，本次借助巴黎车展这一全球顶级行业平台，将通过欧盟认证的 TK 系列带到欧洲，聚焦家庭出行、户外旅居场景，为后续法国、北欧多国上市与本地化渠道建设铺垫基础。
+在空间造型与制作层面，展台采用简约大气的现代展陈风格，以浅灰基底搭配品牌标识视觉，开放式布局弱化硬质隔断，将整车静态展示与动力部件技术拆解展区融合。展区划分为 TK 系列车型体验区、V9 露营场景展示区、核心动力技术叙事板块，访客可进入座舱体验灵活多变的车内空间，技术展区陈列铠甲电池、混动总成等零部件，多媒体大屏直观演示 800V 高压快充、外放电功能、多座椅百变布局，把硬核工程技术转化为可现场感知的家庭出行场景。
+活动期现场内容与传播营销深度绑定，巴黎车展汇聚全球汽车媒体、海外行业 KOL 与欧洲家庭用户，兼顾城市通勤与露营旅居的车型场景自带传播亮点，海内外汽车创作者拍摄展台、实车与技术展品素材，在海外社交平台、专业汽车媒体持续传播，快速建立东风风行 FORTHING 在欧洲新能源家庭车赛道的品牌认知。项目跳出传统车展单纯陈列新车的模式，不只是车型欧洲首发，更是品牌全球化体系能力的对外展示窗口。展台将家庭出行理念、新能源动力技术、户外旅居场景叙事融为一体，集车型海外首秀、技术拆解展示、座舱沉浸式体验、海外商务洽谈于一体，实现品牌海外战略传递、欧洲新品市场预热、全球家用新能源汽车圈层跨文化传播的多重营销目标。
+东风风行 FORTHING，东风柳汽旗下乘用车品牌，依托东风集团制造体系，拥有三十余年整车研发制造经验。品牌发布 “乘风双擎” 海外战略，聚焦全球家庭出行需求，开发 TK 系列、星海 V9 等新能源车型，产品通过欧盟 WVTA 整车认证，覆盖纯电与插混动力。品牌持续参与国际 A 级车展，推进海外 KD 工厂、销售服务网络布局，面向全球市场打造兼顾大空间、安全与户外拓展能力的新能源家庭车型。</p>
+      <div class="meta">东风汽车 · 10-12~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Mondial-de-LAuto-FORTHING-Paris-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/6dfbe32c596b4e83b39a483010429ade.jpg" alt="【2026巴黎车展】阿维塔" loading="lazy">
+      <h2>【2026巴黎车展】阿维塔</h2>
+      <p class="description">阿维塔在2026巴黎国际车展（Mondial de L’Auto）
+阿维塔登陆 2026 巴黎国际车展，是品牌全球化布局进程中的重要海外亮相，本次展会集中展出品牌旗舰车型，面向欧洲市场展示 CHN 平台与华为全栈智能解决方案，正式向海外行业、媒体与消费者传递中国高端智能电动汽车的产品实力。项目历史背景源于全球汽车产业电动化、智能化变革，欧洲高端新能源市场竞争日趋激烈，本土豪华品牌加速电动转型，而中国高端智能电动车品牌陆续出海，将智能驾驶、一体化座舱作为差异化竞争力。
+阿维塔依托长安、华为、宁德时代三方联合打造的 CHN 智能电动平台，以高端情感智能汽车作为品牌定位，借助巴黎车展这一全球顶级汽车舞台，跳出单纯车型参展的思路，向欧洲高端消费群体诠释 “情感智能” 的出行新理念，推进品牌在欧洲市场的落地筹备。在空间造型与制作层面，展台采用极简高级的未来主义设计，以低饱和深灰基底搭配柔和线性灯光，弱化厚重硬质隔断，塑造克制、高级的科技质感，契合高端豪华品牌调性。展区划分为实车静态体验区、智能技术叙事区，参观者可进入车内沉浸式体验鸿蒙智能座舱，展台多媒体装置直观演示 ADS 高阶智驾、底盘控制、电池安全等核心技术，将复杂的智能技术转化为可视化场景。
+活动期的现场内容与传播营销深度绑定，巴黎车展汇聚全球汽车媒体、行业 KOL、经销商与海外高端用户，极具未来感的展台与智能座舱体验形成强话题点，海外媒体、汽车创作者拍摄展台与实车素材，在海外社交平台、专业汽车媒体广泛传播，快速建立阿维塔在欧洲高端智能电动车赛道的品牌认知。项目意义突破传统车展产品陈列的模式，不只是车型展示，更是中国高端智能汽车品牌面向全球的一次理念输出。展台将 CHN 平台、华为智能技术转化为海外用户可感知的驾乘体验，集海外品牌亮相、技术解读、实车体验、商务洽谈于一体，完成国际化高端品牌形象塑造、欧洲市场预热、高端汽车圈层跨文化传播的多重营销目标。
+阿维塔 AVATR 诞生于 2021 年，由长安汽车、华为、宁德时代三方联合共创的高端智能电动汽车品牌。品牌主打情感智能出行，依托 CHN 智能电动平台与华为 ADS 高阶智驾、鸿蒙智能座舱核心能力，打造面向全球的高端新能源车型。阿维塔持续推进全球化战略，借助国际顶级车展面向海外市场传递品牌价值，将中国前沿智能汽车技术、设计美学带到全球高端汽车市场。</p>
+      <div class="meta">阿维塔 AVATR · 10-12~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Mondial-de-LAuto-AVATR-Paris-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/26b3c745a2104b50b6f8dad0d4fda842.jpg" alt="【2026巴黎车展】问界 AITO" loading="lazy">
+      <h2>【2026巴黎车展】问界 AITO</h2>
+      <p class="description">赛力斯 AITO 问界品牌在2026巴黎国际车展（Mondial de L’Auto）
+赛力斯旗下 AITO 问界登陆 2026 巴黎国际车展，以 “智慧重塑豪华” 为参展主题，展出 M9、M8、M7、M6 全系主力车型与
+魔方技术平台，现场官宣品牌将于 2027 年秋季正式进入欧洲市场，是 AITO 全球化战略进程中极具里程碑意义的一站。项
+目历史背景根植于全球汽车产业电动化与智能化变革浪潮，欧洲高端豪华电动车赛道竞争日趋激烈，本土豪华品牌加速电动转型；AITO 依托赛力斯整车制造能力与鸿蒙智行体系的智能技术赋能，在国内市场完成百万用户规模化验证之后，选择巴黎车展这一全球顶级行业舞台，面向欧洲媒体、经销商与高端消费群体，诠释 “新豪华” 出行理念，推进 WVTA 整车认证、Euro NCAP 安全测试与本地化产品适配，为欧洲渠道网络搭建与产品上市做好铺垫。
+在空间造型与制作层面，展台采用克制简约的高端展陈设计，以低饱和浅灰为基底，搭配竖向线性灯光，开放式布局摒弃厚重硬质围挡，兼顾豪华展厅质感与车展的动态传播属性。展区划分为实车静态体验区、魔方技术平台拆解展示区、智能座舱交互演示板块，参观者可进入车内沉浸式体验鸿蒙座舱与高阶智驾演示，解剖车身结构展品直观呈现魔方平台兼容超增、纯电、超混多动力的底层架构，多媒体交互装置将复杂的舱驾协同、智能底盘技术转化为可现场感知的可视化体验。
+活动期现场内容与传播营销深度绑定，巴黎车展汇聚全球汽车媒体、行业 KOL 与欧洲高端潜在客户，兼具东方豪华美学与前沿智能科技的展台与实车展品自带话题，海内外汽车创作者拍摄展台、实车、技术拆解素材，在海外社交平台与专业汽车媒体持续传播，帮助 AITO 在欧洲高端豪华汽车圈层快速建立品牌认知。项目跳出传统车展单纯陈列新车的模式，不只是车型海外亮相，更是 AITO 面向全球市场传递 “智慧重塑豪华” 品牌主张的叙事窗口。展台将整车产品、魔方平台技术、智能座舱体验融为一体，集欧洲市场战略发布、技术拆解科普、座舱沉浸式体验、海外商务洽谈于一体，实现国际化高端品牌形象塑造、欧洲市场预热、全球豪华智能汽车圈层跨文化传播的多重营销目标。
+AITO 问界，赛力斯集团旗下高端智慧汽车品牌，诞生于 2021 年，依托赛力斯整车智造能力与鸿蒙智行智能技术体系，主打 “智慧重塑豪华”。品牌自研魔方技术平台，可兼容增程、纯电、超混多种动力，搭载鸿蒙智能座舱与高阶智能驾驶系统。品牌在国内市场收获百万用户验证，持续布局全球化，以国际 A 级车展为窗口推进欧洲市场落地，向全球输出融合东方豪华美学与智能科技的高端出行产品。</p>
+      <div class="meta">问界 AITO · 10-12~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Mondial-de-LAuto-AITO-Paris-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/0a276e66da6149bf9e43676f7a7990a3.jpg" alt="【2026巴黎车展】理想汽车" loading="lazy">
+      <h2>【2026巴黎车展】理想汽车</h2>
+      <p class="description">理想汽车在2026巴黎国际车展（Mondial de L’Auto）
+理想汽车亮相 2026 巴黎国际车展，是品牌首次登陆巴黎车展，以 Li 6（国内命名理想 i6）欧洲首秀为核心，正式对外发布欧洲市场战略，标志品牌全球化布局进入新阶段。项目历史背景根植于全球新能源汽车格局变迁，作为现代汽车工业发源地，欧洲市场长期由本土车企主导，而中国新能源车企持续出海，在智能座舱、家庭舒适空间、高压快充领域形成差异化优势；理想汽车深耕家庭用户市场多年，本次选择巴黎车展作为欧洲战略发布舞台，并非简单的车型参展，而是面向欧洲媒体、行业伙伴与海外家庭用户，输出 “移动的家” 产品理念，为 2027 年一季度挪威、荷兰率先上市铺路。在空间造型与制作层面，展台整体遵循简约克制的现代设计语言，以低饱和度浅灰基底，搭配通透的开放式展陈结构，弱化传统车展厚重的展位围挡，营造居家般松弛氛围，呼应品牌家庭出行的核心定位。
+展区划分车型静态体验区、技术解读区、家庭出行场景演示板块，核心展品 Li 6 五座纯电 SUV 开放座舱体验，参观者可近距离感受皇后座、车载冷暖冰箱、800V 高压 5C 超充等核心配置；展台配套多屏交互系统，直观展示 WLTP 续航、拖车拓展、本地化车机适配等面向欧洲用户的定制化方案。
+活动期内现场内容与传播营销深度绑定，巴黎车展汇聚全球汽车媒体与行业 KOL，展台上的家庭化座舱场景极具话题性，海外媒体、汽车博主拍摄实拍素材，同步在海外社交平台、专业汽车媒体传播，面向欧洲家庭用户、汽车行业从业者，快速建立品牌认知。项目意义跳出传统车展单纯新车发布模式，不只是产品亮相，更是品牌全球化叙事的重要节点。展台把中国家庭汽车设计思路转化为欧洲受众能够理解的出行场景，集车型首发、战略发布、产品体验、行业沟通于一体，完成品牌国际化形象塑造、欧洲市场预热、全球圈层传播的多重营销目标。
+理想汽车创立于 2015 年，是国内专注家庭用户的智能电动车品牌，以 “创造移动的家，创造幸福的家” 为使命。品牌深耕家庭出行场景，凭借增程与纯电双路线产品、舒适座舱、智能辅助驾驶收获大量国内家庭用户。2026 年正式启动欧洲市场布局，坚持围绕家庭需求做产品开发，依托国际车展、海外研发中心，持续推进产品本地化适配，把 “移动的家” 理念输出至全球市场。</p>
+      <div class="meta">理想汽车 · 10-12~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Mondial-de-LAuto-Li-Auto-Paris-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/29684469c52b437394dd233b17b09cb1.jpg" alt="【2026巴黎车展】小鹏汽车 XPENG" loading="lazy">
+      <h2>【2026巴黎车展】小鹏汽车 XPENG</h2>
+      <p class="description">小鹏汽车 XPENG 在2026巴黎国际车展（Mondial de L’Auto）
+小鹏汽车亮相 2026 巴黎国际车展，是品牌全球化出海战略中的重要一站，展台展出面向欧洲市场的多款纯电量产车型与前沿智能座舱技术，向全球媒体、行业伙伴及欧洲消费者集中展示中国智能电动汽车的软硬件综合实力。项目历史背景根植于全球汽车电动智能化浪潮，欧洲市场对智能电动车的需求持续增长，本土车企加速电动转型，市场竞争日趋激烈；小鹏多年深耕全栈自研智能驾驶、智能座舱技术，将欧洲作为全球化核心阵地，依托巴黎车展这一世界级行业舞台，跳出简单的车型参展，面向欧洲用户阐释 “智能、实用” 的出行理念，为后续多国上市、渠道布局做好市场铺垫。
+在空间造型与制作层面，展台延续小鹏简约科技的设计语言，以品牌标志性科技银与浅蓝作为主色调，采用通透开放的展陈结构，舍弃厚重围挡，以干净利落的几何造型与分层背光营造干净、前卫的科技氛围。展区划分为实车静态体验区、智能技术叙事区、交互演示板块，参观者可进入车内体验 XOS 座舱与 XNGP 高阶智驾演示，多媒体装置直观展示全域 800V 高压平台、车载机器人、本地化车机适配方案，将复杂的自研智能技术转化为直观可感知的现场体验。
+活动期的现场内容与传播营销深度绑定，巴黎车展汇聚全球汽车媒体、行业 KOL 与海外潜在客户，简洁前卫的展台与可直观体验的智能功能自带话题，海内外汽车创作者拍摄展台、实车素材，在海外社交平台与专业汽车媒体广泛传播，帮助小鹏快速在欧洲智能电动车市场建立品牌认知。项目跳出传统车展单纯新车陈列模式，不只是车型亮相，更是小鹏面向欧洲市场的品牌叙事窗口。展台将全栈自研智能技术融入场景叙事，集车型海外展示、技术解读、座舱体验、商务洽谈于一体，实现国际化品牌形象塑造、欧洲市场预热、全球智能汽车圈层跨文化传播的多重营销目标。
+小鹏汽车 XPeng 创立于 2014 年，是国内全栈自研的智能纯电汽车品牌，专注智能驾驶、智能座舱与整车平台技术研发。品牌坚持以智能化作为核心差异化优势，持续开拓海外市场。小鹏依托国际顶级车展向欧洲用户展示自研技术与整车产品，针对欧洲法规与用户习惯完成本地化适配，将中国智能电动车的创新能力输出海外，打造面向全球家庭的智能出行产品。</p>
+      <div class="meta">小鹏汽车 · 10-12~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Mondial-de-LAuto-XPENG-Paris-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/30cdbc8bd72f43b9a64dba54245d2c35.jpg" alt="【2026巴黎车展】本田 HONDA" loading="lazy">
+      <h2>【2026巴黎车展】本田 HONDA</h2>
+      <p class="description">本田 Honda 在2026巴黎国际车展（Mondial de L’Auto）
+本田 Honda 登陆 2026 巴黎国际车展，作为日系全球化车企代表，本次展台集中展出全新纯电车型、e:N 系列欧洲版本以及前沿移动出行概念车，面向全球媒体、经销商与欧洲消费者，系统展示品牌电动化与可持续出行的转型成果。项目历史背景源于全球汽车产业能源变革，欧洲严苛碳排放法规加速驱动传统车企向电动化转型，本田长期深耕内燃机、混动技术，如今加速布局欧洲纯电市场；巴黎车展作为全球汽车行业核心交流平台，为本田提供面向欧洲市场传递全新产品矩阵的窗口，将品牌从发动机技术积淀延伸至纯电、氢能、多元移动方案，重新定义本田在欧洲市场的出行价值。
+在空间造型与制作层面，展台延续本田简洁理性的工业设计风格，以浅灰与品牌标志性红作为色彩基调，采用通透开放式布局，摒弃繁复厚重围挡，以干净利落的几何线条塑造简约现代的展陈空间。展区划分为量产车型静态体验区、概念移动装置展示区、动力技术叙事板块，访客可进入座舱体验新一代车机交互系统，多媒体装置直观展示纯电平台、电池方案、氢能技术，把本田动力研发底蕴转化为可现场感知的体验。
+活动期的现场内容与传播营销深度绑定，巴黎车展汇聚全球汽车媒体、行业 KOL 与海外潜在用户，干净克制的展台、前瞻概念车具备很强的视觉传播力，海内外汽车创作者拍摄展台与车辆实拍素材，在社交平台与专业汽车媒体广泛分发，持续强化本田在欧洲新能源市场的品牌声量。项目跳出传统车展单纯陈列新车的模式，不只是车型亮相，更是本田全球电动化战略的对外公开展示。展台将发动机基因、电动化技术、可持续出行理念融入场景叙事，集车型海外发布、前瞻概念展示、座舱体验、行业商务洽谈于一体，实现品牌转型理念传递、欧洲新品预热、全球汽车行业圈层传播的多重营销目标。
+本田 Honda 创立于 1948 年，源自日本的全球性移动出行企业，以发动机技术研发实力著称，业务覆盖汽车、摩托车、动力装备等领域。近年加速电动化转型，推出 e:N 纯电系列，同时持续探索氢能等多元清洁能源方案。本田依托国际车展向全球市场传递可持续出行构想，将长久积累的机械工程技术，转化为面向未来的电动移动产品，面向全球用户打造安全、实用的出行解决方案。</p>
+      <div class="meta">HONDA 本田 · 10-12~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Mondial-de-LAuto-Honda-Paris-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/82800f6307fc456c81ce6ef5f438d1b8.jpg" alt="【2026巴黎车展】长安汽车、深蓝汽车" loading="lazy">
+      <h2>【2026巴黎车展】长安汽车、深蓝汽车</h2>
+      <p class="description">长安汽车、深蓝汽车在2026巴黎国际车展（Mondial de L’Auto）
+长安汽车携深蓝汽车 DEEPAL 登陆 2026 巴黎国际车展，是长安集团多品牌欧洲战略落地的关键节点，深蓝带来 S07 PHEV 与适配海外市场的右舵版 S05 PHEV 亮相，面向欧洲年轻消费群体展示品牌全球化产品方案。项目历史背景根植于全球汽车电动化转型浪潮，欧洲作为传统汽车工业核心市场，对混动、智能出行产品需求持续增长，长安深耕欧洲市场二十余年，从单一车型出口升级为多品牌体系化落地；深蓝作为集团主打年轻科技运动的新能源品牌，继慕尼黑车展完成欧洲品牌发布后，本次借巴黎车展的行业窗口，面向海外媒体、经销商与年轻用户，展示本地化调校的插混车型，推进英国等市场上市计划。
+在空间造型与制作层面，展台整体采用极简未来感设计，以深蓝品牌标志性蓝黑主色调贯穿全场，开放式展陈结构弱化厚重围挡，兼顾车辆展示与观众互动。展区划分实车静态体验区、智能技术演示板块，参观者可进入座舱体验智能交互、空间布局，配套大屏演示动力系统、WLTP 续航、右舵本地化适配等技术细节；展台融入轻量化数字多媒体装置，直观呈现长安自研混动、电池安全技术，塑造科技运动的品牌气质。
+活动期现场内容与传播营销深度绑定，巴黎车展汇聚全球汽车媒体、行业 KOL，传奇球星菲戈亲临展台加持曝光，面向欧洲年轻用户、汽车行业从业者，海外博主与媒体拍摄实车、展台影像，在海外社交平台、专业汽车媒体持续扩散话题，快速在欧洲年轻圈层建立 DEEPAL 品牌认知。项目跳出传统车展简单展车模式，不只是产品亮相，更是深蓝面向欧洲市场的品牌叙事落地。展台把国内成熟的数智新能源技术转化为海外用户可感知的出行场景，集车型海外首发、技术解读、用户体验、行业商务洽谈于一体，实现深蓝海外品牌形象塑造、欧洲市场预热、全球化圈层传播的多重营销目标。
+深蓝汽车 DEEPAL，长安汽车旗下中高端新能源品牌，2022 年正式诞生，定位年轻科技运动。依托长安集团自研混动、智能电控技术，主打面向全球年轻用户的新能源车型。品牌坚持科技平权理念，持续布局海外市场，依托国际车展完成全球化品牌传播，打造兼具运动驾趣、智能座舱的产品矩阵，将中国数智新能源技术输出到欧洲、东南亚等全球市场。</p>
+      <div class="meta">长安汽车 · 10-12~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Mondial-de-LAuto-Changan-Auto-Deepal-Auto-Paris-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/93b018730bca4a4ebbb6538d19d748f9.jpg" alt="【2026巴黎车展】阿尔派 Alpine" loading="lazy">
+      <h2>【2026巴黎车展】阿尔派 Alpine</h2>
+      <p class="description">阿尔派 Alpine 在2026巴黎国际车展（Mondial de L’Auto）
+Alpine 阿尔派登陆 2026 巴黎国际车展，作为雷诺集团旗下纯正法式运动跑车品牌，本次主场参展集中展出 PS1 全新概念车、A110 Sculpture 艺术雕塑，以及 A290、A390 系列新款定制版本，向全球行业、媒体与跑车爱好者完整展示品牌 “梦想车库” 电动化战略蓝图。项目历史背景根植于全球跑车产业的低碳转型浪潮，传统燃油跑车面临减排压力，高性能电动化成为行业核心命题；Alpine 依托 F1 赛事与勒芒耐力赛积累的赛车工程积淀，在保留品牌轻量化操控基因的基础上全面转向电动化，选择巴黎车展这一法国本土顶级汽车盛会，向全球受众传递法式跑车的未来叙事，完成从经典燃油跑车品牌向高性能电动跑车品牌的战略转身。
+在空间造型与制作层面，展台延续品牌标志性阿尔卑斯蓝为主视觉基调，整体采用流动曲面与低反光哑光材质，摒弃厚重硬质围挡，用通透开放式展陈凸显车身空气动力学线条，融合艺术展厅与车展展台双重气质。展区划分概念车艺术叙事区、量产跑车静态体验区、赛车技术解读板块，参观者可近距离观赏 A110 Sculpture 艺术装置，多媒体交互系统演示 APP 高性能电动平台、轻量化铝制车身、800V 高压电池与扭矩矢量控制等核心技术，将赛车工程逻辑转化为可视化的现场体验。
+活动期现场内容与传播营销深度绑定，巴黎车展汇聚全球汽车媒体、赛车 KOL 与性能车收藏爱好者，极具艺术感的概念车与雕塑展品视觉冲击力强，海内外汽车创作者拍摄展台、实车素材，在专业汽车媒体与社交平台持续传播，强化 Alpine 在全球性能跑车圈层的品牌影响力。项目跳出传统车展单纯车辆陈列模式，不只是车型发布，更是品牌传承与电动革新的综合叙事舞台。展台把赛车基因、法式设计美学与电动化技术融入场景叙事，集概念首发、量产车型展示、技术科普、行业商务洽谈于一体，实现品牌电动化战略发布、新产品市场预热、全球性能车圈层文化传播的多重营销目标。
+Alpine 阿尔派，1955 年于法国创立，雷诺集团旗下高端运动跑车品牌，根植法式赛车文化，以轻量化车身、纯粹操控乐趣闻名，长期参与 F1、勒芒等顶级汽车赛事。品牌近年启动 “梦想车库” 电动化转型，自研 APP 高性能电动平台，在保留跑车驾驶质感的同时推进全面电动化。Alpine 以巴黎车展等国际舞台传递性能美学，将赛道工程技术落地民用跑车，打造兼顾经典传承与前沿电动技术的法式高性能汽车产品。</p>
+      <div class="meta">10-12~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Mondial-de-LAuto-Alpine-Paris-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/a3b73101f71c488399e81ea1b72b8544.jpg" alt="【2026巴黎车展】比亚迪" loading="lazy">
+      <h2>【2026巴黎车展】比亚迪</h2>
+      <p class="description">比亚迪欧洲 BYD Euro 在2026巴黎国际车展（Mondial de L’Auto）
+比亚迪 BYD 登陆 2026 巴黎国际车展，展台面积达 1000 平方米，携海洋、王朝系列多款面向欧洲市场的量产车型、全新 ATTO 8 全球首发，同步展出第二代刀片电池、DM-i 超级混动、储能解决方案，是比亚迪深化欧洲全球化布局的关键舞台，向全球媒体、经销商与欧洲消费者完整展示全产业链自研的新能源技术体系。
+项目历史背景根植于全球汽车产业电动转型浪潮，欧洲严苛碳排放法规推动市场加速向新能源切换，本土老牌车企与多国新势力同台竞争；比亚迪作为全球新能源汽车领军企业，持续深耕欧洲市场多年，依托垂直整合的电池、电机、电控全链条技术优势，借助巴黎车展这一顶级行业窗口，面向欧洲受众传递绿色出行理念，推进多国渠道、本地化供应链建设，完成从产品出口到品牌生态落地的升级。在空间造型与制作层面，展台采用通透开放式设计，以品牌简约科技视觉为主基调，白色基底搭配轻量化弧形展墙，弱化厚重围挡，将整车静态展区、电池技术拆解区、储能能源展示板块有机融合。展区划分车型沉浸式体验区、核心技术叙事区，参观者可进入座舱体验整车交互系统，多媒体装置直观演示第二代刀片电池、快充技术与储能产品，把垂直整合的硬核能源技术转化为可现场体验的可视化场景，现场还设置体育 IP 联动互动环节，丰富现场体验。
+活动期现场内容与传播营销深度绑定，巴黎车展汇聚全球汽车媒体、海外行业 KOL 与欧洲家庭用户，全品类车型矩阵、刀片电池技术展品自带强大话题属性，海内外汽车创作者拍摄展台、实车、技术展品素材，在海外社交平台与专业汽车媒体广泛传播，持续巩固比亚迪在欧洲新能源市场的头部品牌影响力。项目跳出传统车展单纯陈列新车的模式，不只是多款车型亮相，更是比亚迪全产业链技术实力与欧洲市场战略的综合对外展示。展台将整车产品、电池储能技术、可持续能源叙事融为一体，集新车全球首发、技术科普、座舱沉浸式体验、海外商务洽谈于一体，实现品牌全球化战略传递、欧洲新品市场预热、全球新能源汽车圈层跨文化传播的多重营销目标。
+比亚迪 BYD，1995 年创立于中国深圳，全球新能源汽车领军企业，具备电池、电机、电控、整车垂直整合自研能力，业务覆盖汽车、储能、轨道交通等领域。品牌深耕欧洲市场多年，依托刀片电池、DM-i 超级混动等核心技术，面向欧洲家庭推出覆盖不同价位段的新能源车型。持续参与国际 A 级车展，推进本地化销售网络与储能业务落地，向全球输出完整零碳出行解决方案。</p>
+      <div class="meta">比亚迪 BYD · 10-12~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Mondial-de-LAuto-BYD-Euro-Paris-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-10">
+      <img class="cover" src="https://res.onsiteclub.com/381e2eed63894527babce070e16dffd5.jpg" alt="【2026巴黎车展】奥迪" loading="lazy">
+      <h2>【2026巴黎车展】奥迪</h2>
+      <p class="description">奥迪品牌 Audi 在2026巴黎国际车展（Mondial de L’Auto）
+奥迪亮相 2026 巴黎国际车展，作为德系豪华汽车品牌主场外的重要全球发布窗口，本次展台集中展出全新电动化车型与未来出行概念车，面向全球媒体、行业伙伴与欧洲消费者，完整呈现品牌向电动、数字化转型的最新成果。项目历史背景根植于欧洲汽车产业绿色转型浪潮，严苛的碳排放法规倒逼传统豪华车企加速产品迭代，奥迪持续推进 e-tron 电动系列落地，依托巴黎车展这一全球汽车行业风向标，对外展示品牌电气化战略落地进展，在欧洲本土豪华电动车赛道强化市场占位，传递德系豪华品牌面向未来的出行思考。
+在空间造型与制作层面，展台延续奥迪极简理性的品牌设计语言，大面积采用哑光银灰基底，搭配利落的直线结构与层次化背光灯墙，以通透开放式布局弱化封闭围挡，营造克制、精致的科技豪华氛围。展区划分量产车型静态体验区、概念车艺术展示区、数字化座舱交互板块，参观者可进入车内体验新一代车载交互系统，多媒体装置演示纯电平台、电池技术与可持续材料应用方案，把品牌电动化研发成果转化为直观可感知的现场体验。
+活动期的现场内容与传播营销深度绑定，巴黎车展汇集全球汽车媒体、行业 KOL 与高端潜在客户，简洁高级的展台视觉、概念车先锋设计自带传播属性，海内外汽车创作者、专业媒体拍摄实拍素材，在社交平台与汽车专业媒体持续扩散，巩固奥迪在豪华电动领域的品牌声量。项目跳出传统车展单纯新车陈列模式，不只是车型展出，更是奥迪电气化转型战略的公开展示窗口。展台将平台技术、可持续理念融入场景叙事，集车型发布、概念前瞻、座舱体验、行业商务交流于一体，实现品牌电动化理念传递、新产品市场预热、全球豪华汽车圈层传播的多重营销目标。
+奥迪 Audi，创立于 1909 年的德国豪华汽车品牌，隶属于大众汽车集团，以四环标识、精工底盘、灯艺设计享誉全球。品牌近年全力推进电动化转型，持续落地 e-tron 纯电产品矩阵，坚持在豪华质感、数字化座舱、可持续材料上创新。奥迪积极利用国际顶级车展传递未来出行构想，将德系工程美学与低碳理念结合，面向全球高端消费群体，塑造兼具性能、科技与可持续理念的豪华汽车形象。</p>
+      <div class="meta">Audi 奥迪 · 10-12~10-18</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Mondial-de-LAuto-Audi-Paris-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-11">
+      <img class="cover" src="https://res.onsiteclub.com/1fd7aafcd7534b89ac7de24bf2654f92.jpg" alt="Helinox「TAKE A SEAT SHANGHAI」限时快闪" loading="lazy">
+      <h2>Helinox「TAKE A SEAT SHANGHAI」限时快闪</h2>
+      <p class="description">Helinox「TAKE A SEAT SHANGHAI」限时快闪落地上海环贸 iapm 商场，是 Helinox Wear 服饰线正式登陆中国市场的首发线下项目，以「Wearable Gear 可穿戴装备」作为核心主题，实现轻量化户外装备与机能服饰的同台展示。从项目背景来看，Helinox 原本凭借轻量化户外折叠家具在国内户外圈层积累深厚口碑，伴随都市户外风潮兴起，品牌进一步拓展服饰赛道，将成熟的工程轻量化技术延伸至穿着产品；环贸 iapm 地处上海核心高端商圈，汇聚都市消费群体、设计爱好者，为本品牌全新服饰线的国内首发提供优质的展示场景与客流基础。项目在空间造型与制作层面延续品牌标志性极简工业美学，整体空间线条干净克制，弱化多余装饰，将产品本身作为视觉主体。
+展区一方面陈列品牌经典轻量化户外桌椅装备，另一方面重点首秀斩获红点设计大奖的 Helinox Wear 机能服饰，包含 ZERO 系列、ECLIPSE PACK DOWN 模块化羽绒服，同步展出中国限定马克杯、限定户外椅等专属周边。现场设置产品体验区，访客可以亲身试坐经典折叠椅、试穿新款服饰，直观触摸、体验品牌轻量化、易收纳的核心技术，把产品参数转化为真实体感。
+活动期的现场体验内容与传播营销深度绑定，极简利落的工业风展陈自带高级质感，非常适配社交平台视觉传播，面向都市户外爱好者与设计爱好者，现场打卡、产品实测内容由到场博主、观众自发产出，在社交平台扩散种草。项目意义在于打破装备与服饰的品类壁垒，打通两大产品线，模糊都市日常和户外场景的边界，跳出传统户外装备只聚焦露营场景的宣传思路，把品牌的轻量化工程理念延伸到穿搭领域。本次快闪集产品体验、打卡传播、新品发售于一体，借助 iapm 商圈流量与社交 UGC 传播，完成 Helinox Wear 服饰线的国内首发曝光，向市场传递 “装备可随身、服饰可户外” 的产品主张，实现新品发布、品牌理念传递与消费转化的多重目标。
+Helinox 诞生于 2009 年，依托高端铝合金材料企业 DAC 的工程技术积淀，主打轻量化可收纳户外家具，凭借出色结构设计多次斩获国际设计奖项，是全球都市户外领域标杆品牌。品牌最初以折叠椅出圈，产品兼顾强度、轻量与便携性，深受露营、轻户外人群喜爱。随着品牌发展，Helinox 延伸至机能服饰赛道，推出 Helinox Wear 系列，延续品牌轻量化工程基因，提出 Wearable Gear 理念，将装备级技术融入日常穿搭，推动户外装备从营地走向城市生活场景。</p>
+      <div class="meta">上海 · 10-10~10-27</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Helinox-TAKE-A-SEAT-SHANGHAI-POP-UP-STORE-20206-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-12">
+      <img class="cover" src="https://res.onsiteclub.com/5930e95cce91483ca95bb75bad68b005.jpg" alt="CANDIE&#x27;S 限时快闪" loading="lazy">
+      <h2>CANDIE&#x27;S 限时快闪</h2>
+      <p class="description">CANDIE&#x27;S 限时快闪落地上海衡复风貌区延庆路老洋房沿街，依托梧桐街区 Citywalk 自然流量，打造复古甜酷少女风主题空间。项目背景根植于当下城市漫游文化兴起的趋势，衡复风貌区延庆路聚集大量特色独立小店，是上海 Citywalk 的热门路线，年轻群体习惯漫步街区、探店打卡，这类小型沿街老洋房空间，区别于商场内大型快闪，更适合营造松弛的街区式消费体验。
+项目在空间造型与制作上延续 CANDIE&#x27;S 标志性千禧美学，以复古粉色与黑色撞色作为主色调，搭配格纹、蝴蝶结等品牌经典视觉元素，在沿街橱窗与室内空间布置巨型品牌视觉装置，兼顾街道路人的远距离视觉吸引与进店后的沉浸式街拍打卡需求。店铺体量小巧精致，内部陈列品牌新款女装、配饰与鞋包，同步推出本次延庆路快闪限定单品；空间设置打卡拍照区域与留言板，访客参与打卡集章任务，即可领取品牌限定贴纸、明信片等轻量周边礼品。整个空间将零售售卖与场景打卡融为一体，嵌入延庆路网红小店集群之中，成为城市漫游路线上的一站。
+活动期的现场内容和传播营销紧密联动，梧桐街道、老洋房建筑搭配千禧甜酷风格的室内场景，天然具备街拍氛围感，面向千禧风穿搭爱好者与城市漫游青年，到访游客自发产出街拍、穿搭打卡内容，在社交平台扩散传播。项目意义在于探索小体量沿街限时零售的新形态，跳出商场封闭展厅的传统快闪模式，把品牌场景植入城市历史街区，借 Citywalk 客流完成品牌曝光。项目不止是新品陈列与限定款售卖，而是将店铺打造为街区漫游节点，利用低成本、轻量化的美陈装置实现品牌风格表达，借助游客 UGC 打卡内容扩大传播，实现品牌风格输出、线下零售转化和圈层种草传播的多重目标。
+CANDIE&#x27;S 诞生于 1981 年，源自美国，最初凭借标志性木底凉拖风靡欧美少女市场，是千禧年代极具代表性的少淑时尚品牌，隶属于 Iconix 品牌集团。品牌主打甜酷少女风格，擅长运用蝴蝶结、格纹、粉黑撞色等元素塑造 Y2K 复古氛围，产品线覆盖女装、鞋履、配饰，风格俏皮年轻化。进入国内市场后持续深耕千禧美学，擅长以街区快闪、主题门店等轻量化线下形式触达年轻穿搭群体，传递复古甜美的少女时尚态度。</p>
+      <div class="meta">上海 · 10-10~10-20</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/CANDIES-POP-UP-STORE-SHANGHAI-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-13">
+      <img class="cover" src="https://res.onsiteclub.com/36cdef28ae5c4600b18704e0361c3984.jpg" alt="BLUE ERDOS「BEsties 慢闪空间」" loading="lazy">
+      <h2>BLUE ERDOS「BEsties 慢闪空间」</h2>
+      <p class="description">BLUE ERDOS「BEsties 慢闪空间」落地上海永源路，展期长达六个月，作为上海时装周・上海时尚周末街区重点项目，它跳出短期快闪的一次性展示逻辑，打造可反复回访的长期都市女性社群空间。项目历史背景源于品牌线上 BEsties 影像与播客栏目，栏目持续记录都市女性之间松弛多元的好友关系，本次慢闪是把线上积累的女性故事叙事延伸至线下实体场景，依托上海时装周的街区化策展趋势，将时装从秀场延伸到城市街道，构建生活化的时尚交流场域。
+在空间造型与制作层面，整体采用简约柔和的设计调性，摒弃夸张厚重装置，以低饱和度、温润质感的场景烘托女性之间松弛的相处氛围。空间内设置声音艺术装置与故事影像展陈，同步陈列 BLUE ERDOS 秋冬羊绒服饰，将影像叙事、声音体验与服装陈列自然融合。运营周期内持续轮换创意工坊、线下分享会等社群活动，访客能够沉浸式聆听 BEsties 栏目中的人物故事，参与主题沙龙，选购品牌当季新品。
+空间刻意弱化传统门店单纯的零售属性，核心定位为女孩相聚交流的社交场所。活动期内现场内容与传播营销深度绑定，永源路作为时装周重点街区自带时尚客流，影像、声音艺术装置自带细腻高级的视觉与听觉体验，适配社交平台内容传播。面向都市白领、简约穿搭爱好者与女性社群人群，参与沙龙、工坊的访客与时尚 KOL 产出感性的故事向内容，区别于常规穿搭种草，更侧重情感共鸣，持续拉长项目传播周期。项目意义在于探索长期街区慢闪的全新商业形态，不再以短期打卡、一次性带货为目标，把线下空间作为品牌社群运营载体，融合服饰零售、影像艺术、社群聚会与周期性主题活动。借助时装周的行业影响力和持续更新的社群内容，持续沉淀女性用户社群，传递品牌温柔、独立的女装美学，完成品牌文化传递、产品体验以及长期社群经营的多重营销目标。
+BLUE ERDOS 是鄂尔多斯集团旗下面向年轻都市群体的时装品牌，依托集团深厚羊绒面料研发积淀，主打简约现代风格羊绒服饰，以优质面料、利落剪裁平衡质感与日常穿搭需求。品牌跳出单纯售卖服装的思路，持续关注当代女性生活状态，以影像、播客等内容形式搭建女性对话平台，擅长通过街区型线下慢闪、社群沙龙等形式与年轻消费者沟通，传递松弛独立的都市穿搭理念，为都市人群打造兼具舒适度与美学表达的羊绒时装选择。</p>
+      <div class="meta">上海 · 10-10~10-15</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/BLUE-ERDOS-BEsties-POP-UP-STORE-SH-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-14">
+      <img class="cover" src="https://res.onsiteclub.com/4480783815204a1cbdfb0207e210179f.jpg" alt="美腕「李佳琦超级双 11・OFFER 真箱好物展」" loading="lazy">
+      <h2>美腕「李佳琦超级双 11・OFFER 真箱好物展」</h2>
+      <p class="description">美腕打造「李佳琦超级双 11・OFFER 真箱好物展」落地上海前滩公园巷，是品牌为双 11 大促预热打造的线下 IP 街区展。项目历史背景根植于直播电商行业线上内容线下化的探索趋势，《所有女生的 OFFER》作为李佳琦直播间双 11 重磅 IP 综艺，聚焦品牌谈判、好物甄选的台前故事，本次展览正是将屏幕里直播间谈判桌的叙事搬到城市公共空间，打破直播只能在线上观看的局限，借助城市公共街区的开放属性，完成大促前期用户心智预热。
+在空间造型与制作层面，整条 300 米沿街街区作为展场，沿线排布 73 个巨型 OFFER 行李箱艺术装置，集合 67 个美妆、家居、个护参展品牌。设计以行李箱作为核心视觉符号，象征直播间谈判争取而来的优惠 offer，把线上商品链接转化为实体可沉浸式打卡装置，箱体内部陈列各品牌明星单品，让虚拟商品信息转变为可近距离观看、触摸的实体展品，整体装置兼顾街区远距离视觉识别与近景细节展示，适配开放式街区的参观动线。展览免费向公众开放，访客沿着街区漫步逛展，现场设置互动打卡任务，观众在社交平台发布打卡内容即可兑换品牌福利。
+活动期现场内容和传播营销深度绑定，开放式城市街区场景降低参与门槛，面向所有女生粉丝、美妆爱好者与城市逛街人群，巨型行李箱装置自带话题记忆点，游客、垂类博主自发产出打卡内容，在社交平台持续发酵，为即将到来的双 11 直播间蓄水。项目意义在于打通直播电商 IP 和城市公共街区，将直播间场景从线上屏幕平移至街头，跳出传统商业快闪封闭展厅模式。本次展览不仅为入驻品牌提供线下曝光窗口，同时以沉浸式叙事强化 “谈 offer” IP 故事，集品牌展品展示、社交打卡传播、大促预热蓄水于一体，完成 IP 价值放大、多品牌联合曝光与双 11 消费情绪预热的多重营销目标。
+美腕（美 ONE）是国内头部直播电商企业，2014 年成立，打造了李佳琦直播间、《所有女生的 OFFER》、奈娃家族等知名 IP，构建覆盖直播、自制内容、文创 IP 的完整内容生态。企业以内容驱动消费，持续联动美妆、家居、食品等多元品牌，深耕直播选品与用户服务。美腕积极探索线上 IP 落地线下的全域营销模式，擅长结合城市公共空间打造街区式展览，将直播间叙事延伸到实体场景，搭建品牌、消费者之间的多元沟通桥梁。</p>
+      <div class="meta">上海 · 10-05~10-07</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Meiwan-LiJiaqi-Super-D11-OFFER-Real-Box-Exhibition-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-15">
+      <img class="cover" src="https://res.onsiteclub.com/36f85b440eaa49929f7d7e01a8fdabad.jpg" alt="小米澎程「第 N 空间」十一特展（上海）" loading="lazy">
+      <h2>小米澎程「第 N 空间」十一特展（上海）</h2>
+      <p class="description">小米澎程「第 N 空间」十一特展将上海外滩老市府设为全国主会场，同步开启 19 城巡展，并在 7 座高速服务区增设体验点位，是小米汽车迄今为止规模最大的全国线下巡展项目。从项目历史背景来看，随着家庭自驾、长途露营需求持续增长，用户对汽车的期待不再局限于代步工具，而是延伸至可灵活变化的移动生活载体；小米汽车依托智能电控与车身结构技术，提出 “智能可变大空间” 的产品概念，本次巡展便是将座舱技术从参数转化为实景体验，借助十一长假的出行热潮，覆盖城市展馆与高速公路服务区，触达更广泛的潜在用户群体。
+在空间造型与制作层面，展览打造七大实景主题样板间，将澎程 SUV 的座舱场景向外可视化，依托超长滑轨、纯平地板与可旋转座椅，还原一键切换的十余种生活场景，包括会客厅、移动咖啡馆、工作室、大床房、亲子游乐区等。现场重点展出 N70 Pro、N90 Max 两款主力车型，N90 Max 探索版电动升顶帐篷成为全场视觉核心。展区配套皮耶咖啡联名体验、打卡互动、礼品兑换环节，访客可以进入座舱沉浸式体验场景切换，直观感受 “空间魔术”。
+活动期现场体验与传播营销深度绑定，外滩老市府本身自带城市地标属性，多场景样板间视觉冲击力强，适配社交平台传播。面向家庭用户、自驾露营爱好者与米粉群体，现场访客、汽车垂类博主拍摄座舱场景实拍视频与图文，产出大量原生 UGC 内容，跨城市联动的巡展模式持续拉长传播周期。项目意义在于打破传统车展静态看车的模式，不再单纯介绍硬件参数，而是把汽车定义为移动生活空间，用实景样板间具象化展示座舱变形技术。巡展覆盖城市展厅与高速服务区两大场景，精准匹配自驾人群，将冰冷的产品技术转化为可感知的生活方式，集沉浸式产品体验、社交打卡、全域品牌传播于一体，实现产品价值传递、用户种草与品牌认知升级的多重目标。
+小米澎程是小米汽车旗下面向长途自驾、家庭露营场景打造的 SUV 产品系列，依托小米在智能电控、人车交互、车身结构方面的技术积累，主打可灵活重构的智能座舱空间。品牌跳出传统 SUV 的产品定位，以 “移动生活空间” 作为核心主张，围绕家庭出游、户外露营用户需求，开发可旋转座椅、纯平地板、电动升顶帐篷等创新结构。小米汽车以全域线下巡展的方式，把座舱空间技术实景化展示，面向米粉与户外家庭群体，传递车即生活空间的全新出行理念。</p>
+      <div class="meta">上海 · 小米汽车 · 10-01~10-07</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Xiaomi-Pengcheng-The-9th-Space-Exhibition-SH-2026-10-12" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-10-14
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
