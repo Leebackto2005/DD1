@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-10-24</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-10-24 周六</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">4</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/1feca3e080f44c448a4f38c51a49a0b5.jpg" alt="VOGUE 时尚之力盛会 2026·「绝色」颁奖晚宴（苏州）" loading="lazy">
+      <h2>VOGUE 时尚之力盛会 2026·「绝色」颁奖晚宴（苏州）</h2>
+      <p class="description">十月二十三日晚，苏州科技馆的穹顶下，2026 VOGUE 时尚之力盛会（Forces of Fashion）的颁奖晚宴开席。这一年的红毯主题叫「绝色」（Extreme Colors），而真正把「绝色」落到实处的地方，是餐桌。
+盛会落在苏州狮山文化广场。这片被称为「城市客厅」的场域，由苏州科技馆、苏州博物馆西馆与狮山大剧院三座建筑围合而成，狮山、天狮湖环绕其间。颁奖晚宴设在苏州科技馆的穹顶大厅——白天是科普场馆，入夜之后，白色穹顶、弧形墙面与「苏州科技馆」的题字一起，成了这场晚宴最大的背景板。
+空间处理上，主办方没有另搭舞台，而是顺着建筑的弧度做文章：深蓝与紫色灯光打亮穹顶，长桌铺黑色麻质桌布，桌面上是一条从入口延伸到厅内的花艺带。花不是鲜花，是乐高积木拼出的花——紫色、粉色、白色的花朵，配蘑菇、苔藓和小小的绿色植株，像把一座微观花园搬上了桌。
+制作上的心思藏在细节里：每位宾客的菜单卡上印着名字，旁边是一块做成乐高积木形状的黄油；烛台用的是暖黄色玻璃，与冷调的穹顶灯光形成对冲。这些元素单看都不贵，放在一起却把「时尚」和「手作」两种气质缝在了一起——正好对应这一届「绝色」想讲的多元表达。
+传播层面，VOGUE 官方账号在活动当晚发布了现场图，把红毯上的「绝色」延伸到餐桌上：同一套色彩系统、同一组视觉符号，从镜头前一直铺到餐盘边。这也是这几年国际时尚 IP 落地中国城市的一个共同做法——不再只借一座展馆办一场秀，而是把整座城市的文化空间当成会场。
+对活动行业来说，这场晚宴的价值不在排场，而在「场地与内容的匹配度」：苏州科技馆的穹顶给了晚宴一个别处复制不了的顶，乐高花艺给了它一个可以拍照传播的细节，两者叠加，才让一场颁奖晚宴有了记忆点。</p>
+      <div class="meta">苏州 · VOGUE 服饰与美容 · 10-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/VOGUE-Forces-of-Fashion-2026-Suzhou-Awards-Gala-2026-10-23" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/8f7e8c370e724f61906afd986052ec99.jpg" alt="嘉格纳 GAGGENAU「光影万象 藏臻艺境」Vario Expressive 艺境灵动制冷系列新品发布会" loading="lazy">
+      <h2>嘉格纳 GAGGENAU「光影万象 藏臻艺境」Vario Expressive 艺境灵动制冷系列新品发布会</h2>
+      <p class="description">本次嘉格纳 GAGGENAU「光影万象 藏臻艺境」Vario Expressive 艺境灵动制冷系列新品发布会，落地居庸关长城北关广场，由思贝思（SPACE）提供全链条场地落地服务，是一次高端奢厨品牌与国家级历史文脉地标对话的标志性项目。从项目背景来看，居庸关长城作为国家级文保单位，承载千年历史底蕴，场地审批严苛、落地约束多，天然具备稀缺的文化仪式感，与嘉格纳追求精工、典藏级的品牌调性高度契合。
+在空间造型与制作层面，项目没有对古建本体进行硬质改造，全部采用柔性布置方式完成空间塑造，以长城雄浑壮阔的原生景观作为天然主背景，搭配克制高级的灯光造景，用光影烘托产品的精致质感；同时突破长城过往活动配套短板，搭建该场地历史上规模最大的配套功能空间，覆盖接待、媒体、设备运维等场景，并且创新设计专属人流安检动线，为同类文保场地活动提供全新参考范式。活动期内，新品发布、现场品鉴、媒体探访等核心内容，和传播营销深度绑定，长城地标自带话题稀缺性，古文明与德系精工的碰撞形成天然传播抓手，现场产出的大片素材、高端访谈内容，面向设计师圈层、高净值客群、行业媒体进行分发，把一场线下私享发布会转化为品牌文化叙事的传播节点。
+项目的意义，不止是完成一场新品发布，而是在严守文物保护底线的前提下，探索高端奢侈品牌在地标文保场景的表达边界，借长城厚重的文化势能，强化嘉格纳超越厨电、偏向艺术藏品的品牌定位，实现品牌价值、产品信息与文化意象的同步传递，也印证了特殊文保场地活动，合规统筹、动线规划、多方协调能力是创意落地的核心根基。
+嘉格纳 GAGGENAU 源自德国，拥有三百余年精工传承，是全球高端嵌入式厨电标杆品牌，主打定制化、艺术化厨电系统，服务高端住宅与顶奢私厨场景。品牌坚持以精密工艺、极简克制的设计语言，将厨电升华为家居艺术品，面向设计师、高净值人群打造典藏级烹饪解决方案，长期深耕高端私域与设计师圈层营销，擅长依托文化地标、艺术场景打造品牌发布会，传递 “精工即艺术” 的核心理念。
+场地供应商：思贝思（SPACE） www.360space.cn</p>
+      <div class="meta">北京 · 10-21</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/GAGGENAU-Vario-Expressive-New-Launch-by-SPACE-2026-10-23" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/7f4c6f0b6235420e95441f900457b63d.jpg" alt="解码温暖：波司登 1/2 世纪展" loading="lazy">
+      <h2>解码温暖：波司登 1/2 世纪展</h2>
+      <p class="description">「解码温暖：波司登 1/2 世纪展」落地上海 GATE M 西岸梦中心，作为品牌五十周年重磅纪念项目，以 Warmth Code 为核心概念，回溯自 1976 年创立至今半个世纪的羽绒服饰发展历程，将中国本土实业品牌的技术迭代、时代叙事与时尚表达浓缩于六大沉浸式篇章。波司登深耕羽绒领域五十年，持续参与羽绒行业标准制定，完成珠峰、南北极等极端环境科考装备的研发，本次展览跳出传统品牌陈列，以策展叙事的形式，完成品牌历史的系统性梳理。
+项目空间依托西岸工业遗存建筑基底，划分序章、梦想、时纪、织艺、无界、尾声六大展区，空间造型采用粗粝工业底色搭配柔和的光影装置，序章 8 米高时光博古架作为视觉核心，纵向拉开时间纵轴；梦想空间实景复刻常熟山泾村缝纫组初创场景，老式缝纫机、自行车等实物原件还原创业原点；时纪板块以 15 组独立橱窗打造时间切片，记录品牌里程碑事件；织艺展区采用分层透明展柜，拆解面料、充绒、绗缝的底层工艺。
+在制作层面，展区融合实物文物、超媒体影像、交互装置，兼顾历史藏品保护与现代展陈视觉，以七彩流动光轨作为动线引导，串联起怀旧写实、科技解构、先锋时装等多元视觉氛围。活动期间除静态展陈，开幕仪式、名人导览、设计师对谈同步落地，多维度解读温暖的多重内涵。
+传播营销上，展览选址西岸文化地标，面向大众消费者、设计师圈层与媒体，由明星嘉宾、KOL 现场打卡产出短视频与图文内容，线下预约观展体验与社交媒体内容分发联动，将品牌周年纪念转化为文化事件，弱化硬广属性。
+项目意义在于以展览载体，印证中国本土服饰品牌从代工制造到全球专业羽绒品牌的成长路径，把一件羽绒服的工艺史转化为大众可感知的文化叙事，为国货品牌周年文化策展树立样本。</p>
+      <div class="meta">上海 · 波司登 · 10-19~11-01</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Bosideng-Decoding-Warmth-Half-Century-Exhibition-2026-10-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/930fc72428f949a8a69a77e6107b1760.jpg" alt="2026抖音时尚设计师大赛决赛暨抖音时尚趋势大秀" loading="lazy">
+      <h2>2026抖音时尚设计师大赛决赛暨抖音时尚趋势大秀</h2>
+      <p class="description">2026 抖音时尚设计师大赛决赛暨抖音时尚趋势大秀落地上海世博创意秀场，作为 2027 春夏上海时装周闭幕大秀，以 “One of Many 一即万相” 为核心命题，是平台打通线上内容生态与线下专业时尚体系、扶持本土新锐设计的标志性项目。赛事打破传统时装赛事的单一成衣评判框架，设置时装配饰、时尚创意双赛道，将数字影像、装置艺术、AIGC 时尚创作纳入评审维度，既对标国际青年设计赛事的专业标准，也延续抖音以内容驱动时尚传播的底层逻辑，回应新生代设计师 “作品表达 + 大众沟通” 的双重能力需求，填补独立创作者从创意到市场的链路缺口。
+秀场空间以镜面结构为核心造型语言，大面积反光立面重构 T 台边界，模特行进时，面料肌理、廓形轮廓、光影倒影多重叠合，呼应 “个体自成一体、万相共生” 的主题叙事；整体视觉叙事遵循 “始于缤纷，归于素白” 的节奏递进，成衣作品沿主秀道依次呈现，创意装置与影像展区分布于侧场，材质选型兼顾轻量化与高反光可控性，在保证直播镜头画质稳定的同时，营造沉浸式、多视角可解读的观秀场景，由专业秀导团队统筹舞台调度、光影编程与开场肢体表演，让空间本身成为主题表达的载体。
+活动现场完成五大年度奖项揭晓，集结行业评委、买手与媒体资源，而线下秀场的每一段造型、每一组装置、设计师幕后花絮、获奖专访，同步作为短视频素材回流抖音生态，形成 “线下专业发布、线上持续发酵” 的传播闭环。大赛本身即是营销载体，赛事周期内的命题解读、设计师连载创作、话题挑战赛持续积累热度，大秀直播、明星与 KOL 看秀内容放大趋势声量，让专业秀场不再局限于行业小圈层，把 2027 春夏多元审美趋势传递给泛时尚用户，其项目意义在于重构时尚话语权：不再由单一权威定义流行，而是让无数独立创作者的表达共同生成趋势，为中国新生代设计师提供兼具专业背书与流量商业机会的成长舞台。</p>
+      <div class="meta">上海 · 抖音 · 10-16</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/2026-Douyin-Fashion-Trend-Show-2026-10-16" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-10-24
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
