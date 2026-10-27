@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-10-27</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-10-27 周二</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">2</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/3360cc77b44e46a5a2a1b6ef5f88eb2e.jpg" alt="京东健康 2026 第六届中国医药数字营销论坛" loading="lazy">
+      <h2>京东健康 2026 第六届中国医药数字营销论坛</h2>
+      <p class="description">2026 年 10 月 21 日以“破界・AI 赋新生”为主题的 2026 第六届中国医药数字营销论坛（CPDMF）于北京 CBD 正大中心国际宴会厅隆重举办。本届论坛由京东健康主办，汇聚千余位医药企业、数字化服务商、合规研究、医疗营销领域从业者，聚焦 AI 技术在医药营销场景的合规落地，共话医药数字化转型全新路径。
+作为国内医药数字营销领域标杆垂直行业峰会，CPDMF 持续深耕医药学术推广、患者健康管理数字化赛道。伴随行业监管持续规范化，传统医药学术推广模式迎来变革，人工智能正在成为驱动医药营销提质增效的核心引擎。本届论坛跳出技术概念探讨，以 “合规为先、落地为王” 为核心导向，围绕创新药、处方药、OTC、家用医疗器械、中医药等多品类数字化推广痛点展开深度研讨。
+本次大会设置主论坛、多赛道平行分论坛、品牌特装展区及闭门商务对接会四大板块。主论坛现场，行业政策专家深度解读医药数字营销监管要求，厘清 AI 医学内容、数字人学术推广、医疗用户数据应用的合规边界；京东健康重磅发布医药 AI 营销全链路解决方案，推出面向新药上市、医生学术赋能、患者全周期健康管理的 AI 工具与服务体系。
+在主题分享与圆桌对话环节，京东集团副总裁、京东健康医药业务总经理宋志瑞表示，京东健康将持续搭建产业交流平台，将药企专业洞察与自身供应链、AI技术及数字营销能力融合，让药品在合适时间、场景送达真正需要的人手中，多家头部药企市场、医学事务、数字化负责人登台，分享新药数字化上市、线上学术运营、患教内容生态、私域长效运营等真实落地案例，围绕 AI 医学内容生成、营销效果归因、数据资产建设等热点议题碰撞观点，探讨技术应用中的风险管控方案。
+同期开设的多场平行分论坛，分别聚焦处方药学术数字化、OTC 患者运营、中医药品牌数字化、医药数据合规风控、AI 医疗工具实践等细分方向，满足不同赛道从业者的深度交流需求。会场序厅品牌展区集中展示医药数字化 SaaS 平台、医学内容服务、AI 数字人、智能随访系统等创新产品，搭建供需对接桥梁。现场还同步开展年度奖项颁发，表彰医药数字营销领域优秀实践案例与创新服务商。
+本次论坛同步开启线上直播通道，打破地域限制，为行业同仁提供线上观学渠道。主办方京东健康表示，将持续依托平台生态与 AI 能力，在合规框架下持续打磨医药数字化服务，联动产业链伙伴，共同构建安全、高效、可持续的医药数字营销新生态，助力医药产业高质量发展。
+京东健康是京东集团旗下专注于大健康产业的平台，依托京东成熟供应链、数字技术与线上线下服务网络，覆盖药品零售、互联网医疗、药企数字化服务等板块。面向医药产业端，京东健康持续打造合规数字化工具与全链路营销方案，以 AI 技术赋能学术推广、患者管理、新药上市等场景，搭建医药产业链沟通对接平台，在严格遵守医疗监管规则的前提下，推动医药行业数字化、高质量发展。
+场地供应商：思贝思（SPACE） www.360space.cn</p>
+      <div class="meta">北京 · 京东 · 10-21</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/The-6th-China-Pharmaceutical-Digital-Marketing-BJ-2026-10-26" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/bcbcc226842d4328952dce228a668f63.jpg" alt="OPPO Find X10 Series 全球发布会" loading="lazy">
+      <h2>OPPO Find X10 Series 全球发布会</h2>
+      <p class="description">OPPO Find X10 Series 全球发布会由 UNIPLAN 承制，于 2026 年 10 月 21 日在西班牙马略卡岛举办，作为 Find 系列旗舰机型面向全球市场的重磅首发活动，承载着 OPPO 高端影像全球化布局的战略目标。从行业背景来看，全球高端手机市场竞争持续聚焦影像、光学与 AI 计算摄影赛道，OPPO 延续与哈苏的深度联合研发路线，本次发布会以 “真实原生影像” 为核心叙事，借马略卡岛自然光影环境，把产品影像能力和现场环境融为一体，向海外媒体、KOL、区域经销商同步传递新一代 LUMO 原色影像引擎、2 亿像素主摄、一体化雕塑玻璃机身等核心卖点。
+在空间造型与落地制作层面，场地依托滨海自然环境搭建极简克制的主发布舞台，采用低饱和度的浅灰、米白基底，配合柔和渐变光影，呼应哈苏相机经典的北欧设计语言；展区划分主发布区、产品静态体验台、影像样片沉浸式观览区与媒体专访间，展陈道具以轻薄哑光材质为主，弱化冗余装饰，重点突出手机本身的曲面一体造型与镜头模组细节，现场灯光系统模拟自然光变化，还原产品在不同光线条件下的色彩表现，兼顾专业拍摄、媒体取景与观众直观体验。
+活动内容与传播营销形成紧密闭环，发布会主流程完成技术讲解、真机首发、影像创作案例分享，配套真机上手体验、创作者实拍交流，同步面向全球多语种线上直播。线下邀请全球科技媒体、海外影像创作者到场实地体验，产出实拍测评、现场短视频；线上直播覆盖欧洲、东南亚等核心市场，配合海外社交平台话题运营，把发布会现场的空间氛围感、产品影像演示片段转化为可扩散的传播素材，让新品核心卖点快速触达海外消费群体，夯实 OPPO 在全球高端影像手机赛道的品牌认知，为后续区域上市、渠道铺货铺垫声量基础。
+OPPO 是全球智能终端品牌，持续深耕智能手机、影像技术、IoT 生态领域，坚持以影像创新为高端旗舰主线，长期和哈苏开展光学色彩联合研发。Find 系列作为 OPPO 旗舰标杆，专注移动影像、屏幕与性能突破，面向全球高端消费市场。依托全球化研发、海外渠道与创作者生态，OPPO 持续输出兼具设计质感与影像实力的产品，在欧洲、东南亚等市场稳步推进高端化战略。</p>
+      <div class="meta">OPPO · 10-21</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/OPPO-Find-X10-Series-Launch-Event-SP-2026-10-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-10-27
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
