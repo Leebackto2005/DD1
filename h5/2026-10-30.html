@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-10-30</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-10-30 周五</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">16</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/658d8f68783e43e1a0d04e22d21329a3.jpg" alt="gubi x MINISO CHOUCHOU自然系餐厅" loading="lazy">
+      <h2>gubi x MINISO CHOUCHOU自然系餐厅</h2>
+      <p class="description">GUBI × MINISO CHOUCHOU「自然系餐厅」限时体验空间落地上海，作为丹麦经典家居品牌 GUBI 与 MINISO 原创治愈 IP CHOUCHOU 的跨界共创项目，以自然共生为核心命题，将北欧极简家居美学、有机形态设计与 CHOUCHOU 小精灵温柔治愈的自然叙事相融。CHOUCHOU 设定为栖居于城市缝隙、贴近草木的精灵形象，主打松弛、原生、温柔的情绪表达；而 GUBI 深耕北欧现代设计，擅长以有机曲线、天然材质打造静谧日常场景，本次合作跳出常规 IP 快闪零售模式，以餐厅为载体，构建一处可供休憩、用餐、打卡、感受器物与 IP 共生的自然餐食场域。
+整体空间以浅原木、燕麦、苔藓绿为主色调，造型语言提取 GUBI 经典家具的柔和弧面，搭配起伏如草甸、林间小丘的微地形装置，弱化生硬边界；CHOUCHOU 精灵形象不做夸张巨型化，以低饱和度植绒雕塑、小型摆件隐匿于餐台、窗沿与绿植群落之间，划分林间餐食区、GUBI 家具陈列区、CHOUCHOU 灵感角、限定周边零售区四大板块，访客如同走入被精灵栖息的林间小馆。
+制作上大量采用可循环原木板材、水洗微水泥、针织软包、仿真苔藓与柔光漫射灯膜，搭配 GUBI 原版经典座椅、餐桌落地陈设，模块化结构便于快速搭建与拆除，兼顾餐饮业态的消防、卫生规范，温润天然材质、流畅家具曲线与 IP 手作肌理形成层次丰富的触感对话，自然光与漫射灯光交织，弱化商业感，营造松弛的林间氛围感。现场提供限定自然主题餐品与特调，设置 IP 手作体验、设计师分享，联动 CHOUCHOU 新品首发，将用餐转化为沉浸式美学体验。
+活动内容与传播营销深度绑定，柔和治愈的林间餐厅场景高度适配小红书、短视频的治愈向种草，前期释放空间预告、联名大片、餐品剧透蓄水流量，博主、食客产出氛围感 UGC，线上种草引导预约到店打卡用餐，线下体验带动联名周边转化，形成预热引流、到店体验、自发传播、商品转化的闭环。
+项目意义在于打通高端家居、原创潮玩 IP、轻餐饮三种业态，让 GUBI 跳出单纯家具展示，让 CHOUCHOU 脱离毛绒盲盒的单一标签，以自然生活场景传递治愈理念，为大众展示日常家居美学的落地可能性，探索平价原创 IP 与国际经典家居品牌跨界的差异化路径。</p>
+      <div class="meta">上海 · 名创优品 · 10-25~11-21</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Gubi-X-MINISO-CHOUCHOU-Natural-Cuisine-Restaurant-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/092e881f554c42d0a3eb70b6614f20ea.jpg" alt="图拉斯首家线下慢闪店" loading="lazy">
+      <h2>图拉斯首家线下慢闪店</h2>
+      <p class="description">TORRAS 图拉斯首家线下慢闪店落地上海 Gate M 西岸梦中心 L1，10 月 16 日开启试营业、10 月 23 日正式启幕，以滨水启航为核心概念，依托西岸原生港口文脉打造品牌首个线下实体体验据点。作为线上起家的数码配件品牌，图拉斯长期聚焦手机保护壳、磁吸支架、快充、防护膜等移动数码装备，过往传播以电商参数、功能测评为主，本次慢闪跳出单纯产品售卖逻辑，借西岸滨江城市漫游场景，将硬核科技配件转化为可感知的都市出行生活方式载体。
+空间造型提取西岸码头船舱舷窗符号，以品牌标志性亮橙为主视觉，搭配通透玻璃与哑光银金属，大量圆形环窗作为取景框，把江景、西岸工业景致框入室内，划分膜力挑战互动区、磁吸支架体验台、低温快充感官展区、香氛休憩角与限定零售区，整体不做封闭厚重隔断，保持内外视线贯通，呼应滨江开阔松弛的氛围，环形舷窗元素也呼应品牌支架旋转、自由调节的产品特征。
+制作采用轻量化模块化烤漆框架、超白钢化玻璃、柔光漫射灯带，适配商场进场规范与快速拆装的慢闪属性，金属冷感、通透玻璃与高饱和品牌橙形成视觉对冲，在保留科技利落质感的同时弱化冰冷感；展陈摒弃密集堆叠，采用低干涉开放式展台，让访客直接上手感受防摔、磁吸、低温快充等功能，兼顾科技体验与打卡出片需求。现场设置「膜力挑战赛」、真机试玩、香氛感官体验、西岸限定周边派发等内容，打造 Citywalk 途中可停留的停靠站点，把静态陈列转化为趣味互动。
+活动内容和传播营销深度绑定，前置释放舷窗橙色空间预告、功能体验短视频，精准触达数码爱好者、潮流博主与西岸漫游人群；滨江舷窗取景点位天然适配小红书、短视频种草，到场用户产出江景氛围感 UGC，线下真机体验补齐线上无法传递的手感、温控、磁吸反馈，形成线上种草预约、线下沉浸式功能体验、自发内容扩散、产品转化的闭环。
+项目意义在于完成图拉斯从线上数码配件品牌向生活方式品牌的线下落地，跳出参数化传播，用场景叙事建立情感认知，依托西岸潮流地标放大品牌辨识度，为数码 3C 品牌线下体验空间探索兼具科技实证、审美表达与城市在地性的路径。</p>
+      <div class="meta">上海 · 图拉斯 · 10-25~11-21</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/TORRAS-first-offline-slow-flash-store-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/c3cad1ea971e47ca92dbd7a97c3ee9d9.jpg" alt="朗姿留白限时空间" loading="lazy">
+      <h2>朗姿留白限时空间</h2>
+      <p class="description">LANCY FROM25 朗姿「留白限时空间」落地上海愚园路创邑草坪，展期为 10 月 24 日至 11 月 1 日，10 月 25 日闭馆休整，作为品牌承接松弛美学脉络的户外限时项目，延续朗姿面向 25 至 40 岁独立精英女性的优雅时装定位，把东方美学里的留白概念从视觉符号转化为可沉浸式体验的生活主张，回应当代都市人群在密集节奏中寻找喘息、保留自我空间的情绪诉求。
+项目选址愚园路这条兼具老上海人文质感与潮流打卡属性的街区，空间造型以低饱和米白、浅燕麦为主色调，运用流畅柔和的弧形结构，弱化硬质边界，装置线条提取针线、卷尺等制衣元素，呼应时装本源；整体采用开放式轻量模块化搭建，与草坪原生自然环境相融，没有繁复堆砌，以空、简、透气为核心，大面积留白区域留给光影与访客动线，材质上选用哑光布艺、微水泥、原木肌理，克制的材质语言放大面料触感、服饰质感的表达，兼顾户外场地的施工限制与可拆卸、低损耗的制作逻辑，展陈装置可拆分复用，契合可持续策展思路。
+现场设置多维度轻互动板块，包含留白四宫格影像打卡、DIY 帆布包手作、留白手册文字书写体验，配套限定云朵包挂、留白下午茶与明星专属福利，引导访客从观看转向自我表达，将品牌牦牛绒、针织等核心面料系列融入场景叙事，让时装不止是单品，而是松弛生活方式的载体。
+活动内容与传播链路深度咬合，愚园路原生街区氛围、极简干净的留白场景天然适配小红书、短视频平台的图文种草，代言人王楚然到场内容、手作体验片段、氛围感打卡素材前置释放，线上话题蓄水预约，线下访客产出 UGC 内容回流扩散，形成 “线上种草预约 — 到场沉浸式体验打卡 — 自发内容传播 — 引导品牌系列转化” 的完整闭环。
+项目意义在于跳出时装快闪重陈列、重销售的传统范式，以留白美学搭建情绪共鸣场域，打通东方审美、时装质感与都市女性精神需求，持续夯实 LANCY FROM25 高级、松弛、年轻的品牌资产。</p>
+      <div class="meta">上海 · 朗姿 · 10-24~11-01</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LANCY-Blank-Space-Popup-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/0e8a53d15bec48ed83c510941b0404c1.jpg" alt="译依 YIYI 译路繁花上海站" loading="lazy">
+      <h2>译依 YIYI 译路繁花上海站</h2>
+      <p class="description">译依 YIYI「译路繁花」上海站限时美学展落地上海高端精品空间，作为品牌年度巡展的核心一站，承接品牌六周年「时光序章」的长期主义美学脉络，延续译依深耕珍稀羊绒、驼绒等顶奢面料，融合东方雅致底蕴与欧洲精工的设计内核，以 “繁花” 隐喻女性生命不同阶段的舒展姿态，把面料叙事、成衣与高级珠宝置于同一场域共生呈现。
+项目空间以低饱和度米杏、雾金为主色调，提取花枝舒展的柔和曲线作为基础造型语言，摒弃繁复堆砌，以半透纱幔、层叠弧形展墙模拟花簇自然生长的动线，划分面料溯源馆、成衣造型展区、YIYITREASURE 珠宝珍藏厅、私享品鉴沙龙四大板块；展陈造型弱化强商业感，把 Loro Piana、Colombo 等珍稀面料样本与成衣并置，让访客直观触摸羊绒、羊驼绒的原生肌理。
+制作上采用模块化弧形烤漆结构、柔光漫反射灯膜与可回收纱质软装置，适配高端私展静谧克制的氛围，结构轻量化、拆装低损耗，兼顾场地保护与可持续策展，哑光金属细框、玉石质感装饰件与柔软珍稀面料形成冷暖材质对冲，以克制的光影烘托面料光泽与珠宝火彩，动线迂回舒缓，适配高端客群漫游式品鉴节奏。现场配套设计师分享、面料工坊、一对一穿搭私定、限定花艺伴手礼，设置 VIP 私享晚宴，邀请品牌代言人董璇到场，将静态陈列升级为深度美学社交场域。
+活动内容与传播营销深度咬合，前置释放代言人大片、面料工艺短片、空间美学预告，精准触达高净值客群与时尚垂类博主；现场氛围感雅致场景适配小红书、短视频质感种草，VIP 品鉴、珠宝特写、面料细节素材持续产出，线下私域体验沉淀口碑，线上内容引流预约，形成预热蓄水、到场品鉴、圈层自发分享、私定转化的闭环。
+项目意义不止新品陈列，而是搭建东方高阶女装的沉浸式质感场，打通面料源头、成衣设计、高级珠宝的完整品牌叙事，传递从容自洽的当代女性美学，夯实译依作为本土高端奢雅女装品牌的资产，持续向国际买手与高端客群传递中国设计师品牌兼具东方内核与全球顶级面料工艺的差异化价值。</p>
+      <div class="meta">上海 · 译依 YIYI · 10-23~10-24</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/YIYI-s-translation-LUXURIOUS-FLOWERS-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/6790bd690c0b45f1aef4cb0e5dfa3edf.jpg" alt="Calvin Klein「Feel the Fit」丹宁之境上海限时展" loading="lazy">
+      <h2>Calvin Klein「Feel the Fit」丹宁之境上海限时展</h2>
+      <p class="description">Calvin Klein「Feel the Fit」丹宁之境上海限时展
+Calvin Klein「Feel the Fit」丹宁之境上海限时展落地 Gate M 西岸梦中心筒仓，启幕派对定于 10 月 22 日，公众开放周期为 10 月 23 日至 11 月 5 日，是品牌 2026 秋季丹宁广告主题的线下实体延伸，延续 Calvin Klein 自上世纪 70 年代奠定的丹宁美学根基，聚焦版型、贴合度与身体表达，重新诠释经典牛仔 “适配不同身形” 的内核。
+项目依托西岸标志性圆柱形工业筒仓原生结构做载体，不做封闭化包裹，以靛蓝色丹宁面料层叠缠绕筒仓外立面，搭配放大版皮标、缝线等牛仔标志性符号，将服装细节建筑化；内部顺着筒仓环形动线划分广告回廊、品牌丹宁档案陈列区、明星同款造型展区、沉浸式试穿空间与丹宁手作工坊，陈列 JENNIE、Jung Kook、MINGYU 演绎的定制丹宁造型，同时展出 90 复刻直筒、阔腿、高腰微喇等多元裤型。
+制作上采用轻量化柔性布艺装置、哑光烤漆展架与可控轮廓灯光，适配筒仓原有承重、消防与进场限制，模块化展陈可快速拆装，面料装置兼顾视觉张力与安全可拆除要求，工业粗粝的水泥肌理、筒仓圆弧曲面与柔软丹宁布料形成强烈材质反差，以极简克制的视觉语言回归品牌标志性的性感、松弛、忠于身体的设计主张。现场除单品观赏、试穿体验之外，配套丹宁改造手作、限定特调，启幕夜集结艺人嘉宾与音乐人演出，把静态展览转化为氛围感潮流派对。
+活动内容与传播营销深度绑定，筒仓外部巨型靛蓝装置本身即是天然打卡地标，前置释放明星造型、空间预告蓄水线上话题，小红书、短视频平台适配强视觉的环形空间与牛仔质感拍摄，到场 KOL、访客产出 UGC 内容持续扩散，线下试穿体验承接线上种草，形成线上预约打卡、到场体验、自发分享、系列单品引流转化的完整链路。
+项目意义跳出单纯新品陈列，把 “Feel the Fit” 从一句 slogan 转化为可触摸、可试穿、可共创的体验，回溯品牌丹宁历史资产，强化 Calvin Klein 丹宁以版型为核心、包容多元身形的品牌认知，在西岸艺术语境中完成潮流、建筑、面料文化的融合表达。</p>
+      <div class="meta">上海 · Calvin Klein 卡尔文克莱恩 · 10-23~11-05</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Calvin-Klein-Feel-the-Fit-Denim-World-Exhibition-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/7d22035470aa4c719585d42946dcb927.jpg" alt="HOURGLASS「轻纱入夜」快闪空间（南京）" loading="lazy">
+      <h2>HOURGLASS「轻纱入夜」快闪空间（南京）</h2>
+      <p class="description">HOURGLASS「轻纱入夜」限时快闪空间落地南京德基广场二期 B1 中庭，展期自 2026 年 10 月 23 日至 10 月 28 日，以轻纱小金管唇膏与柔光亮采定制珍藏彩盘两大新品为核心，诠释品牌静奢美妆美学，是品牌静奢概念店同步启幕的配套首发体验项目。项目根植 HOURGLASS 一贯的光影彩妆理念，将 “唇上穿纱、轻然无感” 的柔雾妆效转化为可沉浸式感知的实体场景，跳出常规美妆快闪直白陈列的模式，把妆感特质转化为空间叙事。整体造型以浅粉丝绒面料搭配鎏金线条与柔和背光构建暮色氛围，视觉重心为由 42 枚珠宝质感饰扣组成的垂坠帘幕装置，饰扣融合字母、星座与中国限定纹样，呼应彩盘可自由搭配饰扣、自主定制的产品特性；空间分区清晰，包含产品试妆体验区、主题打卡区、互动沙龙区，材质选用丝绒、哑光烤漆与柔光导光板，依靠漫射光影营造朦胧松弛的入夜氛围感，弱化商业推销感，强化艺术质感。活动周期内，首日设置代言人到场分享妆容的重磅事件，同时开放全色号试色、彩盘饰扣 DIY、限定礼遇兑换等轻互动体验。在营销链路层面，明星到场制造首发流量引爆点，线下高颜值装置适配小红书、抖音的打卡传播，体验者产出的妆效实拍、空间氛围感素材反向反哺线上种草，打通线下触感试妆与线上内容扩散的闭环。项目意义在于依托德基高端客群基底，在南京市场落地品牌静奢定位，直观传递轻纱小金管透气柔焦的差异化质地；快闪作为短期高密度的品牌叙事窗口，承接新品上市节奏，强化 HOURGLASS 不止是彩妆、更是兼具珠宝质感与光影美学的奢妆品牌认知，完成高端美妆在华东重点城市的审美渗透，为同期开业的线下门店持续引流蓄水。
+HOURGLASS2004 年由 Carisa Janes 创立，定位高端静奢彩妆，2020 年完成全纯素配方转型，坚持零动物实验，以光影粉体技术、珠宝级精致包装著称。品牌摒弃浓妆逻辑，主打贴合原生肤质的通透柔光妆效，代表性产品线包含 Ambient Lighting 光影蜜粉、定制彩盘、小金管唇膏，把彩妆作为修饰气质的配饰，在全球轻奢美妆赛道形成辨识度极高的极简高级风格。</p>
+      <div class="meta">南京 · HOURGLASS · 10-23~10-28</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/HOURGLASS-SHEER-VEIL-AT-DUSK-POPUP-NJ-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-7">
+      <img class="cover" src="https://res.onsiteclub.com/13a87a91bb174ef999d82ea605fe74ba.png" alt="丝芙兰玩妆节" loading="lazy">
+      <h2>丝芙兰玩妆节</h2>
+      <p class="description">2026 SEPHORiA 丝芙兰玩妆节以 “玩妆大都会” 为主题落地上海张园，活动周期为 10 月 23 日至 25 日，是 SEPHORiA 连续第四年登陆上海、首次落址张园石库门建筑群的年度美妆盛典，也是丝芙兰 “玩妆乐园” 体验生态中最高规格的线下 IP，承接往届积累的全网声量基础，完成从单点快闪到街区式沉浸式大都会的迭代升级。
+项目依托张园原生石库门里弄肌理，没有割裂历史建筑风貌，而是以彩色潮流视觉装置、巨型美妆符号雕塑、品牌模块化展亭植入纵横街巷，划分七大主题街区，其中特设 “玩妆东方集” 板块，集结 20 余个本土美妆品牌，新旧视觉碰撞形成极具辨识度的场域语言；制作上采用轻量化可拆装展陈结构，兼顾历史保护建筑的进场限制与环保复用需求，软膜、烤漆造型、亚克力道具与石库门青砖、雕花门窗形成材质反差，保留里弄漫游式天然动线，让参观者以 “玩妆居民” 的身份穿行体验。
+现场配套 60 余个全球美妆品牌展位、40 余场专业美妆大师课，创新推出 “玩妆币” 串联全场景互动打卡，叠加明星、彩妆大师与头部美妆 KOL 到场分享，打通试妆、趋势体验、限定礼遇、即时选购的完整链路。活动内容与传播营销深度绑定，线下里弄打卡点位天然适配小红书、短视频平台的图文种草，现场嘉宾内容、大师课片段同步线上分发，线下体验反哺 UGC 产出，线上话题引流预约到场，形成 “预约到场 — 沉浸式打卡 — 内容自发传播 — 电商转化” 的闭环。
+项目意义在于将美妆消费转化为文化社交事件，把国际美妆潮流嵌入上海城市历史地标，打破美妆快闪同质化的同时，扶持本土美妆力量，持续夯实 SEPHORiA 作为国内标杆美妆盛事的品牌资产，传递自由玩妆、表达自我的品牌主张。</p>
+      <div class="meta">上海 · SEPHORA 丝芙兰 · 10-23~10-25</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Sephora-Makeup-Festival-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-8">
+      <img class="cover" src="https://res.onsiteclub.com/091e925e15344946a138e027c2e2d364.jpg" alt="Audi x Garmin 城市快闪（成都）" loading="lazy">
+      <h2>Audi x Garmin 城市快闪（成都）</h2>
+      <p class="description">Audi x Garmin「向上由我创」城市快闪落地成都华熙 LIVE・528，展期自 2026 年 10 月 23 日至 10 月 25 日，是奥迪 e-tron 纯电系列与专业运动科技品牌 Garmin 佳明的跨界联动体验站，打通高端电动出行、户外运动、生理健康监测两大科技赛道，跳出常规车企静态车展的范式，以 “进取突破自我” 为共同叙事主线，把车辆四驱性能、电动补能逻辑和运动生理数据感知转化为可参与的户外挑战场景。空间依托华熙 LIVE 文体活力街区的开放属性，采用模块化户外组团布局，延续奥迪简约科技的黑白灰基底，点缀 Garmin 标志性橙红；核心装置为 37° 高难度 e-tron 爬坡台，搭配 quattro 攀岩挑战区、蓄能健身互动区、产品静展与穿戴体验区，结构以高强度防滑坡道、穿孔金属板、线性灯带搭建，兼顾户外安全、夜间亮化与快速拆装巡展需求，将 e-tron 四驱抓地力、能量续航与 Garmin 心率、体能监测算法做视觉化关联，让 “蓄能” 成为出行与运动共通的核心概念。活动周期内，到场参与者可体验 Q6L e-tron 爬坡试驾、攀岩挑战、体能蓄能游戏，佩戴 Garmin 腕表实时采集心率、体能数据，个人运动能量值汇聚转化为车辆续航进度可视化画面，同时开放车型品鉴、腕表试戴、户外爱好者沙龙、联名周边兑换等内容，弱化硬销售宣讲，强化科技体验与社群互动。在传播营销链路中，高坡度爬坡装置自带强视觉冲击，适配汽车垂类博主、户外运动达人产出短视频内容；华熙 LIVE 聚集大量热爱运动、露营、户外生活的年轻客群，精准匹配合作双方目标圈层；成都站作为西南重要节点，承接全国巡展节奏，线下沉浸式挑战素材回流抖音、小红书、户外社群，形成 “场景种草 — 现场体验 — 圈层扩散” 的闭环。项目意义在于，本次跨界跳出简单联名曝光，挖掘奥迪与 Garmin“持续突破、数据驱动、探索边界” 的共识，在西南核心城市传递 e-tron 时代 quattro 技术传承，将奥迪从交通工具品牌延伸至户外探索生活方式载体；借助 Garmin 专业运动科技的信任背书，触达传统豪华汽车难以渗透的户外、越野、跑步社群，为纯电车型吸纳新类型潜在用户，构建科技、运动、探索一体化的品牌生态叙事。
+AUDI 奥迪 1909 年诞生于德国，隶属于大众集团，四环标识源自早期四家车企合并，quattro 四驱、灯光科技、底盘调校是核心技术标签，e-tron 纯电系列代表品牌电动化转型主线，面向追求性能、科技感与出行生活方式的用户。Garmin 佳明 1989 年创立于美国，以 GPS 导航、运动生理算法见长，主打全天候健康监测、户外导航穿戴设备，Fenix 等系列是户外、越野跑圈层标杆，主张 “Beat Yesterday 挑战昨天的你”，和奥迪进取精神高度契合。</p>
+      <div class="meta">成都 · Audi 奥迪 · 10-23~10-25</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/AUDI-GARMIN-POPUP-CD-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-9">
+      <img class="cover" src="https://res.onsiteclub.com/94d2c6ce685b4bc7a7511f5aab8578b4.jpg" alt="CANALI「Under the Surface 表象之下，方见真章」主题快闪空间" loading="lazy">
+      <h2>CANALI「Under the Surface 表象之下，方见真章」主题快闪空间</h2>
+      <p class="description">CANALI「Under the Surface 表象之下，方见真章」主题快闪空间
+CANALI「Under the Surface 表象之下，方见真章」主题快闪空间落地北京 SKP 一层中庭，活动单日限定开启于 2026 年 10 月 23 日，属于品牌全球巡回工艺概念展的北京站，以意式精裁背后的隐藏工艺内核作为叙事主线，跳出传统男装静态成衣陈列逻辑，把西装夹克两百余道制衣工序转化为可沉浸式参观的叙事型空间。空间造型采用克制内敛的低奢调性，整体以温润大地色系为主，主视觉结构为通透框架式展廊，融合中国竹编艺术家合作装置、面料剖面样本墙、工艺分镜影像屏与成衣静展模块，将面料内里衬层、肩垫结构、手工纳缝等肉眼不易察觉的细节放大可视化；空间划分成衣陈列区、工艺拆解展区、影像叙事区与艺术对话区，材质以哑光木饰面、柔和肌理地毯、半透隔断与纤细金属展架为主，依靠均匀漫射光影弱化商业感，突出面料肌理与手工痕迹，模块化搭建方式兼顾高端质感、安装效率与单日活动的落地需求。活动当日邀请品牌高层、艺人嘉宾到场，设置工艺导览、艺术家对谈、秋冬新品静态鉴赏等内容，以线下深度体验替代直白促销。在传播营销逻辑上，单日重磅活动模式集中引爆声量，艺人到场、工艺美学内容适配男士时尚媒体、小红书、视频号的精致内容赛道，现场产出的工艺细节影像、空间氛围感大片、嘉宾采访素材形成权威内容源；依托 SKP 高净值男性客群优势，线下精准触达成熟精英消费群体，线下体验传递 “不止廓形，更重内里工艺” 的品牌主张，线上专业向内容持续沉淀品牌口碑，形成高端男装少见的工艺向传播闭环。项目意义在于，区别于奢侈男装常规上新快闪，本次快闪以工艺艺术展的形态重塑认知，传递 CANALI 九十余年家族制衣的匠心根基，完成品牌从 “好看西装” 到 “考究精裁体系” 的认知升级；作为全球巡展首站，北京站承担国内市场叙事锚点的作用，为后续米兰、纽约等站点预热，巩固品牌在国内高端男士正装与休闲精裁赛道的差异化定位。
+CANALI 创立于 1934 年，意大利三代家族独立运营的奢华男装精裁品牌，总部位于米兰近郊，坚持意大利本土自有工坊生产，以高舒适度、活动自在的意式剪裁闻名，摒弃僵硬刻板正装范式。产品线覆盖正装西服、休闲夹克、大衣、配饰等全场景男士衣橱，坚守手工缝制传统，同时持续探索可持续面料与现代化版型，是全球高端精裁男装的标杆品牌，长期面向追求低调质感、注重内里工艺的精英男士。</p>
+      <div class="meta">CANALI 康纳利 · 10-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/CANALI-UNDER-THE-SURFACE-POPUP-BJ-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-10">
+      <img class="cover" src="https://res.onsiteclub.com/35b8b7dbd1b24664bb20b7154317aa4a.jpg" alt="2026VOGUE时尚之力盛会" loading="lazy">
+      <h2>2026VOGUE时尚之力盛会</h2>
+      <p class="description">2026 VOGUE 时尚之力盛会（Forces of Fashion）落地苏州，于 10 月 23 日正式举办，作为《VOGUE 服饰与美容》年度旗舰行业盛典，延续该 IP 集结设计师、艺人、创作者、行业决策者的传统，本届以 “快乐，一种富有韧性的创造力” 为内核，将当代时尚叙事嵌入江南古典园林的东方意境之中，探讨创意、个体状态与行业可持续发展之间的关联，跳出单一颁奖晚会的范式，融合行业论坛、创意对话、绝色红毯、VOGUE Ball 沉浸式晚宴、交响现场演出多重板块，搭建国内时尚产业的思想交流与文化展示平台。
+项目依托苏州古典园林空间基底，不破坏原有园林格局，以低介入式装置做场景转译，主视觉采用柔和渐变的亮色体系，呼应 “快乐能量” 主题；红毯通道、论坛沙龙区、晚宴主舞台、子弹时间互动区散落布局于园林水廊、庭院与厅堂之间，借由水面倒影、月洞框景打造移步换景的观看节奏，将园林借景、留白的造园逻辑转化为时尚场域语言。
+制作层面选用轻量化可拆装哑光烤漆结构、半透渐变纱幕、可编程动态光带与高保真声学系统，兼顾文保场地严苛的进场、承重与夜间照明规范，装置体量克制，以软质光影、织物装置为主，硬质造型尽量依附原有建筑轮廓，金属细框、柔光背板和园林里的假山、池水、古木形成材质对冲，在古典空间里实现现代时尚氛围，同时保障红毯拍摄、直播、舞台演出的专业影像标准。
+现场内容覆盖设计师圆桌对话、创意趋势分享、交响序曲表演、红毯造型亮相、360° 子弹时间影像互动、晚宴沉浸式体验，汇聚本土新锐设计师、国际品牌创意总监、演员运动员等多元嘉宾，把行业思辨、明星文化、艺术表演融为一体。
+活动内容与传播营销深度咬合，前置释放嘉宾预告、主题大片、红毯直播预约蓄水全网热度，园林框景、水映红毯、氛围感晚宴场景天然适配小红书、短视频平台内容传播；红毯高光、论坛金句、子弹时间互动素材持续产出 UGC，官方直播、媒体专题同步分发，线上话题引流预约，线下独特的江南园林时尚场景持续反哺社交传播，形成预热蓄水、到场见证、全网扩散、文化话题沉淀的完整闭环。
+项目意义在于把顶级时尚盛典从一线城市商业场馆迁移至江南文化地标，完成国际时尚话语与东方古典美学的对话，重新定义时尚之力不止于流量与商业，更来自松弛、坚韧、持续生长的创意能量，持续夯实 VOGUE 作为国内时尚文化引领者的 IP 价值，为本土设计师、创意产业提供面向公众发声的高端平台。</p>
+      <div class="meta">苏州 · VOGUE 服饰与美容 · 10-23</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/2026-VOGUE-Fashion-Power-Summit-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-11">
+      <img class="cover" src="https://res.onsiteclub.com/8dae42fe730a42b7903461e82904098f.jpg" alt="Tatler Best Asia Pacific 2026" loading="lazy">
+      <h2>Tatler Best Asia Pacific 2026</h2>
+      <p class="description">Tatler Best Asia Pacific 2026 落地上海，活动周期为 10 月 20 日至 24 日，是 Tatler Asia 第三届亚太顶级文旅 hospitality 评选盛典，主颁奖礼于 10 月 22 日在上海衍园举办，面向亚太酒店、餐厅、酒吧行业，今年首次增设邮轮品类榜单，一次性发布 Best100 酒店、Best100 餐厅、Best100 酒吧及 Best-in-Class 单项荣誉，集结超 600 位亚太餐饮、酒店主理人、主厨、行业决策者与生活方式意见领袖，构建行业交流与权威表彰的顶级平台。
+项目整体由主颁奖晚宴、Tatler Best Talks 行业论坛、全城联动 Tatler Best Takeover 主厨联名快闪餐酒合作三大板块构成，空间造型以黑金为主视觉基调，融合典雅的英式轻奢与东方雅致质感，主舞台采用纵向延伸的阶梯式结构，巨型烫金 BEST 标识作为视觉核心，搭配低暗环境光与轮廓线性灯，弱化多余装饰，把焦点留给荣誉揭晓瞬间；签到与合影区使用哑光黑背板、金属蚀刻线条与定制奖牌装置，材质上选用拉丝不锈钢、烤漆、绒面软包与可控专业光影系统，兼顾晚宴庄重仪式感与影像出片需求，模块化结构可快速拆分搭建，适配高端私宴场地进场与撤场要求，论坛区则转为通透简约的沙龙布局，弱化舞台高差，营造平等对话氛围，全城联动餐酒体验不设统一固定空间，依托上海多家获奖门店落地限定客座主厨菜单与特调，形成分布式城市场域。
+现场内容与传播营销深度咬合，前期线上释放入围名单、城市客座餐券预约，吸引行业人群与高端食客蓄水；颁奖现场荣誉名单、主厨访谈、高光瞬间同步分发至 Tatler 自有媒体矩阵，获奖品牌自主转发榜单内容，KOL 深度体验联名餐酒并产出探店内容，线下仪式内容持续反哺线上话题热度，榜单本身成为可长期沉淀、反复引用的行业权威内容资产，形成预约参与 — 现场见证 — 榜单扩散 — 到店体验转化的完整链路。
+项目意义在于搭建亚太高端服务业统一评价标尺，以中立专业视角记录亚太餐饮与奢华旅居的迭代，推动区域内主厨、酒店品牌交流互通，巩固 Tatler 在亚太奢华生活方式领域的权威话语权，也以上海作为枢纽，向外传递国内高端餐饮、精品酒店的发展实力。</p>
+      <div class="meta">上海 · TATLER · 10-22</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Tatler-Best-Asia-Pacific-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-12">
+      <img class="cover" src="https://res.onsiteclub.com/1a5c8254d0b741d8a4f46143daa87592.jpg" alt="ONLY DOME 限时快闪（广州）" loading="lazy">
+      <h2>ONLY DOME 限时快闪（广州）</h2>
+      <p class="description">ONLY DOME 限时快闪落地广州正佳广场，展期自 2026 年 10 月 21 日至 11 月 22 日，是女装品牌 ONLY 以 DOME 穹顶为核心视觉符号打造的沉浸式主题空间，承载品牌先锋都市女装系列上新，以 “穹顶之下，自成风格” 作为叙事主线。项目依托 ONLY 长期面向年轻都市女性的定位，跳出常规服装快闪平铺陈列的模式，将 DOME 穹顶结构作为空间骨架，把服装穿搭的自我表达转化为包裹式的建筑化场景。空间造型以几何网格穹顶为主体，通透半透膜搭配金属细框架构筑轻盈、未来感的球形舱体，穹顶内部搭载分层柔光系统，随着时段切换色温，模拟晨昏光影变化；内部划分主题穿搭陈列区、造型试穿区、自拍光影打卡舱、互动兑换区，材质以拉丝金属、半透纱膜与哑光白色饰面为主，结构模块化搭建，便于快速组装与拆除，兼顾落地效率与视觉整体性，契合快闪短期落地、高辨识度的制作需求。活动周期内设置造型顾问搭配服务、穹顶光影打卡、限定周边派发、穿搭征集等内容，鼓励消费者试穿新品、拍摄氛围感穿搭大片。在传播营销逻辑上，球形穹顶本身具备极强的画面适配度，天然适配小红书、抖音短视频传播，线下到店用户产出的穿搭与空间素材持续向外扩散；正佳广场作为广州流量型综合购物中心，客群以年轻潮流消费群体为主，为快闪提供稳定自然客流，线下体验承接线上种草，形成 “线上预热引流、线下体验转化、UGC 内容反哺传播” 的闭环。项目意义在于，借助 DOME 穹顶这个强记忆点装置，重塑 ONLY 年轻化、先锋化的品牌形象，不再仅仅作为基础女装供给，而是打造可以停留、体验、社交的时尚据点；长达一个月的展期，也给予品牌充分时间完成新品系列深度曝光，在华南核心城市持续沉淀品牌潮流标签，拉近品牌与 Z 世代消费者之间的距离。
+ONLY 隶属于 Bestseller 绫致集团，1995 年诞生于丹麦，主打都市先锋女装，面向独立、追求个性表达的年轻女性。品牌风格兼具利落通勤感与潮流街头气质，持续迭代版型、色彩与面料，兼顾实穿性与时髦度，产品线覆盖日常穿搭、轻礼服、牛仔系列等，长期以线下门店、主题快闪联动社交平台内容营销的方式，在国内女装市场保持高活跃度，是国内认知度较高的北欧时尚女装品牌。</p>
+      <div class="meta">广州 · ONLY · 10-21~11-22</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/ONLY-DOME-POPUP-GZ-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-13">
+      <img class="cover" src="https://res.onsiteclub.com/c85ac51b69b54ecf97a39720c150676e.jpg" alt="AUDI 热爱嘉年华·武汉站" loading="lazy">
+      <h2>AUDI 热爱嘉年华·武汉站</h2>
+      <p class="description">AUDI 热爱嘉年华・武汉站落地武汉新天地广场，展期自 2026 年 10 月 21 日至 10 月 25 日，属于上汽奥迪全国城市巡展中的一站，以 “行于心动间” 为主题，跳出传统车企静态车展、硬推车型的模式，将 quattro 四驱传承、新能源电动产品、汽车生活方式融合为开放式城市聚场，打造面向车主、汽车爱好者与城市年轻群体的轻嘉年华体验。项目依托新天地开放式街区的松弛氛围，采用模块化组团式布局，主视觉延续品牌极简高级的黑白基底搭配电光紫点缀，空间以多个独立功能盒子串联而成，包含历史胶囊展区、悦享客厅、视界工坊、quattro 全域 RC 挑战区、AUDI × BOSE 声效体验区、热爱集市与聚享咖啡休憩区；造型以通透穿孔板、弧形框架、柔光灯带打造轻盈现代的展馆体块，兼顾户外街区通风、人流疏导与夜间亮化效果，组装可拆卸结构适配短期巡展、多城市复制落地的制作需求，把奥迪从工业机械、参数性能的形象转化为可沉浸游玩的生活场景。活动周期内，现场设置新车静态品鉴，重点展出 E7X、E5 Sportback 电动车型，同步开放 4D 公路沉浸体验、RC 遥控车赛道挑战、BOSE 定制音频互动、车主沙龙、打卡集章兑换周边等多元内容，弱化销售宣讲，强化游玩、社交、视听体验。在传播营销链路中，开放式街区装置视觉友好，适配汽车垂类博主、本地生活达人产出短视频打卡内容；全国巡展节奏形成长线话题，武汉站承接前序北京站热度，为上海、成都后续站点持续蓄水；新天地自带潮流消费、年轻社交客流，线下体验传递 “不止是座驾，更是热爱生活的载体”，线下实拍、试驾体验、车主故事回流抖音、小红书、汽车社群，形成内容扩散。项目意义在于，这是上汽奥迪转型新能源阶段重要的用户沟通阵地，不再单向输出产品卖点，而是以嘉年华的形式拉近品牌与新生代用户距离，在华中重镇武汉完成电动新品的城市曝光，传递 quattro 技术基因延续至纯电时代的理念，沉淀车主社群，收集区域市场反馈，为奥迪电动化产品矩阵在华中市场构建有温度、有圈层感的品牌叙事。
+AUDI 奥迪，隶属于大众汽车集团，1909 年诞生于德国，四环标识象征早期四家车企合并，以 quattro 四驱系统、灯光科技、先锋底盘调校享誉全球。上汽奥迪作为国内重要业务板块，聚焦高端豪华纯电与燃油车型，兼顾性能、舒适与智能座舱，持续面向新时代消费者打造人车共生的出行生活方式，在豪华汽车市场兼具运动基因与科技标签，车主圈层文化运营是其差异化营销重点。</p>
+      <div class="meta">武汉 · Audi 奥迪 · 10-21~10-25</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/AUDI-LOVE-THE-CARNIVAL-POPUP-WH-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-14">
+      <img class="cover" src="https://res.onsiteclub.com/55df9e4e6ea143278f4a886cc13204bd.jpg" alt="Augustinus Bader华南POP-UP首店" loading="lazy">
+      <h2>Augustinus Bader华南POP-UP首店</h2>
+      <p class="description">Augustinus Bader 奥古斯汀巴德华南 POP-UP 首店落地深圳湾万象城 A 区 B1 南中庭，启幕活动定于 2026 年 10 月 21 日，作为品牌正式布局华南市场的首发触点，围绕品牌核心专利 TFC8® 细胞修护科技构建奢护体验空间，跳出普通美妆快闪以产品陈列、促销转化为主的模式，把再生医学护肤的科研内核转化为克制沉静的静奢护肤场景。空间造型遵循品牌标志性蓝金视觉体系，采用通透方框式围合结构，铜棕金属框架搭配静谧深海蓝地台，半透纱质隔断划分区域，弱化厚重的店铺边界感；内部设置全线产品陈列区、肌肤面诊体验区、科技理念影像区与护理体验吧台，材质选用拉丝古铜金属、柔光烤漆、低反光镜面与软质布艺，依靠均匀柔和的漫射照明烘托实验室般严谨、舒缓的氛围，模块化框架结构兼顾高端质感、现场安装效率与中庭人流疏导需求，把看不见的细胞修护原理转化为可沉浸式感知的叙事载体。活动当日以首发揭幕、一对一专业肌肤面诊、定制护肤方案、产品上手体验为核心内容，由品牌护肤顾问依据肤质诉求匹配产品，传递 “顺应肌肤原生修护力” 的护肤逻辑。在传播营销链路中，深圳湾万象城聚集华南高净值、关注功效抗老奢护的核心客群，首店首发自带区域节点事件属性，适合高端生活媒体、护肤 KOL 深度测评；空间简约高级的低饱和质感适配小红书、视频号精致护肤赛道，现场产出的科技解读、面诊体验、产品细节素材形成专业向 UGC，打通线上科普种草、线下深度体验、私域长效留存的闭环。项目意义在于，这是品牌进入华南的标志性里程碑，区别于常规美妆渠道铺货，以首站快闪完成品牌心智预埋，向华南消费者清晰建立 “科研再生型高端护肤” 定位，而非单纯贵妇面霜标签；依托深圳辐射粤港澳大湾区，收集区域肤质数据、沉淀客群资产，为后续广州、香港等华南门店布局铺垫市场基础，巩固 Augustinus Bader 在全球功效奢护赛道差异化的科技品牌形象。
+Augustinus Bader（奥古斯汀巴德，简称 AB）由德国再生医学教授 Augustinus Bader 创立，2018 年正式面世，依托教授三十余年干细胞与创面修复研究，核心专利 TFC8® 信号因子复合物，主打唤醒肌肤自我修护、细胞焕新。品牌无香精、清洁配方，以 The Cream、The Rich Cream 王牌面霜出圈，属于科研驱动型静奢护肤，在全球高端抗老护肤圈层认可度极高，区别于传统贵妇护肤，主打临床可验证的修护抗老效果。</p>
+      <div class="meta">Augustinus Bader 奥古斯汀巴德 · 10-21</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/AUGUSTINUS-BADER-POPUP-SZ-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-15">
+      <img class="cover" src="https://res.onsiteclub.com/3268433d44634d2f8c5bfd710eb302ab.jpg" alt="ERDOS&amp;辛芷蕾联名系列限时展" loading="lazy">
+      <h2>ERDOS&amp;辛芷蕾联名系列限时展</h2>
+      <p class="description">ERDOS × 辛芷蕾联名系列限时展落地上海新天地时尚一期户外广场，以《城市目击报告》为叙事主线，是该联名胶囊系列的上海首发策展项目。区别于常规明星代言合作，辛芷蕾以联合设计师身份深度参与创作，将个人生活感悟、松弛又有力量的女性状态注入成衣，融合羊绒、皮革与针织多元材质，以 LL 手钩标识、XZL 撞色纽扣、手绘瓢虫毛毡等专属细节作为系列印记；ERDOS 长期深耕高端羊绒材质，坚持柔软面料承载独立精神，本次展览跳出传统明星快闪的流量陈列模式，在石库门历史街区语境下搭建都市纪实感体验空间，串联起城市漫游、自我表达与羊绒时装的叙事脉络。
+项目依托新天地石库门建筑肌理，划分城市目击影像序厅、联名成衣静态展区、材质触摸实验室、主题打卡电话亭四大板块。空间造型采用克制的低饱和黑、燕麦、深棕主色调，利落方正框架搭配通透半透软膜，复刻都市街角、顶楼、复古电话亭等广告片内的场景片段；巨型纪实海报墙作为视觉核心，硬朗金属展架呼应皮革的利落质感，柔软垂坠纱幔衬出羊绒温润肌理，现代极简装置与石库门红砖、拱窗形成新旧碰撞，把电影感的城市片段转化为可步入的场景。
+在制作层面，展陈主体采用轻量化模块化预制结构，适配户外广场搭建；成衣展台配备定向柔光，清晰呈现羊绒肌理、手钩刺绣、毛毡瓢虫等细微工艺；复古电话亭艺术装置内置互动屏幕，循环播放《城市目击报告》纪实短片，触感体验台陈列原绒、纱线、皮革样块，供访客近距离触摸比对；所有装置兼顾日间自然光观感与夜间氛围照明，预留多机位打卡面适配社交拍摄，同时做好户外防雨防护。
+活动期内，除成衣展陈外，设置主题导览、设计师分享、限定周边兑换，引导访客读懂系列背后的创作故事，把单品展示转化为一场关于当代女性自我表达的对话。传播营销层面，项目依托新天地城市文旅流量，面向都市独立女性、羊绒爱好者、时尚媒体与明星粉丝圈层，以 “联合设计师” 的创作身份为核心传播点，联动时尚博主、生活方式达人到场拍摄纪实感图文短片，线下实景打卡联动小红书、抖音线上扩散，弱化带货促销属性，传递柔软之中自有力量的品牌态度。
+项目意义在于，重构明星联名项目的策展逻辑，不再局限于偶像符号的简单复用，而是将明星创作者视角、个人故事与面料工艺深度绑定，在历史商业街区完成高级羊绒时装的生活化叙事，为本土高端羊绒品牌明星联名线下快闪打造差异化样本。</p>
+      <div class="meta">上海 · 鄂尔多斯 · 10-20~11-08</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/ERDOS-Xin-Zhirui-Collection-Exhibition-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-16">
+      <img class="cover" src="https://res.onsiteclub.com/775e1e8403054e1882940428194c6454.jpg" alt="LU XIANG 陆相上海快闪" loading="lazy">
+      <h2>LU XIANG 陆相上海快闪</h2>
+      <p class="description">LU XIANG 陆相上海快闪落地静安永源路 10 号，于 10 月 17 日对外开放，是品牌参与上海时装周・上海时尚周末的策展型零售空间，作为本土新锐机能户外品牌，陆相跳出欧美户外体系的叙事框架，以中国广袤地貌为创作原点，将丹霞山峦、河谷岩层的自然肌理转化为服饰语言，平衡硬核户外性能与东方地貌美学，探索属于本土语境下的 Gorpcore 风格。
+项目嵌入梧桐街区沿街场地，空间造型提取山峦层叠、岩层褶皱的形态，主色调取自丹霞赭石、岩灰、砂土，弱化规整商业展柜，以起伏错落的斜面装置模拟山地剖面，划分地貌灵感档案区、机能成衣陈列区、面料性能体验台、街区试穿打卡点位四大板块，把山脉等高线、岩层纹理转化为空间线条，让参观者如同穿行于微缩山地景观之中。
+制作上采用模块化可拆装斜向展架、微水泥肌理面板、哑光金属框架与低饱和渐变透光软膜，兼顾沿街场地的进场条件、采光与安全规范，装置体量克制，不破坏永源路街区松弛的梧桐街道氛围；面料样本、冲锋衣硬壳、耐磨裤装与地貌影像并置，访客可直接触摸防水透气、抗撕裂机能面料，将抽象的地貌灵感落地为可感知的服饰材质体验。现场配套地貌灵感分享沙龙、穿搭造型体验、限定单品首发，联动上海时尚周末全城时尚地图，打通街区漫游、试穿选购与设计师交流，打破传统户外店单一售卖模式。
+活动内容与传播营销深度咬合，街区松弛自然的山地装置适配小红书、短视频户外垂类种草，前期依托时装周话题释放丹霞主题系列预告，精准触达户外爱好者、城市山系穿搭圈层；到场博主与访客产出街区氛围感 UGC，线上种草引导街区打卡，线下沉浸式地貌叙事强化品牌记忆，形成线上预热、街区到访、自发分享、单品转化的完整闭环。
+项目意义在于建立本土户外差异化表达，把山水地貌文化注入机能装备，区别于舶来户外语言，借上海时装周街区场景面向全国户外圈层发声，证明户外服饰不只是功能装备，更是承载在地自然审美与文化思考的载体，持续夯实陆相 “源于中国地貌的机能户外” 品牌定位。</p>
+      <div class="meta">上海 · 陆相 · 10-17</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LU-XIANG-Shanghai-pop-up-store-2026-10-30" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-10-30
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
