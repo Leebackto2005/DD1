@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-10-31</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-10-31 周六</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">6</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/57f2372fc6084bf2be7d663660f0e8a9.jpg" alt="周生生「一念·生光」珠宝艺术展与周生生 × Pincle 限定快闪" loading="lazy">
+      <h2>周生生「一念·生光」珠宝艺术展与周生生 × Pincle 限定快闪</h2>
+      <p class="description">周生生「一念·生光」珠宝艺术展与周生生 × Pincle 限定快闪
+周生生「一念·生光」珠宝艺术展于2026年10月28日在上海Yard 200揭幕。解读这个项目，关键不在于它又办了一场高珠展，而在于它试图用一套东方哲学语法，为一家拥有近百年历史的珠宝品牌重新定义“光”的来源。
+背景是双重的：一方面，周生生长期以“周而复始，生生不息”为品牌底色，但这一表述在消费者端往往停留在名字的吉祥寓意上，缺乏可被观看的哲学载体；另一方面，高级珠宝市场的叙事长期被西方宝石学的“稀缺—净度—克拉”框架主导，华人珠宝品牌在高珠领域的话语权，更多建立在渠道与工艺能力上，而非文化阐释权上。「一念·生光」是一次有意识的“阐释权争夺”：它不再从宝石出发，而是从《易经》出发，用六种生命姿态——灵动、突破、兼融、演进、共生、平衡——重新组织高级珠宝的观看顺序。
+空间与造型是这套哲学最直接的翻译。Yard 200的历史建筑没有被改造成白盒子展厅，而是被保留为一个“发光的容器”。启幕时刻，中阮的温润弦音与电子声场交叠，YuYu装置随乐声渐次亮起，金色光迹沿建筑立面游弋，逐层点亮檐角与窗廊，最终汇向建筑中央。这一设计的关键词是“游弋”而非“照亮”：光不是从展柜里向外发射的，而是在建筑的皮肤上流动、蔓延、最终汇聚。六道“念”作为展区线索，将空间切割为六个递进的观看单元，但彼此之间没有硬性的物理隔断，动线保持流动，呼应的是“变化中寻求共生”的叙事基调。陈坤在开幕现场以Weave竹梦作品解读这种空间感受：“每一条线单独看都很简单，交织在一起之后，才形成完整而有秩序的形态”。
+制作角度揭示了展览最容易被忽略的一层自觉。周生生并非没有工艺叙事可讲——YuYu系列运用微镶嵌与CNC高精度加工，品牌本身是De Beers全球看货商之一，钻石筛选遵循金伯利流程。但「一念·生光」选择把这些技术参数压到背景层，让工艺服务于“生命姿态”的意象，而不是反过来让意象成为工艺的插图。Weave竹梦的“柔软却稳定”、YuYu的光影可塑性，都是在制作精度足够之后才成立的空间表达；工艺在这里是前提，不是卖点。
+活动内容与传播营销的关系，呈现出一种值得解读的分层。展览本身是高珠话语的生产现场——品牌代言人陈坤、王安宇，嘉宾胡杏儿、王若琳的到场，为六道“念”提供了人格化的解读入口：陈坤谈“沉静而笃定的光”，王安宇谈“认定方向就一步一步走下去”，王若琳则以《亲密爱人》对接“兼融”展区关于陪伴与守护的叙事。这套内容在时尚与文化媒体中流通，完成的是品牌文化资本积累。而与此同时，周生生在快闪与IP联名层面的策略——包括与生活方式类品牌的限定合作——则承担着另一条路径：用更低门槛、更高频次的触点，把高珠展上被哲学化的“光”，翻译成年轻人可以随手带走的东西。两条路径并不互斥：艺术展负责“升维”，快闪负责“降维触达”，共同服务于同一个问题——当一个以黄金与钻石起家的品牌开始谈论《易经》，它需要让不同圈层的人都能找到一个进入的入口。
+项目意义最终落在一个判断上。「一念·生光」真正完成的事情，不是让周生生“变得艺术”，而是为华人高级珠宝提供了一种不以西方宝石学为唯一坐标的观看方式。当光沿着Yard 200的檐角流动，而不是从展柜射灯中射出，周生生把“光”从宝石的物理属性中抽离出来，重新锚定在观看者的内心状态上。这当然是一种品牌叙事策略，但它同时也是一次真实的文化站位：在一个高珠话语权长期外包的市场里，一家华人品牌选择用自己的经典、自己的哲学、自己的空间语言，来回答“一件珠宝为什么值得被注视”。</p>
+      <div class="meta">上海 · 周生生 · 10-28~11-01</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Chow-Sang-Sang-One-Thought-Light-Arises-2026-10-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/904bedf912e3481393fd5e6c14d0a3ca.jpg" alt="科颜氏保湿之巅限时体验空间" loading="lazy">
+      <h2>科颜氏保湿之巅限时体验空间</h2>
+      <p class="description">科颜氏「保湿之巅」限时体验空间落在上生新所海军俱乐部，2026年10月28日至11月1日开放。这个选址本身就是一个值得解读的选择：一栋1924年建成的西班牙传教风格历史建筑，前身是美国乡村总会健身房与保龄球馆。把一个关于“极寒生存”的叙事放进一栋被城市更新反复软化的遗产建筑里，科颜氏要做的不是复刻珠峰，而是把珠峰“驯化”成一种可步入、可拍照、可带走的都市体验。
+项目背景的张力在于“经典”与“基础”之间的微妙位置。 高保湿面霜诞生于1970年，是科颜氏最具辨识度的单品，但它的身份始终悬在“药妆 heritage”与“平价大碗”之间。在欧莱雅高档化妆品部的增长叙事中，科颜氏高保湿急护霜被列为驱动北亚区增长的明星产品之一，但与此同时，大众线科颜氏在2026年双11开门红中被归入“下滑”阵营。这意味着“保湿之巅”不是一个单纯的新品发布，而是一次为经典单品重新赋值文化溢价的空间行动：它需要让一瓶被消费者当作“干皮救星”甚至“大白罐平替”的面霜，重新看起来像一件有资格占据“巅峰”二字的东西。
+空间与造型的策略因此极为清晰：用“极地”的视觉语法覆盖“日常”的产品身份。 官方传播将体验描述为“亲历昆布极寒冰瀑，挑战洛子壁极风攀登，探觅南坳冰洞遗迹”，并强调“极地氛围感拉满，随手拍都出片”。这里的关键词不是“珠峰”，而是“出片”。海军俱乐部的历史空间被临时改写为一座微缩的极地剧场，昆布冰瀑、洛子壁、南坳冰洞这些真实登山叙事中的地名被提取为场景模块，寒冷被制造成一种可安全消费的沉浸感。科颜氏没有试图让参观者感到不适，恰恰相反，它把“极端”处理成一种审美资源——你站在人造冰瀑前，感受到的不是生存威胁，而是一种精致的、可供分享的凛冽。
+制作角度则揭示了这场空间真正的叙事支点：高保湿面霜的“极地测试史”。 这款产品自2005年起被用于格陵兰首次登峰探险的极端环境测试，此后又经历北极横穿、冰岛与阿拉斯加的验证。核心成分冰河醣蛋白来自南极，其“防冻”特性原本是在极低温度下保护肌肤不结冰、不流失水分的功能性逻辑。“保湿之巅”所做的，是把这套档案从产品页面和百科词条中抽出来，转化成可步入的空间因果：你先在“昆布冰瀑”前感受寒冷，再被告知有一瓶面霜就是为了在这种环境里守住水分而存在。制作在这里不是配方演示，而是把“极端测试”变成一种体验性的证据链。
+活动内容与传播营销的关系，呈现出一种值得注意的倒置。 蔡徐坤作为品牌代言人于10月28日亮相品牌活动，为空间提供了开幕日的流量锚点。但真正驱动空间在社交平台上扩散的，不是明星本身，而是空间被设计成“随手拍都出片”的视觉基础设施。换句话说，“保湿之巅”的传播产品首先是一组可以被拍下来的场景，其次才是一瓶需要被理解的面霜。“保湿”这个功效诉求在传播中反而退到了背景位置——冰川蛋白、角鲨烷、白茅根提取物的科学叙事需要消费者主动去读取，而“我在珠峰脚下”的打卡影像不需要任何解释就能流通。这不是传播的失控，而是一种有意的分工：空间负责制造欲望的视觉素材，产品负责在被带回家之后完成功效的兑现。
+项目意义最终落在一次尺度上的重新校准。 在一个功效护肤话语不断向“修护”“抗老”“屏障医学”攀升的市场里，“保湿”正在被挤压成一个过于基础、甚至不值得单独言说的品类词。科颜氏用一座“保湿之巅”完成的，是把保湿重新锚定在人类身体面对极端环境时最原初的需求上：不是变得更年轻，不是修复得更完美，而是在寒冷中不失去水分。当海军俱乐部的百年木屋架下立起人造冰瀑，科颜氏真正试图贩卖的并不是一次珠峰探险的幻觉，而是一个判断：一瓶面霜的“巅峰”，不在于它比谁更贵或更复杂，而在于它敢把自己放进最不适合皮肤生存的地方，然后证明自己仍然有用。</p>
+      <div class="meta">上海 · Kiehl&#x27;s 科颜氏 · 10-28~11-01</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Kiehls-Summit-of-Hydration-2026-10-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/9cfaa0454d9b40769de10a6fda1ffb4a.jpg" alt="2026 王者荣耀共创之夜 十一周年庆典" loading="lazy">
+      <h2>2026 王者荣耀共创之夜 十一周年庆典</h2>
+      <p class="description">2026年，王者荣耀迎来十一周年。周年庆典「2026 王者荣耀共创之夜」在深圳举办，这是王者荣耀系列活动首次落地深圳，也是腾讯第三次将具有全国影响力的超大型电竞年度活动落地深圳福田（前两次为2025穿越火线IP嘉年华暨职业联赛夏季赛总决赛、「刺激之夜」和平精英2026年度潮流大秀）。舞美设计以「1+1，你我共创」为核心，把十一周年的数字符号、玩家之间的情感连接，以及年度主题「懂你意思」，一起收进整个舞台空间。团队从概念草图起步，经过模型推演与现场一次次调整，用半年时间把图纸做成现场。
+中心舞台由两个「1」和一颗四芒星共同构成。两个「1」既呼应十一周年，也像两条向前延伸的峡谷之路，分别代表「你」和「我」；中央的四芒星取自王者游戏中的星形元素，被赋予「+」的含义，把两条路连接起来。由此，「11」有了「1+1」的另一层读法：你我相遇、并肩同行，共同创造属于自己的王者故事。「懂你意思」在这里被理解为玩家之间无需多言的默契，也是王者与玩家长期陪伴中形成的相互理解。
+空间布局上，粉丝观众席被嵌入舞台的环抱之中，表演动线向观众身边延伸。艺人可以走近玩家，观众的欢呼、合唱与回应也成为舞台画面的一部分。舞台从概念草图、模型推演到现场搭建，方案在一次次调整与磨合中定下来；半年的打磨，让它在灯光与欢呼里从图纸走进现实。
+当晚线下观众约6200人，「你我共创」从设计概念变成近距离互动的现场体验，每一位到场的玩家都参与构成这场周年庆典。活动的影响也落在场馆周边：重点商圈深业上城客流12万，同比增长3%，销售额1200万元，同比增长3%；周边重点酒店住宿2843人，对比活动前增长9%，入住率83.4%，对比活动前提升10个百分点。收官之后，团队用一组从草图、模型、搭建到演出成片的画面，为这半年留下记录——这也是这场周年舞台的一份工作注脚。</p>
+      <div class="meta">深圳 · 王者荣耀 · 10-25</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Honor-of-Kings-Co-Creation-Night-2026-SZ-2026-10-29" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/dd4a1535eb364e9792dd5386452b0e10.jpg" alt="Tiffany 2026 Blue Book 高级珠宝系列 Hidden Garden 花语秘境发布" loading="lazy">
+      <h2>Tiffany 2026 Blue Book 高级珠宝系列 Hidden Garden 花语秘境发布</h2>
+      <p class="description">Tiffany 2026 Blue Book 高级珠宝系列 Hidden Garden 花语秘境发布
+Tiffany Blue Book“花语秘境”（Hidden Garden）并非一场单纯的高级珠宝发布，而是一次关于“自然如何被品牌重新编码”的精密操演。从项目背景看，这是LVMH收购后蒂芙尼持续将品牌向高处推的关键一步：在奢侈品冷周期中，高珠展承担着立天花板、巩固文化定价权的功能。
+系列由Nathalie Verdeille主导，灵感根系却深植于两条历史脉络：让·史隆伯杰的自然主义典藏，以及其挚友邦妮·梅隆的橡树泉花园——那位亲手设计白宫玫瑰园、收藏了史隆伯杰一百四十余件作品的女人。这使得“花语秘境”从诞生起就带有双重遗产叙事：设计的遗产，与收藏的遗产。
+空间与造型是这种叙事最直观的载体。上海露香园的老洋房被改造成一间鼠尾草灰绿色的“临时温室”，浅金格架、编篮、蓝色矢车菊手稿营造出私人花房的氛围。八个展柜的陈列顺序本身就是一次时间旅行：先以梅隆夫人旧藏、后赠予弗吉尼亚美术馆的史隆伯杰古董开篇——1965年的“石上鸟”胸针被置于视觉起点——再过渡到春、夏、秋三季新作。古董与当代并置，让新作不是“被观看”，而是“被接入”一条可追溯的血统。专属时计空间的首次设置，则进一步将珠宝工艺延伸至制表传统，形成品类之间的互文。
+从制作角度看，“花语秘境”的工艺哲学恰恰在于它并不追求“像自然”，而是追求“自然被压进秩序之后反而更清楚”。雏菊花瓣以手工柔软网状结构制作，再由钻石勾出边界，浪漫花语被整理成图腾；棕榈叠影以paillonné珐琅工艺叠搭色彩；金缕织梦用铂金与18K黄金编织出纤维的受力感。这是一种高度自觉的“人造自然”：每一片叶子、每一只蝴蝶的振翅，都是被计算过的雕塑。
+活动内容与传播营销的关系在此呈现出一种值得解读的错位。高珠展本身的传播逻辑是“遗产—工艺—稀缺性”的闭环，但真正让“花语秘境”在社交平台上获得超出展厅的流动性的，是两条与之平行、甚至部分脱离品牌预设的路径：其一是群星晚宴制造的“颜狗天堂”式视觉事件，章子怡、唐嫣、言承旭等人的同框与互动一夜之间刷屏，将珠宝从展柜中抽离，嵌入大众对“美”与“关系”的即时消费；其二是小红书上消费者自发创造的“玄学线”——Tiffany被谐音为“踢翻你”，高珠展上是艺术，社交媒体上是职场护身符，“拼团拆解重制”的玩法传播效率甚至超过品牌任何一支高珠广告。
+品牌讲述传承，消费者讲述生存；高珠展提供的是梦的素材，而梦的流通方式已经部分脱离了品牌的控制。 “花语秘境”的项目意义，正在于它同时暴露并利用了这种张力。它用一座“可佩戴的微缩花园”回应高级珠宝市场同质化堆砌克拉数的痛点，用史隆伯杰—梅隆的双重遗产为每一件作品注入可被收藏的“出处”，同时以露香园的在地性完成一次文化转译。而它真正提出的问题或许是：当消费者已经开始用自己的语言重写品牌故事，一场高珠展的终极产品，究竟是那些不可复制的宝石，还是那些在展厅之外持续流通的、关于“蒂芙尼是什么”的叙事碎片。</p>
+      <div class="meta">上海 · Tiffany &amp; Co. 蒂芙尼 · 10-24</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Tiffany-Blue-Book-Hidden-Garden-2026-10-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-5">
+      <img class="cover" src="https://res.onsiteclub.com/6cbf866532a74dda87537501cc7620bb.jpg" alt="THEBALVENIE苏格兰百富「淬炼新生·时间之境」限时体验空间" loading="lazy">
+      <h2>THEBALVENIE苏格兰百富「淬炼新生·时间之境」限时体验空间</h2>
+      <p class="description">THEBALVENIE苏格兰百富「淬炼新生·时间之境」限时体验空间
+百富这个项目值得解读的地方，不在于它又做了一场快闪，而在于它把品牌最核心的资产——“笨拙的手工”——放进了一个可以被观看、被触摸、被喝掉的空间里。背景是双重的：百富至今仍坚持自种大麦、铺地发芽、专属桶匠与铜匠，是苏格兰极少数没有把“手工”外包给效率的酒厂；与此同时，奢侈品行业正在经历一场“工艺的文化化”，酿造背后的劳动不再只是生产环节，而成为需要被展出、被诠释的文化遗产。百富与丹尼尔·阿尔轩的联名，正是在这两条线的交叉处发生的。
+空间与造型的叙事线索极其明确：铺地发芽。巨鹿路758号的展厅被还原为“八重淬炼”的递进结构，麦田装置与翻麦农具将酒厂车间移入市区，而88年展区则被处理成一场视觉上的“时间沉积”——阿尔轩的「时间遗珍」青铜雕塑以侵蚀与风化的语言让时间可见，88年酒樽隐现于八重层叠景观之中，斑驳铜绿环绕四周。这不是在“展示一瓶老酒”，而是在把时间本身制造成一件可观看的雕塑。
+制作角度揭示了这个项目最诚实的部分：百富没有试图让手工“看起来很美”，而是让它“摸起来很具体”。现场的手工翻麦体验，让参与者亲手触碰一粒麦芽在时间中的转化；1931系列12年以100%自家铺地发芽大麦酿造，波本桶打底、赫雷斯雪莉桶收尾，蜂蜜甜润与麦芽糖的温润饼干感，恰恰是那套费时费力的翻麦工艺在风味上的回声。手工在这里不是修辞，而是一套可以被舌头检验的因果链。
+传播营销的层面呈现出一种值得注意的错位。官方叙事以“五大手工技艺—88年珍藏—艺术联名”为闭环，但真正驱动人群到场和扩散的，是三条更“轻”的动线：免费特调让新手用自己的舌头完成第一次品牌投票，打卡礼遇与麦田装置制造了出片率极高的社交素材，而“全球仅17瓶”的88年则充当了稀缺性的视觉锚点。到场者的反馈也诚实：展览不大，把它当成一间带试饮的品牌限时店，预期就顺了；期待博物馆级大展的，会失望。这种“预期管理”本身，恰恰说明百富清楚这场空间的首要功能不是教育，而是转化。
+项目意义或许正在于此：百富用阿尔轩的“未来考古”去对冲威士忌的“过去考古”，让手工的缓慢不再被感知为效率的缺陷，而被重新编码为一种可收藏的时间厚度。当88年酒液隔着玻璃被观看、当12年的甜润被一杯特调翻译给从未喝过单一麦芽的人，这个只活八天的空间真正完成的事情，是把“时间”从威士忌的年份数字里抽出来，变成一种可以被体验、被拍照、被带走的品牌资产。</p>
+      <div class="meta">上海 · THE BALVENIE 百富 · 10-24~11-01</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/The-Balvenie-Dawn-of-Our-Spirit-2026-10-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-6">
+      <img class="cover" src="https://res.onsiteclub.com/b115ebb53d854694b83017a62337d705.jpg" alt="荣耀WIN2系列新品发布会" loading="lazy">
+      <h2>荣耀WIN2系列新品发布会</h2>
+      <div class="meta">杭州 · 荣耀 · 10-21</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Honor-WIN2-Series-New-Product-Launch-Event-2026-10-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-10-31
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
