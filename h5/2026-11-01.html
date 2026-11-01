@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-11-01</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-11-01 周日</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">4</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/d996a94291704b289fb90bbc7da9f6fd.jpg" alt="「德芯造艺」朗格精密计时展" loading="lazy">
+      <h2>「德芯造艺」朗格精密计时展</h2>
+      <p class="description">品牌：朗格 A. Lange &amp; Söhne｜项目：「德芯造艺」朗格精密计时展｜时间：2026.10.31—11.07（每日 10:00—18:00）｜地点：上海市 外滩源壹号（中山东一路 33 号）
+朗格 A. Lange &amp; Söhne 来自德国萨克森州，做的是精密制表，品牌历史超过 180 年。1990 年代品牌复兴之后，计时成为它核心的一条技术线：1999 年起，朗格持续把计时码表往更复杂的方向推，追针、万年历、陀飞轮这些结构被反复组合。2026 年 10 月 31 日，「德芯造艺」朗格精密计时展在上海外滩源壹号开幕，展期到 11 月 7 日，每天 10 点到 18 点。
+展览以「计时」为主线，五个主题空间按「历史—作品—技术—机芯」的顺序层层展开：从品牌历史的源起与复兴，到卓越计时作品的诞生与背后的探索，再到机械技术的演进，收在机芯之美与精密工艺。这条顺序本身就是一个论证：历史说明为什么要做计时，作品给出做到什么程度，技术解释怎么做，机芯则把工艺摊开给人看。名字里的「德芯造艺」，说的正是这条路径——德国的芯，和围绕它建立的手艺。
+落地在外滩源壹号，一栋有年份的建筑。展陈用三种媒介分工：多媒体交代结构与原理，实物给出比例、重量与打磨，互动体验补上手上的那一步——计时的操作逻辑，按一次，比看十行字更清楚。历史段落用德累斯顿及周边地区的地图与建筑模型，把「萨克森精密制表」放回它的地理原点；作品段落集中陈列 9 枚计时作品，包括 DATOGRAPH 大日历计时、1815 计时、TOURBOGRAPH 陀飞轮追针计时「荣誉勋章」、DATOGRAPH 大日历计时万年历、DATOGRAPH 大日历计时动力储存指示、1815 追针万年历、DATOGRAPH 大日历计时万年历陀飞轮与 TRIPLE SPLIT 三重追针。实物之间留出距离，观众可以逐枚看完。
+展期八天、需要预约，这两个条件决定了它更像一次定向沟通，而不是面向全城的公开活动。对朗格来说，计时不是附属功能，而是品牌在复杂功能领域的技术名片；把 9 枚作品放进同一栋历史建筑，等于把「德国芯」从参数表里拿出来，交给眼睛和手去判断。展览留下的不是一个数字，而是一个可以复述的说法：德芯造艺。对一个客单价高、决策周期长的品类来说，能被复述的说法，比一次热闹更有价值。</p>
+      <div class="meta">上海 · A.Lange&amp;Soehne 朗格 · 10-31~11-07</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/A-Lange-Soehne-Chronograph-Exhibition-Shanghai-2026-10-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/004323fceaf14cb0a598fba8d800a79e.jpg" alt="ECCO「自然有动线」主题限时空间" loading="lazy">
+      <h2>ECCO「自然有动线」主题限时空间</h2>
+      <p class="description">品牌：ECCO 爱步｜项目：ECCO「自然有动线」主题限时空间（BIOM 秋冬成衣系列）｜时间：快闪 2026.10.29—11.03；慢闪 2026.10.29—11.22｜地点：上海市黄浦区 上海新天地
+鞋品牌做成衣，难的从来不是设计，是让人相信它懂身体。ECCO 是丹麦的鞋履与服饰品牌，BIOM 是它做了十七年的一条健步线，2009 年初代上市，讲的是让鞋顺从双脚的自然动作。这条线卖的不是造型，是脚感，而脚感恰恰是屏幕和参数表交代不了的。2026 年秋冬，BIOM 把同一套人体工学逻辑从脚上延到身上，推出成衣系列，并在上海新天地开出 ECCO「自然有动线」主题限时空间（BIOM 秋冬成衣系列）。时间卡在双 11 之前：与其在详情页里解释剪裁，不如让人把衣服和鞋一起穿上，走两步。
+走进空间，先被颜色接住：蓝紫渐变压在金属质感上，如水般延伸的曲线从地面起身、向内收拢，远看是一尾鱼摆尾的瞬间。装置以「自在鱼游」为意象，花瓣与水滴状的曲面围合出场地，中央留一道拱形门洞；水滴形金属挂架从曲面上伸出挂成衣；低矮地台分区摆鞋；花瓣形吊灯悬在上方，几组沙发散在场内。中心是巨型鱼尾装置与水滴造型，把视线收住。
+装置说的其实是产品那句台词。女款「鱼游软壳外套」用多层下摆做出荷叶边，衣摆一动就是鱼尾的流动感；男款「驭风外套」把户外面料收进日常轮廓；两款都配 BIOM 鞋履，鞋服同场试穿。曲线、分割线、荷叶边在装置上是造型，在衣服上是版型，同一套语言换了个尺度。
+这里不是展，是一间没有墙的更衣室。场地是开敞的，四面可进，只用一道拱门给出方向。空间开在街区动线上：路过的人不必先决定「要不要看展」，走进拱门就在场内。三面墙各领一件事：品牌历史墙从 1963 年讲起，摊开工艺与科技的家底；BIOM 展示墙讲动态剪裁与人体工学；明星合影装置让人停下来、举起手机、带走一张图。动线短而顺：先看墙，再在挂杆前挑衣服，往低处取鞋，坐下试穿。挂杆对应挑款，地台对应取鞋，沙发对应试穿，每个动作都有家具接住。陈列密度刻意压低，鞋与鞋之间留出距离，人才有地方站、蹲下去摸鞋面。一套可以穿上身照镜子：来买鞋的顺手看了衣服，来买衣服的顺手试了鞋。
+六天做声量，三周做转化，这是两件不同的活。10 月 29 日空间对外开放，10 月 30 日举行启幕仪式，品牌全线代言人黄景瑜到场，同场还有 ECCO 大中华区总经理董江白、瑞安新天地高级商业总监 Clarence Lee 李振辉、瑞安新天地总经理 Mickey Tao 陶然。四人共同启动装置，水滴汇入涟漪，灯光亮起。品牌方与业主方高层同台，说明这不只是品牌快闪，也是新天地的动作。快闪空间 10 月 29 日到 11 月 3 日，六天，把镜头和人群聚过来；慢闪空间 10 月 29 日到 11 月 22 日，三周，把看过的人引到店里。六天加三周，正好覆盖双 11 的决策窗口。这类空间不承担成交，承担的是让一双鞋、一件外套先被穿上身，在双 11 之前，试穿本身就是决策的一半。</p>
+      <div class="meta">上海 · ECCO 爱步 · 10-29~11-22</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/ECCO-BIOM-Pop-Up-Xintiandi-Shanghai-2026-10-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/069f7f6655994e488d0d1d2b18a8fe5b.jpg" alt="FALCONERI「绒于东方」四季羊绒系列展" loading="lazy">
+      <h2>FALCONERI「绒于东方」四季羊绒系列展</h2>
+      <p class="description">品牌：FALCONERI｜项目：「绒于东方」四季羊绒系列（Four-Season Cashmere）主题展览｜时间：2026.10.29 开展｜地点：北京市 京艷·翰林书院
+FALCONERI 是意大利羊绒品牌，2009 年加入 Oniverse 集团。它的产品线以羊绒针织为主，原料从蒙古牧场直采，不经过中间商——这句话写在品牌的官方介绍里，也是它做展览时想让人相信的部分。2026 年 10 月 29 日，品牌在北京京艷·翰林书院呈现「绒于东方」四季羊绒系列展；同年 12 月，上海港汇恒隆精品店将开业。一个意大利品牌把一次重要的材质叙事放在北京的一座四合院里，再把下一站交给上海，这条路线本身就说明了它对中国市场的判断。
+展览要处理的是一个跨语境的问题：羊绒是西方的面料语言，四合院是东方的空间语言，两者放在一起，稍不注意就会变成符号拼贴。「绒于东方」的解法是把叙事收窄到材质本身——三间主题展室依次为「本源」「匠艺」「成作」，对应羊绒从生长、雕琢到成型的三个段落。院子没有被填满，建筑的木构、墙面与自然光留出大量空白，羊绒的轻、软、暖放在这些安静的界面上，靠触感与光线说话。意式提供产品与工艺，东方提供观看的节奏，两者各让一步。
+动线顺着院子展开，三间展室之间隔着露天，人要穿过庭院才能进入下一间。这段路不是过场：它把观看速度降下来，也让「四季」的时间感落在脚步上。展室里的陈列分成几种尺度：圆形展墙悬挂成衣，圆形展柜收纳衣物，白墙与木质展台承担说明；「本源」一段用干草堆与圆顶帐篷搭出牧场的意象，把原料的来处变成可以看见的场景。其中一间放了一台木质织机，有人坐在机前操作，纱线一根根过综，观众可以停下来看完一个来回——机器把「匠艺」从形容词变成动作。
+展览在 10 月 29 日开展。对 FALCONERI 来说，这场展览要留下的不是开展当天的热闹，而是「懂羊绒」这三个字：在一个羊绒供给充足、价格带拉得很开的市场里，把产地、工艺、成衣三件事讲清楚，比讲风格更有用。北京的四合院提供了画面，上海的精品店承接了生意，一场展览因此有了两个落点——一个负责建立信任，一个负责把信任变成可以走进去的门店。</p>
+      <div class="meta">北京 · FALCONERI · 10-29</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/FALCONERI-Four-Season-Cashmere-Beijing-2026-10-29" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-4">
+      <img class="cover" src="https://res.onsiteclub.com/e164ca47735b4d1dbe982266644e6b67.jpg" alt="君超中心「此刻·向潮」大型公共艺术装置（广州）" loading="lazy">
+      <h2>君超中心「此刻·向潮」大型公共艺术装置（广州）</h2>
+      <p class="description">君超中心（GRANTRAL ONE）于 2026 年 7 月 10 日开业，落址广州国际金融城 A001 地块（广州市天河区），从地铁 5 号线科韵路站的 A、B 出口可直通 MTR 层。项目总建筑面积 35 万平方米，商业体量 16 万平方米，进驻品牌超过 300 家，其中 35 家以上为城市首店或旗舰店，整体以「CHAO+」理念组织消费场景。开业一百天这个节点，项目没有把预算压进折扣海报，而是把 L1 中庭、A/B/C/D 中庭与户外广场一并交出，交给一件装置——「此刻·向潮」。命题很清楚：一个把「潮」写进名字的商业体，要让人走进来就看见潮。
+装置以「潮水与千帆的共生」为题，把珠江奔流的城市底色与项目「有潮有调」的定位，拆成水滴、帆船、浪潮三段递进的空间叙事。造型大量使用蒂芙尼蓝的曲面线条，帆被解构后藏进曲面之中，远看是帆、近看又不是帆；水流与金属相接的位置留了一段暖色光晕，冷色曲面因此在转折处有了温度。五个点位沿这条线展开：户外广场的「游心渡口」以船帆起笔，是整条动线的入口；D 中庭的「又见粼粼」让船头破浪而出，外面套一枚月环；C 中庭的「溪泉之吟」把流动光影与细碎灯光铺开，做的是水声的视觉版；B 中庭的「百舸之汇」让大小船只高低错落；L1 中庭 A 的「泱泱云川」是主装置，10 米高的浪花从地面卷起。
+落地时，五个点位没有被当成五件各自成立的雕塑，而是被一张「CHAO 漫游地图」串成一条能从户外一路走到室内的路径。空间关系逐段安排：户外广场进深开阔，承担「起」的功能，适合退后几步看整组船帆；D、C、B 三个中庭尺度收紧，分别对应框景、光影、俯视三种观看方式；L1 中庭 A 挑高足够，才放得下 10 米的浪花，也才承得住停留时间偏长的人流。竖向层次被刻意用上——B 中庭的小船高低错落，只有站到上层往下看，画面才成立，装置因此不只属于地面，也属于围栏边。运营侧配了一个动作：到访顾客在社交平台打卡发布，可换领限定周边「杜邦纸艺术限定包」，看展、停留、带走一件东西，被串成同一条链。
+效果先在现场显形。2026 年 10 月 17 日入夜后，L1 中庭装置前围满拍照的年轻人，同层茶饮店点单要等 20 分钟以上——装置把人留住了，停留时间拉长到足以影响同层店铺的排队。扩散则交给顾客完成：打卡换周边的机制，让装置画面从商场空间流向社交平台，形成一轮不靠投放的传播。放回项目线上看，君超中心开业满一百天，客流累计突破 500 万人次，会员规模超过 20 万，日均客流约 5 万人次；「此刻·向潮」在这组数字之后亮起，更像是把「一百天」这个时间刻度，换成了一件可以走完、可以拍下、也可以被记住的空间作品。</p>
+      <div class="meta">广州 · 10-18~01-25</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/GRANTRAL-ONE-Toward-the-Tide-Art-Installation-GZ-2026-10-31" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-11-01
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
