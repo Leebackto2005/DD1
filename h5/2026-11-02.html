@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Club 会展日推 · 2026-11-02</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Serif Bold Factor #11：环境光晕——顶部居中的金色径向渐变，2% 透明度营造温暖氛围深度 */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center, #B8860B 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Serif Bold Factor #10：纸质纹理——inline SVG 噪点叠加，营造印刷品般的触感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页头 */
+.site-header { padding: 4rem 0 2.5rem; text-align: center; }
+.site-header .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1rem;
+}
+.site-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.site-header .date-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.5rem;
+}
+.site-header .gold-rule {
+  width: 64px;
+  height: 2px;
+  background: #B8860B;
+  margin: 1.5rem auto 0;
+  border: 0;
+}
+
+/* 统计带 */
+.stats-band { padding: 2.5rem 0 3rem; text-align: center; }
+.stats-band .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #B8860B;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats-band .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-top: 0.75rem;
+}
+
+/* 资讯列表 */
+.report-main { padding: 1rem 0 4rem; }
+.report-main section { padding: 0; }
+
+article.case {
+  padding: 2.5rem 0;
+  border-top: 1px solid #E8E4DF;
+}
+article.case:first-child { border-top: 2px solid #B8860B; }
+article.case .cover {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-top: 2px solid #B8860B;
+}
+article.case h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+article.case .description {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6B6B6B;
+  margin-bottom: 1.25rem;
+}
+article.case .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+article.case .btn-original {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1A1A1A;
+  background: transparent;
+  border: 1px solid #1A1A1A;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+article.case .btn-original:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 5rem 0;
+  text-align: center;
+}
+.empty-state p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #6B6B6B;
+  letter-spacing: -0.01em;
+}
+
+/* 页脚 */
+.site-footer {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid #E8E4DF;
+  text-align: center;
+}
+.site-footer .footer-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+  line-height: 1.8;
+}
+.site-footer .footer-meta a {
+  color: #6B6B6B;
+  text-decoration: none;
+  border-bottom: 1px solid #E8E4DF;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer .footer-meta a:hover {
+  color: #B8860B;
+  border-color: #B8860B;
+}
+
+/* 响应式：移动端 < 768px */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .container { padding: 0 1.25rem; }
+  .site-header { padding: 3rem 0 2rem; }
+  .site-header h1 { font-size: 1.75rem; }
+  .stats-band { padding: 2rem 0 2.5rem; }
+  .stats-band .stat-number { font-size: 2.5rem; }
+  .report-main { padding: 0.5rem 0 3rem; }
+  article.case { padding: 1.75rem 0; }
+  article.case h2 { font-size: 1.4rem; }
+  article.case .btn-original {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .empty-state { padding: 4rem 0; }
+  .empty-state p { font-size: 1.25rem; }
+  .site-footer { padding: 2.5rem 0 3rem; }
+}
+
+  </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="eyebrow">Onsite Club · Daily Digest</div>
+        <h1>会展日推</h1>
+        <div class="date-stamp">2026-11-02 周一</div>
+        <hr class="gold-rule">
+      </div>
+    </header>
+    
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stat-number">3</div>
+        <div class="stat-label">今日新增 / New Today</div>
+      </div>
+    </section>
+    
+
+    <main class="report-main">
+      <div class="container">
+        <section>
+    <article class="case" id="case-1">
+      <img class="cover" src="https://res.onsiteclub.com/1dc1b5b007dd48e88277cf85c5b498c5.jpg" alt="MONA WORLD 车主聚会暨 MONA L05 中国上市发布会" loading="lazy">
+      <h2>MONA WORLD 车主聚会暨 MONA L05 中国上市发布会</h2>
+      <p class="description">2026年10月29日傍晚，小鹏集团在广州南沙的大湾区文化体育中心办了一场「MONA WORLD 车主聚会暨 L05 中国上市发布会」。它没有按常规发布会的样子来：场地一半是舞台，一半是海边市集与草坪，约 5000 位 MONA 车主从全国各地赶来，先玩、再听歌、最后看车上市。品牌把这一晚定义成 MONA 狂欢节，作为年度发布会计划的收官一站。对 MONA 这条产品线来说，这是继 M03 之后第一次把「车主」放在比「新车」更前面的位置。
+整场活动围绕一个被搭出来的「世界」展开。入口写着 WELCOME TO MONA WORLD，主视觉用 SAME CITY, DIFFERENT WORLD 把「同一座城市、另一种活法」讲成一句口号，舞台立面上反复出现 MONA L05 与「年轻人的首款大五座 SUV」，另一侧是 REVEL OVER ALL MOMENT 的灯牌和 L03、L05 的车型标识，让老车主与新车型同时出现在一个画面里。场地在体育馆与海边之间切换：白天是拼豆、市集与落日，入夜后灯光收拢到主舞台，乐队与发布环节接管视线，情绪从「逛」过渡到「看」。
+流程被拆成三段。第一段是共创：一块巨型汽车拼豆由车主分批完成，按预热口径是「史上最大的汽车拼豆」，也成了现场最花时间的装置，排队的人比看车的人多。第二段是聚会：落日美食、市集摊位与实力乐队轮番上场，把体育馆外场变成音乐节现场，明星车主也被请上台。第三段才是发布会本体，L05 在灯光与屏幕的配合下驶上主舞台。5000 人的入场、分区与离场，要在一套通道体系里同时解决三条动线——这是这类「半户外、半场内」活动最容易被低估的工程量。
+传播上，这场活动的落点是把「上市」翻译成「在一起」。MONA L05 定位年轻人的首款大五座 SUV，提供纯电与超级增程两种动力、共 6 款车型，限时价 13.98 万至 17.18 万元；增程版 CLTC 纯电续航 310 公里、满油满电综合续航 1310 公里。品牌把这一晚的重点放在车主身上：5000 位车主与鹏友到场，MONA 代言人兼车主欧阳娜娜第四次助阵，从车主视角分享 L05 的使用体验。从预热到当晚，官方话题一直围绕「5000 位车主聚会」而不是单纯的新车参数；把发布会做成一场可以带家人来的派对，新车只是其中一个环节。对品牌而言，一场 5000 人的聚会既是发布，也是一次用户运营的集中呈现：它让新车被看见，也让车主被看见。</p>
+      <div class="meta">广州 · 小鹏汽车 · 10-29</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/XPENG-MONA-L05-Launch-Guangzhou-2026-10-29" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-2">
+      <img class="cover" src="https://res.onsiteclub.com/fb2d86d2020844298cad56e2456f286c.jpg" alt="2026 大众汽车集团（中国）技术日 · 首届" loading="lazy">
+      <h2>2026 大众汽车集团（中国）技术日 · 首届</h2>
+      <p class="description">2026年10月28日，首届大众汽车集团（中国）技术日在合肥举行，地点在集团旗下的大众汽车（中国）科技有限公司（VCTC）。这一天被放在「在中国，为中国」战略推进四年的节点上：本土研发体系已经成型，需要一次当面的说明，把实验室、在研产品与一整套技术矩阵同时摊开。集团也借这场活动宣布进入「深耕中国，共赢全球」的阶段——中国不再只是最大的单一市场，也被定义为全球业务的创新策源地与出口枢纽。
+空间的概念原点是「和谐共生」（symbiotic &amp; cyclical）。主舞台取圆形，环形界面把发言人、屏幕与车辆收在同一个中心里；圆的下方做开合屏，随流程开合，让车辆以有节奏的方式出现，也把注意力从语言拉回实物。主舞台后方另设三个独立展区，分别对应整车平台、电子电气架构与高级驾驶辅助，在发布会临近结束时才揭幕，把来宾从坐席引向展区，形成第二段动线。
+一天的安排被切成两段。上午是开放环节：集团合肥研发中心的相关实验室首次对来宾开放，参观者可以走进测试与验证的现场；同一时段还可以体验搭载集团自研高级驾驶辅助系统与 AI 智能座舱的新产品。下午转入发布会，由集团高层揭晓首个本土自研的一体化技术矩阵 VEGA。空间叙事、屏幕内容与出车节奏被当成一件事来排，所以同一座场地能在几分钟内从「论坛」切换到「展场」。
+发布会的落点是一个名字和一条路线。VEGA 取自织女星，把整车平台、电子电气架构与高级驾驶辅助收进同一套体系：平台侧对应 CMP 与 CSP，架构侧是 CEA，智驾侧是面向全场景的 L2++ 方案；配套还有「大众黄金标准」的验证流程，以及合肥的 L3 道路测试牌照。对传播而言，技术日的价值不止于当天的新闻——它把抽象战略翻译成可参观的实验室、可上车的功能和可走进去的展区，让「本土研发」从一句话变成一组能被拍摄、被引用、被复述的画面。
+制作与执行：全案的创意策划、舞台与视觉设计、内容制作由 jangled nerves（jn）承担，灯光与搭建的落地监理也在同一支团队手里；合作伙伴为 rgb。</p>
+      <div class="meta">合肥 · Volkswagen Group 大众汽车集团 · 10-28</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/Volkswagen-Group-China-Tech-Day-Hefei-2026-10-28" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+    <article class="case" id="case-3">
+      <img class="cover" src="https://res.onsiteclub.com/c2d2217c0c784a6bba3af480b01b5631.jpg" alt="「被雨中断的比赛」LACOSTE 2026秋冬时装秀 · 广富林新章" loading="lazy">
+      <h2>「被雨中断的比赛」LACOSTE 2026秋冬时装秀 · 广富林新章</h2>
+      <p class="description">2026年10月22日傍晚，LACOSTE 把 2026 秋冬系列带到上海松江的广富林文化遗址公园。这是品牌创意总监 Pelagia Kolotouros 上任以来，第一次在巴黎之外完整呈现整季系列——今年三月，同一组造型在巴黎罗兰·加洛斯球场完成首秀。广富林被称作「上海之根」，遗址内的新石器时代遗存可追溯至约四千年前；三组漂浮在富林湖水面上的坡屋顶建筑由 CCDI 悉地国际设计，展馆主体沉入水下，形成国内城市里少见的「半在水上、半在水下」的建筑群，也成为这场秀的舞台基底。
+系列名为 Washed Out Match, Reimagined，中文语汇落在「被雨中断的比赛」。故事回到 1923 年：一场骤雨打断了 René Lacoste 正在进行的比赛，球场空下来，人们的目光转向看台——观众匆忙披上的防风雨衣、外套与披肩，成了本季的起点。设计不再只服务球场上的运动员，而是转向看台上的观看者：风衣被处理成带斗篷感的 Polo，粘合技术羊毛与透明尼龙叠压，天鹅绒与标志性的 René 西装外套带来光泽与柔软的反差。品牌与苏格兰防水老牌 Mackintosh 的合作，则把防雨运动套装、百褶风衣裙与混合式夹克衬衫收进同一套语汇。
+秀场的改造围绕「水」展开。一条被橘红色灯光照亮的长廊跨过水面，把入场动线拉长，尽头是一片红土色的镜面球场；模特沿岸线走来，身影与古建筑的屋檐一起落在水面上。地面做得极薄、极亮，脚步落下带起浅浅的水痕，观众围坐在三面，视线始终压得很低，像一场因雨暂停、所有人都在等待天晴的比赛。系列里低饱和的大地色、湿感面料与红土意象，与这套空间语言互为注脚。
+秀场之外，这场活动更接近一次完整的市场动作。LACOSTE 与全球代言人王一博共创的四套秀场造型当晚发布，并同步开启「即看即买」：观众在观看直播的同时，即可下单秀场同款与联名系列，把秀场到零售的链路压进同一个晚上。到场嘉宾包括王一博、Taylor Zakhar Perez、Nicole Scherzinger、梁家辉、朱珠、王天辰、周依然、陈碧舸、范少勋；秀后品牌在遗址现场举办 After Party。选择广富林这样一处城市文化地标，也把品牌的法式运动传承与上海的地方文脉放进同一画面——大秀不再只是发布，而是一次可以即时转化、也可以被城市记住的品牌事件。</p>
+      <div class="meta">上海 · Lacoste 拉科斯特 · 10-22</div>
+      <a class="btn-original" href="https://www.onsiteclub.com/case/LACOSTE-FW26-Washed-Out-Match-Show-Shanghai-2026-10-22" target="_blank" rel="noopener noreferrer">查看原页</a>
+    </article>
+        </section>
+      </div>
+    </main>
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-meta">
+          数据源 · <a href="https://www.onsiteclub.com" target="_blank" rel="noopener noreferrer">onsiteclub.com</a><br>
+          生成于 2026-11-02
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
